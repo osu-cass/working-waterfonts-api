@@ -1,4 +1,4 @@
-What's Fresh's API documentation
+Working Waterfronts's API documentation
 ================================
 
 API and Usage Documentation:

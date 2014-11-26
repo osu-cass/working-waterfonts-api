@@ -1,0 +1,398 @@
+[
+  {
+    "model": "whats_fresh_api.Image",
+    "pk": "1",
+    "fields": {
+      "image": "/media/halibut.jpg",
+      "caption": "Woof!",
+      "name": "A dog",
+      "created": "2014-08-08 23:27:05.568395+00:00",
+      "modified": "2014-08-08 23:27:05.568395+00:00"
+    }
+  },
+  {
+    "model": "whats_fresh_api.Image",
+    "pk": "2",
+    "fields": {
+      "image": "/media/tuna.jpg",
+      "caption": "Meow!",
+      "name": "A cat",
+      "created": "2014-08-08 23:27:05.568395+00:00",
+      "modified": "2014-08-08 23:27:05.568395+00:00"
+    }
+  },
+  {
+    "model": "whats_fresh_api.Story",
+    "pk": "2",
+    "fields": {
+      "name": "Fresh Prince",
+      "history": "This is the story, all about how my life got flip turned upside down!",
+      "facts": "I have never watch this",
+      "buying": "Buying people is illegal",
+      "preparing": "Being a prince is hard work, make sure you prepare for it",
+      "products": "Still illegal",
+      "images": [1],
+      "videos": [1],
+      "created": "2014-08-08 23:27:05.568395+00:00",
+      "modified": "2014-08-08 23:27:05.568395+00:00"
+      }
+    },
+    {
+    "model": "whats_fresh_api.Story",
+    "pk": "1",
+    "fields": {
+      "name": "Star Wars",
+      "history": "A long time ago, in a galaxy far, far away...",
+      "facts": "Star Wars is awesome",
+      "buying": "Always buy all related products",
+      "preparing": "Fried",
+      "products": "Fish",
+      "season": "Spring",
+      "images": [2],
+      "videos": [2],
+      "created": "2014-08-08 23:27:05.568395+00:00",
+      "modified": "2014-08-08 23:27:05.568395+00:00"
+    }
+  },
+  {
+    "model": "whats_fresh_api.Product",
+    "pk": "2",
+    "fields": {
+      "name": "Tuna",
+      "variety": "Tuna Variety",
+      "alt_name": "Albacore",
+      "description": "Tuna Description",
+      "origin": "The Oregon Coast",
+      "season": "May to November",
+      "available": "True",
+      "market_price": "$1 per dozen",
+      "link": "http://upload.wikimedia.org/wikipedia/commons/2/21/Tuna_assortment.png",
+      "image": "1",
+      "story": "1",
+      "created": "2014-08-08 23:27:05.568395+00:00",
+      "modified": "2014-08-08 23:27:05.568395+00:00"
+    }
+  },
+  {
+    "model": "whats_fresh_api.Product",
+    "pk": "1",
+    "fields": {
+      "name": "Halibut",
+      "variety": "Alaskan",
+      "alt_name": "Pacific Halibut",
+      "description": "Pacific Halibut is a fish.",
+      "origin": "Offshore",
+      "season": "December to January",
+      "available": "True",
+      "market_price": "$",
+      "link": "http://en.wikipedia.org/wiki/File:Pacific_Halibut_Fileting.JPG",
+      "image": "2",
+      "story": "1",
+      "created": "2014-08-08 23:27:05.568395+00:00",
+      "modified": "2014-08-08 23:27:05.568395+00:00"
+    }
+  },
+  {
+    "model": "whats_fresh_api.POI",
+    "pk": "1",
+    "fields": {
+      "name": "Portland Tuna",
+      "status": "True",
+      "description": "Fake Portland Tuna",
+      "location": "POINT (-122.679630 45.518962)",
+      "street": "720 SW Broadway",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97204",
+      "location_description": "Located on Broadway in Portland",
+      "contact_name": "Portland Tuna Contact",
+      "phone": "",
+      "story": "2",
+      "website": "",
+      "email": "",
+      "created": "2014-08-08 23:27:05.568395+00:00",
+      "modified": "2014-08-08 23:27:05.568395+00:00"
+    }
+  },
+  {
+    "model": "whats_fresh_api.POI",
+    "pk": "2",
+    "fields": {
+      "name": "Portland Halibut",
+      "status": "True",
+      "description": "Fake Portland Halibut",
+      "location": "POINT (-122.670619 45.520988)",
+      "street": "1 SW Pine St",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97204",
+      "location_description": "Located on Pine in Portland",
+      "contact_name": "Portland Halibut Contact",
+      "phone": "",
+      "story": "1",
+      "website": "",
+      "email": "",
+      "created": "2014-08-08 23:27:05.568395+00:00",
+      "modified": "2014-08-08 23:27:05.568395+00:00"
+    }
+  },
+  {
+    "model": "whats_fresh_api.POI",
+    "pk": "3",
+    "fields": {
+      "name": "Newport Tuna",
+      "status": "True",
+      "description": "Fake Newport Tuna",
+      "location": "POINT (-124.050122 44.631592)",
+      "street": "146 SE Bay Blvd",
+      "city": "Newport",
+      "state": "OR",
+      "zip": "97365",
+      "location_description": "Located on Bay Blvd in Newport",
+      "contact_name": "Newport Tuna Contact",
+      "phone": "",
+      "story": "2",
+      "website": "",
+      "email": "",
+      "created": "2014-08-08 23:27:05.568395+00:00",
+      "modified": "2014-08-08 23:27:05.568395+00:00"
+    }
+  },
+  {
+    "model": "whats_fresh_api.POI",
+    "pk": "4",
+    "fields": {
+      "name": "Newport Halibut",
+      "status": "True",
+      "description": "Fake Newport Halibut",
+      "location": "POINT (-124.052868 44.646006)",
+      "street": "1226 Oregon Coast Hwy",
+      "city": "Newport",
+      "state": "OR",
+      "zip": "97365",
+      "location_description": "Located on Oregon Coast Hwy in Newport",
+      "contact_name": "Newpotr Halibut Contact",
+      "phone": "",
+      "story": "1",
+      "website": "",
+      "email": "",
+      "created": "2014-08-08 23:27:05.568395+00:00",
+      "modified": "2014-08-08 23:27:05.568395+00:00"
+    }
+  },
+  {
+    "model": "whats_fresh_api.POI",
+    "pk": "5",
+    "fields": {
+      "name": "Waldport Tuna",
+      "status": "True",
+      "description": "Fake Waldport Tuna",
+      "location": "POINT (-124.066166 44.427761)",
+      "street": "522 NW Spring St",
+      "city": "Waldport",
+      "state": "OR",
+      "zip": "97394",
+      "location_description": "Located on Spring St in Waldport",
+      "contact_name": "Waldport Tuna Contact",
+      "phone": "",
+      "story": "2",
+      "website": "",
+      "email": "",
+      "created": "2014-08-08 23:27:05.568395+00:00",
+      "modified": "2014-08-08 23:27:05.568395+00:00"
+    }
+  },
+  {
+    "model": "whats_fresh_api.POI",
+    "pk": "6",
+    "fields": {
+      "name": "Waldport Halibut",
+      "status": "True",
+      "description": "Fake Waldport Halibut",
+      "location": "POINT (-124.069126 44.425188)",
+      "street": "190 SW Maple St",
+      "city": "Waldport",
+      "state": "OR",
+      "zip": "97364",
+      "location_description": "Located on SW Maple St in Waldport",
+      "contact_name": "Waldport Halibut Contact",
+      "phone": "",
+      "story": "1",
+      "website": "",
+      "email": "",
+      "created": "2014-08-08 23:27:05.568395+00:00",
+      "modified": "2014-08-08 23:27:05.568395+00:00"
+    }
+  },
+  {
+    "model": "whats_fresh_api.POI",
+    "pk": "7",
+    "fields": {
+      "name": "Pacific City Tuna",
+      "status": "True",
+      "description": "Fake Pacific City Tuna",
+      "location": "POINT (-123.958093 45.197105)",
+      "street": "35650 Roger Ave",
+      "city": "Cloverdale",
+      "state": "OR",
+      "zip": "97112",
+      "location_description": "Located on Roger Ave in Pacific City",
+      "contact_name": "Pacific City Tuna Contact",
+      "phone": "",
+      "story": "2",
+      "website": "",
+      "email": "",
+      "created": "2014-08-08 23:27:05.568395+00:00",
+      "modified": "2014-08-08 23:27:05.568395+00:00"
+    }
+  },
+  {
+    "model": "whats_fresh_api.POI",
+    "pk": "8",
+    "fields": {
+      "name": "Pacific City Halibut",
+      "status": "True",
+      "description": "Fake Pacific City Halibut",
+      "location": "POINT (-123.959418 45.207253)",
+      "street": "34455 Brooten Rd",
+      "city": "Cloverdale",
+      "state": "OR",
+      "zip": "97112",
+      "location_description": "Located on Brooten Rd in Pacific City",
+      "contact_name": "Pacific City Halibut Contact",
+      "phone": "",
+      "story": "1",
+      "website": "",
+      "email": "",
+      "created": "2014-08-08 23:27:05.568395+00:00",
+      "modified": "2014-08-08 23:27:05.568395+00:00"
+    }
+  },
+  {
+    "model": "whats_fresh_api.POIProduct",
+    "pk": "1",
+    "fields": {
+       "poi": "1",
+       "product_preparation": "2",
+       "poi_price": "",
+       "available": "None"
+    }
+  },
+  {
+    "model": "whats_fresh_api.POIProduct",
+    "pk": "2",
+    "fields": {
+       "poi": "2",
+       "product_preparation": "1",
+       "poi_price": "",
+       "available": "None"
+    }
+  },
+  {
+    "model": "whats_fresh_api.POIProduct",
+    "pk": "3",
+    "fields": {
+       "poi": "3",
+       "product_preparation": "2",
+       "poi_price": "",
+       "available": "None"
+    }
+  },
+  {
+    "model": "whats_fresh_api.POIProduct",
+    "pk": "4",
+    "fields": {
+       "poi": "4",
+       "product_preparation": "1",
+       "poi_price": "",
+       "available": "None"
+    }
+  },
+  {
+    "model": "whats_fresh_api.POIProduct",
+    "pk": "5",
+    "fields": {
+       "poi": "5",
+       "product_preparation": "2",
+       "poi_price": "",
+       "available": "None"
+    }
+  },
+  {
+    "model": "whats_fresh_api.POIProduct",
+    "pk": "6",
+    "fields": {
+       "poi": "6",
+       "product_preparation": "1",
+       "poi_price": "",
+       "available": "None"
+    }
+  },
+  {
+    "model": "whats_fresh_api.POIProduct",
+    "pk": "7",
+    "fields": {
+       "poi": "7",
+       "product_preparation": "2",
+       "poi_price": "",
+       "available": "None"
+    }
+  },
+  {
+    "model": "whats_fresh_api.POIProduct",
+    "pk": "8",
+    "fields": {
+       "poi": "8",
+       "product_preparation": "1",
+       "poi_price": "",
+       "available": "None"
+    }
+  },
+  {
+    "model": "whats_fresh_api.ProductPreparation",
+    "pk": "1",
+    "fields": {
+       "preparation": "1",
+       "product": "1"
+    }
+  },
+  {
+    "model": "whats_fresh_api.ProductPreparation",
+    "pk": "2",
+    "fields": {
+       "preparation": "1",
+       "product": "2"
+    }
+  },
+  {
+    "model": "whats_fresh_api.Video",
+    "pk": "1",
+    "fields": {
+      "video": "http://www.youtube.com/watch?v=efgDdSWDg0g",
+      "caption": "A starship",
+      "caption": "Traveling at the speed of light!",
+      "created": "2014-08-08 23:27:05.568395+00:00",
+      "modified": "2014-08-08 23:27:05.568395+00:00"
+    }
+  },
+  {
+    "model": "whats_fresh_api.Video",
+    "pk": "2",
+    "fields": {
+      "video": "http://www.youtube.com/watch?v=M-nlAuCW7WY",
+      "caption": "Princely!",
+      "name": "Princely!",
+      "created": "2014-08-08 23:27:05.568395+00:00",
+      "modified": "2014-08-08 23:27:05.568395+00:00"
+    }
+  },
+  {
+    "model": "whats_fresh_api.Preparation",
+    "pk": "1",
+    "fields": {
+      "name": "Frozen",
+      "description": "This product was quickly cooled and frozen after being caught",
+      "additional_info": "Live octopus requires a locking container"
+    }
+  }
+]

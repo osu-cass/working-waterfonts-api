@@ -1,0 +1,181 @@
+{% extends "base.html" %}
+
+{% block header %}
+<div class="back">
+    {% for p in parent_url %}
+    <a href="{{ p.url }}">
+        &lt; <span class="parent_text">{{ p.name }}</span>
+    </a>
+    {% endfor %}
+</div>
+{% endblock header %}
+
+{% block title %}
+<h2 class='light'>{{ title }}</h2>
+<h4 class='light accent'>{{ message }}</h4>
+{% endblock title %}
+
+{% load static %}
+
+{% block content %}
+<form class='form' action="{{ post_url }}" method="post">
+    {% if poi_form.errors or errors %}
+    <div class='error'>
+        {% for error in poi_form.errors %}
+        {% if error != "lat" and error != "long" %}
+        <h4 class='light warning'>Invalid {{ error|escape }}!</h4>
+        {% endif %}
+        {% endfor %}
+        {% for error in errors %}
+        <h4 class='light warning'>{{ error|escape }}</h4>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <h4 id='error_tag' class='light warning'></h4>
+    {% csrf_token %}
+    <div class='entry_box'>
+        {% if poi_form.instance.pk != None %}
+        <button  class='dbutton' type="button" onclick="deletePOI();return false;" />Delete</button>
+        {% endif %}
+        <h3>Basic Info</h3>
+        <p class="field_text">Name*:</p>
+        {{ poi_form.name }}
+        <p class="field_text">Hours*:</p>
+        {{ poi_form.hours }}
+        <p class="field_text">Description*:</p>
+        {{ poi_form.description }}
+        <p class="field_text">Story:</p>
+        {{ poi_form.story }}
+        <p class=" field_text">In Port:</p>
+        {{ poi_form.status }}
+        <h3>Location</h3>
+        <p class="field_text">Street Address*:</p>
+        {{ poi_form.street }}
+        <p class="field_text">City*:</p>
+        {{ poi_form.city }}
+        <p class="field_text">State*:</p>
+        {{ poi_form.state }}
+        <p class="field_text">Zipcode*:</p>
+        {{ poi_form.zip }}
+        <p class=" field_text">Location Description:</p>
+        {{ poi_form.location_description }}
+        <h3>Contact info: </h3>
+        <p class="field_text">Contact Name*:</p>
+        {{ poi_form.contact_name }}
+        <p class=" field_text">Website:</p>
+        {{ poi_form.website }}
+        <p class=" field_text">Email:</p>
+        {{ poi_form.email }}
+        <p class=" field_text">Phone:</p>
+        {{ poi_form.phone }}
+        <h3 class="title">Products</h3>
+        <button type="button" onclick="appendProduct()">Add Product</button>
+        <div class="container">
+            {% if existing_product_preparations %}
+            {% for pp in existing_product_preparations %}
+            <div class="product">
+                <select disabled id="existing{{ pp.id }}">
+                    <option value="{{ pp.product }}">{{ pp.product }}</option>
+                </select>
+                <select disabled id="existing{{ pp.id }}" class="preparation">
+                    <option value="{{ pp.id }}">{{ pp.preparation_text }}</option>
+                </select>
+                <a href="#" onclick="deleteProduct(this);return false;">
+                    <img class="delete" src="{% static 'delete.png' %}" />
+                </a>
+            </div>
+            {% endfor %}
+            {% else %}
+            <span class="no_products">No Products Yet!</span>
+            {% endif %}
+            <input id="preparation_ids" name="preparation_ids" type="hidden" />
+        </div>
+        <button type="submit" onclick="setPreparationField();" />Save</button>
+    </div>
+</form>
+<!-- The template div used by appendProduct() -->
+<div id='new_product'>
+    <div class='product'>
+        <select id="product$iteration" onchange="showPreparations($iteration)">
+            <option selected disabled></option>
+            {% for product in product_list %}
+            <option value="{{ product }}">{{ product }}</option>
+            {% endfor %}
+        </select>
+        <select disabled id="preparation$iteration" class="preparation">
+            <option selected disabled></option>
+        </select>
+        <a href="#" onclick="deleteProduct(this);return false;">
+            <img class="delete" src="{% static 'delete.png' %}" />
+        </a>
+    </div>
+</div>
+{% endblock content %}
+{% block footer %}
+<script>
+    var preparation_options = {{ json_preparations|safe }};
+
+    number_of_products = 0;
+
+    function deleteProduct(element)
+    {
+        $( element ).parent().css("display", "none");
+        if ($( ".preparation:visible" ).length === 0) {
+            $( ".no_products" ).show();
+        };
+    }
+
+    function deletePOI()
+    {
+        if(confirm('Are you sure you want to delete this poi?')) {
+            $.ajax({
+                type: 'DELETE',
+                headers: { 'X-CSRFToken': '{{ csrf_token }}' },
+                statusCode: {
+                    404: function() {
+                        $("#error_tag").text('Unable to delete poi!');
+                        $("html, body").animate({ scrollTop: 0 }, "slow");
+                    },
+                    200: function() {
+                        window.location.replace('{% with parent_url|last as last %}{{ last.url }}{% endwith %}/?success=true');
+                    }
+                }
+            });
+        }
+    }
+
+    function showPreparations(prep_number)
+    {
+        var preparation_select = document.getElementById("preparation" + prep_number);
+        var product_select = document.getElementById("product" + prep_number);
+        var current_product = product_select.options[product_select.selectedIndex].value
+        preparation_select.options.length = 0;
+        for (preparation in preparation_options[current_product]) {
+            var option = document.createElement("option");
+            option.value = preparation_options[current_product][preparation].value;
+            option.text = preparation_options[current_product][preparation].name;
+            preparation_select.add(option);
+        }
+        preparation_select.disabled=false;
+    }
+
+    function appendProduct()
+    {
+        $( ".no_products" ).hide();
+        var new_product_html = $('#new_product').html();
+        var new_product_html = new_product_html.split("$iteration").join(number_of_products);
+        $( ".container" ).append( new_product_html );
+        number_of_products++;
+    }
+
+    function setPreparationField()
+    {
+        var preparation_ids = []
+        $( ".preparation:visible" ).each( function( index, element ){
+            preparation_ids.push(this.options[this.selectedIndex].value);
+        });
+
+        $('input[name="preparation_ids"]').val(preparation_ids);
+    }
+</script>
+{% endblock footer %}

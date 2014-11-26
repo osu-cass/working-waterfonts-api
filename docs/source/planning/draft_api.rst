@@ -4,7 +4,7 @@ Draft API
 Format
 ------
 
-Responses will be returned in standard JSON format. An attempt will be made to keep the structure simple. Https will be used for all endpoints. 
+Responses will be returned in standard JSON format. An attempt will be made to keep the structure simple. Https will be used for all endpoints.
 
 Null values (optional fields that do not have data), will be empty strings: "".
 
@@ -71,7 +71,7 @@ Returns a single poi record identified by <id>. This will return all available d
 
 	{
 		error: {error_status: bool, error_name: text, error_text: text, error_level},
-            id: int, 
+            id: int,
 			name: text,
 			alt_name: text or null,
 			summary: text,
@@ -96,7 +96,7 @@ Returns a single poi record identified by <id>. This will return all available d
 			modified: datetime,
 			ext: {attribute: value, attribute: value...} or {},
 	}
-	
+
 
 */pois/categories/<id>*
 
@@ -125,7 +125,7 @@ Returns a list of pois in the category identified by <id>.
             ]
 	}
 
-    
+
 Additional parameters
 ---------------------
 
@@ -133,7 +133,7 @@ These parameters can be added to any endpoint request
 
 *?location=<lat>,<long>*
 
-or 
+or
 
 *?lat=<float>&long=<float>*
 
@@ -149,7 +149,7 @@ examples:
 
 *?limit=<int>*
 
-This parameter will limit the number of records returned to <int>. In combination with the location parameter, it can be used to return the 5 nearest vendors selling tuna:
+This parameter will limit the number of records returned to <int>. In combination with the location parameter, it can be used to return the 5 nearest pois selling tuna:
 
 .. raw:: html
 
