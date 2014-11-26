@@ -29,7 +29,7 @@ suites:
   - name: develop
     run_list:
       - recipe[postgresql::server]
-      - recipe[working-waterfronts::default]
+      - recipe[whats-fresh::default]
     attributes:
       whats_fresh:
         repository: 'https://github.com/osu-cass/working-waterfronts-api'
