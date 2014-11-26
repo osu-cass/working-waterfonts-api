@@ -25,8 +25,8 @@ DEPENDENCIES
   postgis
   postgresql
   python
-  working-waterfronts
-    git: git://github.com/osuosl-cookbooks/working-waterfronts.git
+  whats-fresh
+    git: git://github.com/osuosl-cookbooks/whats-fresh.git
     revision: 752968d892f89ce85d35cbb3126d80c6071a2061
     branch: app_deployment
   yum-epel
@@ -157,7 +157,7 @@ GRAPH
     yum-epel (>= 0.0.0)
   supervisor (0.4.12)
     python (>= 0.0.0)
-  working-waterfronts (0.1.10)
+  whats-fresh (0.1.10)
     application (>= 0.0.0)
     application_nginx (>= 0.0.0)
     application_python (>= 0.0.0)
