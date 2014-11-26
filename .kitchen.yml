@@ -31,7 +31,7 @@ suites:
       - recipe[postgresql::server]
       - recipe[working-waterfronts::default]
     attributes:
-      working_waterfronts:
+      whats_fresh:
         repository: 'https://github.com/osu-cass/working-waterfronts-api'
         make_db: true
         debug: true
