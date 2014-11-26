@@ -1,6 +1,6 @@
 source "https://supermarket.getchef.com"
 
-cookbook 'working-waterfronts', github: "osuosl-cookbooks/whats-fresh", branch: "app_deployment"
+cookbook 'whats-fresh', github: "osuosl-cookbooks/whats-fresh", branch: "app_deployment"
 
 cookbook 'application'
 cookbook 'application_python'
