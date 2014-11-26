@@ -1,7 +1,7 @@
 import json
 
 story = """ {
-    "model": "whats_fresh_api.Image",
+    "model": "working_waterfronts_api.Image",
     "pk": "{0}",
     "fields": {
       "name": "{0}",

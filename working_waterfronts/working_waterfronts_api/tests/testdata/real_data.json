@@ -1,7 +1,7 @@
 [
   {
     "pk": 2,
-    "model": "whats_fresh_api.poi",
+    "model": "working_waterfronts_api.poi",
     "fields": {
       "status": null,
       "city": "Newport",
@@ -24,7 +24,7 @@
   },
   {
     "pk": 3,
-    "model": "whats_fresh_api.poi",
+    "model": "working_waterfronts_api.poi",
     "fields": {
       "status": true,
       "city": "Gold Beach",
@@ -47,7 +47,7 @@
   },
   {
     "pk": 4,
-    "model": "whats_fresh_api.poi",
+    "model": "working_waterfronts_api.poi",
     "fields": {
       "status": null,
       "city": "Waldport",
@@ -70,7 +70,7 @@
   },
   {
     "pk": 5,
-    "model": "whats_fresh_api.poi",
+    "model": "working_waterfronts_api.poi",
     "fields": {
       "status": null,
       "city": "Florence",
@@ -93,7 +93,7 @@
   },
   {
     "pk": 6,
-    "model": "whats_fresh_api.poi",
+    "model": "working_waterfronts_api.poi",
     "fields": {
       "status": null,
       "city": "Waldport",
@@ -116,7 +116,7 @@
   },
   {
     "pk": 7,
-    "model": "whats_fresh_api.poi",
+    "model": "working_waterfronts_api.poi",
     "fields": {
       "status": null,
       "city": "Newport",
@@ -139,7 +139,7 @@
   },
   {
     "pk": 8,
-    "model": "whats_fresh_api.poi",
+    "model": "working_waterfronts_api.poi",
     "fields": {
       "status": null,
       "city": "Newport",
@@ -162,7 +162,7 @@
   },
   {
     "pk": 9,
-    "model": "whats_fresh_api.poi",
+    "model": "working_waterfronts_api.poi",
     "fields": {
       "status": null,
       "city": "Waldport",
@@ -185,7 +185,7 @@
   },
   {
     "pk": 10,
-    "model": "whats_fresh_api.poi",
+    "model": "working_waterfronts_api.poi",
     "fields": {
       "status": true,
       "city": "Gold Beach",
@@ -208,7 +208,7 @@
   },
   {
     "pk": 11,
-    "model": "whats_fresh_api.poi",
+    "model": "working_waterfronts_api.poi",
     "fields": {
       "status": true,
       "city": "Florence",
@@ -231,7 +231,7 @@
   },
   {
     "pk": 12,
-    "model": "whats_fresh_api.poi",
+    "model": "working_waterfronts_api.poi",
     "fields": {
       "status": true,
       "city": "Newport",
@@ -254,7 +254,7 @@
   },
   {
     "pk": 13,
-    "model": "whats_fresh_api.poi",
+    "model": "working_waterfronts_api.poi",
     "fields": {
       "status": true,
       "city": "Newport",
@@ -277,7 +277,7 @@
   },
   {
     "pk": 14,
-    "model": "whats_fresh_api.poi",
+    "model": "working_waterfronts_api.poi",
     "fields": {
       "status": true,
       "city": "Waldport",
@@ -300,7 +300,7 @@
   },
   {
     "pk": 15,
-    "model": "whats_fresh_api.poi",
+    "model": "working_waterfronts_api.poi",
     "fields": {
       "status": true,
       "city": "Waldport",
@@ -323,7 +323,7 @@
   },
   {
     "pk": 16,
-    "model": "whats_fresh_api.poi",
+    "model": "working_waterfronts_api.poi",
     "fields": {
       "status": null,
       "city": "Corvallis",
@@ -346,7 +346,7 @@
   },
   {
     "pk": 1,
-    "model": "whats_fresh_api.product",
+    "model": "working_waterfronts_api.product",
     "fields": {
       "origin": "Pacific Ocean",
       "available": null,
@@ -365,7 +365,7 @@
   },
   {
     "pk": 2,
-    "model": "whats_fresh_api.product",
+    "model": "working_waterfronts_api.product",
     "fields": {
       "origin": "Pacific Ocean",
       "available": null,
@@ -384,7 +384,7 @@
   },
   {
     "pk": 3,
-    "model": "whats_fresh_api.product",
+    "model": "working_waterfronts_api.product",
     "fields": {
       "origin": "",
       "available": null,
@@ -403,7 +403,7 @@
   },
   {
     "pk": 4,
-    "model": "whats_fresh_api.product",
+    "model": "working_waterfronts_api.product",
     "fields": {
       "origin": "Pacific Ocean",
       "available": null,
@@ -422,7 +422,7 @@
   },
   {
     "pk": 5,
-    "model": "whats_fresh_api.product",
+    "model": "working_waterfronts_api.product",
     "fields": {
       "origin": "Pacific Ocean",
       "available": true,
@@ -441,7 +441,7 @@
   },
   {
     "pk": 6,
-    "model": "whats_fresh_api.product",
+    "model": "working_waterfronts_api.product",
     "fields": {
       "origin": "Pacific Ocean",
       "available": null,
@@ -460,7 +460,7 @@
   },
   {
     "pk": 7,
-    "model": "whats_fresh_api.product",
+    "model": "working_waterfronts_api.product",
     "fields": {
       "origin": "",
       "available": null,
@@ -479,7 +479,7 @@
   },
   {
     "pk": 8,
-    "model": "whats_fresh_api.product",
+    "model": "working_waterfronts_api.product",
     "fields": {
       "origin": "",
       "available": null,
@@ -498,7 +498,7 @@
   },
   {
     "pk": 9,
-    "model": "whats_fresh_api.product",
+    "model": "working_waterfronts_api.product",
     "fields": {
       "origin": "",
       "available": true,
@@ -517,7 +517,7 @@
   },
   {
     "pk": 10,
-    "model": "whats_fresh_api.product",
+    "model": "working_waterfronts_api.product",
     "fields": {
       "origin": "",
       "available": null,
@@ -536,7 +536,7 @@
   },
   {
     "pk": 11,
-    "model": "whats_fresh_api.product",
+    "model": "working_waterfronts_api.product",
     "fields": {
       "origin": "",
       "available": null,
@@ -555,7 +555,7 @@
   },
   {
     "pk": 1,
-    "model": "whats_fresh_api.story",
+    "model": "working_waterfronts_api.story",
     "fields": {
       "name": "Starfish Enterblub",
       "history": "These are the voyages of the Starfish Enterblub; her five year mission -- to seek out new fish and new fishilizations...",
@@ -575,7 +575,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.image",
+    "model": "working_waterfronts_api.image",
     "pk": "1",
     "fields": {
       "image": "/media/cat.jpg",
@@ -586,7 +586,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.Video",
+    "model": "working_waterfronts_api.Video",
     "pk": "1",
     "fields": {
       "video": "http://www.youtube.com/watch?v=efgDdSWDg0g",
@@ -598,7 +598,7 @@
   },
   {
     "pk": 1,
-    "model": "whats_fresh_api.preparation",
+    "model": "working_waterfronts_api.preparation",
     "fields": {
       "additional_info": "",
       "name": "Live",
@@ -607,7 +607,7 @@
   },
   {
     "pk": 2,
-    "model": "whats_fresh_api.preparation",
+    "model": "working_waterfronts_api.preparation",
     "fields": {
       "additional_info": "",
       "name": "Frozen",
@@ -616,7 +616,7 @@
   },
   {
     "pk": 3,
-    "model": "whats_fresh_api.preparation",
+    "model": "working_waterfronts_api.preparation",
     "fields": {
       "additional_info": "It's been cut along parallel to the backbone.",
       "name": "Filet",
@@ -625,7 +625,7 @@
   },
   {
     "pk": 4,
-    "model": "whats_fresh_api.preparation",
+    "model": "working_waterfronts_api.preparation",
     "fields": {
       "additional_info": "",
       "name": "Smoked",
@@ -634,7 +634,7 @@
   },
   {
     "pk": 30,
-    "model": "whats_fresh_api.productpreparation",
+    "model": "working_waterfronts_api.productpreparation",
     "fields": {
       "preparation": 1,
       "product": 10
@@ -642,7 +642,7 @@
   },
   {
     "pk": 31,
-    "model": "whats_fresh_api.productpreparation",
+    "model": "working_waterfronts_api.productpreparation",
     "fields": {
       "preparation": 1,
       "product": 1
@@ -650,7 +650,7 @@
   },
   {
     "pk": 32,
-    "model": "whats_fresh_api.productpreparation",
+    "model": "working_waterfronts_api.productpreparation",
     "fields": {
       "preparation": 3,
       "product": 1
@@ -658,7 +658,7 @@
   },
   {
     "pk": 33,
-    "model": "whats_fresh_api.productpreparation",
+    "model": "working_waterfronts_api.productpreparation",
     "fields": {
       "preparation": 2,
       "product": 1
@@ -666,7 +666,7 @@
   },
   {
     "pk": 34,
-    "model": "whats_fresh_api.productpreparation",
+    "model": "working_waterfronts_api.productpreparation",
     "fields": {
       "preparation": 1,
       "product": 9
@@ -674,7 +674,7 @@
   },
   {
     "pk": 35,
-    "model": "whats_fresh_api.productpreparation",
+    "model": "working_waterfronts_api.productpreparation",
     "fields": {
       "preparation": 2,
       "product": 9
@@ -682,7 +682,7 @@
   },
   {
     "pk": 36,
-    "model": "whats_fresh_api.productpreparation",
+    "model": "working_waterfronts_api.productpreparation",
     "fields": {
       "preparation": 1,
       "product": 2
@@ -690,7 +690,7 @@
   },
   {
     "pk": 37,
-    "model": "whats_fresh_api.productpreparation",
+    "model": "working_waterfronts_api.productpreparation",
     "fields": {
       "preparation": 2,
       "product": 2
@@ -698,7 +698,7 @@
   },
   {
     "pk": 38,
-    "model": "whats_fresh_api.productpreparation",
+    "model": "working_waterfronts_api.productpreparation",
     "fields": {
       "preparation": 1,
       "product": 4
@@ -706,7 +706,7 @@
   },
   {
     "pk": 39,
-    "model": "whats_fresh_api.productpreparation",
+    "model": "working_waterfronts_api.productpreparation",
     "fields": {
       "preparation": 2,
       "product": 4
@@ -714,7 +714,7 @@
   },
   {
     "pk": 40,
-    "model": "whats_fresh_api.productpreparation",
+    "model": "working_waterfronts_api.productpreparation",
     "fields": {
       "preparation": 1,
       "product": 5
@@ -722,7 +722,7 @@
   },
   {
     "pk": 41,
-    "model": "whats_fresh_api.productpreparation",
+    "model": "working_waterfronts_api.productpreparation",
     "fields": {
       "preparation": 3,
       "product": 5
@@ -730,7 +730,7 @@
   },
   {
     "pk": 42,
-    "model": "whats_fresh_api.productpreparation",
+    "model": "working_waterfronts_api.productpreparation",
     "fields": {
       "preparation": 2,
       "product": 5
@@ -738,7 +738,7 @@
   },
   {
     "pk": 43,
-    "model": "whats_fresh_api.productpreparation",
+    "model": "working_waterfronts_api.productpreparation",
     "fields": {
       "preparation": 3,
       "product": 6
@@ -746,7 +746,7 @@
   },
   {
     "pk": 44,
-    "model": "whats_fresh_api.productpreparation",
+    "model": "working_waterfronts_api.productpreparation",
     "fields": {
       "preparation": 3,
       "product": 3
@@ -754,7 +754,7 @@
   },
   {
     "pk": 45,
-    "model": "whats_fresh_api.productpreparation",
+    "model": "working_waterfronts_api.productpreparation",
     "fields": {
       "preparation": 2,
       "product": 3
@@ -762,7 +762,7 @@
   },
   {
     "pk": 46,
-    "model": "whats_fresh_api.productpreparation",
+    "model": "working_waterfronts_api.productpreparation",
     "fields": {
       "preparation": 1,
       "product": 7
@@ -770,7 +770,7 @@
   },
   {
     "pk": 47,
-    "model": "whats_fresh_api.productpreparation",
+    "model": "working_waterfronts_api.productpreparation",
     "fields": {
       "preparation": 2,
       "product": 7
@@ -778,7 +778,7 @@
   },
   {
     "pk": 48,
-    "model": "whats_fresh_api.productpreparation",
+    "model": "working_waterfronts_api.productpreparation",
     "fields": {
       "preparation": 2,
       "product": 8
@@ -786,7 +786,7 @@
   },
   {
     "pk": 49,
-    "model": "whats_fresh_api.productpreparation",
+    "model": "working_waterfronts_api.productpreparation",
     "fields": {
       "preparation": 4,
       "product": 11
@@ -794,7 +794,7 @@
   },
   {
     "pk": 39,
-    "model": "whats_fresh_api.poiproduct",
+    "model": "working_waterfronts_api.poiproduct",
     "fields": {
       "product_preparation": 44,
       "poi_price": "",
@@ -804,7 +804,7 @@
   },
   {
     "pk": 40,
-    "model": "whats_fresh_api.poiproduct",
+    "model": "working_waterfronts_api.poiproduct",
     "fields": {
       "product_preparation": 32,
       "poi_price": "",
@@ -814,7 +814,7 @@
   },
   {
     "pk": 41,
-    "model": "whats_fresh_api.poiproduct",
+    "model": "working_waterfronts_api.poiproduct",
     "fields": {
       "product_preparation": 43,
       "poi_price": "",
@@ -824,7 +824,7 @@
   },
   {
     "pk": 42,
-    "model": "whats_fresh_api.poiproduct",
+    "model": "working_waterfronts_api.poiproduct",
     "fields": {
       "product_preparation": 46,
       "poi_price": "",
@@ -834,7 +834,7 @@
   },
   {
     "pk": 43,
-    "model": "whats_fresh_api.poiproduct",
+    "model": "working_waterfronts_api.poiproduct",
     "fields": {
       "product_preparation": 48,
       "poi_price": "",
@@ -844,7 +844,7 @@
   },
   {
     "pk": 44,
-    "model": "whats_fresh_api.poiproduct",
+    "model": "working_waterfronts_api.poiproduct",
     "fields": {
       "product_preparation": 40,
       "poi_price": "",
@@ -854,7 +854,7 @@
   },
   {
     "pk": 45,
-    "model": "whats_fresh_api.poiproduct",
+    "model": "working_waterfronts_api.poiproduct",
     "fields": {
       "product_preparation": 46,
       "poi_price": "",
@@ -864,7 +864,7 @@
   },
   {
     "pk": 46,
-    "model": "whats_fresh_api.poiproduct",
+    "model": "working_waterfronts_api.poiproduct",
     "fields": {
       "product_preparation": 44,
       "poi_price": "",
@@ -874,7 +874,7 @@
   },
   {
     "pk": 50,
-    "model": "whats_fresh_api.poiproduct",
+    "model": "working_waterfronts_api.poiproduct",
     "fields": {
       "product_preparation": 46,
       "poi_price": "",
@@ -884,7 +884,7 @@
   },
   {
     "pk": 51,
-    "model": "whats_fresh_api.poiproduct",
+    "model": "working_waterfronts_api.poiproduct",
     "fields": {
       "product_preparation": 47,
       "poi_price": "",
@@ -894,7 +894,7 @@
   },
   {
     "pk": 52,
-    "model": "whats_fresh_api.poiproduct",
+    "model": "working_waterfronts_api.poiproduct",
     "fields": {
       "product_preparation": 48,
       "poi_price": "",
@@ -904,7 +904,7 @@
   },
   {
     "pk": 53,
-    "model": "whats_fresh_api.poiproduct",
+    "model": "working_waterfronts_api.poiproduct",
     "fields": {
       "product_preparation": 44,
       "poi_price": "",
@@ -914,7 +914,7 @@
   },
   {
     "pk": 54,
-    "model": "whats_fresh_api.poiproduct",
+    "model": "working_waterfronts_api.poiproduct",
     "fields": {
       "product_preparation": 43,
       "poi_price": "",
@@ -924,7 +924,7 @@
   },
   {
     "pk": 59,
-    "model": "whats_fresh_api.poiproduct",
+    "model": "working_waterfronts_api.poiproduct",
     "fields": {
       "product_preparation": 43,
       "poi_price": "",
@@ -934,7 +934,7 @@
   },
   {
     "pk": 60,
-    "model": "whats_fresh_api.poiproduct",
+    "model": "working_waterfronts_api.poiproduct",
     "fields": {
       "product_preparation": 44,
       "poi_price": "",
@@ -944,7 +944,7 @@
   },
   {
     "pk": 61,
-    "model": "whats_fresh_api.poiproduct",
+    "model": "working_waterfronts_api.poiproduct",
     "fields": {
       "product_preparation": 43,
       "poi_price": "",
@@ -954,7 +954,7 @@
   },
   {
     "pk": 62,
-    "model": "whats_fresh_api.poiproduct",
+    "model": "working_waterfronts_api.poiproduct",
     "fields": {
       "product_preparation": 31,
       "poi_price": "",
@@ -964,7 +964,7 @@
   },
   {
     "pk": 63,
-    "model": "whats_fresh_api.poiproduct",
+    "model": "working_waterfronts_api.poiproduct",
     "fields": {
       "product_preparation": 43,
       "poi_price": "",
@@ -974,7 +974,7 @@
   },
   {
     "pk": 64,
-    "model": "whats_fresh_api.poiproduct",
+    "model": "working_waterfronts_api.poiproduct",
     "fields": {
       "product_preparation": 44,
       "poi_price": "",
@@ -984,7 +984,7 @@
   },
   {
     "pk": 65,
-    "model": "whats_fresh_api.poiproduct",
+    "model": "working_waterfronts_api.poiproduct",
     "fields": {
       "product_preparation": 31,
       "poi_price": "",
@@ -994,7 +994,7 @@
   },
   {
     "pk": 66,
-    "model": "whats_fresh_api.poiproduct",
+    "model": "working_waterfronts_api.poiproduct",
     "fields": {
       "product_preparation": 36,
       "poi_price": "",

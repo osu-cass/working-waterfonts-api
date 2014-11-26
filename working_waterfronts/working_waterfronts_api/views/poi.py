@@ -1,8 +1,8 @@
 from django.http import (HttpResponse,
                          HttpResponseNotFound)
 from django.contrib.gis.measure import D
-from whats_fresh.whats_fresh_api.models import POI
-from whats_fresh.whats_fresh_api.functions import get_lat_long_prox
+from working_waterfronts.working_waterfronts_api.models import POI
+from working_waterfronts.working_waterfronts_api.functions import get_lat_long_prox
 
 import json
 from .serializer import FreshSerializer

@@ -8,11 +8,11 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
 
-from whats_fresh.whats_fresh_api.models import (POI, Product,
+from working_waterfronts.working_waterfronts_api.models import (POI, Product,
                                                 ProductPreparation,
                                                 POIProduct)
-from whats_fresh.whats_fresh_api.forms import POIForm
-from whats_fresh.whats_fresh_api.functions import (group_required,
+from working_waterfronts.working_waterfronts_api.forms import POIForm
+from working_waterfronts.working_waterfronts_api.functions import (group_required,
                                                    coordinates_from_address,
                                                    BadAddressException)
 

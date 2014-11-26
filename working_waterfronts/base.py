@@ -1,5 +1,5 @@
 """
-Django settings for whats_fresh project.
+Django settings for working_waterfronts project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -26,7 +26,7 @@ TEMPLATE_DEBUG = True
 ALLOWED_HOSTS = []
 
 FIXTURE_DIRS = (
-    os.path.join(BASE_DIR, 'whats_fresh/whats_fresh_api/tests/testdata'),
+    os.path.join(BASE_DIR, 'working_waterfronts/working_waterfronts_api/tests/testdata'),
 )
 
 # Application definition
@@ -39,7 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.gis',
-    'whats_fresh.whats_fresh_api',
+    'working_waterfronts.working_waterfronts_api',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -51,9 +51,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'whats_fresh.urls'
+ROOT_URLCONF = 'working_waterfronts.urls'
 
-WSGI_APPLICATION = 'whats_fresh.wsgi.application'
+WSGI_APPLICATION = 'working_waterfronts.wsgi.application'
 
 
 # Database

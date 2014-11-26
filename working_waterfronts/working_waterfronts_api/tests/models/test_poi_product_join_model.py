@@ -1,6 +1,6 @@
 from django.test import TestCase
 
-from whats_fresh.whats_fresh_api.models import (POIProduct,
+from working_waterfronts.working_waterfronts_api.models import (POIProduct,
                                                 ProductPreparation, Product,
                                                 Preparation, POI)
 from django.contrib.gis.db import models
@@ -25,7 +25,7 @@ class POIProductJoinTestCase(TestCase):
         }
 
     def test_fields_exist(self):
-        model = models.get_model('whats_fresh_api', 'POIProduct')
+        model = models.get_model('working_waterfronts_api', 'POIProduct')
         for field, field_type in self.expected_fields.items():
             self.assertEqual(
                 field_type, type(model._meta.get_field_by_name(field)[0]))
@@ -48,7 +48,7 @@ class POIProductJoinTestCase(TestCase):
             self.fail("No __unicode__ method found")
 
     def test_optional_fields(self):
-        models.get_model('whats_fresh_api', 'POIProduct')
+        models.get_model('working_waterfronts_api', 'POIProduct')
         for field in self.optional_fields:
             self.assertEqual(
                 POIProduct._meta.get_field_by_name(field)[0].blank, True)

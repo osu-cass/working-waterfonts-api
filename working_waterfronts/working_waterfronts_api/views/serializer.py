@@ -1,5 +1,5 @@
 from django.core.serializers import json
-from whats_fresh.whats_fresh_api.models import POI
+from working_waterfronts.working_waterfronts_api.models import POI
 
 
 class FreshSerializer(json.Serializer):

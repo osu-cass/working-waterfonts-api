@@ -1,6 +1,6 @@
 [
   {
-    "model": "whats_fresh_api.Image",
+    "model": "working_waterfronts_api.Image",
     "pk": "10",
     "fields": {
       "image": "/media/dog.jpg",
@@ -11,7 +11,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.Image",
+    "model": "working_waterfronts_api.Image",
     "pk": "20",
     "fields": {
       "image": "/media/cat.jpg",
@@ -22,7 +22,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.Story",
+    "model": "working_waterfronts_api.Story",
     "pk": "10",
     "fields": {
       "name": "Starfish Enterblub",
@@ -39,7 +39,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.Story",
+    "model": "working_waterfronts_api.Story",
     "pk": "20",
     "fields": {
       "name": "Fresh Prince",
@@ -55,7 +55,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.Product",
+    "model": "working_waterfronts_api.Product",
     "pk": "10",
     "fields": {
       "name": "Starfish Voyager",
@@ -74,7 +74,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.Product",
+    "model": "working_waterfronts_api.Product",
     "pk": "100",
     "fields": {
       "name": "Ezri Dax",
@@ -93,7 +93,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.POI",
+    "model": "working_waterfronts_api.POI",
     "pk": "10",
     "fields": {
       "name": "No Optional Null Fields Are Null",
@@ -116,7 +116,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.POI",
+    "model": "working_waterfronts_api.POI",
     "pk": "20",
     "fields": {
       "name": "All Optional Null Fields Are Null",
@@ -139,7 +139,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.POIProduct",
+    "model": "working_waterfronts_api.POIProduct",
     "pk": "10",
     "fields": {
        "poi": "10",
@@ -149,7 +149,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.ProductPreparation",
+    "model": "working_waterfronts_api.ProductPreparation",
     "pk": "10",
     "fields": {
        "preparation": "10",
@@ -157,7 +157,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.ProductPreparation",
+    "model": "working_waterfronts_api.ProductPreparation",
     "pk": "20",
     "fields": {
        "preparation": "10",
@@ -165,7 +165,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.POIProduct",
+    "model": "working_waterfronts_api.POIProduct",
     "pk": "20",
     "fields": {
        "poi": "20",
@@ -175,7 +175,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.POIProduct",
+    "model": "working_waterfronts_api.POIProduct",
     "pk": "30",
     "fields": {
        "poi": "10",
@@ -185,7 +185,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.Video",
+    "model": "working_waterfronts_api.Video",
     "pk": "10",
     "fields": {
       "video": "http://www.youtube.com/watch?v=efgDdSWDg0g",
@@ -196,7 +196,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.Video",
+    "model": "working_waterfronts_api.Video",
     "pk": "20",
     "fields": {
       "video": "http://www.youtube.com/watch?v=M-nlAuCW7WY",
@@ -207,7 +207,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.Preparation",
+    "model": "working_waterfronts_api.Preparation",
     "pk": "10",
     "fields": {
       "name": "Live",
@@ -216,7 +216,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.Preparation",
+    "model": "working_waterfronts_api.Preparation",
     "pk": "20",
     "fields": {
       "name": "Filet",

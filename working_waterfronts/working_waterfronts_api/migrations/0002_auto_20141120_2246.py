@@ -13,7 +13,7 @@ def create_group(apps, schema_editor):
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('whats_fresh_api', '0001_initial'),
+        ('working_waterfronts_api', '0001_initial'),
         ('auth', '0001_initial')
     ]
 

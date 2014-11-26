@@ -1,7 +1,7 @@
 from django.http import (HttpResponse,
                          HttpResponseNotFound)
-from whats_fresh.whats_fresh_api.models import Product
-from whats_fresh.whats_fresh_api.functions import get_limit
+from working_waterfronts.working_waterfronts_api.models import Product
+from working_waterfronts.working_waterfronts_api.functions import get_limit
 
 import json
 from .serializer import FreshSerializer

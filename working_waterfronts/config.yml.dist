@@ -24,10 +24,10 @@ USE_TZ: True
 
 
 ##### Static and media files #####
-STATIC_ROOT: "/opt/whats_fresh/static"
+STATIC_ROOT: "/opt/working_waterfronts/static"
 STATIC_URL: "/static/"
 
-MEDIA_ROOT: "/opt/whats_fresh/media"
+MEDIA_ROOT: "/opt/working_waterfronts/media"
 MEDIA_URL: "/media/"
 
 

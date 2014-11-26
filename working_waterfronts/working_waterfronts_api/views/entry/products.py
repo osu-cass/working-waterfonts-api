@@ -7,10 +7,10 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.conf import settings
 
-from whats_fresh.whats_fresh_api.models import (Product, Preparation,
+from working_waterfronts.working_waterfronts_api.models import (Product, Preparation,
                                                 ProductPreparation)
-from whats_fresh.whats_fresh_api.forms import ProductForm
-from whats_fresh.whats_fresh_api.functions import group_required
+from working_waterfronts.working_waterfronts_api.forms import ProductForm
+from working_waterfronts.working_waterfronts_api.functions import group_required
 from django.forms.models import save_instance
 
 import json

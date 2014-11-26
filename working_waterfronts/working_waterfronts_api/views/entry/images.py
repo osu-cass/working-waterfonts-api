@@ -7,9 +7,9 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.conf import settings
 
-from whats_fresh.whats_fresh_api.models import Image
-from whats_fresh.whats_fresh_api.forms import ImageForm
-from whats_fresh.whats_fresh_api.functions import group_required
+from working_waterfronts.working_waterfronts_api.models import Image
+from working_waterfronts.working_waterfronts_api.forms import ImageForm
+from working_waterfronts.working_waterfronts_api.functions import group_required
 
 
 @login_required

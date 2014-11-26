@@ -1,6 +1,6 @@
 [
   {
-    "model": "whats_fresh_api.Image",
+    "model": "working_waterfronts_api.Image",
     "pk": "1",
     "fields": {
       "image": "/media/halibut.jpg",
@@ -11,7 +11,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.Image",
+    "model": "working_waterfronts_api.Image",
     "pk": "2",
     "fields": {
       "image": "/media/tuna.jpg",
@@ -22,7 +22,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.Story",
+    "model": "working_waterfronts_api.Story",
     "pk": "2",
     "fields": {
       "name": "Fresh Prince",
@@ -38,7 +38,7 @@
       }
     },
     {
-    "model": "whats_fresh_api.Story",
+    "model": "working_waterfronts_api.Story",
     "pk": "1",
     "fields": {
       "name": "Star Wars",
@@ -55,7 +55,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.Product",
+    "model": "working_waterfronts_api.Product",
     "pk": "2",
     "fields": {
       "name": "Tuna",
@@ -74,7 +74,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.Product",
+    "model": "working_waterfronts_api.Product",
     "pk": "1",
     "fields": {
       "name": "Halibut",
@@ -93,7 +93,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.POI",
+    "model": "working_waterfronts_api.POI",
     "pk": "1",
     "fields": {
       "name": "Portland Tuna",
@@ -115,7 +115,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.POI",
+    "model": "working_waterfronts_api.POI",
     "pk": "2",
     "fields": {
       "name": "Portland Halibut",
@@ -137,7 +137,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.POI",
+    "model": "working_waterfronts_api.POI",
     "pk": "3",
     "fields": {
       "name": "Newport Tuna",
@@ -159,7 +159,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.POI",
+    "model": "working_waterfronts_api.POI",
     "pk": "4",
     "fields": {
       "name": "Newport Halibut",
@@ -181,7 +181,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.POI",
+    "model": "working_waterfronts_api.POI",
     "pk": "5",
     "fields": {
       "name": "Waldport Tuna",
@@ -203,7 +203,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.POI",
+    "model": "working_waterfronts_api.POI",
     "pk": "6",
     "fields": {
       "name": "Waldport Halibut",
@@ -225,7 +225,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.POI",
+    "model": "working_waterfronts_api.POI",
     "pk": "7",
     "fields": {
       "name": "Pacific City Tuna",
@@ -247,7 +247,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.POI",
+    "model": "working_waterfronts_api.POI",
     "pk": "8",
     "fields": {
       "name": "Pacific City Halibut",
@@ -269,7 +269,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.POIProduct",
+    "model": "working_waterfronts_api.POIProduct",
     "pk": "1",
     "fields": {
        "poi": "1",
@@ -279,7 +279,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.POIProduct",
+    "model": "working_waterfronts_api.POIProduct",
     "pk": "2",
     "fields": {
        "poi": "2",
@@ -289,7 +289,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.POIProduct",
+    "model": "working_waterfronts_api.POIProduct",
     "pk": "3",
     "fields": {
        "poi": "3",
@@ -299,7 +299,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.POIProduct",
+    "model": "working_waterfronts_api.POIProduct",
     "pk": "4",
     "fields": {
        "poi": "4",
@@ -309,7 +309,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.POIProduct",
+    "model": "working_waterfronts_api.POIProduct",
     "pk": "5",
     "fields": {
        "poi": "5",
@@ -319,7 +319,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.POIProduct",
+    "model": "working_waterfronts_api.POIProduct",
     "pk": "6",
     "fields": {
        "poi": "6",
@@ -329,7 +329,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.POIProduct",
+    "model": "working_waterfronts_api.POIProduct",
     "pk": "7",
     "fields": {
        "poi": "7",
@@ -339,7 +339,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.POIProduct",
+    "model": "working_waterfronts_api.POIProduct",
     "pk": "8",
     "fields": {
        "poi": "8",
@@ -349,7 +349,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.ProductPreparation",
+    "model": "working_waterfronts_api.ProductPreparation",
     "pk": "1",
     "fields": {
        "preparation": "1",
@@ -357,7 +357,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.ProductPreparation",
+    "model": "working_waterfronts_api.ProductPreparation",
     "pk": "2",
     "fields": {
        "preparation": "1",
@@ -365,7 +365,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.Video",
+    "model": "working_waterfronts_api.Video",
     "pk": "1",
     "fields": {
       "video": "http://www.youtube.com/watch?v=efgDdSWDg0g",
@@ -376,7 +376,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.Video",
+    "model": "working_waterfronts_api.Video",
     "pk": "2",
     "fields": {
       "video": "http://www.youtube.com/watch?v=M-nlAuCW7WY",
@@ -387,7 +387,7 @@
     }
   },
   {
-    "model": "whats_fresh_api.Preparation",
+    "model": "working_waterfronts_api.Preparation",
     "pk": "1",
     "fields": {
       "name": "Frozen",

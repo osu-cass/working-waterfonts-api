@@ -7,7 +7,7 @@ admin.autodiscover()
 urlpatterns = patterns(
     '',
     url(r'^admin/', include(admin.site.urls)),
-    (r'^', include('whats_fresh.whats_fresh_api.urls')),
+    (r'^', include('working_waterfronts.working_waterfronts_api.urls')),
     )
 
 if settings.DEBUG:

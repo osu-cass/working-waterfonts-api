@@ -1,6 +1,6 @@
 from django.http import (HttpResponse,
                          HttpResponseNotFound)
-from whats_fresh.whats_fresh_api.models import Preparation
+from working_waterfronts.working_waterfronts_api.models import Preparation
 
 import json
 from .serializer import FreshSerializer

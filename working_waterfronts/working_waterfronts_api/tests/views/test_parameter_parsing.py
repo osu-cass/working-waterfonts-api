@@ -1,5 +1,5 @@
 from django.test import TestCase
-from whats_fresh.whats_fresh_api.functions import get_lat_long_prox, get_limit
+from working_waterfronts.working_waterfronts_api.functions import get_lat_long_prox, get_limit
 from mock import Mock, patch
 from django.contrib.gis.geos import fromstr
 

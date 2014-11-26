@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from whats_fresh.whats_fresh_api.functions import group_required
+from working_waterfronts.working_waterfronts_api.functions import group_required
 
 
 @login_required

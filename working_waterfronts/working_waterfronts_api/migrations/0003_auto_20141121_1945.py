@@ -7,7 +7,7 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('whats_fresh_api', '0002_auto_20141120_2246'),
+        ('working_waterfronts_api', '0002_auto_20141120_2246'),
     ]
 
     operations = [

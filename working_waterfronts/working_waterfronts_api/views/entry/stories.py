@@ -1,13 +1,13 @@
 from django.http import HttpResponse, HttpResponseRedirect
-from whats_fresh.whats_fresh_api.models import Story, Image, Video
+from working_waterfronts.working_waterfronts_api.models import Story, Image, Video
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from whats_fresh.whats_fresh_api.functions import group_required
+from working_waterfronts.working_waterfronts_api.functions import group_required
 from django.conf import settings
 from django.shortcuts import render
 from django.core.urlresolvers import reverse
 from django.shortcuts import get_object_or_404
-from whats_fresh.whats_fresh_api.forms import StoryForm
+from working_waterfronts.working_waterfronts_api.forms import StoryForm
 import json
 
 

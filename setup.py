@@ -31,8 +31,8 @@ setup(
     license='',
     zip_safe=False,
     package_data={
-        'whats_fresh.whats_fresh_api.tests.testdata': ['*.json', 'media/*'],
-        'whats_fresh.whats_fresh_api': ['templates/*', 'static/*.png', 'static/css/*']},
+        'working_waterfronts.working_waterfronts_api.tests.testdata': ['*.json', 'media/*'],
+        'working_waterfronts.working_waterfronts_api': ['templates/*', 'static/*.png', 'static/css/*']},
     description="Working Waterfronts API implementation",
     long_description=open('README.rst').read()
 )

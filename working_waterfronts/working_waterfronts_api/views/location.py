@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from whats_fresh.whats_fresh_api.models import POI
+from working_waterfronts.working_waterfronts_api.models import POI
 import json
 
 

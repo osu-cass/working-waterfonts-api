@@ -1,6 +1,6 @@
 from django.test import TestCase
 
-from whats_fresh.whats_fresh_api.models import Image
+from working_waterfronts.working_waterfronts_api.models import Image
 from django.contrib.gis.db import models
 
 
@@ -24,7 +24,7 @@ class ImageTestCase(TestCase):
         }
 
     def test_fields_exist(self):
-        model = models.get_model('whats_fresh_api', 'Image')
+        model = models.get_model('working_waterfronts_api', 'Image')
         for field, field_type in self.expected_fields.items():
             self.assertEqual(
                 field_type, type(model._meta.get_field_by_name(field)[0]))
@@ -57,7 +57,7 @@ class ImageTestCase(TestCase):
             self.fail("No __unicode__ method found")
 
     def test_optional_fields(self):
-        models.get_model('whats_fresh_api', 'Image')
+        models.get_model('working_waterfronts_api', 'Image')
         for field in self.optional_fields:
             self.assertEqual(
                 Image._meta.get_field_by_name(field)[0].blank, True)

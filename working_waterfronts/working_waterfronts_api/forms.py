@@ -1,5 +1,5 @@
 import django.forms as forms
-from whats_fresh.whats_fresh_api.models import (POI, Product, Preparation,
+from working_waterfronts.working_waterfronts_api.models import (POI, Product, Preparation,
                                                 Story, Video, Image)
 
 

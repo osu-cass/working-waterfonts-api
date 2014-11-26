@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.core.urlresolvers import reverse
-from whats_fresh.whats_fresh_api.models import Preparation
+from working_waterfronts.working_waterfronts_api.models import Preparation
 from django.contrib.auth.models import User, Group
 
 
