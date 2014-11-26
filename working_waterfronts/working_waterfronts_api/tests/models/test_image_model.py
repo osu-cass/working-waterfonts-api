@@ -11,11 +11,9 @@ class ImageTestCase(TestCase):
             'image': models.ImageField,
             'name': models.TextField,
             'caption': models.TextField,
-            'product': models.related.RelatedObject,
+            'poi': models.related.RelatedObject,
             'created': models.DateTimeField,
             'modified': models.DateTimeField,
-            'product': models.related.RelatedObject,
-            'story': models.related.RelatedObject,
             'id': models.AutoField
         }
 

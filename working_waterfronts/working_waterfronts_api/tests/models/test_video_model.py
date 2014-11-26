@@ -12,7 +12,7 @@ class VideoTestCase(TestCase):
             'name': models.TextField,
             'created': models.DateTimeField,
             'modified': models.DateTimeField,
-            'story': models.related.RelatedObject,
+            'poi': models.related.RelatedObject,
             'id': models.AutoField
         }
 

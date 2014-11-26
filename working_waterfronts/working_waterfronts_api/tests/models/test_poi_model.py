@@ -10,33 +10,30 @@ class POITestCase(TestCase):
     def setUp(self):
         self.expected_fields = {
             'name': models.TextField,
-            'description': models.TextField,
-            'status': models.NullBooleanField,
+            'alt_name': models.TextField,
+            'location': models.PointField,
             'street': models.TextField,
             'city': models.TextField,
             'state': models.TextField,
             'zip': models.TextField,
-            'status': models.NullBooleanField,
+            'description': models.TextField,
+            'history': models.TextField,
+            'facts': models.TextField,
             'location_description': models.TextField,
-            'hours': models.TextField,
-            'contact_name': models.TextField,
             'website': models.URLField,
             'email': models.EmailField,
             'phone': PhoneNumberField,
-            'location': models.PointField,
-            'story': models.ForeignKey,
-            'story_id': models.ForeignKey,
+            'categories': models.ManyToManyField,
+            'pois_categories': models.ManyToManyField,
             'created': models.DateTimeField,
             'modified': models.DateTimeField,
-            'products_preparations': models.ManyToManyField,
-            'poiproduct': models.related.RelatedObject,
             'id': models.AutoField
         }
 
         self.optional_fields = {
+            'alt_name',
             'location_description',
             'website',
-            'hours',
             'email',
             'phone'
         }
