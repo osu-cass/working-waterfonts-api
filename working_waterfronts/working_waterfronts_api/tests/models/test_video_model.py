@@ -38,3 +38,6 @@ class VideoTestCase(TestCase):
         for field in self.optional_fields:
             self.assertEqual(
                 Video._meta.get_field_by_name(field)[0].blank, True)
+
+    def test___unicode___method(self):
+        assert hasattr(Video, '__unicode__'), "No __unicode__ method found"

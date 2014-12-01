@@ -14,8 +14,6 @@ class POICategoryJoinTestCase(TestCase):
             'id': models.AutoField
         }
 
-        self.optional_fields = {}
-
     def test_fields_exist(self):
         model = models.get_model('working_waterfronts_api', 'POICateogry')
         for field, field_type in self.expected_fields.items():
@@ -27,16 +25,4 @@ class POICategoryJoinTestCase(TestCase):
         self.assertEqual(sorted(fields), sorted(self.expected_fields.keys()))
 
     def test___unicode___method(self):
-        try:
-            POICategory.__unicode__(
-                POICategory(
-                    poi=POI(name='test'),
-                    category=Category(category='test')))
-        except AttributeError:
-            self.fail("No __unicode__ method found")
-
-    def test_optional_fields(self):
-        models.get_model('working_waterfronts_api', 'POICategory')
-        for field in self.optional_fields:
-            self.assertEqual(
-                POICategory._meta.get_field_by_name(field)[0].blank, True)
+        assert hasattr(POICategory, '__unicode__'), "No __unicode__ method found"

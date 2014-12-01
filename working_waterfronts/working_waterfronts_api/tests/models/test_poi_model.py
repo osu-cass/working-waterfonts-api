@@ -55,10 +55,7 @@ class POITestCase(TestCase):
         self.assertTrue(POI._meta.get_field('created').auto_now_add)
 
     def test___unicode___method(self):
-        try:
-            POI.__unicode__(POI())
-        except AttributeError:
-            self.fail("No __unicode__ method found")
+        assert hasattr(POI, '__unicode__'), "No __unicode__ method found"
 
     def test_optional_fields(self):
         models.get_model('working_waterfronts_api', 'POI')

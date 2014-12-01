@@ -13,8 +13,6 @@ class CategoryTestCase(TestCase):
             'id': models.AutoField
         }
 
-        self.optional_fields = {}
-
     def test_fields_exist(self):
         model = models.get_model('working_waterfronts_api', 'Category')
         for field, field_type in self.expected_fields.items():
@@ -30,13 +28,4 @@ class CategoryTestCase(TestCase):
         self.assertTrue(Category._meta.get_field('created').auto_now_add)
 
     def test___unicode___method(self):
-        try:
-            Category.__unicode__(Category())
-        except AttributeError:
-            self.fail("No __unicode__ method found")
-
-    def test_optional_fields(self):
-        models.get_model('working_waterfronts_api', 'Category')
-        for field in self.optional_fields:
-            self.assertEqual(
-                Category._meta.get_field_by_name(field)[0].blank, True)
+        assert hasattr(Category, '__unicode__'), "No __unicode__ method found"

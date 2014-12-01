@@ -49,10 +49,7 @@ class ImageTestCase(TestCase):
             self.fail("No __unicode__ method found")
 
     def test_filename_method(self):
-        try:
-            Image.filename(Image(image="cat.jpg"))
-        except AttributeError:
-            self.fail("No __unicode__ method found")
+        assert hasattr(Image, '__unicode__'), "No __unicode__ method found"
 
     def test_optional_fields(self):
         models.get_model('working_waterfronts_api', 'Image')
