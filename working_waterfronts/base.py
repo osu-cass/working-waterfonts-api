@@ -62,7 +62,7 @@ WSGI_APPLICATION = 'working_waterfronts.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'whats_fresh',
+        'NAME': 'working_waterfronts',
         'USER': 'postgres',
         'PASSWORD': '',
         'HOST': 'localhost',
