@@ -43,6 +43,7 @@ images
 .. code-block:: python
 
 	id          int (pk)
+    name        varchar
     poi_id      int (foreign key to poi)
 	image       image (file)
 	caption     text (optional)
@@ -55,6 +56,7 @@ videos
 .. code-block:: python
 
 	id              int (pk)
+    name            varchar
     poi_id          int (foreign key to poi)
 	video           link
 	description     text (optional)
@@ -68,15 +70,23 @@ hazards
 .. code-block:: python
 
     id              int (pk)
-    poi_id          int (foreign key to poi)
+    name            varchar
     description     text
 	created         datetime
 	updated         datetime (auto-update on modification)
 
+pois_hazards
+------------
+
+.. code-block:: python
+    
+    poi_id      int (foreign key to poi)
+    hazard_id   int (foreign key to hazard)
 
 pois_categories
 ---------------
 
 .. code-block:: python
 
+	poi_id          int (foreign key to poi)
 	category_id     int (foreign key to category)
