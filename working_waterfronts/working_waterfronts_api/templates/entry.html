@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class='entry'>
+    <a href='{% url 'list-pois-edit' %}'>
+        <h4>POIs</h4>
+    </a>
+</div>
+
+<div class='entry'>
+    <a href='{% url 'entry-list-preparations' %}'>
+        <h4>Preparations</h4>
+    </a>
+</div>
+
+<div class='entry'>
+    <a href='{% url 'entry-list-products' %}'>
+        <h4>Products</h4>
+    </a>
+</div>
+
+<div class='entry'>
+    <a href='{% url 'entry-list-stories' %}'>
+        <h4>Stories</h4>
+    </a>
+</div>
+
+<div class='entry'>
+    <a href='{% url 'entry-list-videos' %}'>
+        <h4>Videos</h4>
+    </a>
+</div>
+
+
+<div class='entry'>
+    <a href='{% url 'entry-list-images' %}'>
+        <h4>Images</h4>
+    </a>
+</div>
+
+
+{% endblock %}

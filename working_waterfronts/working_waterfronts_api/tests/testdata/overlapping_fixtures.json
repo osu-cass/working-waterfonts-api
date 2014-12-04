@@ -1,0 +1,227 @@
+[
+  {
+    "model": "working_waterfronts_api.Image",
+    "pk": "10",
+    "fields": {
+      "image": "/media/dog.jpg",
+      "caption": "Woof!",
+      "name": "A dog",
+      "created": "2014-08-08 23:27:05.568395+00:00",
+      "modified": "2014-08-08 23:27:05.568395+00:00"
+    }
+  },
+  {
+    "model": "working_waterfronts_api.Image",
+    "pk": "20",
+    "fields": {
+      "image": "/media/cat.jpg",
+      "caption": "Meow!",
+      "name": "A cat",
+      "created": "2014-08-08 23:27:05.568395+00:00",
+      "modified": "2014-08-08 23:27:05.568395+00:00"
+    }
+  },
+  {
+    "model": "working_waterfronts_api.Story",
+    "pk": "10",
+    "fields": {
+      "name": "Starfish Enterblub",
+      "history": "These are the voyages of the Starfish Enterblub; her five year mission -- to seek out new fish and new fishilizations...",
+      "facts": "The Starfish Enterblub is a spaceship",
+      "buying": "Buying a spaceship is an expensive proposition.",
+      "preparing": "Spaceships are usually well prepared for you",
+      "products": "This is a product",
+      "season": "All of them",
+      "images": [10],
+      "videos": [10],
+      "created": "2014-08-08 23:27:05.568395+00:00",
+      "modified": "2014-08-08 23:27:05.568395+00:00"
+    }
+  },
+  {
+    "model": "working_waterfronts_api.Story",
+    "pk": "20",
+    "fields": {
+      "name": "Fresh Prince",
+      "history": "This is the story, all about how my life got flip turned upside down!",
+      "facts": "I have never watch this",
+      "buying": "Buying people is illegal",
+      "preparing": "Being a prince is hard work, make sure you prepare for it",
+      "products": "Still illegal",
+      "images": [20],
+      "videos": [20],
+      "created": "2014-08-08 23:27:05.568395+00:00",
+      "modified": "2014-08-08 23:27:05.568395+00:00"
+    }
+  },
+  {
+    "model": "working_waterfronts_api.Product",
+    "pk": "10",
+    "fields": {
+      "name": "Starfish Voyager",
+      "variety": "Tuna",
+      "alt_name": "The Stargazer",
+      "description": "This is one sweet fish!",
+      "origin": "The Delta Quadrant",
+      "season": "Season 1",
+      "available": "True",
+      "market_price": "$33.31",
+      "link": "http://www.amazon.com/Star-Trek-Voyager-Complete-Seventh/dp/B00062IDCO/",
+      "image": "10",
+      "story": "10",
+      "created": "2014-08-08 23:27:05.568395+00:00",
+      "modified": "2014-08-08 23:27:05.568395+00:00"
+    }
+  },
+  {
+    "model": "working_waterfronts_api.Product",
+    "pk": "100",
+    "fields": {
+      "name": "Ezri Dax",
+      "variety": "Freshwater Eel",
+      "alt_name": "Jadzia",
+      "description": "That's not actually an eel, it's a symbiote.",
+      "origin": "Trill",
+      "season": "Season 7",
+      "available": "True",
+      "market_price": "$32.64 per season",
+      "link": "http://www.amazon.com/Star-Trek-Deep-Space-Nine/dp/B00008KA57/",
+      "image": "20",
+      "story": "20",
+      "created": "2014-08-08 23:27:05.568395+00:00",
+      "modified": "2014-08-08 23:27:05.568395+00:00"
+    }
+  },
+  {
+    "model": "working_waterfronts_api.POI",
+    "pk": "10",
+    "fields": {
+      "name": "No Optional Null Fields Are Null",
+      "status": "True",
+      "description": "This is a poi shop.",
+      "location": "POINT (-122.478002 37.833688)",
+      "street": "1633 Sommerville Rd",
+      "city": "Sausalito",
+      "state": "CA",
+      "zip": "94965",
+      "hours": "Open Tuesday, 10am to 5pm",
+      "location_description": "Location description",
+      "contact_name": "A. Persson",
+      "phone": "+1 541-737-7627",
+      "story": "10",
+      "website": "http://example.com",
+      "email": "a@perr.com",
+      "created": "2014-08-08 23:27:05.568395+00:00",
+      "modified": "2014-08-08 23:27:05.568395+00:00"
+    }
+  },
+  {
+    "model": "working_waterfronts_api.POI",
+    "pk": "20",
+    "fields": {
+      "name": "All Optional Null Fields Are Null",
+      "status": null,
+      "description": "Ceci n'est pas un magasin.",
+      "location": "POINT (-122.478002 37.833688)",
+      "street": "501 Isabelle Rd",
+      "city": "North Bend",
+      "state": "OR",
+      "zip": "97459",
+      "hours": "",
+      "location_description": "",
+      "contact_name": "Isabelle",
+      "phone": "555 123 4567",
+      "story": null,
+      "website": "",
+      "email": "",
+      "created": "2014-08-08 23:27:05.568395+00:00",
+      "modified": "2014-08-08 23:27:05.568395+00:00"
+    }
+  },
+  {
+    "model": "working_waterfronts_api.POIProduct",
+    "pk": "10",
+    "fields": {
+       "poi": "10",
+       "product_preparation": "10",
+       "poi_price": "$12 per dozen",
+       "available": "None"
+    }
+  },
+  {
+    "model": "working_waterfronts_api.ProductPreparation",
+    "pk": "10",
+    "fields": {
+       "preparation": "10",
+       "product": "10"
+    }
+  },
+  {
+    "model": "working_waterfronts_api.ProductPreparation",
+    "pk": "20",
+    "fields": {
+       "preparation": "10",
+       "product": "100"
+    }
+  },
+  {
+    "model": "working_waterfronts_api.POIProduct",
+    "pk": "20",
+    "fields": {
+       "poi": "20",
+       "product_preparation": "20",
+       "poi_price": "$6 per pound",
+       "available": "False"
+    }
+  },
+  {
+    "model": "working_waterfronts_api.POIProduct",
+    "pk": "30",
+    "fields": {
+       "poi": "10",
+       "product_preparation": "20",
+       "poi_price": "Free!",
+       "available": "False"
+    }
+  },
+  {
+    "model": "working_waterfronts_api.Video",
+    "pk": "10",
+    "fields": {
+      "video": "http://www.youtube.com/watch?v=efgDdSWDg0g",
+      "caption": "Traveling at the speed of light!",
+      "name": "A starship",
+      "created": "2014-08-08 23:27:05.568395+00:00",
+      "modified": "2014-08-08 23:27:05.568395+00:00"
+    }
+  },
+  {
+    "model": "working_waterfronts_api.Video",
+    "pk": "20",
+    "fields": {
+      "video": "http://www.youtube.com/watch?v=M-nlAuCW7WY",
+      "caption": "Princely",
+      "name": "Princely",
+      "created": "2014-08-08 23:27:05.568395+00:00",
+      "modified": "2014-08-08 23:27:05.568395+00:00"
+    }
+  },
+  {
+    "model": "working_waterfronts_api.Preparation",
+    "pk": "10",
+    "fields": {
+      "name": "Live",
+      "description": "The food goes straight from sea to you with live food, sitting in saltwater tanks!",
+      "additional_info": "Live octopus requires a locking container"
+    }
+  },
+  {
+    "model": "working_waterfronts_api.Preparation",
+    "pk": "20",
+    "fields": {
+      "name": "Filet",
+      "description": "",
+      "additional_info": ""
+    }
+  }
+]

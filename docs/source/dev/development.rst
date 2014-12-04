@@ -10,8 +10,8 @@ Project Structure
 Issue Tracking
 --------------
 
-The bug tracker for the What's Fresh API is at `code.osuosl.org`_, and all bugs and feature
-requests for the What's Fresh API should be tracked there. Please create an issue for any
+The bug tracker for the Working Waterfronts API is at `code.osuosl.org`_, and all bugs and feature
+requests for the Working Waterfronts API should be tracked there. Please create an issue for any
 code, documentation or translation you wish to contribute.
 
 .. _`code.osuosl.org`: https://code.osuosl.org/projects/sea-grant-working-waterfronts/
