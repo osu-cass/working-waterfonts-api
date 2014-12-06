@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 import json
 
 
-class POITestCase(TestCase):
+class PointOfInterestTestCase(TestCase):
     fixtures = ['test_fixtures']
 
     def setUp(self):
@@ -17,7 +17,7 @@ class POITestCase(TestCase):
         self.client.post(reverse('login'), {'username': 'test',
                                             'password': 'pass'})
 
-        self.expected_poi = """
+        self.expected_pointofinterest = """
 {
   "error": {
     "status": false,
@@ -28,7 +28,7 @@ class POITestCase(TestCase):
   },
   "name": "No Optional Null Fields Are Null",
   "status": true,
-  "description": "This is a poi shop.",
+  "description": "This is a pointofinterest shop.",
   "lat": 37.833688,
   "lng": -122.478002,
   "street": "1633 Sommerville Rd",
@@ -66,30 +66,30 @@ class POITestCase(TestCase):
 {
   "error": {
     "status": true,
-    "text": "POI id 999 was not found.",
-    "name": "POI Not Found",
-    "debug": "DoesNotExist: POI matching query does not exist.",
+    "text": "PointOfInterest id 999 was not found.",
+    "name": "PointOfInterest Not Found",
+    "debug": "DoesNotExist: PointOfInterest matching query does not exist.",
     "level": "Error"
   }
 }"""
 
     def test_url_endpoint(self):
-        url = reverse('poi-details', kwargs={'id': '1'})
-        self.assertEqual(url, '/1/pois/1')
+        url = reverse('pointofinterest-details', kwargs={'id': '1'})
+        self.assertEqual(url, '/1/pointofinterests/1')
 
-    def test_known_poi(self):
+    def test_known_pointofinterest(self):
         response = self.client.get(
-            reverse('poi-details', kwargs={'id': '1'})).content
+            reverse('pointofinterest-details', kwargs={'id': '1'})).content
 
         parsed_answer = json.loads(response)
-        expected_answer = json.loads(self.expected_poi)
+        expected_answer = json.loads(self.expected_pointofinterest)
 
         self.maxDiff = None
         self.assertEqual(parsed_answer, expected_answer)
 
-    def test_poi_not_found(self):
+    def test_pointofinterest_not_found(self):
         response = self.client.get(
-            reverse('poi-details', kwargs={'id': '999'}))
+            reverse('pointofinterest-details', kwargs={'id': '999'}))
         self.assertEqual(response.status_code, 404)
 
         parsed_answer = json.loads(response.content)

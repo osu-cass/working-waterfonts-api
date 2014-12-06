@@ -90,7 +90,7 @@ class ParameterTestCase(TestCase):
         mock_request = Mock()
         mock_request.GET = {'lat': '45.6', 'lng': '-123.4', 'proximity': '25'}
 
-        point = fromstr('POINT (-123.4000000000000057 45.6000000000000014)',
+        point = fromstr('PointOfInterestNT (-123.4000000000000057 45.6000000000000014)',
                         srid=4326)
 
         expected_result = [point, 25, None, self.base_error]
@@ -105,7 +105,7 @@ class ParameterTestCase(TestCase):
         mock_request = Mock()
         mock_request.GET = {'lat': '45.6', 'lng': '-123.4'}
 
-        point = fromstr('POINT (-123.4000000000000057 45.6000000000000014)',
+        point = fromstr('PointOfInterestNT (-123.4000000000000057 45.6000000000000014)',
                         srid=4326)
 
         expected_result = [point, 20, None, self.base_error]
@@ -165,7 +165,7 @@ class ParameterTestCase(TestCase):
             'limit': '80'
         }
 
-        point = fromstr('POINT (-123.4000000000000057 45.6000000000000014)',
+        point = fromstr('PointOfInterestNT (-123.4000000000000057 45.6000000000000014)',
                         srid=4326)
 
         expected_result = [point, 25, 80, self.base_error]

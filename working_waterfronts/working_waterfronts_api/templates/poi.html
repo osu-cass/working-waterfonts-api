@@ -19,9 +19,9 @@
 
 {% block content %}
 <form class='form' action="{{ post_url }}" method="post">
-    {% if poi_form.errors or errors %}
+    {% if pointofinterest_form.errors or errors %}
     <div class='error'>
-        {% for error in poi_form.errors %}
+        {% for error in pointofinterest_form.errors %}
         {% if error != "lat" and error != "long" %}
         <h4 class='light warning'>Invalid {{ error|escape }}!</h4>
         {% endif %}
@@ -34,40 +34,40 @@
     <h4 id='error_tag' class='light warning'></h4>
     {% csrf_token %}
     <div class='entry_box'>
-        {% if poi_form.instance.pk != None %}
-        <button  class='dbutton' type="button" onclick="deletePOI();return false;" />Delete</button>
+        {% if pointofinterest_form.instance.pk != None %}
+        <button  class='dbutton' type="button" onclick="deletePointOfInterest();return false;" />Delete</button>
         {% endif %}
         <h3>Basic Info</h3>
         <p class="field_text">Name*:</p>
-        {{ poi_form.name }}
+        {{ pointofinterest_form.name }}
         <p class="field_text">Hours*:</p>
-        {{ poi_form.hours }}
+        {{ pointofinterest_form.hours }}
         <p class="field_text">Description*:</p>
-        {{ poi_form.description }}
+        {{ pointofinterest_form.description }}
         <p class="field_text">Story:</p>
-        {{ poi_form.story }}
+        {{ pointofinterest_form.story }}
         <p class=" field_text">In Port:</p>
-        {{ poi_form.status }}
+        {{ pointofinterest_form.status }}
         <h3>Location</h3>
         <p class="field_text">Street Address*:</p>
-        {{ poi_form.street }}
+        {{ pointofinterest_form.street }}
         <p class="field_text">City*:</p>
-        {{ poi_form.city }}
+        {{ pointofinterest_form.city }}
         <p class="field_text">State*:</p>
-        {{ poi_form.state }}
+        {{ pointofinterest_form.state }}
         <p class="field_text">Zipcode*:</p>
-        {{ poi_form.zip }}
+        {{ pointofinterest_form.zip }}
         <p class=" field_text">Location Description:</p>
-        {{ poi_form.location_description }}
+        {{ pointofinterest_form.location_description }}
         <h3>Contact info: </h3>
         <p class="field_text">Contact Name*:</p>
-        {{ poi_form.contact_name }}
+        {{ pointofinterest_form.contact_name }}
         <p class=" field_text">Website:</p>
-        {{ poi_form.website }}
+        {{ pointofinterest_form.website }}
         <p class=" field_text">Email:</p>
-        {{ poi_form.email }}
+        {{ pointofinterest_form.email }}
         <p class=" field_text">Phone:</p>
-        {{ poi_form.phone }}
+        {{ pointofinterest_form.phone }}
         <h3 class="title">Products</h3>
         <button type="button" onclick="appendProduct()">Add Product</button>
         <div class="container">
@@ -125,15 +125,15 @@
         };
     }
 
-    function deletePOI()
+    function deletePointOfInterest()
     {
-        if(confirm('Are you sure you want to delete this poi?')) {
+        if(confirm('Are you sure you want to delete this pointofinterest?')) {
             $.ajax({
                 type: 'DELETE',
                 headers: { 'X-CSRFToken': '{{ csrf_token }}' },
                 statusCode: {
                     404: function() {
-                        $("#error_tag").text('Unable to delete poi!');
+                        $("#error_tag").text('Unable to delete pointofinterest!');
                         $("html, body").animate({ scrollTop: 0 }, "slow");
                     },
                     200: function() {

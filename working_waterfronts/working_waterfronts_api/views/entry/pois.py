@@ -8,10 +8,10 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
 
-from working_waterfronts.working_waterfronts_api.models import (POI, Product,
+from working_waterfronts.working_waterfronts_api.models import (PointOfInterest, Product,
                                                 ProductPreparation,
-                                                POIProduct)
-from working_waterfronts.working_waterfronts_api.forms import POIForm
+                                                PointOfInterestProduct)
+from working_waterfronts.working_waterfronts_api.forms import PointOfInterestForm
 from working_waterfronts.working_waterfronts_api.functions import (group_required,
                                                    coordinates_from_address,
                                                    BadAddressException)
@@ -21,22 +21,22 @@ import json
 
 @login_required
 @group_required('Administration Users', 'Data Entry Users')
-def poi(request, id=None):
+def pointofinterest(request, id=None):
     """
-    */entry/pois/<id>*, */entry/pois/new*
+    */entry/pointofinterests/<id>*, */entry/pointofinterests/new*
 
-    The entry interface's edit/add/delete poi view. This view creates the
-    edit page for a given poi, or the "new poi" page if it is not passed
-    an ID. It also accepts POST requests to create or edit pois, and DELETE
-    requests to delete the poi.
+    The entry interface's edit/add/delete pointofinterest view. This view creates the
+    edit page for a given pointofinterest, or the "new pointofinterest" page if it is not passed
+    an ID. It also accepts POST requests to create or edit pointofinterests, and DELETE
+    requests to delete the pointofinterest.
 
     If called with DELETE, it will return a 200 upon success or a 404 upon
     failure. This is to be used as part of an AJAX call, or some other API
     call.
     """
     if request.method == 'DELETE':
-        poi = get_object_or_404(POI, pk=id)
-        poi.delete()
+        pointofinterest = get_object_or_404(PointOfInterest, pk=id)
+        pointofinterest.delete()
         return HttpResponse()
 
     if request.method == 'POST':
@@ -49,7 +49,7 @@ def poi(request, id=None):
                 post_data['zip'])
 
             post_data['location'] = fromstr(
-                'POINT(%s %s)' % (coordinates[1], coordinates[0]),
+                'PointOfInterestNT(%s %s)' % (coordinates[1], coordinates[0]),
                 srid=4326)
         # Bad Address will be thrown if Google does not return coordinates for
         # the address, and MultiValueDictKeyError will be thrown if the POST
@@ -72,40 +72,40 @@ def poi(request, id=None):
             errors.append("You must choose at least one product.")
             prod_preps = []
 
-        poi_form = POIForm(post_data)
-        if poi_form.is_valid() and not errors:
-            del poi_form.cleaned_data['products_preparations']
+        pointofinterest_form = PointOfInterestForm(post_data)
+        if pointofinterest_form.is_valid() and not errors:
+            del pointofinterest_form.cleaned_data['products_preparations']
             if id:
-                poi = POI.objects.get(id=id)
+                pointofinterest = PointOfInterest.objects.get(id=id)
 
-                # For all of the current poi products,
-                for poi_product in poi.poiproduct_set.all():
+                # For all of the current pointofinterest products,
+                for pointofinterest_product in pointofinterest.pointofinterestproduct_set.all():
                     # Delete any that aren't in the returned list
-                    if poi_product.product_preparation.id not in prod_preps:
-                        poi_product.delete()
+                    if pointofinterest_product.product_preparation.id not in prod_preps:
+                        pointofinterest_product.delete()
                     # And ignore any that are in both the existing and the
                     # returned list
-                    elif poi_product.product_preparation.id in prod_preps:
+                    elif pointofinterest_product.product_preparation.id in prod_preps:
                         prod_preps.remove(
-                            poi_product.product_preparation.id)
+                            pointofinterest_product.product_preparation.id)
                 # Then, create all of the new ones
                 for product_preparation in prod_preps:
-                    poi_product = POIProduct.objects.create(
-                        poi=poi,
+                    pointofinterest_product = PointOfInterestProduct.objects.create(
+                        pointofinterest=pointofinterest,
                         product_preparation=ProductPreparation.objects.get(
                             id=product_preparation))
-                poi.__dict__.update(**poi_form.cleaned_data)
-                poi.save()
+                pointofinterest.__dict__.update(**pointofinterest_form.cleaned_data)
+                pointofinterest.save()
             else:
-                poi = POI.objects.create(**poi_form.cleaned_data)
+                pointofinterest = PointOfInterest.objects.create(**pointofinterest_form.cleaned_data)
                 for product_preparation in prod_preps:
-                    poi_product = POIProduct.objects.create(
-                        poi=poi,
+                    pointofinterest_product = PointOfInterestProduct.objects.create(
+                        pointofinterest=pointofinterest,
                         product_preparation=ProductPreparation.objects.get(
                             id=product_preparation))
-                poi.save()
+                pointofinterest.save()
             return HttpResponseRedirect(
-                "%s?saved=true" % reverse('list-pois-edit'))
+                "%s?saved=true" % reverse('list-pointofinterests-edit'))
 
         existing_prod_preps = []
         for preparation_id in prod_preps:
@@ -122,30 +122,30 @@ def poi(request, id=None):
         errors = []
 
     if id:
-        poi = POI.objects.get(id=id)
-        poi_form = POIForm(instance=poi)
-        title = "Edit %s" % poi.name
+        pointofinterest = PointOfInterest.objects.get(id=id)
+        pointofinterest_form = PointOfInterestForm(instance=pointofinterest)
+        title = "Edit %s" % pointofinterest.name
         message = ""
-        post_url = reverse('edit-poi', kwargs={'id': id})
+        post_url = reverse('edit-pointofinterest', kwargs={'id': id})
         # If the list already has items, we're coming back to it from above
         # And have already filled the list with the product preparations POSTed
         if not existing_prod_preps:
-            for poi_product in poi.poiproduct_set.all():
+            for pointofinterest_product in pointofinterest.pointofinterestproduct_set.all():
                 existing_prod_preps.append({
-                    'id': poi_product.product_preparation.id,
+                    'id': pointofinterest_product.product_preparation.id,
                     'preparation_text':
-                        poi_product.product_preparation.preparation.name,
-                    'product': poi_product.product_preparation.product.name
+                        pointofinterest_product.product_preparation.preparation.name,
+                    'product': pointofinterest_product.product_preparation.product.name
                 })
     elif request.method != 'POST':
-        title = "Add a POI"
-        post_url = reverse('new-poi')
+        title = "Add a PointOfInterest"
+        post_url = reverse('new-pointofinterest')
         message = "* = Required field"
-        poi_form = POIForm()
+        pointofinterest_form = PointOfInterestForm()
     else:
-        title = "Add aPOI"
+        title = "Add aPointOfInterest"
         message = "* = Required field"
-        post_url = reverse('new-poi')
+        post_url = reverse('new-pointofinterest')
 
     data = {}
     product_list = []
@@ -161,16 +161,16 @@ def poi(request, id=None):
 
     json_preparations = json.dumps(data)
 
-    return render(request, 'poi.html', {
+    return render(request, 'pointofinterest.html', {
         'parent_url': [
             {'url': reverse('home'), 'name': 'Home'},
-            {'url': reverse('list-pois-edit'), 'name': 'POIs'}],
+            {'url': reverse('list-pointofinterests-edit'), 'name': 'PointOfInterests'}],
         'title': title,
         'message': message,
         'post_url': post_url,
         'existing_product_preparations': existing_prod_preps,
         'errors': errors,
-        'poi_form': poi_form,
+        'pointofinterest_form': pointofinterest_form,
         'json_preparations': json_preparations,
         'product_list': product_list,
     })
@@ -178,42 +178,42 @@ def poi(request, id=None):
 
 @login_required
 @group_required('Administration Users', 'Data Entry Users')
-def poi_list(request):
+def pointofinterest_list(request):
     """
-    */entry/pois*
+    */entry/pointofinterests*
 
-    The entry interface's pois list. This view lists all pois,
+    The entry interface's pointofinterests list. This view lists all pointofinterests,
     their description, and allows you to click on them to view/edit the
-    poi.
+    pointofinterest.
     """
 
     message = ""
     if request.GET.get('success') == 'true':
-        message = "POI deleted successfully!"
+        message = "PointOfInterest deleted successfully!"
     elif request.GET.get('saved') == 'true':
-        message = "POI saved successfully!"
+        message = "PointOfInterest saved successfully!"
 
-    paginator = Paginator(POI.objects.order_by('name'),
+    paginator = Paginator(PointOfInterest.objects.order_by('name'),
                           settings.PAGE_LENGTH)
     page = request.GET.get('page')
 
     try:
-        pois = paginator.page(page)
+        pointofinterests = paginator.page(page)
     except PageNotAnInteger:
         # If page is not an integer, deliver first page.
-        pois = paginator.page(1)
+        pointofinterests = paginator.page(1)
     except EmptyPage:
         # If page is out of range (e.g. 9999), deliver last page of results.
-        pois = paginator.page(paginator.num_pages)
+        pointofinterests = paginator.page(paginator.num_pages)
 
     return render(request, 'list.html', {
         'parent_url': reverse('home'),
         'parent_text': 'Home',
         'message': message,
-        'new_url': reverse('new-poi'),
-        'new_text': "New POI",
-        'title': "All POIs",
-        'item_classification': "poi",
-        'item_list': pois,
-        'edit_url': 'edit-poi'
+        'new_url': reverse('new-pointofinterest'),
+        'new_text': "New PointOfInterest",
+        'title': "All PointOfInterests",
+        'item_classification': "pointofinterest",
+        'item_list': pointofinterests,
+        'edit_url': 'edit-pointofinterest'
     })

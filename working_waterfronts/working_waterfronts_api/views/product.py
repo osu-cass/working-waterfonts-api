@@ -94,13 +94,13 @@ def product_details(request, id=None):
     return HttpResponse(json.dumps(data), content_type="application/json")
 
 
-def product_poi(request, id=None):
+def product_pointofinterest(request, id=None):
     """
-    */products/pois/<id>*
+    */products/pointofinterests/<id>*
 
-    List all products sold by poi <id>. This information includes the
+    List all products sold by pointofinterest <id>. This information includes the
     details of the products, rather than only the product name/id and
-    preparation name/id returned by */pois/<id>*.
+    preparation name/id returned by */pointofinterests/<id>*.
     """
     data = {}
     error = {
@@ -114,12 +114,12 @@ def product_poi(request, id=None):
 
     try:
         product_list = Product.objects.filter(
-            productpreparation__poiproduct__poi__id__exact=id)[:limit]
+            productpreparation__pointofinterestproduct__pointofinterest__id__exact=id)[:limit]
     except Exception as e:
         data['error'] = {
             'status': True,
-            'name': 'POI Not Found',
-            'text': 'POI with id %s not found!' % id,
+            'name': 'PointOfInterest Not Found',
+            'text': 'PointOfInterest with id %s not found!' % id,
             'level': 'Error',
             'debug': "{0}: {1}".format(type(e).__name__, str(e))
         }

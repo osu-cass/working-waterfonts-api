@@ -38,10 +38,10 @@ class Image(models.Model):
         }
 
 
-class POI(models.Model):
+class PointOfInterest(models.Model):
 
     """
-    The POI model holds the information for a poi, including the
+    The PointOfInterest model holds the information for a pointofinterest, including the
     geographic location as a pair of latitudinal/logitudinal coordinates,
     a street address, and an optional text description of their location
     (in case the address/coordinates are of, say, a dock instead of a shop).
@@ -75,8 +75,8 @@ class POI(models.Model):
     story = models.ForeignKey('Story', null=True, blank=True)
     products_preparations = models.ManyToManyField(
         'ProductPreparation',
-        related_name='pois',
-        through='POIProduct',
+        related_name='pointofinterests',
+        through='PointOfInterestProduct',
         blank=True)
 
     created = models.DateTimeField(auto_now_add=True)
@@ -120,7 +120,7 @@ class Product(models.Model):
 class Story(models.Model):
 
     """
-    The story model holds the stories for products and pois
+    The story model holds the stories for products and pointofinterests
     """
 
     def __unicode__(self):
@@ -177,27 +177,27 @@ class ProductPreparation(models.Model):
     preparation = models.ForeignKey(Preparation)
 
 
-class POIProduct(models.Model):
+class PointOfInterestProduct(models.Model):
 
     """
-    Keep track of the products each poi has.
+    Keep track of the products each pointofinterest has.
 
-    The ForeignKey poi field here means this creates a one-to-many -- each
-    poi can have many POIProducts, but a POIProduct can only have one
-    poi. In the same way, each POIProduct can only have one product and
+    The ForeignKey pointofinterest field here means this creates a one-to-many -- each
+    pointofinterest can have many PointOfInterestProducts, but a PointOfInterestProduct can only have one
+    pointofinterest. In the same way, each PointOfInterestProduct can only have one product and
     one preparation.
     """
 
     def __unicode__(self):
-        if not self.poi:
-            return "Unsaved product/poi join"
+        if not self.pointofinterest:
+            return "Unsaved product/pointofinterest join"
         else:
-            return "Products for poi %s" % (self.poi.name)
+            return "Products for pointofinterest %s" % (self.pointofinterest.name)
 
-    poi = models.ForeignKey(POI)
+    pointofinterest = models.ForeignKey(PointOfInterest)
     product_preparation = models.ForeignKey(ProductPreparation)
 
-    poi_price = models.TextField(blank=True)
+    pointofinterest_price = models.TextField(blank=True)
     available = models.NullBooleanField()
 
 

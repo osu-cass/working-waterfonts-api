@@ -93,13 +93,13 @@
     }
   },
   {
-    "model": "working_waterfronts_api.POI",
+    "model": "working_waterfronts_api.PointOfInterest",
     "pk": "1",
     "fields": {
       "name": "No Optional Null Fields Are Null",
       "status": "True",
-      "description": "This is a poi shop.",
-      "location": "POINT (-122.478002 37.833688)",
+      "description": "This is a pointofinterest shop.",
+      "location": "PointOfInterestNT (-122.478002 37.833688)",
       "street": "1633 Sommerville Rd",
       "city": "Sausalito",
       "state": "CA",
@@ -116,13 +116,13 @@
     }
   },
   {
-    "model": "working_waterfronts_api.POI",
+    "model": "working_waterfronts_api.PointOfInterest",
     "pk": "2",
     "fields": {
       "name": "All Optional Null Fields Are Null",
       "status": null,
       "description": "Ceci n'est pas un magasin.",
-      "location": "POINT (-122.478002 37.833688)",
+      "location": "PointOfInterestNT (-122.478002 37.833688)",
       "street": "501 Isabelle Rd",
       "city": "North Bend",
       "state": "OR",
@@ -139,12 +139,12 @@
     }
   },
   {
-    "model": "working_waterfronts_api.POIProduct",
+    "model": "working_waterfronts_api.PointOfInterestProduct",
     "pk": "1",
     "fields": {
-       "poi": "1",
+       "pointofinterest": "1",
        "product_preparation": "1",
-       "poi_price": "$12 per dozen",
+       "pointofinterest_price": "$12 per dozen",
        "available": "None"
     }
   },
@@ -173,22 +173,22 @@
     }
   },
   {
-    "model": "working_waterfronts_api.POIProduct",
+    "model": "working_waterfronts_api.PointOfInterestProduct",
     "pk": "2",
     "fields": {
-       "poi": "2",
+       "pointofinterest": "2",
        "product_preparation": "3",
-       "poi_price": "$6 per pound",
+       "pointofinterest_price": "$6 per pound",
        "available": "False"
     }
   },
   {
-    "model": "working_waterfronts_api.POIProduct",
+    "model": "working_waterfronts_api.PointOfInterestProduct",
     "pk": "3",
     "fields": {
-       "poi": "1",
+       "pointofinterest": "1",
        "product_preparation": "3",
-       "poi_price": "Free!",
+       "pointofinterest_price": "Free!",
        "available": "False"
     }
   },

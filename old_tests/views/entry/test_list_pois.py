@@ -1,10 +1,10 @@
 from django.test import TestCase
 from django.core.urlresolvers import reverse
-from working_waterfronts.working_waterfronts_api.models import POI
+from working_waterfronts.working_waterfronts_api.models import PointOfInterest
 from django.contrib.auth.models import User, Group
 
 
-class ListPOITestCase(TestCase):
+class ListPointOfInterestTestCase(TestCase):
     fixtures = ['thirtythree']
 
     def setUp(self):
@@ -23,40 +23,40 @@ class ListPOITestCase(TestCase):
     def test_not_logged_in(self):
         self.client.logout()
         response = self.client.get(
-            reverse('edit-poi', kwargs={'id': '1'}))
-        self.assertRedirects(response, '/login?next=/entry/pois/1')
+            reverse('edit-pointofinterest', kwargs={'id': '1'}))
+        self.assertRedirects(response, '/login?next=/entry/pointofinterests/1')
 
     def test_url_endpoint(self):
-        url = reverse('new-poi')
-        self.assertEqual(url, '/entry/pois/new')
+        url = reverse('new-pointofinterest')
+        self.assertEqual(url, '/entry/pointofinterests/new')
 
     def test_list_items(self):
         """
-        Tests to see if the list of pois contains the proper
-        pois and proper poi data
+        Tests to see if the list of pointofinterests contains the proper
+        pointofinterests and proper pointofinterest data
         """
 
-        page_1 = self.client.get(reverse('list-pois-edit')).context
+        page_1 = self.client.get(reverse('list-pointofinterests-edit')).context
         page_2 = self.client.get(
-            '{}?page=2'.format(reverse('list-pois-edit'))).context
+            '{}?page=2'.format(reverse('list-pointofinterests-edit'))).context
         page_3 = self.client.get(
-            '{}?page=3'.format(reverse('list-pois-edit'))).context
+            '{}?page=3'.format(reverse('list-pointofinterests-edit'))).context
         page_4 = self.client.get(
-            '{}?page=4'.format(reverse('list-pois-edit'))).context
+            '{}?page=4'.format(reverse('list-pointofinterests-edit'))).context
         page_nan = self.client.get(
-            '{}?page=NaN'.format(reverse('list-pois-edit'))).context
+            '{}?page=NaN'.format(reverse('list-pointofinterests-edit'))).context
 
         self.assertEqual(
             list(page_1['item_list']),
-            list(POI.objects.order_by('name')[:15]))
+            list(PointOfInterest.objects.order_by('name')[:15]))
 
         self.assertEqual(
             list(page_2['item_list']),
-            list(POI.objects.order_by('name')[15:30]))
+            list(PointOfInterest.objects.order_by('name')[15:30]))
 
         self.assertEqual(
             list(page_3['item_list']),
-            list(POI.objects.order_by('name')[30:33]))
+            list(PointOfInterest.objects.order_by('name')[30:33]))
 
         # Page 4 should be identical to Page 3, as these fixtures
         # have enough content for three pages (15 items per page, 33 items)

@@ -73,7 +73,7 @@ class NewProductTestCase(TestCase):
         # allow us to test the multi-product logic.
 
         # We can't predict what the ID of the new product will be, so we can
-        # delete all of the pois, and then choose the only poi left
+        # delete all of the pointofinterests, and then choose the only pointofinterest left
         # after creation.
         Product.objects.all().delete()
 
@@ -82,7 +82,7 @@ class NewProductTestCase(TestCase):
         Preparation.objects.create(id=2)
         Image.objects.create(id=1)
 
-        # Data that we'll post to the server to get the new poi created
+        # Data that we'll post to the server to get the new pointofinterest created
         new_product = {'name': 'Salmon', 'variety': 'Pacific', 'story': 1,
                        'alt_name': 'Pacific Salmon', 'origin': 'The Pacific',
                        'description': 'It\'s salmon -- from the Pacific!',

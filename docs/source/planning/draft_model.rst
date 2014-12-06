@@ -9,9 +9,7 @@ pois
 	id                      int (pk)
 	name                    varchar
 	alt_name                varchar (optional)
-	summary                 text
-	lat                     float
-	long                    float
+	location                point
 	street                  varchar
 	city                    varchar
 	state                   varchar
@@ -66,7 +64,7 @@ videos
 
 hazards
 -------
-    
+
 .. code-block:: python
 
     id              int (pk)
@@ -79,7 +77,7 @@ pois_hazards
 ------------
 
 .. code-block:: python
-    
+
     poi_id      int (foreign key to poi)
     hazard_id   int (foreign key to hazard)
 

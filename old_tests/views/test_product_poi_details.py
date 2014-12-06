@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 import json
 
 
-class ProductPOITestCase(TestCase):
+class ProductPointOfInterestTestCase(TestCase):
     fixtures = ['test_fixtures']
 
     def setUp(self):
@@ -67,12 +67,12 @@ Voyager-Complete-Seventh/dp/B00062IDCO/",
 }"""
 
     def test_url_endpoint(self):
-        url = reverse('product-poi', kwargs={'id': '1'})
-        self.assertEqual(url, '/1/products/pois/1')
+        url = reverse('product-pointofinterest', kwargs={'id': '1'})
+        self.assertEqual(url, '/1/products/pointofinterests/1')
 
-    def test_known_product_pois(self):
+    def test_known_product_pointofinterests(self):
         response = self.client.get(
-            reverse('product-poi', kwargs={'id': '1'})).content
+            reverse('product-pointofinterest', kwargs={'id': '1'})).content
         parsed_answer = json.loads(response)
         expected_answer = json.loads(self.expected_products)
 

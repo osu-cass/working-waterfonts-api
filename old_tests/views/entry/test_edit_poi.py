@@ -1,18 +1,18 @@
 from django.test import TestCase
 from django.core.urlresolvers import reverse
-from working_waterfronts.working_waterfronts_api.models import POI, Story
+from working_waterfronts.working_waterfronts_api.models import PointOfInterest, Story
 from django.contrib.auth.models import User, Group
 
 
-class EditPOITestCase(TestCase):
+class EditPointOfInterestTestCase(TestCase):
 
     """
-    Test that the Edit POI page works as expected.
+    Test that the Edit PointOfInterest page works as expected.
 
     Things tested:
         URLs reverse correctly
         The outputted page has the correct form fields
-        POSTing "correct" data will result in the update of the poi
+        POSTing "correct" data will result in the update of the pointofinterest
             object with the specified ID
         POSTing data with all fields missing (hitting "save" without entering
             data) returns the same field with notations of missing fields
@@ -36,21 +36,21 @@ class EditPOITestCase(TestCase):
         self.client.logout()
 
         response = self.client.get(
-            reverse('edit-poi', kwargs={'id': '1'}))
-        self.assertRedirects(response, '/login?next=/entry/pois/1')
+            reverse('edit-pointofinterest', kwargs={'id': '1'}))
+        self.assertRedirects(response, '/login?next=/entry/pointofinterests/1')
 
     def test_url_endpoint(self):
-        url = reverse('edit-poi', kwargs={'id': '1'})
-        self.assertEqual(url, '/entry/pois/1')
+        url = reverse('edit-pointofinterest', kwargs={'id': '1'})
+        self.assertEqual(url, '/entry/pointofinterests/1')
 
-    def test_successful_poi_update(self):
+    def test_successful_pointofinterest_update(self):
         """
-        POST a proper "new poi" command to the server, and see if the
-        new poi appears in the database
+        POST a proper "new pointofinterest" command to the server, and see if the
+        new pointofinterest appears in the database
         """
 
-        # Data that we'll post to the server to get the new poi created
-        new_poi = {
+        # Data that we'll post to the server to get the new pointofinterest created
+        new_pointofinterest = {
             'zip': '97365', 'website': '', 'hours': '',
             'street': '750 NW Lighthouse Dr', 'story': 1,
             'status': '', 'state': 'OR', 'preparation_ids': '1,2',
@@ -60,20 +60,20 @@ class EditPOITestCase(TestCase):
             'contact_name': 'Test Contact', 'city': 'Newport'}
 
         self.client.post(
-            reverse('edit-poi', kwargs={'id': '1'}), new_poi)
+            reverse('edit-pointofinterest', kwargs={'id': '1'}), new_pointofinterest)
 
         # These values are changed by the server after being received from
         # the client/web page. The preparation IDs are going to be changed
-        # into poi_product objects, so we'll not need the preparations_id
+        # into pointofinterest_product objects, so we'll not need the preparations_id
         # field
-        del new_poi['preparation_ids']
-        new_poi['status'] = None
-        new_poi['phone'] = None
-        new_poi['story'] = Story.objects.get(id=new_poi['story'])
+        del new_pointofinterest['preparation_ids']
+        new_pointofinterest['status'] = None
+        new_pointofinterest['phone'] = None
+        new_pointofinterest['story'] = Story.objects.get(id=new_pointofinterest['story'])
 
-        vend = POI.objects.get(id=1)
-        for field in new_poi:
-            self.assertEqual(getattr(vend, field), new_poi[field])
+        vend = PointOfInterest.objects.get(id=1)
+        for field in new_pointofinterest:
+            self.assertEqual(getattr(vend, field), new_pointofinterest[field])
 
         self.assertEqual(vend.location.y, 44.6752643)  # latitude
         self.assertEqual(vend.location.x, -124.072162)  # longitude
@@ -82,7 +82,7 @@ class EditPOITestCase(TestCase):
         # IDs 1 and 2, and then posting '1,2' as the list of product
         # preparations.
         product_preparations = ([
-            vp.product_preparation.id for vp in vend.poiproduct_set.all()])
+            vp.product_preparation.id for vp in vend.pointofinterestproduct_set.all()])
 
         self.assertEqual(sorted(product_preparations), [1, 2])
 
@@ -92,12 +92,12 @@ class EditPOITestCase(TestCase):
         right initial data
         """
 
-        response = self.client.get(reverse('edit-poi', kwargs={'id': '1'}))
+        response = self.client.get(reverse('edit-pointofinterest', kwargs={'id': '1'}))
 
         fields = {
             "name": "No Optional Null Fields Are Null",
             "status": True,
-            "description": "This is a poi shop.",
+            "description": "This is a pointofinterest shop.",
             "hours": "Open Tuesday, 10am to 5pm",
             "street": "1633 Sommerville Rd",
             "city": "Sausalito",
@@ -112,23 +112,23 @@ class EditPOITestCase(TestCase):
 
         phone = 5417377627
 
-        form = response.context['poi_form']
+        form = response.context['pointofinterest_form']
         self.assertEqual(phone, form['phone'].value().national_number)
 
         for field in fields:
             self.assertEqual(fields[field], form[field].value())
 
-    def test_delete_poi(self):
+    def test_delete_pointofinterest(self):
         """
-        Tests that DELETing entry/pois/<id> deletes the item
+        Tests that DELETing entry/pointofinterests/<id> deletes the item
         """
         response = self.client.delete(
-            reverse('edit-poi', kwargs={'id': '2'}))
+            reverse('edit-pointofinterest', kwargs={'id': '2'}))
         self.assertEqual(response.status_code, 200)
 
-        with self.assertRaises(POI.DoesNotExist):
-            POI.objects.get(id=2)
+        with self.assertRaises(PointOfInterest.DoesNotExist):
+            PointOfInterest.objects.get(id=2)
 
         response = self.client.delete(
-            reverse('edit-poi', kwargs={'id': '2'}))
+            reverse('edit-pointofinterest', kwargs={'id': '2'}))
         self.assertEqual(response.status_code, 404)

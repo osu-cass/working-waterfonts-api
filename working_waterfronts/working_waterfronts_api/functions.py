@@ -58,7 +58,7 @@ def group_required(*group_names):
 
 def get_lat_long_prox(request, error=None):
     """
-    Parse the latitude, longitude, proximity, and limit for the POI
+    Parse the latitude, longitude, proximity, and limit for the PointOfInterest
     list functions.
 
     If the parsing results in an error, the error block is updated to reflect
@@ -81,7 +81,7 @@ def get_lat_long_prox(request, error=None):
                     "level": "Warning",
                     "status": True,
                     "name": "Bad proximity",
-                    "text": "There was an error finding pois "
+                    "text": "There was an error finding pointofinterests "
                             "within {0} miles".format(proximity),
                     'debug': "{0}: {1}".format(type(e).__name__, str(e))
                 }
@@ -90,7 +90,7 @@ def get_lat_long_prox(request, error=None):
             proximity = settings.DEFAULT_PROXIMITY
 
         try:
-            point = fromstr('POINT(%s %s)' % (lng, lat), srid=4326)
+            point = fromstr('PointOfInterestNT(%s %s)' % (lng, lat), srid=4326)
         except Exception as e:
             error = {
                 "level": "Warning",

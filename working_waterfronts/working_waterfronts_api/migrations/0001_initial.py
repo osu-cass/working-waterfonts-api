@@ -111,7 +111,7 @@ class Migration(migrations.Migration):
             bases=(models.Model,),
         ),
         migrations.CreateModel(
-            name='POI',
+            name='PointOfInterest',
             fields=[
                 ('id',
                     models.AutoField(verbose_name='ID', serialize=False,
@@ -141,17 +141,17 @@ class Migration(migrations.Migration):
             bases=(models.Model,),
         ),
         migrations.CreateModel(
-            name='POIProduct',
+            name='PointOfInterestProduct',
             fields=[
                 ('id',
                     models.AutoField(verbose_name='ID', serialize=False,
                                      auto_created=True, primary_key=True)),
-                ('poi_price', models.TextField(blank=True)),
+                ('pointofinterest_price', models.TextField(blank=True)),
                 ('available', models.NullBooleanField()),
                 ('product_preparation',
                     models.ForeignKey(
                         to='working_waterfronts_api.ProductPreparation')),
-                ('poi', models.ForeignKey(to='working_waterfronts_api.POI')),
+                ('pointofinterest', models.ForeignKey(to='working_waterfronts_api.PointOfInterest')),
             ],
             options={
             },
@@ -174,16 +174,16 @@ class Migration(migrations.Migration):
             bases=(models.Model,),
         ),
         migrations.AddField(
-            model_name='poi',
+            model_name='pointofinterest',
             name='products_preparations',
             field=models.ManyToManyField(
-                related_name=b'pois',
-                through='working_waterfronts_api.POIProduct',
+                related_name=b'pointofinterests',
+                through='working_waterfronts_api.PointOfInterestProduct',
                 to='working_waterfronts_api.ProductPreparation', blank=True),
             preserve_default=True,
         ),
         migrations.AddField(
-            model_name='poi',
+            model_name='pointofinterest',
             name='story',
             field=models.ForeignKey(blank=True, to='working_waterfronts_api.Story',
                                     null=True),

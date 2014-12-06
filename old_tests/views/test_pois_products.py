@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 import json
 
 
-class POIsProductsTestCase(TestCase):
+class PointOfInterestsProductsTestCase(TestCase):
     fixtures = ['overlapping_fixtures']
 
     def setUp(self):
@@ -28,12 +28,12 @@ class POIsProductsTestCase(TestCase):
     "debug": null,
     "level": null
   },
-  "pois": [
+  "pointofinterests": [
     {
       "id": 10,
       "name": "No Optional Null Fields Are Null",
       "status": true,
-      "description": "This is a poi shop.",
+      "description": "This is a pointofinterest shop.",
       "lat": 37.833688,
       "lng": -122.478002,
       "street": "1633 Sommerville Rd",
@@ -70,7 +70,7 @@ class POIsProductsTestCase(TestCase):
   ]
 }"""
 
-        self.limited_pois_error = """
+        self.limited_pointofinterests_error = """
 {
   "error": {
     "status": false,
@@ -82,32 +82,32 @@ class POIsProductsTestCase(TestCase):
 }"""
 
     def test_url_endpoint(self):
-        url = reverse('pois-products', kwargs={'id': '10'})
-        self.assertEqual(url, '/1/pois/products/10')
+        url = reverse('pointofinterests-products', kwargs={'id': '10'})
+        self.assertEqual(url, '/1/pointofinterests/products/10')
 
     def test_no_location_parameter(self):
         response = self.client.get(
-            reverse('pois-products', kwargs={'id': '10'})).content
+            reverse('pointofinterests-products', kwargs={'id': '10'})).content
         parsed_answer = json.loads(response)
 
         expected_answer = json.loads(self.expected_json)
 
-        parsed_answer['pois'] = sorted(
-            parsed_answer['pois'], key=lambda k: k['id'])
-        expected_answer['pois'] = sorted(
-            expected_answer['pois'], key=lambda k: k['id'])
+        parsed_answer['pointofinterests'] = sorted(
+            parsed_answer['pointofinterests'], key=lambda k: k['id'])
+        expected_answer['pointofinterests'] = sorted(
+            expected_answer['pointofinterests'], key=lambda k: k['id'])
 
-        for poi in parsed_answer['pois']:
-            for product in poi['products']:
+        for pointofinterest in parsed_answer['pointofinterests']:
+            for product in pointofinterest['products']:
                 self.assertTrue('product_id' in product)
 
-        for poi in expected_answer['pois']:
-            poi['products'] = sorted(
-                poi['products'], key=lambda k: k['product_id'])
+        for pointofinterest in expected_answer['pointofinterests']:
+            pointofinterest['products'] = sorted(
+                pointofinterest['products'], key=lambda k: k['product_id'])
 
-        for poi in parsed_answer['pois']:
-            poi['products'] = sorted(
-                poi['products'], key=lambda k: k['product_id'])
+        for pointofinterest in parsed_answer['pointofinterests']:
+            pointofinterest['products'] = sorted(
+                pointofinterest['products'], key=lambda k: k['product_id'])
 
         self.maxDiff = None
 
@@ -116,27 +116,27 @@ class POIsProductsTestCase(TestCase):
     def test_limit_parameter(self):
         response = self.client.get(
             "%s?limit=1" % reverse(
-                'pois-products', kwargs={'id': '100'})
+                'pointofinterests-products', kwargs={'id': '100'})
         ).content
 
         parsed_answer = json.loads(response)
-        expected_error = json.loads(self.limited_pois_error)
+        expected_error = json.loads(self.limited_pointofinterests_error)
 
         self.assertEqual(parsed_answer['error'], expected_error['error'])
-        self.assertEqual(len(parsed_answer['pois']), 1)
+        self.assertEqual(len(parsed_answer['pointofinterests']), 1)
 
 
-class POIsProductsLocationTestCase(TestCase):
+class PointOfInterestsProductsLocationTestCase(TestCase):
 
     """
-    Test whether the /pois/products/<id> view returns the correct results
+    Test whether the /pointofinterests/products/<id> view returns the correct results
     when given a coordinate to center on.
 
     This is an individual class to allow the use of different fixture sets.
 
-    For future test-writers: the location_fixtures tests have six pois
+    For future test-writers: the location_fixtures tests have six pointofinterests
     in them -- two in Newport, two in Waldport, and two in Portland. Each
-    poi has one product, and each product is sold at one of the two pois
+    pointofinterest has one product, and each product is sold at one of the two pointofinterests
     in the city.
 
     This means you can easily test the proximity limit by limiting yourself
@@ -157,21 +157,21 @@ class POIsProductsLocationTestCase(TestCase):
 
         self.maxDiff = None
 
-        # No pois. This is the return for location queries from
+        # No pointofinterests. This is the return for location queries from
         # the middle of nowhere.
-        self.expected_no_pois = """
+        self.expected_no_pointofinterests = """
 {
   "error": {
     "debug": "",
     "status": true,
     "level": "Information",
-    "text": "No POIs found for product 1",
-    "name": "No POIs"
+    "text": "No PointOfInterests found for product 1",
+    "name": "No PointOfInterests"
     },
-  "pois": []
+  "pointofinterests": []
 }"""
 
-        # Nearby pois for product Halibut (1)
+        # Nearby pointofinterests for product Halibut (1)
         # This JSON contains the two halibut stores in Newport and Waldport,
         # but not Portland. This is the return for a good coordinates.
         self.expected_halibut = """
@@ -183,7 +183,7 @@ class POIsProductsLocationTestCase(TestCase):
     "debug": null,
     "text": null
   },
-  "pois": [{
+  "pointofinterests": [{
     "id": 4,
     "website": "",
     "street": "1226 Oregon Coast Hwy",
@@ -249,7 +249,7 @@ class POIsProductsLocationTestCase(TestCase):
   }]
 }"""
 
-        # Nearby pois for product Halibut (1), with 50 mile range.
+        # Nearby pointofinterests for product Halibut (1), with 50 mile range.
         # This JSON contains the halibut stores in Newport, Waldport, and
         # Pacific City, but not Portland. This is the return for a good
         # coordinates.
@@ -262,7 +262,7 @@ class POIsProductsLocationTestCase(TestCase):
     "name": null,
     "level": null
   },
-  "pois": [
+  "pointofinterests": [
     {
       "status": true,
       "city": "Newport",
@@ -362,7 +362,7 @@ class POIsProductsLocationTestCase(TestCase):
   ]
 }"""
 
-        # Nearby pois for product Halibut (1)
+        # Nearby pointofinterests for product Halibut (1)
         # This JSON contains the two halibut stores in Newport and Waldport,
         # but not Portland. This is the return for a good coordinates.
         self.expected_halibut_bad_limit = """
@@ -374,7 +374,7 @@ class POIsProductsLocationTestCase(TestCase):
     "debug": "ValueError: invalid literal for int() with base 10: 'cat'",
     "text": "Invalid limit. Returning all results."
   },
-  "pois": [{
+  "pointofinterests": [{
     "id": 4,
     "website": "",
     "street": "1226 Oregon Coast Hwy",
@@ -440,7 +440,7 @@ class POIsProductsLocationTestCase(TestCase):
   }]
 }"""
 
-        # Nearby pois for product Halibut (1)
+        # Nearby pointofinterests for product Halibut (1)
         # This JSON contains the two halibut stores in Newport and Waldport,
         # but not Portland. This is the return for a good coordinates.
         self.expected_halibut_limit_1 = """
@@ -452,7 +452,7 @@ class POIsProductsLocationTestCase(TestCase):
     "debug": null,
     "text": null
   },
-  "pois": [{
+  "pointofinterests": [{
     "id": 4,
     "website": "",
     "street": "1226 Oregon Coast Hwy",
@@ -486,10 +486,10 @@ class POIsProductsLocationTestCase(TestCase):
   }]
 }"""
 
-        # All pois for product Halibut (1)
+        # All pointofinterests for product Halibut (1)
         # This JSON contains the three halibut stores in Newport, Waldport,
         # and Portland. This is the return for a bad coordinates.
-        self.expected_all_pois_products = """
+        self.expected_all_pointofinterests_products = """
 {
   "error": {
     "level": "Warning",
@@ -500,7 +500,7 @@ not_a_latitude, not_a_longitude",
     "debug": "ValueError: String or unicode input unrecognized \
 as WKT EWKT, and HEXEWKB."
   },
-  "pois": [{
+  "pointofinterests": [{
     "id": 2,
     "name": "Portland Halibut",
     "status": true,
@@ -629,7 +629,7 @@ as WKT EWKT, and HEXEWKB."
     }]
 }"""
 
-        # All pois for product Halibut (1)
+        # All pointofinterests for product Halibut (1)
         # This JSON contains the three halibut stores in Newport, Waldport,
         # and Portland. This is the return for a bad proximity with good
         # location -- the default proximity of 20 miles.
@@ -638,11 +638,11 @@ as WKT EWKT, and HEXEWKB."
   "error": {
     "level": "Warning",
     "status": true,
-    "text": "There was an error finding pois within cat miles",
+    "text": "There was an error finding pointofinterests within cat miles",
     "name": "Bad proximity",
     "debug": "ValueError: invalid literal for int() with base 10: 'cat'"
   },
-  "pois": [{
+  "pointofinterests": [{
     "id": 4,
     "website": "",
     "street": "1226 Oregon Coast Hwy",
@@ -708,7 +708,7 @@ as WKT EWKT, and HEXEWKB."
   }]
 }"""
 
-        # All pois for product Halibut (1)
+        # All pointofinterests for product Halibut (1)
         # This JSON contains the three halibut stores in Newport, Waldport,
         # and Portland. This is the return for a bad coordinates.
         self.expected_all_missing_long = """
@@ -721,7 +721,7 @@ as WKT EWKT, and HEXEWKB."
     "debug": "GEOSException: Error encountered checking Geometry returned \
 from GEOS C function \\"GEOSWKTReader_read_r\\"."
   },
-  "pois": [{
+  "pointofinterests": [{
     "id": 2,
     "name": "Portland Halibut",
     "status": true,
@@ -850,7 +850,7 @@ from GEOS C function \\"GEOSWKTReader_read_r\\"."
     }]
 }"""
 
-        # All pois for product Halibut (1)
+        # All pointofinterests for product Halibut (1)
         # This JSON contains the three halibut stores in Newport, Waldport,
         # and Portland. This is the return for a bad coordinates.
         self.expected_all_missing_lat = """
@@ -863,7 +863,7 @@ from GEOS C function \\"GEOSWKTReader_read_r\\"."
     "debug": "GEOSException: Error encountered checking Geometry \
 returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   },
-  "pois": [{
+  "pointofinterests": [{
     "id": 2,
     "name": "Portland Halibut",
     "status": true,
@@ -992,40 +992,40 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
     }]
 }"""
 
-    def test_no_pois_nearby_poi_products(self):
+    def test_no_pointofinterests_nearby_pointofinterest_products(self):
         """
-        Test that, when there are no pois, we get an empty list back for the
-        pois/products endpoint.
+        Test that, when there are no pointofinterests, we get an empty list back for the
+        pointofinterests/products endpoint.
         """
-        no_poi_data = json.loads(
+        no_pointofinterest_data = json.loads(
             self.client.get(
                 '%s?lat=44.015225&lng=-123.016873' % reverse(
-                    'pois-products', kwargs={'id': '1'})).content)
+                    'pointofinterests-products', kwargs={'id': '1'})).content)
 
-        expected_answer = json.loads(self.expected_no_pois)
-        self.assertEqual(no_poi_data, expected_answer)
+        expected_answer = json.loads(self.expected_no_pointofinterests)
+        self.assertEqual(no_pointofinterest_data, expected_answer)
 
-    def test_successful_location_by_poi_product(self):
+    def test_successful_location_by_pointofinterest_product(self):
         """
-        Test that good parameters return poi/product results ordered by
+        Test that good parameters return pointofinterest/product results ordered by
         location. There will also be a default limit of 20 miles.
         """
         halibut_near_newport = json.loads(self.client.get(
-            '%s?lat=44.609079&lng=-124.052538' % reverse('pois-products',
+            '%s?lat=44.609079&lng=-124.052538' % reverse('pointofinterests-products',
                                                          kwargs={'id': '1'})
         ).content)
 
         expected_answer = json.loads(self.expected_halibut)
         self.assertEqual(halibut_near_newport, expected_answer)
 
-    def test_good_limit_by_poi_product(self):
+    def test_good_limit_by_pointofinterest_product(self):
         """
-        Test that good parameters return poi/product results ordered by
+        Test that good parameters return pointofinterest/product results ordered by
         location. There will also be a default limit of 20 miles.
         """
         halibut_near_newport_limit = json.loads(self.client.get(
             '%s?lat=44.609079&lng=-124.052538&limit=1' % reverse(
-                'pois-products', kwargs={'id': '1'})).content)
+                'pointofinterests-products', kwargs={'id': '1'})).content)
 
         expected_answer = json.loads(self.expected_halibut_limit_1)
         self.assertEqual(halibut_near_newport_limit, expected_answer)
@@ -1037,42 +1037,42 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
         """
         halibut_near_newport = json.loads(self.client.get(
             '%s?lat=44.609079&lng=-124.052538&limit=10' % reverse(
-                'pois-products', kwargs={'id': '1'})).content)
+                'pointofinterests-products', kwargs={'id': '1'})).content)
 
         expected_answer = json.loads(self.expected_halibut)
         self.assertEqual(halibut_near_newport, expected_answer)
 
-    def test_bad_limit_by_poi_product(self):
+    def test_bad_limit_by_pointofinterest_product(self):
         """
-        Test that good parameters return poi/product results ordered by
+        Test that good parameters return pointofinterest/product results ordered by
         location. There will also be a default limit of 20 miles.
         """
         halibut_near_newport_limit = json.loads(self.client.get(
             '%s?lat=44.609079&lng=-124.052538&limit=cat' % reverse(
-                'pois-products', kwargs={'id': '1'})).content)
+                'pointofinterests-products', kwargs={'id': '1'})).content)
 
         expected_answer = json.loads(self.expected_halibut_bad_limit)
         self.assertEqual(halibut_near_newport_limit, expected_answer)
 
-    def test_bad_location_parameters_poi_products(self):
+    def test_bad_location_parameters_pointofinterest_products(self):
         """
         Test that only one parameter (only lat/only long) returns a Warning,
         and that bad parameter values (text) return Warning, for the
-        pois/products endpoint.
+        pointofinterests/products endpoint.
         """
 
         # Coordinates are not numbers
         broken_data = json.loads(self.client.get(
             '%s?lat=not_a_latitude&lng=not_a_longitude' % reverse(
-                'pois-products', kwargs={'id': '1'})).content)
+                'pointofinterests-products', kwargs={'id': '1'})).content)
 
-        expected_answer = json.loads(self.expected_all_pois_products)
+        expected_answer = json.loads(self.expected_all_pointofinterests_products)
         self.assertEqual(broken_data, expected_answer)
 
         # lat is missing
         broken_data = json.loads(self.client.get(
             '%s?lng=-45.232' % reverse(
-                'pois-products', kwargs={'id': '1'})).content)
+                'pointofinterests-products', kwargs={'id': '1'})).content)
         expected_answer = json.loads(self.expected_all_missing_lat)
 
         self.assertEqual(broken_data, expected_answer)
@@ -1080,44 +1080,44 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
         # long is missing
         broken_data = json.loads(self.client.get(
             '%s?lat=-45.232' % reverse(
-                'pois-products', kwargs={'id': '1'})).content)
+                'pointofinterests-products', kwargs={'id': '1'})).content)
         expected_answer = json.loads(self.expected_all_missing_long)
 
         self.assertEqual(broken_data, expected_answer)
 
-    def test_successful_location_by_poi_product_extended_proximity(self):
+    def test_successful_location_by_pointofinterest_product_extended_proximity(self):
         """
-        Test that good parameters return poi/product results ordered by
+        Test that good parameters return pointofinterest/product results ordered by
         location, with an extended proximity of 50 miles. This will include
         the Pacific City location.
         """
         halibut_near_newport_extended = json.loads(self.client.get(
             '%s?lat=44.609079&lng=-124.052538'
             '&proximity=50' % reverse(
-                'pois-products', kwargs={'id': '1'})).content)
+                'pointofinterests-products', kwargs={'id': '1'})).content)
 
         expected_answer = json.loads(self.expected_halibut_extended)
         self.assertEqual(halibut_near_newport_extended, expected_answer)
 
-    def test_proximity_bad_location_poi_products(self):
+    def test_proximity_bad_location_pointofinterest_products(self):
         """
         Test that bad location returns a Warning.
         """
         # Good proximity, bad location
         broken_data = json.loads(self.client.get(
             '%s?lat=not_a_latitude&lng=not_a_longitude&proximity=50' % reverse(
-                'pois-products', kwargs={'id': '1'})).content)
+                'pointofinterests-products', kwargs={'id': '1'})).content)
 
-        expected_answer = json.loads(self.expected_all_pois_products)
+        expected_answer = json.loads(self.expected_all_pointofinterests_products)
         self.assertEqual(broken_data, expected_answer)
 
-    def test_bad_proximity_good_location_poi_products(self):
+    def test_bad_proximity_good_location_pointofinterest_products(self):
         """
         Test that bad proximity returns a Warning.
         """
         broken_data = json.loads(self.client.get(
             '%s?lat=44.609079&lng=-124.052538&proximity=cat' % reverse(
-                'pois-products', kwargs={'id': '1'})).content)
+                'pointofinterests-products', kwargs={'id': '1'})).content)
 
         expected_answer = json.loads(self.expected_vp_bad_prox)
         self.assertEqual(broken_data, expected_answer)

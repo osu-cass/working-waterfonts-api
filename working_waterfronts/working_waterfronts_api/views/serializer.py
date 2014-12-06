@@ -1,5 +1,5 @@
 from django.core.serializers import json
-from working_waterfronts.working_waterfronts_api.models import POI
+from working_waterfronts.working_waterfronts_api.models import PointOfInterest
 
 
 class FreshSerializer(json.Serializer):
@@ -7,7 +7,7 @@ class FreshSerializer(json.Serializer):
     def get_dump_object(self, obj):
         self._current['id'] = obj.id
 
-        if isinstance(obj, POI):
+        if isinstance(obj, PointOfInterest):
             self._current['lat'] = obj.location.y
             self._current['lng'] = obj.location.x
             del self._current['location']

@@ -9,7 +9,7 @@ def home(request):
     """
     */entry*
 
-    Returns the /entry list, with buttons for POIs, Products,
+    Returns the /entry list, with buttons for PointOfInterests, Products,
     and Preparations.
     """
     return render(request, 'entry.html')

@@ -1,12 +1,12 @@
 import django.forms as forms
-from working_waterfronts.working_waterfronts_api.models import (POI, Product, Preparation,
+from working_waterfronts.working_waterfronts_api.models import (PointOfInterest, Product, Preparation,
                                                 Story, Video, Image)
 
 
-class POIForm(forms.ModelForm):
+class PointOfInterestForm(forms.ModelForm):
 
     class Meta:
-        model = POI
+        model = PointOfInterest
         exclude = []
         widgets = {
             'name': forms.TextInput(attrs={'required': 'true'}),

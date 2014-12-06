@@ -1,18 +1,18 @@
 from django.http import (HttpResponse,
                          HttpResponseNotFound)
 from django.contrib.gis.measure import D
-from working_waterfronts.working_waterfronts_api.models import POI
+from working_waterfronts.working_waterfronts_api.models import PointOfInterest
 from working_waterfronts.working_waterfronts_api.functions import get_lat_long_prox
 
 import json
 from .serializer import FreshSerializer
 
 
-def poi_list(request):
+def pointofinterest_list(request):
     """
-    */pois/*
+    */pointofinterests/*
 
-    List all pois in the database. There is no order to this list,
+    List all pointofinterests in the database. There is no order to this list,
     only whatever is returned by the database.
     """
     error = {
@@ -27,16 +27,16 @@ def poi_list(request):
     point, proximity, limit, error = get_lat_long_prox(request, error)
 
     if point:
-        poi_list = POI.objects.filter(
+        pointofinterest_list = PointOfInterest.objects.filter(
             location__distance_lte=(point, D(mi=proximity)))[:limit]
     else:
-        poi_list = POI.objects.all()[:limit]
+        pointofinterest_list = PointOfInterest.objects.all()[:limit]
 
-    if not poi_list:
+    if not pointofinterest_list:
         error = {
             "status": True,
-            "name": "No POIs",
-            "text": "No POIs found",
+            "name": "No PointOfInterests",
+            "text": "No PointOfInterests found",
             "level": "Information",
             "debug": ""
         }
@@ -44,9 +44,9 @@ def poi_list(request):
     serializer = FreshSerializer()
 
     data = {
-        "pois": json.loads(
+        "pointofinterests": json.loads(
             serializer.serialize(
-                poi_list,
+                pointofinterest_list,
                 use_natural_foreign_keys=True
             )
         ),
@@ -56,11 +56,11 @@ def poi_list(request):
     return HttpResponse(json.dumps(data), content_type="application/json")
 
 
-def pois_products(request, id=None):
+def pointofinterests_products(request, id=None):
     """
-    */pois/products/<id>*
+    */pointofinterests/products/<id>*
 
-    List all pois in the database that sell product <id>.
+    List all pointofinterests in the database that sell product <id>.
     There is no order to this list, only whatever is returned by the database.
     """
     error = {
@@ -75,12 +75,12 @@ def pois_products(request, id=None):
     point, proximity, limit, error = get_lat_long_prox(request, error)
     try:
         if point:
-            poi_list = POI.objects.filter(
-                poiproduct__product_preparation__product__id__exact=id,
+            pointofinterest_list = PointOfInterest.objects.filter(
+                pointofinterestproduct__product_preparation__product__id__exact=id,
                 location__distance_lte=(point, D(mi=proximity)))[:limit]
         else:
-            poi_list = POI.objects.filter(
-                poiproduct__product_preparation__product__id__exact=id
+            pointofinterest_list = PointOfInterest.objects.filter(
+                pointofinterestproduct__product_preparation__product__id__exact=id
             )[:limit]
 
     except Exception as e:
@@ -96,11 +96,11 @@ def pois_products(request, id=None):
             content_type="application/json"
         )
 
-    if not poi_list:
+    if not pointofinterest_list:
         error = {
             "status": True,
-            "name": "No POIs",
-            "text": "No POIs found for product %s" % id,
+            "name": "No PointOfInterests",
+            "text": "No PointOfInterests found for product %s" % id,
             "level": "Information",
             "debug": ""
         }
@@ -108,9 +108,9 @@ def pois_products(request, id=None):
     serializer = FreshSerializer()
 
     data = {
-        "pois": json.loads(
+        "pointofinterests": json.loads(
             serializer.serialize(
-                poi_list,
+                pointofinterest_list,
                 use_natural_foreign_keys=True
             )
         ),
@@ -120,11 +120,11 @@ def pois_products(request, id=None):
     return HttpResponse(json.dumps(data), content_type="application/json")
 
 
-def poi_details(request, id=None):
+def pointofinterest_details(request, id=None):
     """
-    */pois/<id>*
+    */pointofinterests/<id>*
 
-    Returns the poi data for poi <id>.
+    Returns the pointofinterest data for pointofinterest <id>.
     """
     data = {}
 
@@ -137,12 +137,12 @@ def poi_details(request, id=None):
     }
 
     try:
-        poi = POI.objects.get(id=id)
+        pointofinterest = PointOfInterest.objects.get(id=id)
     except Exception as e:
         data['error'] = {
             'status': True,
-            'name': 'POI Not Found',
-            'text': 'POI id %s was not found.' % id,
+            'name': 'PointOfInterest Not Found',
+            'text': 'PointOfInterest id %s was not found.' % id,
             'level': 'Error',
             'debug': "{0}: {1}".format(type(e).__name__, str(e))
         }
@@ -155,7 +155,7 @@ def poi_details(request, id=None):
 
     data = json.loads(
         serializer.serialize(
-            [poi],
+            [pointofinterest],
             use_natural_foreign_keys=True
         )[1:-1]  # Serializer can only serialize lists,
         # so we have to chop off the list brackets

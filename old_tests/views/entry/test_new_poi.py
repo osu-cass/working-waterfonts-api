@@ -1,14 +1,14 @@
 from django.test import TestCase
 from django.core.urlresolvers import reverse
-from working_waterfronts.working_waterfronts_api.models import (POI, ProductPreparation,
+from working_waterfronts.working_waterfronts_api.models import (PointOfInterest, ProductPreparation,
                                                 Product, Preparation, Story)
 from django.contrib.auth.models import User, Group
 
 
-class NewPOITestCase(TestCase):
+class NewPointOfInterestTestCase(TestCase):
 
     """
-    Test that the New POI page works as expected.
+    Test that the New PointOfInterest page works as expected.
 
     Things tested:
         URLs reverse correctly
@@ -38,12 +38,12 @@ class NewPOITestCase(TestCase):
         self.client.logout()
 
         response = self.client.get(
-            reverse('edit-poi', kwargs={'id': '1'}))
-        self.assertRedirects(response, '/login?next=/entry/pois/1')
+            reverse('edit-pointofinterest', kwargs={'id': '1'}))
+        self.assertRedirects(response, '/login?next=/entry/pointofinterests/1')
 
     def test_url_endpoint(self):
-        url = reverse('new-poi')
-        self.assertEqual(url, '/entry/pois/new')
+        url = reverse('new-pointofinterest')
+        self.assertEqual(url, '/entry/pointofinterests/new')
 
     def test_form_fields(self):
         """
@@ -52,37 +52,37 @@ class NewPOITestCase(TestCase):
         response = self.client.post(
             reverse('login'),
             {'username': 'temporary', 'password': 'temporary'})
-        response = self.client.get(reverse('new-poi'))
+        response = self.client.get(reverse('new-pointofinterest'))
 
         fields = {'name': 'input', 'description': 'textarea', 'hours': 'input',
                   'story': 'select', 'status': 'select', 'street': 'input',
                   'city': 'input', 'state': 'input', 'zip': 'input',
                   'location_description': 'textarea', 'contact_name': 'input',
                   'website': 'input', 'email': 'input', 'phone': 'input'}
-        form = response.context['poi_form']
+        form = response.context['pointofinterest_form']
 
         for field in fields:
             # for the Edit tests, you should be able to access
             # form[field].value
             self.assertIn(fields[field], str(form[field]))
 
-    def test_successful_poi_creation(self):
+    def test_successful_pointofinterest_creation(self):
         """
-        POST a proper "new poi" command to the server, and see if the
-        new poi appears in the database
+        POST a proper "new pointofinterest" command to the server, and see if the
+        new pointofinterest appears in the database
         """
         self.client.post(reverse('login'),
                          {'username': 'temporary', 'password': 'temporary'})
         # Create objects that we'll be setting as the foreign objects for
-        # our test poi
+        # our test pointofinterest
 
         # We'll want multiple product_preparations to
         # allow us to test the multi-product logic.
 
-        # We can't predict what the ID of the new poi will be, so we can
-        # delete all of the pois, and then choose the only poi left
+        # We can't predict what the ID of the new pointofinterest will be, so we can
+        # delete all of the pointofinterests, and then choose the only pointofinterest left
         # after creation.
-        POI.objects.all().delete()
+        PointOfInterest.objects.all().delete()
 
         Story.objects.create(id=1)
         product = Product.objects.create(id=1)
@@ -93,8 +93,8 @@ class NewPOITestCase(TestCase):
         ProductPreparation.objects.create(
             id=2, product=product, preparation=preparation)
 
-        # Data that we'll post to the server to get the new poi created
-        new_poi = {
+        # Data that we'll post to the server to get the new pointofinterest created
+        new_pointofinterest = {
             'zip': '97365', 'website': '', 'hours': 'optional hours',
             'street': '750 NW Lighthouse Dr', 'story': '',
             'status': '', 'state': 'OR', 'preparation_ids': '1,2',
@@ -103,22 +103,22 @@ class NewPOITestCase(TestCase):
             'email': '', 'description': 'Test Description',
             'contact_name': 'Test Contact', 'city': 'Newport'}
 
-        self.client.post(reverse('new-poi'), new_poi)
+        self.client.post(reverse('new-pointofinterest'), new_pointofinterest)
 
-        self.assertGreater(len(POI.objects.all()), 0)
+        self.assertGreater(len(PointOfInterest.objects.all()), 0)
 
         # These values are changed by the server after being received from
         # the client/web page. The preparation IDs are going to be changed
-        # into poi_product objects, so we'll not need the preparations_id
+        # into pointofinterest_product objects, so we'll not need the preparations_id
         # field
-        del new_poi['preparation_ids']
-        new_poi['status'] = None
-        new_poi['phone'] = None
-        new_poi['story'] = None
+        del new_pointofinterest['preparation_ids']
+        new_pointofinterest['status'] = None
+        new_pointofinterest['phone'] = None
+        new_pointofinterest['story'] = None
 
-        vend = POI.objects.all()[0]
-        for field in new_poi:
-            self.assertEqual(getattr(vend, field), new_poi[field])
+        vend = PointOfInterest.objects.all()[0]
+        for field in new_pointofinterest:
+            self.assertEqual(getattr(vend, field), new_pointofinterest[field])
 
         self.assertEqual(vend.location.y, 44.6752643)  # latitude
         self.assertEqual(vend.location.x, -124.072162)  # longitude
@@ -127,29 +127,29 @@ class NewPOITestCase(TestCase):
         # IDs 1 and 2, and then posting '1,2' as the list of product
         # preparations.
         product_preparations = ([
-            vp.product_preparation.id for vp in vend.poiproduct_set.all()])
+            vp.product_preparation.id for vp in vend.pointofinterestproduct_set.all()])
 
         self.assertEqual(sorted(product_preparations), [1, 2])
 
     def test_no_data_error(self):
         """
-        POST a "new poi" command to the server missing all of the
+        POST a "new pointofinterest" command to the server missing all of the
         required fields, and test to see what the error comes back as.
         """
         response = self.client.post(
             reverse('login'),
             {'username': 'temporary', 'password': 'temporary'})
         # Create a list of all objects before sending bad POST data
-        all_pois = POI.objects.all()
+        all_pointofinterests = PointOfInterest.objects.all()
 
-        new_poi = {
+        new_pointofinterest = {
             'zip': '', 'website': '', 'street': '', 'story': '',
             'status': '', 'state': '', 'preparation_ids': '',
             'phone': '', 'name': '', 'location_description': '',
             'email': '', 'description': '', 'contact_name': '',
             'city': '', 'hours': ''}
 
-        response = self.client.post(reverse('new-poi'), new_poi)
+        response = self.client.post(reverse('new-pointofinterest'), new_pointofinterest)
 
         # Test non-automatically generated errors written into the view
         self.assertIn(
@@ -161,28 +161,28 @@ class NewPOITestCase(TestCase):
             'city', 'name', 'zip', 'location', 'state',
             'street', 'contact_name', 'description']
         for field_name in required_fields:
-            self.assertIn(field_name, response.context['poi_form'].errors)
+            self.assertIn(field_name, response.context['pointofinterest_form'].errors)
 
         # Test that we didn't add any new objects
-        self.assertTrue(list(POI.objects.all()) == list(all_pois))
+        self.assertTrue(list(PointOfInterest.objects.all()) == list(all_pointofinterests))
 
     def test_bad_address(self):
         """
-        POST a "new poi" to the server with a bad address -- a non-existant
+        POST a "new pointofinterest" to the server with a bad address -- a non-existant
         street -- and test that a Bad Address error is returned.
 
         This test contains the same POST data as the
-        test_successful_poi_creation, but with a bad address. This means
+        test_successful_pointofinterest_creation, but with a bad address. This means
         the only error returned should be a Bad Address error.
         """
         response = self.client.post(
             reverse('login'),
             {'username': 'temporary', 'password': 'temporary'})
         # Create a list of all objects before sending bad POST data
-        all_pois = POI.objects.all()
+        all_pointofinterests = PointOfInterest.objects.all()
 
         # Create objects that we'll be setting as the foreign objects for
-        # our test poi
+        # our test pointofinterest
 
         # It needs a story, and we'll want multiple product_preparations to
         # allow us to test the multi-product logic.
@@ -195,8 +195,8 @@ class NewPOITestCase(TestCase):
         ProductPreparation.objects.create(
             id=2, product=product, preparation=preparation)
 
-        # Data that we'll post to the server to get the new poi created
-        new_poi = {
+        # Data that we'll post to the server to get the new pointofinterest created
+        new_pointofinterest = {
             'zip': '97477', 'website': '', 'hours': '',
             'street': '123 Fake Street', 'story': 1,
             'status': '', 'state': 'OR', 'preparation_ids': '1,2',
@@ -205,10 +205,10 @@ class NewPOITestCase(TestCase):
             'email': '', 'description': 'Test Description',
             'contact_name': 'Test Contact', 'city': 'Springfield'}
 
-        response = self.client.post(reverse('new-poi'), new_poi)
+        response = self.client.post(reverse('new-pointofinterest'), new_pointofinterest)
 
         # Test that the bad address returns a bad address
         self.assertIn("Full address is required.", response.context['errors'])
 
         # Test that we didn't add any new objects
-        self.assertTrue(list(POI.objects.all()) == list(all_pois))
+        self.assertTrue(list(PointOfInterest.objects.all()) == list(all_pointofinterests))

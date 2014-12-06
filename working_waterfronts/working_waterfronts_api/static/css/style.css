@@ -185,7 +185,7 @@ a {
   border: 2px solid #333;
   width: 80%; }
 
-.preparation:hover, .product:hover, .poi:hover {
+.preparation:hover, .product:hover, .pointofinterest:hover {
   background-color: #FFF; }
 
 .item {

@@ -9,7 +9,7 @@ class CategoryTestCase(TestCase):
     def setUp(self):
         self.expected_fields = {
             'category': models.TextField,
-            'poicategory': models.related.RelatedObject,
+            'pointofinterestcategory': models.related.RelatedObject,
             'id': models.AutoField
         }
 

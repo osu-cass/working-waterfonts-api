@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from working_waterfronts.working_waterfronts_api.models import POI
+from working_waterfronts.working_waterfronts_api.models import PointOfInterest
 import json
 
 
@@ -7,11 +7,11 @@ def locations(request):
     """
     */locations/*
 
-    Returns a list of city names for all pois. Useful for populating
+    Returns a list of city names for all pointofinterests. Useful for populating
     selection lists.
     """
-    poi_list = POI.objects.all()
-    cities = [poi.city for poi in poi_list]
+    pointofinterest_list = PointOfInterest.objects.all()
+    cities = [pointofinterest.city for pointofinterest in pointofinterest_list]
     unique_cities = [
         {'location': city[0], 'name': city[1]}
         for city in enumerate(set(cities))]
