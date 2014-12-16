@@ -30,3 +30,7 @@ class Video(models.Model):
             'name': self.name,
             'link': self.video
         }
+
+
+class Image(models.Model):
+    pass
