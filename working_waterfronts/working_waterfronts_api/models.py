@@ -66,6 +66,7 @@ class Video(models.Model):
             'name': self.name,
             'link': self.video
         }
+<<<<<<< HEAD
 
 
 class Image(models.Model):
@@ -116,3 +117,13 @@ class Category(models.Model):
     category = models.TextField(default='')
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
+
+
+class Hazard(models.Model):
+    name = models.TextField()
+    description = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
+
+    def __unicode__(self):
+        return self.name
