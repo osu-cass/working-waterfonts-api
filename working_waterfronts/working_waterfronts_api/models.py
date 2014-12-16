@@ -1,5 +1,6 @@
 from django.db import models
 
+<<<<<<< HEAD
 
 class Video(models.Model):
     """
@@ -30,3 +31,10 @@ class Video(models.Model):
             'name': self.name,
             'link': self.video
         }
+||||||| merged common ancestors
+# Create your models here.
+=======
+# Create your models here.
+class Category(models.Model):
+    pass
+>>>>>>> Category model test
