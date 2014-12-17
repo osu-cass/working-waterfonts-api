@@ -35,7 +35,7 @@ class Video(models.Model):
 class Category(models.Model):
     """
     The category model is a name associated with many points of interest.
-    Its raison d'être is to be a category for POIs -- it holds no other
+    Its raison d'etre is to be a category for POIs -- it holds no other
     information itself.
     """
 
