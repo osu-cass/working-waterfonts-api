@@ -46,7 +46,7 @@ images
 	image       image (file)
 	caption     text (optional)
 	created     datetime
-	updated     datetime (auto-update on modification)
+	modified    datetime (auto-update on modification)
 
 videos
 ------
