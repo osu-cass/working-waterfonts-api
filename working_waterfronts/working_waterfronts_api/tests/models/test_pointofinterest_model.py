@@ -11,6 +11,7 @@ class PointOfInterestTestCase(TestCase):
         self.expected_fields = {
             'name': models.TextField,
             'alt_name': models.TextField,
+            'contact_name': models.TextField,
             'location': models.PointField,
             'street': models.TextField,
             'city': models.TextField,
