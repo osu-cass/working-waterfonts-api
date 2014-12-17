@@ -24,6 +24,8 @@ class PointOfInterestTestCase(TestCase):
             'website': models.URLField,
             'email': models.EmailField,
             'phone': PhoneNumberField,
+            'hazards': models.ManyToManyField,
+            'pointofinterests_hazards': models.ManyToManyField,
             'categories': models.ManyToManyField,
             'pointofinterests_categories': models.ManyToManyField,
             'created': models.DateTimeField,
