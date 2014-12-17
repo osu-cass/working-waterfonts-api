@@ -1,6 +1,5 @@
 from django.db import models
 
-<<<<<<< HEAD
 
 class Video(models.Model):
     """
@@ -31,10 +30,18 @@ class Video(models.Model):
             'name': self.name,
             'link': self.video
         }
-||||||| merged common ancestors
-# Create your models here.
-=======
-# Create your models here.
+
+
 class Category(models.Model):
-    pass
->>>>>>> Category model test
+    """
+    The category model is a name associated with many points of interest.
+    Its raison d'être is to be a category for POIs -- it holds no other
+    information itself.
+    """
+
+    def __unicode__(self):
+        return self.category
+
+    category = models.TextField(default='')
+    created = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)

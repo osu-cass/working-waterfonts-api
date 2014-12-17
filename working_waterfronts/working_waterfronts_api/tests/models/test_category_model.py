@@ -9,12 +9,14 @@ class CategoryTestCase(TestCase):
     def setUp(self):
         self.expected_fields = {
             'category': models.TextField,
+            'created': models.DateTimeField,
+            'modified': models.DateTimeField,
             'pointofinterestcategory': models.related.RelatedObject,
             'id': models.AutoField
         }
 
     def test_fields_exist(self):
-        model = models.get_model('working_waterfronts_api', 'Category')
+        model = Category
         for field, field_type in self.expected_fields.items():
             self.assertEqual(
                 field_type, type(model._meta.get_field_by_name(field)[0]))
