@@ -59,7 +59,7 @@ videos
 	video           link
 	description     text (optional)
 	created         datetime
-	updated         datetime (auto-update on modification)
+	modified         datetime (auto-update on modification)
 
 
 hazards
