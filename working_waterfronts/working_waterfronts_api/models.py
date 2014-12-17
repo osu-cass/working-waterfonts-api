@@ -120,6 +120,9 @@ class Category(models.Model):
 
 
 class Hazard(models.Model):
+    """
+    The Hazard model holds a hazard and its description.
+    """
     name = models.TextField()
     description = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
