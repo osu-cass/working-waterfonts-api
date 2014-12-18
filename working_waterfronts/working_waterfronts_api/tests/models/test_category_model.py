@@ -11,7 +11,6 @@ class CategoryTestCase(TestCase):
             'category': models.TextField,
             'created': models.DateTimeField,
             'modified': models.DateTimeField,
-            'pointofinterestcategory': models.related.RelatedObject,
             'id': models.AutoField
         }
 
