@@ -44,7 +44,7 @@ class PointOfInterestTestCase(TestCase):
         self.null_fields = {'story', 'phone'}
 
     def test_fields_exist(self):
-        model = models.get_model('working_waterfronts_api', 'PointOfInterest')
+        model = PointOfInterest
         for field, field_type in self.expected_fields.items():
             self.assertEqual(
                 field_type, type(model._meta.get_field_by_name(field)[0]))
@@ -61,7 +61,6 @@ class PointOfInterestTestCase(TestCase):
         assert hasattr(PointOfInterest, '__unicode__'), "No __unicode__ method found"
 
     def test_optional_fields(self):
-        models.get_model('working_waterfronts_api', 'PointOfInterest')
         for field in self.optional_fields:
             self.assertEqual(
                 PointOfInterest._meta.get_field_by_name(field)[0].blank, True)
