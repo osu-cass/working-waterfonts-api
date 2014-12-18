@@ -65,3 +65,18 @@ class Image(models.Model):
             'caption': self.caption,
             'link': self.image.url
         }
+
+
+class Category(models.Model):
+    """
+    The category model is a name associated with many points of interest.
+    Its raison d'etre is to be a category for POIs -- it holds no other
+    information itself.
+    """
+
+    def __unicode__(self):
+        return self.category
+
+    category = models.TextField(default='')
+    created = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
