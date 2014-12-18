@@ -25,12 +25,10 @@ class PointOfInterestTestCase(TestCase):
             'email': models.EmailField,
             'phone': PhoneNumberField,
             'hazards': models.ManyToManyField,
-            'pointofinterests_hazards': models.ManyToManyField,
             'categories': models.ManyToManyField,
-            'pointofinterests_categories': models.ManyToManyField,
             'created': models.DateTimeField,
             'modified': models.DateTimeField,
-            'id': models.AutoField
+            u'id': models.AutoField
         }
 
         self.optional_fields = {
@@ -41,7 +39,7 @@ class PointOfInterestTestCase(TestCase):
             'phone'
         }
 
-        self.null_fields = {'story', 'phone'}
+        self.null_fields = {'phone'}
 
     def test_fields_exist(self):
         model = PointOfInterest

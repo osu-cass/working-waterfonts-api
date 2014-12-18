@@ -28,9 +28,10 @@ class PointOfInterest(models.Model):
     email = models.EmailField(blank=True)
     phone = PhoneNumberField(blank=True, null=True)
 
-    products_preparations = models.ManyToManyField(
+    hazards = models.ManyToManyField(
         'Hazard', blank=True)
-    products_preparations = models.ForeignKey("Category")
+    categories = models.ManyToManyField(
+        'Category', blank=True)
 
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
