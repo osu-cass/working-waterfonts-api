@@ -31,7 +31,7 @@ class PointOfInterestCategoryTestCase(TestCase):
         try:
             PointOfInterestCategory.__unicode__(
                 PointOfInterestCategory(
-                    PointOfInterest=PointOfInterest(name='test'),
+                    pointofinterest=PointOfInterest(name='test'),
                     category=Category(name='test')
                 ))
         except AttributeError:
