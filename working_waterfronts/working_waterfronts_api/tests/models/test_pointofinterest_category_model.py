@@ -17,8 +17,7 @@ class PointOfInterestCategoryTestCase(TestCase):
         }
 
     def test_fields_exist(self):
-        model = models.get_model('working_waterfronts_api',
-                'PointOfInterestCategory')
+        model = PointOfInterestCategory
         for field, field_type in self.expected_fields.items():
             self.assertEqual(
                 field_type, type(model._meta.get_field_by_name(field)[0]))
@@ -28,11 +27,4 @@ class PointOfInterestCategoryTestCase(TestCase):
         self.assertEqual(sorted(fields), sorted(self.expected_fields.keys()))
 
     def test___unicode___method(self):
-        try:
-            PointOfInterestCategory.__unicode__(
-                PointOfInterestCategory(
-                    pointofinterest=PointOfInterest(name='test'),
-                    category=Category(name='test')
-                ))
-        except AttributeError:
-            self.fail("No __unicode__ method found")
+        assert hasattr(PointOfInterest, '__unicode__'), "No __unicode__ method found"
