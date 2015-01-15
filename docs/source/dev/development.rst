@@ -72,7 +72,7 @@ To run the image:
 
 ::
 
-    $ docker run --name postgis -p $HOSTPORT:$CONTAINERPORT -e  USERNAME=$USERNAME -e PASS=$PASSWORD kartoza/postgis
+    $ docker run -d --name postgis -p $HOSTPORT:$CONTAINERPORT -e  USERNAME=$USERNAME -e PASS=$PASSWORD kartoza/postgis
 
 Make sure that the What's Fresh project container connects to the database over
 the host port.
@@ -97,14 +97,13 @@ Before the app is ready, create the database and run migrations.
 
 ::
 
-    $ docker exec postgis -it bash
+    $ docker exec -it postgis bash
     # createdb -U $USERNAME -h localhost $DBNAME
     # psql -U $USERNAME -h localhost
     DBNAME=# create extension postgis;
     CREATE EXTENSION
     DBNAME=# ^D
     # ^D
-    $ docker run --link postgis:postgis osuosl/working_waterfronts:dev python manage.py syncdb --noinput
     $ docker run --link postgis:postgis osuosl/working_waterfronts:dev python manage.py migrate
 
 Next, connect to the database with psql and create the relevant user.
@@ -135,6 +134,12 @@ On occasion it may be necessary to obtain a shell in the container:
 
     $ docker run -it osuosl/working_waterfronts:dev bash
 
+Some developers may prefer to mount their copy of the application as a volume
+when they run the app:
+
+::
+
+    $ docker run -v /path/to/code/:/opt/whats_fresh --link postgis:postgis osuosl/whats_fresh:dev
 
 Developing
 ==========
