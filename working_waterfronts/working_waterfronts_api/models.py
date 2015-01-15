@@ -116,3 +116,17 @@ class Category(models.Model):
     category = models.TextField(default='')
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
+
+
+class Hazard(models.Model):
+    """
+    The Hazard model holds a hazard and its description.
+    """
+    name = models.TextField()
+    description = models.TextField()
+    pointofinterests = models.ManyToManyField('PointOfInterest')
+    created = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
+
+    def __unicode__(self):
+        return self.name
