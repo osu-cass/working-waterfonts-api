@@ -66,7 +66,6 @@ class Video(models.Model):
             'name': self.name,
             'link': self.video
         }
-<<<<<<< HEAD
 
 
 class Image(models.Model):
@@ -125,6 +124,7 @@ class Hazard(models.Model):
     """
     name = models.TextField()
     description = models.TextField()
+    pointofinterests = models.ManyToManyField('PointOfInterest')
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 
