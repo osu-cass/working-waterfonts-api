@@ -116,6 +116,12 @@ class Category(models.Model):
     def __unicode__(self):
         return self.category
 
+    def natural_key(self):
+        return {
+            'category': self.category,
+            'id': self.id
+        }
+
     category = models.TextField(default='')
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
@@ -130,6 +136,13 @@ class Hazard(models.Model):
     pointofinterests = models.ManyToManyField('PointOfInterest')
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
+
+    def natural_key(self):
+        return {
+            'name': self.name,
+            'description': self.description,
+            'id': self.id
+        }
 
     def __unicode__(self):
         return self.name
