@@ -53,10 +53,12 @@ class PointOfInterestTestCase(TestCase):
 
     def test_created_modified_fields(self):
         self.assertTrue(PointOfInterest._meta.get_field('modified').auto_now)
-        self.assertTrue(PointOfInterest._meta.get_field('created').auto_now_add)
+        self.assertTrue(
+            PointOfInterest._meta.get_field('created').auto_now_add)
 
     def test___unicode___method(self):
-        assert hasattr(PointOfInterest, '__unicode__'), "No __unicode__ method found"
+        assert hasattr(
+            PointOfInterest, '__unicode__'), "No __unicode__ method found"
 
     def test_optional_fields(self):
         for field in self.optional_fields:
