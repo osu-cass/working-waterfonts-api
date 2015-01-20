@@ -12,6 +12,7 @@ class HazardTestCase(TestCase):
             'created': models.DateTimeField,
             'modified': models.DateTimeField,
             'pointofinterests': models.ManyToManyField,
+            'pointofinterest': models.related.RelatedObject,
             'id': models.AutoField
         }
 

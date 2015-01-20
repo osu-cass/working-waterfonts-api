@@ -25,7 +25,10 @@ class PointOfInterestTestCase(TestCase):
             'email': models.EmailField,
             'phone': PhoneNumberField,
             'hazards': models.ManyToManyField,
+            'hazard': models.related.RelatedObject,
             'categories': models.ManyToManyField,
+            'images': models.ManyToManyField,
+            'videos': models.ManyToManyField,
             'created': models.DateTimeField,
             'modified': models.DateTimeField,
             u'id': models.AutoField
