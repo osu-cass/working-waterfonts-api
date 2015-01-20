@@ -94,7 +94,6 @@ class SerializerTestCase(TestCase):
                 [Hazard.objects.get(id=1)],
                 use_natural_foreign_keys=True
             )
-        print data
 
         parsed_answer = json.loads(data)
         expected_answer = json.loads(self.expected_hazard_json)
@@ -107,7 +106,6 @@ class SerializerTestCase(TestCase):
                 [Category.objects.get(id=1)],
                 use_natural_foreign_keys=True
             )
-        print data
 
         parsed_answer = json.loads(data)
         expected_answer = json.loads(self.expected_category_json)
