@@ -11,10 +11,9 @@ class ImageTestCase(TestCase):
             'image': models.ImageField,
             'name': models.TextField,
             'caption': models.TextField,
-            'pointofinterest': models.ForeignKey,
-            'pointofinterest_id': models.ForeignKey,
             'created': models.DateTimeField,
             'modified': models.DateTimeField,
+            'pointofinterest': models.related.RelatedObject,
             'id': models.AutoField
         }
 
