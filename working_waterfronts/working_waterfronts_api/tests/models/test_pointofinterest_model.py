@@ -12,8 +12,6 @@ class PointOfInterestTestCase(TestCase):
             'name': models.TextField,
             'alt_name': models.TextField,
             'contact_name': models.TextField,
-            'video': models.related.RelatedObject,
-            'image': models.related.RelatedObject,
             'location': models.PointField,
             'street': models.TextField,
             'city': models.TextField,
