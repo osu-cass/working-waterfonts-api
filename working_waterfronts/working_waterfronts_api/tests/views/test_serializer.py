@@ -4,7 +4,7 @@ from working_waterfronts.working_waterfronts_api.models import (
     PointOfInterest, Hazard, Category)
 from django.contrib.gis.geos import fromstr
 from working_waterfronts.working_waterfronts_api.views.serializer import (
-    FreshSerializer)
+    ObjectSerializer)
 
 
 class SerializerTestCase(TestCase):
@@ -44,6 +44,12 @@ class SerializerTestCase(TestCase):
         "id": 1
     }
   ],
+  "videos": [{"caption": "Traveling at the speed of light!",
+                "link": "http://www.youtube.com/watch?v=efgDdSWDg0g",
+                "name": "A Starship"}],
+  "images": [{"caption": "Woof!",
+               "link": "/media/dog.jpg",
+               "name": "A dog"}],
   "name": "Newport Lighthouse",
   "created": "2014-08-08T23:27:05.568Z",
   "modified": "2014-08-08T23:27:05.568Z",
@@ -77,7 +83,7 @@ class SerializerTestCase(TestCase):
 ]"""
 
     def test_serializer_poi(self):
-        serializer = FreshSerializer()
+        serializer = ObjectSerializer()
         data = serializer.serialize(
                 [PointOfInterest.objects.get(id=1)],
                 use_natural_foreign_keys=True
@@ -89,7 +95,7 @@ class SerializerTestCase(TestCase):
         self.assertEqual(parsed_answer, expected_answer)
 
     def test_serializer_hazard(self):
-        serializer = FreshSerializer()
+        serializer = ObjectSerializer()
         data = serializer.serialize(
                 [Hazard.objects.get(id=1)],
                 use_natural_foreign_keys=True
@@ -101,7 +107,7 @@ class SerializerTestCase(TestCase):
         self.assertEqual(parsed_answer, expected_answer)
 
     def test_serializer_category(self):
-        serializer = FreshSerializer()
+        serializer = ObjectSerializer()
         data = serializer.serialize(
                 [Category.objects.get(id=1)],
                 use_natural_foreign_keys=True

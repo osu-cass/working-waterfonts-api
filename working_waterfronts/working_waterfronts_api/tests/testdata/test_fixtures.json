@@ -1,12 +1,63 @@
 [
   {
+    "model": "working_waterfronts_api.PointOfInterest",
+    "pk": "1",
+    "fields": {
+      "name": "Newport Lighthouse",
+      "alt_name": "",
+      "description": "A pretty nice lighthouse",
+      "history": "It was built at some time in the past",
+      "facts": "It's a lighthouse",
+      "location": "POINT (-124.1053399999999982 43.9668739999999971)",
+      "street": "123 Fake St",
+      "city": "Newport",
+      "state": "Oregon",
+      "location_description": "out on the cape over there",
+      "zip": "11234",
+      "website": "",
+      "email": "",
+      "phone": "",
+      "hazards": [1],
+      "categories": [1],
+      "images": [1],
+      "videos": [1],
+      "created": "2014-08-08 23:27:05.568395+00:00",
+      "modified": "2014-08-08 23:27:05.568395+00:00"
+    }
+  },
+  {
+    "model": "working_waterfronts_api.PointOfInterest",
+    "pk": "2",
+    "fields": {
+      "name": "Haystack Rock",
+      "alt_name": "",
+      "description": "A pretty nice rock",
+      "history": "Nature made it",
+      "facts": "It's a nature habitat place, no climbing!",
+      "location": "POINT (-124.1053399999999982 43.9668739999999971)",
+      "street": "123 Fake St",
+      "city": "Canon Beach",
+      "state": "Oregon",
+      "location_description": "",
+      "zip": "11234",
+      "website": "http://hatstackrock.com",
+      "email": "rock@haystackrock.com",
+      "phone": "+1 555 123 4567",
+      "hazards": [2],
+      "categories": [2],
+      "images": [2],
+      "videos": [2],
+      "created": "2014-08-08 23:27:05.568395+00:00",
+      "modified": "2014-08-08 23:27:05.568395+00:00"
+    }
+  },
+  {
     "model": "working_waterfronts_api.Image",
     "pk": "1",
     "fields": {
       "image": "/media/dog.jpg",
       "caption": "Woof!",
       "name": "A dog",
-      "pointofinterest": 1,
       "created": "2014-08-08 23:27:05.568395+00:00",
       "modified": "2014-08-08 23:27:05.568395+00:00"
     }
@@ -18,7 +69,6 @@
       "image": "/media/cat.jpg",
       "caption": "Meow!",
       "name": "A cat",
-      "pointofinterest": 2,
       "created": "2014-08-08 23:27:05.568395+00:00",
       "modified": "2014-08-08 23:27:05.568395+00:00"
     }
@@ -29,7 +79,6 @@
     "fields": {
       "video": "http://www.youtube.com/watch?v=efgDdSWDg0g",
       "name": "A Starship",
-      "pointofinterest": 1,
       "caption": "Traveling at the speed of light!",
       "created": "2014-08-08 23:27:05.568395+00:00",
       "modified": "2014-08-08 23:27:05.568395+00:00"
@@ -42,7 +91,6 @@
       "video": "http://www.youtube.com/watch?v=M-nlAuCW7WY",
       "caption": "Princely",
       "name": "Princely",
-      "pointofinterest": 2,
       "created": "2014-08-08 23:27:05.568395+00:00",
       "modified": "2014-08-08 23:27:05.568395+00:00"
     }
@@ -83,54 +131,6 @@
       "name": "Alien Abduction",
       "description": "This site is liable to result in you being abducted by aliens.",
       "pointofinterests": [2],
-      "created": "2014-08-08 23:27:05.568395+00:00",
-      "modified": "2014-08-08 23:27:05.568395+00:00"
-    }
-  },
-  {
-    "model": "working_waterfronts_api.PointOfInterest",
-    "pk": "1",
-    "fields": {
-      "name": "Newport Lighthouse",
-      "alt_name": "",
-      "description": "A pretty nice lighthouse",
-      "history": "It was built at some time in the past",
-      "facts": "It's a lighthouse",
-      "location": "POINT (-124.1053399999999982 43.9668739999999971)",
-      "street": "123 Fake St",
-      "city": "Newport",
-      "state": "Oregon",
-      "location_description": "out on the cape over there",
-      "zip": "11234",
-      "website": "",
-      "email": "",
-      "phone": "",
-      "hazards": [1],
-      "categories": [1],
-      "created": "2014-08-08 23:27:05.568395+00:00",
-      "modified": "2014-08-08 23:27:05.568395+00:00"
-    }
-  },
-  {
-    "model": "working_waterfronts_api.PointOfInterest",
-    "pk": "2",
-    "fields": {
-      "name": "Haystack Rock",
-      "alt_name": "",
-      "description": "A pretty nice rock",
-      "history": "Nature made it",
-      "facts": "It's a nature habitat place, no climbing!",
-      "location": "POINT (-124.1053399999999982 43.9668739999999971)",
-      "street": "123 Fake St",
-      "city": "Canon Beach",
-      "state": "Oregon",
-      "location_description": "",
-      "zip": "11234",
-      "website": "http://hatstackrock.com",
-      "email": "rock@haystackrock.com",
-      "phone": "+1 555 123 4567",
-      "hazards": [2],
-      "categories": [2],
       "created": "2014-08-08 23:27:05.568395+00:00",
       "modified": "2014-08-08 23:27:05.568395+00:00"
     }

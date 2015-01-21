@@ -3,7 +3,7 @@ from working_waterfronts.working_waterfronts_api.models import (
     PointOfInterest, Hazard)
 
 
-class FreshSerializer(json.Serializer):
+class ObjectSerializer(json.Serializer):
 
     def get_dump_object(self, obj):
         self._current['id'] = obj.id
