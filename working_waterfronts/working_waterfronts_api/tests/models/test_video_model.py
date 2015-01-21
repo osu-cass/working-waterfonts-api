@@ -12,8 +12,7 @@ class VideoTestCase(TestCase):
             'name': models.TextField,
             'created': models.DateTimeField,
             'modified': models.DateTimeField,
-            'pointofinterest': models.ForeignKey,
-            'pointofinterest_id': models.ForeignKey,
+            'pointofinterest': models.related.RelatedObject,
             'id': models.AutoField
         }
 

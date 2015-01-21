@@ -26,7 +26,8 @@ TEMPLATE_DEBUG = True
 ALLOWED_HOSTS = ['localhost']
 
 FIXTURE_DIRS = (
-    os.path.join(BASE_DIR, 'working_waterfronts/working_waterfronts_api/tests/testdata'),
+    os.path.join(BASE_DIR,
+                 'working_waterfronts/working_waterfronts_api/tests/testdata'),
 )
 
 # Application definition

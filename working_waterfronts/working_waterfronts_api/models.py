@@ -1,3 +1,4 @@
+import os
 from django.contrib.gis.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 
@@ -28,6 +29,10 @@ class PointOfInterest(models.Model):
     email = models.EmailField(blank=True)
     phone = PhoneNumberField(blank=True, null=True)
 
+    images = models.ManyToManyField(
+        'Image', blank=True)
+    videos = models.ManyToManyField(
+        'Video', blank=True)
     hazards = models.ManyToManyField(
         'Hazard', blank=True)
     categories = models.ManyToManyField(
@@ -55,7 +60,6 @@ class Video(models.Model):
     video = models.URLField()
     caption = models.TextField(blank=True)
     name = models.TextField(default='')
-    pointofinterest = models.ForeignKey('PointOfInterest')
 
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
@@ -90,7 +94,6 @@ class Image(models.Model):
     image = models.ImageField(upload_to='images')
     name = models.TextField(default='')
     caption = models.TextField(blank=True)
-    pointofinterest = models.ForeignKey('PointOfInterest')
 
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
