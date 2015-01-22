@@ -267,133 +267,285 @@ class PointsOfInterestLocationTestCase(TestCase):
     "text": null
   },
   "pointsofinterest": [{
-    "id": 3,
-    "website": "",
-    "street": "146 SE Bay Blvd",
-    "contact_name": "Newport Tuna Contact",
-    "city": "Newport",
-    "story":  2,
-    "zip": "97365",
-    "location_description": "Located on Bay Blvd in Newport",
-    "lng": -124.050122,
-    "state": "OR",
-    "email": "",
-    "hours": "",
-    "status": true,
-    "modified": "2014-08-08T23:27:05.568Z",
-    "description": "Fake Newport Tuna",
-    "phone": null,
-    "lat": 44.631592,
-    "name": "Newport Tuna",
-    "created": "2014-08-08T23:27:05.568Z",
-    "ext": {
-
+  "videos": [
+    {
+      "caption": "Traveling at the speed of light!",
+      "link": "http://www.youtube.com/watch?v=efgDdSWDg0g",
+      "name": "A Starship"
+    }
+  ],
+  "images": [
+    {
+      "caption": "Meow!",
+      "link": "/media/cat.jpg",
+      "name": "A cat"
+    }
+  ],
+  "street": "146 SE Bay Blvd",
+  "alt_name": "",
+  "facts": "",
+  "lng": -124.050122,
+  "contact_name": "Newport Tuna Contact",
+  "city": "Newport",
+  "zip": "97365",
+  "hazards": [
+    {
+      "id": 1,
+      "name": "Falling Rocks",
+      "description": "If these fall on you, you're dead."
     },
-    "products": [
-      {
-        "product_id": 2,
-        "preparation_id": 1,
-        "preparation": "Frozen",
-        "name": "Tuna"
-      }
-    ]
+    {
+      "id": 3,
+      "name": "Falling Rocks 3",
+      "description": "If these fall on you, you're dead."
+    },
+    {
+      "id": 5,
+      "name": "Falling Rocks 5",
+      "description": "If these fall on you, you're dead."
+    }
+  ],
+  "location_description": "Located on Bay Blvd in Newport",
+  "id": 3,
+  "state": "OR",
+  "email": "",
+  "website": "",
+  "description": "Fake Newport Tuna",
+  "hours": "",
+  "phone": null,
+  "lat": 44.631592,
+  "categories": [
+    {
+      "category": "Cool Stuff",
+      "id": 1
+    },
+    {
+      "category": "Fish Shops",
+      "id": 3
+    },
+    {
+      "category": "Large Obelisks",
+      "id": 5
+    }
+  ],
+  "name": "Newport Tuna",
+  "created": "2014-08-08T23:27:05.568Z",
+  "modified": "2014-08-08T23:27:05.568Z",
+  "ext": {
+
   },
-  {
-    "id": 4,
-    "website": "",
-    "street": "1226 Oregon Coast Hwy",
-    "contact_name": "Newpotr Halibut Contact",
-    "city": "Newport",
-    "story":  1,
-    "zip": "97365",
-    "location_description": "Located on Oregon Coast Hwy in Newport",
-    "lng": -124.052868,
-    "state": "OR",
-    "email": "",
-    "hours": "",
-    "status": true,
-    "modified": "2014-08-08T23:27:05.568Z",
-    "description": "Fake Newport Halibut",
-    "phone": null,
-    "lat": 44.646006,
-    "name": "Newport Halibut",
-    "created": "2014-08-08T23:27:05.568Z",
-    "ext": {
-
+  "history": ""
+},
+{
+  "videos": [
+    {
+      "caption": "Princely",
+      "link": "http://www.youtube.com/watch?v=M-nlAuCW7WY",
+      "name": "Princely"
+    }
+  ],
+  "images": [
+    {
+      "caption": "Woof!",
+      "link": "/media/dog.jpg",
+      "name": "A dog"
+    }
+  ],
+  "street": "1226 Oregon Coast Hwy",
+  "alt_name": "",
+  "facts": "",
+  "lng": -124.052868,
+  "contact_name": "Newpotr Halibut Contact",
+  "city": "Newport",
+  "zip": "97365",
+  "hazards": [
+    {
+      "id": 2,
+      "name": "Alien Abduction",
+      "description": "This site is liable to result in you being abducted by aliens."
     },
-    "products": [
-      {
-        "product_id": 1,
-        "preparation": "Frozen",
-        "preparation_id": 1,
-        "name": "Halibut"
-      }
-    ]
+    {
+      "id": 4,
+      "name": "Alien Abduction 4",
+      "description": "This site is liable to result in you being abducted by aliens."
+    },
+    {
+      "id": 6,
+      "name": "Alien Abduction 6",
+      "description": "This site is liable to result in you being abducted by aliens."
+    }
+  ],
+  "location_description": "Located on Oregon Coast Hwy in Newport",
+  "id": 4,
+  "state": "OR",
+  "email": "",
+  "website": "",
+  "description": "Fake Newport Halibut",
+  "hours": "",
+  "phone": null,
+  "lat": 44.646006,
+  "categories": [
+    {
+      "category": "Uncool Stuff",
+      "id": 2
+    },
+    {
+      "category": "Non-Fish Shops",
+      "id": 4
+    },
+    {
+      "category": "Test Category Do Not Upvote",
+      "id": 6
+    }
+  ],
+  "name": "Newport Halibut",
+  "created": "2014-08-08T23:27:05.568Z",
+  "modified": "2014-08-08T23:27:05.568Z",
+  "ext": {
+
   },
-  {
-    "id": 5,
-    "website": "",
-    "street": "522 NW Spring St",
-    "contact_name": "Waldport Tuna Contact",
-    "city": "Waldport",
-    "story":  2,
-    "zip": "97394",
-    "location_description": "Located on Spring St in Waldport",
-    "lng": -124.066166,
-    "state": "OR",
-    "email": "",
-    "hours": "",
-    "status": true,
-    "modified": "2014-08-08T23:27:05.568Z",
-    "description": "Fake Waldport Tuna",
-    "phone": null,
-    "lat": 44.427761,
-    "name": "Waldport Tuna",
-    "created": "2014-08-08T23:27:05.568Z",
-    "ext": {
-
+  "history": ""
+},
+{
+  "videos": [
+    {
+      "caption": "Traveling at the speed of light!",
+      "link": "http://www.youtube.com/watch?v=efgDdSWDg0g",
+      "name": "A Starship"
+    }
+  ],
+  "images": [
+    {
+      "caption": "Meow!",
+      "link": "/media/cat.jpg",
+      "name": "A cat"
+    }
+  ],
+  "street": "522 NW Spring St",
+  "alt_name": "",
+  "facts": "",
+  "lng": -124.066166,
+  "contact_name": "Waldport Tuna Contact",
+  "city": "Waldport",
+  "zip": "97394",
+  "hazards": [
+    {
+      "id": 1,
+      "name": "Falling Rocks",
+      "description": "If these fall on you, you're dead."
     },
-    "products": [
-      {
-        "product_id": 2,
-        "preparation_id": 1,
-        "preparation": "Frozen",
-        "name": "Tuna"
-      }
-    ]
+    {
+      "id": 3,
+      "name": "Falling Rocks 3",
+      "description": "If these fall on you, you're dead."
+    },
+    {
+      "id": 5,
+      "name": "Falling Rocks 5",
+      "description": "If these fall on you, you're dead."
+    }
+  ],
+  "location_description": "Located on Spring St in Waldport",
+  "id": 5,
+  "state": "OR",
+  "email": "",
+  "website": "",
+  "description": "Fake Waldport Tuna",
+  "hours": "",
+  "phone": null,
+  "lat": 44.427761,
+  "categories": [
+    {
+      "category": "Cool Stuff",
+      "id": 1
+    },
+    {
+      "category": "Fish Shops",
+      "id": 3
+    },
+    {
+      "category": "Large Obelisks",
+      "id": 5
+    }
+  ],
+  "name": "Waldport Tuna",
+  "created": "2014-08-08T23:27:05.568Z",
+  "modified": "2014-08-08T23:27:05.568Z",
+  "ext": {
+
   },
-  {
-    "id": 6,
-    "website": "",
-    "street": "190 SW Maple St",
-    "contact_name": "Waldport Halibut Contact",
-    "city": "Waldport",
-    "story":  1,
-    "zip": "97364",
-    "location_description": "Located on SW Maple St in Waldport",
-    "lng": -124.069126,
-    "state": "OR",
-    "email": "",
-    "hours": "",
-    "status": true,
-    "modified": "2014-08-08T23:27:05.568Z",
-    "description": "Fake Waldport Halibut",
-    "phone": null,
-    "lat": 44.425188,
-    "name": "Waldport Halibut",
-    "created": "2014-08-08T23:27:05.568Z",
-    "ext": {
-
+  "history": ""
+},
+{
+  "videos": [
+    {
+      "caption": "Princely",
+      "link": "http://www.youtube.com/watch?v=M-nlAuCW7WY",
+      "name": "Princely"
+    }
+  ],
+  "images": [
+    {
+      "caption": "Woof!",
+      "link": "/media/dog.jpg",
+      "name": "A dog"
+    }
+  ],
+  "street": "190 SW Maple St",
+  "alt_name": "",
+  "facts": "",
+  "lng": -124.069126,
+  "contact_name": "Waldport Halibut Contact",
+  "city": "Waldport",
+  "zip": "97364",
+  "hazards": [
+    {
+      "id": 2,
+      "name": "Alien Abduction",
+      "description": "This site is liable to result in you being abducted by aliens."
     },
-    "products": [
-      {
-        "product_id": 1,
-        "preparation_id": 1,
-        "preparation": "Frozen",
-        "name": "Halibut"
-      }
-    ]
-  }]
+    {
+      "id": 4,
+      "name": "Alien Abduction 4",
+      "description": "This site is liable to result in you being abducted by aliens."
+    },
+    {
+      "id": 6,
+      "name": "Alien Abduction 6",
+      "description": "This site is liable to result in you being abducted by aliens."
+    }
+  ],
+  "location_description": "Located on SW Maple St in Waldport",
+  "id": 6,
+  "state": "OR",
+  "email": "",
+  "website": "",
+  "description": "Fake Waldport Halibut",
+  "hours": "",
+  "phone": null,
+  "lat": 44.425188,
+  "categories": [
+    {
+      "category": "Uncool Stuff",
+      "id": 2
+    },
+    {
+      "category": "Non-Fish Shops",
+      "id": 4
+    },
+    {
+      "category": "Test Category Do Not Upvote",
+      "id": 6
+    }
+  ],
+  "name": "Waldport Halibut",
+  "created": "2014-08-08T23:27:05.568Z",
+  "modified": "2014-08-08T23:27:05.568Z",
+  "ext": {
+
+  },
+  "history": ""
+}]
 }"""
 
         # All POIs around Newport, with extended proximity.
@@ -409,198 +561,426 @@ class PointsOfInterestLocationTestCase(TestCase):
     "level": null
   },
   "pointsofinterest": [
+{
+  "videos": [
     {
-      "status": true,
-      "city": "Newport",
-      "website": "",
-      "modified": "2014-08-08T23:27:05.568Z",
-      "description": "Fake Newport Tuna",
-      "zip": "97365",
-      "created": "2014-08-08T23:27:05.568Z",
-      "story": 2,
-      "ext": {
-
-      },
-      "location_description": "Located on Bay Blvd in Newport",
-      "lng": -124.050122,
-      "email": "",
-      "hours": "",
-      "phone": null,
-      "state": "OR",
-      "street": "146 SE Bay Blvd",
-      "products": [
-        {
-          "preparation": "Frozen",
-          "preparation_id": 1,
-          "product_id": 2,
-          "name": "Tuna"
-        }
-      ],
-      "lat": 44.631592,
-      "contact_name": "Newport Tuna Contact",
-      "id": 3,
-      "name": "Newport Tuna"
-    },
-    {
-      "status": true,
-      "city": "Newport",
-      "website": "",
-      "modified": "2014-08-08T23:27:05.568Z",
-      "description": "Fake Newport Halibut",
-      "zip": "97365",
-      "created": "2014-08-08T23:27:05.568Z",
-      "story": 1,
-      "ext": {
-
-      },
-      "location_description": "Located on Oregon Coast Hwy in Newport",
-      "lng": -124.052868,
-      "email": "",
-      "hours": "",
-      "phone": null,
-      "state": "OR",
-      "street": "1226 Oregon Coast Hwy",
-      "products": [
-        {
-          "preparation": "Frozen",
-          "preparation_id": 1,
-          "product_id": 1,
-          "name": "Halibut"
-        }
-      ],
-      "lat": 44.646006,
-      "contact_name": "Newpotr Halibut Contact",
-      "id": 4,
-      "name": "Newport Halibut"
-    },
-    {
-      "status": true,
-      "city": "Waldport",
-      "website": "",
-      "modified": "2014-08-08T23:27:05.568Z",
-      "description": "Fake Waldport Tuna",
-      "zip": "97394",
-      "created": "2014-08-08T23:27:05.568Z",
-      "story": 2,
-      "ext": {
-
-      },
-      "location_description": "Located on Spring St in Waldport",
-      "lng": -124.066166,
-      "email": "",
-      "hours": "",
-      "phone": null,
-      "state": "OR",
-      "street": "522 NW Spring St",
-      "products": [
-        {
-          "preparation": "Frozen",
-          "preparation_id": 1,
-          "product_id": 2,
-          "name": "Tuna"
-        }
-      ],
-      "lat": 44.427761,
-      "contact_name": "Waldport Tuna Contact",
-      "id": 5,
-      "name": "Waldport Tuna"
-    },
-    {
-      "status": true,
-      "city": "Waldport",
-      "website": "",
-      "modified": "2014-08-08T23:27:05.568Z",
-      "description": "Fake Waldport Halibut",
-      "zip": "97364",
-      "created": "2014-08-08T23:27:05.568Z",
-      "story": 1,
-      "ext": {
-
-      },
-      "location_description": "Located on SW Maple St in Waldport",
-      "lng": -124.069126,
-      "email": "",
-      "hours": "",
-      "phone": null,
-      "state": "OR",
-      "street": "190 SW Maple St",
-      "products": [
-        {
-          "preparation": "Frozen",
-          "preparation_id": 1,
-          "product_id": 1,
-          "name": "Halibut"
-        }
-      ],
-      "lat": 44.425188,
-      "contact_name": "Waldport Halibut Contact",
-      "id": 6,
-      "name": "Waldport Halibut"
-    },
-    {
-      "status": true,
-      "city": "Cloverdale",
-      "website": "",
-      "modified": "2014-08-08T23:27:05.568Z",
-      "description": "Fake Pacific City Tuna",
-      "zip": "97112",
-      "created": "2014-08-08T23:27:05.568Z",
-      "story": 2,
-      "ext": {
-
-      },
-      "location_description": "Located on Roger Ave in Pacific City",
-      "lng": -123.958093,
-      "email": "",
-      "hours": "",
-      "phone": null,
-      "state": "OR",
-      "street": "35650 Roger Ave",
-      "products": [
-        {
-          "preparation": "Frozen",
-          "preparation_id": 1,
-          "product_id": 2,
-          "name": "Tuna"
-        }
-      ],
-      "lat": 45.197105,
-      "contact_name": "Pacific City Tuna Contact",
-      "id": 7,
-      "name": "Pacific City Tuna"
-    },
-    {
-      "status": true,
-      "city": "Cloverdale",
-      "website": "",
-      "modified": "2014-08-08T23:27:05.568Z",
-      "description": "Fake Pacific City Halibut",
-      "zip": "97112",
-      "created": "2014-08-08T23:27:05.568Z",
-      "story": 1,
-      "ext": {
-
-      },
-      "location_description": "Located on Brooten Rd in Pacific City",
-      "lng": -123.959418,
-      "email": "",
-      "hours": "",
-      "phone": null,
-      "state": "OR",
-      "street": "34455 Brooten Rd",
-      "products": [
-        {
-          "preparation": "Frozen",
-          "preparation_id": 1,
-          "product_id": 1,
-          "name": "Halibut"
-        }
-      ],
-      "lat": 45.207253,
-      "contact_name": "Pacific City Halibut Contact",
-      "id": 8,
-      "name": "Pacific City Halibut"
+      "caption": "Traveling at the speed of light!",
+      "link": "http://www.youtube.com/watch?v=efgDdSWDg0g",
+      "name": "A Starship"
     }
+  ],
+  "images": [
+    {
+      "caption": "Meow!",
+      "link": "/media/cat.jpg",
+      "name": "A cat"
+    }
+  ],
+  "street": "146 SE Bay Blvd",
+  "alt_name": "",
+  "facts": "",
+  "lng": -124.050122,
+  "contact_name": "Newport Tuna Contact",
+  "city": "Newport",
+  "zip": "97365",
+  "hazards": [
+    {
+      "id": 1,
+      "name": "Falling Rocks",
+      "description": "If these fall on you, you're dead."
+    },
+    {
+      "id": 3,
+      "name": "Falling Rocks 3",
+      "description": "If these fall on you, you're dead."
+    },
+    {
+      "id": 5,
+      "name": "Falling Rocks 5",
+      "description": "If these fall on you, you're dead."
+    }
+  ],
+  "location_description": "Located on Bay Blvd in Newport",
+  "id": 3,
+  "state": "OR",
+  "email": "",
+  "website": "",
+  "description": "Fake Newport Tuna",
+  "hours": "",
+  "phone": null,
+  "lat": 44.631592,
+  "categories": [
+    {
+      "category": "Cool Stuff",
+      "id": 1
+    },
+    {
+      "category": "Fish Shops",
+      "id": 3
+    },
+    {
+      "category": "Large Obelisks",
+      "id": 5
+    }
+  ],
+  "name": "Newport Tuna",
+  "created": "2014-08-08T23:27:05.568Z",
+  "modified": "2014-08-08T23:27:05.568Z",
+  "ext": {
+
+  },
+  "history": ""
+},
+{
+  "videos": [
+    {
+      "caption": "Princely",
+      "link": "http://www.youtube.com/watch?v=M-nlAuCW7WY",
+      "name": "Princely"
+    }
+  ],
+  "images": [
+    {
+      "caption": "Woof!",
+      "link": "/media/dog.jpg",
+      "name": "A dog"
+    }
+  ],
+  "street": "1226 Oregon Coast Hwy",
+  "alt_name": "",
+  "facts": "",
+  "lng": -124.052868,
+  "contact_name": "Newpotr Halibut Contact",
+  "city": "Newport",
+  "zip": "97365",
+  "hazards": [
+    {
+      "id": 2,
+      "name": "Alien Abduction",
+      "description": "This site is liable to result in you being abducted by aliens."
+    },
+    {
+      "id": 4,
+      "name": "Alien Abduction 4",
+      "description": "This site is liable to result in you being abducted by aliens."
+    },
+    {
+      "id": 6,
+      "name": "Alien Abduction 6",
+      "description": "This site is liable to result in you being abducted by aliens."
+    }
+  ],
+  "location_description": "Located on Oregon Coast Hwy in Newport",
+  "id": 4,
+  "state": "OR",
+  "email": "",
+  "website": "",
+  "description": "Fake Newport Halibut",
+  "hours": "",
+  "phone": null,
+  "lat": 44.646006,
+  "categories": [
+    {
+      "category": "Uncool Stuff",
+      "id": 2
+    },
+    {
+      "category": "Non-Fish Shops",
+      "id": 4
+    },
+    {
+      "category": "Test Category Do Not Upvote",
+      "id": 6
+    }
+  ],
+  "name": "Newport Halibut",
+  "created": "2014-08-08T23:27:05.568Z",
+  "modified": "2014-08-08T23:27:05.568Z",
+  "ext": {
+
+  },
+  "history": ""
+},
+{
+  "videos": [
+    {
+      "caption": "Traveling at the speed of light!",
+      "link": "http://www.youtube.com/watch?v=efgDdSWDg0g",
+      "name": "A Starship"
+    }
+  ],
+  "images": [
+    {
+      "caption": "Meow!",
+      "link": "/media/cat.jpg",
+      "name": "A cat"
+    }
+  ],
+  "street": "522 NW Spring St",
+  "alt_name": "",
+  "facts": "",
+  "lng": -124.066166,
+  "contact_name": "Waldport Tuna Contact",
+  "city": "Waldport",
+  "zip": "97394",
+  "hazards": [
+    {
+      "id": 1,
+      "name": "Falling Rocks",
+      "description": "If these fall on you, you're dead."
+    },
+    {
+      "id": 3,
+      "name": "Falling Rocks 3",
+      "description": "If these fall on you, you're dead."
+    },
+    {
+      "id": 5,
+      "name": "Falling Rocks 5",
+      "description": "If these fall on you, you're dead."
+    }
+  ],
+  "location_description": "Located on Spring St in Waldport",
+  "id": 5,
+  "state": "OR",
+  "email": "",
+  "website": "",
+  "description": "Fake Waldport Tuna",
+  "hours": "",
+  "phone": null,
+  "lat": 44.427761,
+  "categories": [
+    {
+      "category": "Cool Stuff",
+      "id": 1
+    },
+    {
+      "category": "Fish Shops",
+      "id": 3
+    },
+    {
+      "category": "Large Obelisks",
+      "id": 5
+    }
+  ],
+  "name": "Waldport Tuna",
+  "created": "2014-08-08T23:27:05.568Z",
+  "modified": "2014-08-08T23:27:05.568Z",
+  "ext": {
+
+  },
+  "history": ""
+},
+{
+  "videos": [
+    {
+      "caption": "Princely",
+      "link": "http://www.youtube.com/watch?v=M-nlAuCW7WY",
+      "name": "Princely"
+    }
+  ],
+  "images": [
+    {
+      "caption": "Woof!",
+      "link": "/media/dog.jpg",
+      "name": "A dog"
+    }
+  ],
+  "street": "190 SW Maple St",
+  "alt_name": "",
+  "facts": "",
+  "lng": -124.069126,
+  "contact_name": "Waldport Halibut Contact",
+  "city": "Waldport",
+  "zip": "97364",
+  "hazards": [
+    {
+      "id": 2,
+      "name": "Alien Abduction",
+      "description": "This site is liable to result in you being abducted by aliens."
+    },
+    {
+      "id": 4,
+      "name": "Alien Abduction 4",
+      "description": "This site is liable to result in you being abducted by aliens."
+    },
+    {
+      "id": 6,
+      "name": "Alien Abduction 6",
+      "description": "This site is liable to result in you being abducted by aliens."
+    }
+  ],
+  "location_description": "Located on SW Maple St in Waldport",
+  "id": 6,
+  "state": "OR",
+  "email": "",
+  "website": "",
+  "description": "Fake Waldport Halibut",
+  "hours": "",
+  "phone": null,
+  "lat": 44.425188,
+  "categories": [
+    {
+      "category": "Uncool Stuff",
+      "id": 2
+    },
+    {
+      "category": "Non-Fish Shops",
+      "id": 4
+    },
+    {
+      "category": "Test Category Do Not Upvote",
+      "id": 6
+    }
+  ],
+  "name": "Waldport Halibut",
+  "created": "2014-08-08T23:27:05.568Z",
+  "modified": "2014-08-08T23:27:05.568Z",
+  "ext": {
+
+  },
+  "history": ""
+},
+{
+  "videos": [
+    {
+      "caption": "Traveling at the speed of light!",
+      "link": "http://www.youtube.com/watch?v=efgDdSWDg0g",
+      "name": "A Starship"
+    }
+  ],
+  "facts": "",
+  "street": "35650 Roger Ave",
+  "alt_name": "",
+  "images": [
+    {
+      "caption": "Meow!",
+      "link": "/media/cat.jpg",
+      "name": "A cat"
+    }
+  ],
+  "contact_name": "Pacific City Tuna Contact",
+  "id": 7,
+  "city": "Cloverdale",
+  "zip": "97112",
+  "hazards": [
+    {
+      "id": 1,
+      "name": "Falling Rocks",
+      "description": "If these fall on you, you're dead."
+    },
+    {
+      "id": 3,
+      "name": "Falling Rocks 3",
+      "description": "If these fall on you, you're dead."
+    },
+    {
+      "id": 5,
+      "name": "Falling Rocks 5",
+      "description": "If these fall on you, you're dead."
+    }
+  ],
+  "ext": {
+
+  },
+  "state": "OR",
+  "email": "",
+  "website": "",
+  "description": "Fake Pacific City Tuna",
+  "hours": "",
+  "phone": null,
+  "lat": 45.197105,
+  "categories": [
+    {
+      "category": "Cool Stuff",
+      "id": 1
+    },
+    {
+      "category": "Fish Shops",
+      "id": 3
+    },
+    {
+      "category": "Large Obelisks",
+      "id": 5
+    }
+  ],
+  "name": "Pacific City Tuna",
+  "created": "2014-08-08T23:27:05.568Z",
+  "modified": "2014-08-08T23:27:05.568Z",
+  "location_description": "Located on Roger Ave in Pacific City",
+  "lng": -123.958093,
+  "history": ""
+},
+{
+  "videos": [
+    {
+      "caption": "Princely",
+      "link": "http://www.youtube.com/watch?v=M-nlAuCW7WY",
+      "name": "Princely"
+    }
+  ],
+  "facts": "",
+  "street": "34455 Brooten Rd",
+  "alt_name": "",
+  "images": [
+    {
+      "caption": "Woof!",
+      "link": "/media/dog.jpg",
+      "name": "A dog"
+    }
+  ],
+  "contact_name": "Pacific City Halibut Contact",
+  "id": 8,
+  "city": "Cloverdale",
+  "zip": "97112",
+  "hazards": [
+    {
+      "id": 2,
+      "name": "Alien Abduction",
+      "description": "This site is liable to result in you being abducted by aliens."
+    },
+    {
+      "id": 4,
+      "name": "Alien Abduction 4",
+      "description": "This site is liable to result in you being abducted by aliens."
+    },
+    {
+      "id": 6,
+      "name": "Alien Abduction 6",
+      "description": "This site is liable to result in you being abducted by aliens."
+    }
+  ],
+  "ext": {
+
+  },
+  "state": "OR",
+  "email": "",
+  "website": "",
+  "description": "Fake Pacific City Halibut",
+  "hours": "",
+  "phone": null,
+  "lat": 45.207253,
+  "categories": [
+    {
+      "category": "Uncool Stuff",
+      "id": 2
+    },
+    {
+      "category": "Non-Fish Shops",
+      "id": 4
+    },
+    {
+      "category": "Test Category Do Not Upvote",
+      "id": 6
+    }
+  ],
+  "name": "Pacific City Halibut",
+  "created": "2014-08-08T23:27:05.568Z",
+  "modified": "2014-08-08T23:27:05.568Z",
+  "location_description": "Located on Brooten Rd in Pacific City",
+  "lng": -123.959418,
+  "history": ""
+}
   ]
 }"""
 
@@ -638,9 +1018,52 @@ WKT EWKT, and HEXEWKB."
     "lat": 45.518962,
     "name": "Portland Tuna",
     "created": "2014-08-08T23:27:05.568Z",
+      "alt_name": "",
+      "history": "",
+      "facts": "",
     "ext": {
 
     },
+    "images": [{
+      "link": "/media/cat.jpg",
+      "caption": "Meow!",
+      "name": "A cat"}],
+    "videos": [{
+      "link": "http://www.youtube.com/watch?v=efgDdSWDg0g",
+      "name": "A Starship",
+      "caption": "Traveling at the speed of light!"}
+    ],
+    "categories": [
+      {
+        "category": "Cool Stuff",
+        "id": 1
+      },
+      {
+        "category": "Fish Shops",
+        "id": 3
+      },
+      {
+        "category": "Large Obelisks",
+        "id": 5
+      }
+    ],
+    "hazards": [
+      {
+      "name": "Falling Rocks",
+      "description": "If these fall on you, you're dead.",
+        "id": 1
+      },
+      {
+      "name": "Falling Rocks 3",
+      "description": "If these fall on you, you're dead.",
+        "id": 3
+      },
+      {
+      "name": "Falling Rocks 5",
+      "description": "If these fall on you, you're dead.",
+        "id": 5
+      }
+    ]
   },
   {
     "id": 3,
@@ -660,9 +1083,52 @@ WKT EWKT, and HEXEWKB."
     "lat": 44.631592,
     "name": "Newport Tuna",
     "created": "2014-08-08T23:27:05.568Z",
+      "alt_name": "",
+      "history": "",
+      "facts": "",
     "ext": {
 
     },
+    "images": [{
+      "link": "/media/cat.jpg",
+      "caption": "Meow!",
+      "name": "A cat"}],
+    "videos": [{
+      "link": "http://www.youtube.com/watch?v=efgDdSWDg0g",
+      "name": "A Starship",
+      "caption": "Traveling at the speed of light!"}
+    ],
+    "categories": [
+      {
+        "category": "Cool Stuff",
+        "id": 1
+      },
+      {
+        "category": "Fish Shops",
+        "id": 3
+      },
+      {
+        "category": "Large Obelisks",
+        "id": 5
+      }
+    ],
+    "hazards": [
+      {
+      "name": "Falling Rocks",
+      "description": "If these fall on you, you're dead.",
+        "id": 1
+      },
+      {
+      "name": "Falling Rocks 3",
+      "description": "If these fall on you, you're dead.",
+        "id": 3
+      },
+      {
+      "name": "Falling Rocks 5",
+      "description": "If these fall on you, you're dead.",
+        "id": 5
+      }
+    ]
   },
   {
     "id": 2,
@@ -682,9 +1148,52 @@ WKT EWKT, and HEXEWKB."
     "lat": 45.520988,
     "name": "Portland Halibut",
     "created": "2014-08-08T23:27:05.568Z",
+      "alt_name": "",
+      "history": "",
+      "facts": "",
     "ext": {
 
     },
+    "images": [{
+      "link": "/media/dog.jpg",
+      "caption": "Woof!",
+      "name": "A dog"}],
+    "videos": [{
+      "link": "http://www.youtube.com/watch?v=M-nlAuCW7WY",
+      "caption": "Princely",
+      "name": "Princely"}
+    ],
+    "categories": [
+      {
+        "category": "Uncool Stuff",
+        "id": 2
+      },
+      {
+        "category": "Non-Fish Shops",
+        "id": 4
+      },
+      {
+        "category": "Test Category Do Not Upvote",
+        "id": 6
+      }
+    ],
+    "hazards": [
+      {
+      "name": "Alien Abduction",
+      "description": "This site is liable to result in you being abducted by aliens.",
+        "id": 2
+      },
+      {
+      "name": "Alien Abduction 4",
+      "description": "This site is liable to result in you being abducted by aliens.",
+        "id": 4
+      },
+      {
+      "name": "Alien Abduction 6",
+      "description": "This site is liable to result in you being abducted by aliens.",
+        "id": 6
+      }
+    ]
   },
   {
     "id": 5,
@@ -704,9 +1213,52 @@ WKT EWKT, and HEXEWKB."
     "lat": 44.427761,
     "name": "Waldport Tuna",
     "created": "2014-08-08T23:27:05.568Z",
+      "alt_name": "",
+      "history": "",
+      "facts": "",
     "ext": {
 
     },
+    "images": [{
+      "link": "/media/cat.jpg",
+      "caption": "Meow!",
+      "name": "A cat"}],
+    "videos": [{
+      "link": "http://www.youtube.com/watch?v=efgDdSWDg0g",
+      "name": "A Starship",
+      "caption": "Traveling at the speed of light!"}
+    ],
+    "categories": [
+      {
+        "category": "Cool Stuff",
+        "id": 1
+      },
+      {
+        "category": "Fish Shops",
+        "id": 3
+      },
+      {
+        "category": "Large Obelisks",
+        "id": 5
+      }
+    ],
+    "hazards": [
+      {
+      "name": "Falling Rocks",
+      "description": "If these fall on you, you're dead.",
+        "id": 1
+      },
+      {
+      "name": "Falling Rocks 3",
+      "description": "If these fall on you, you're dead.",
+        "id": 3
+      },
+      {
+      "name": "Falling Rocks 5",
+      "description": "If these fall on you, you're dead.",
+        "id": 5
+      }
+    ]
   },
   {
     "id": 4,
@@ -726,9 +1278,52 @@ WKT EWKT, and HEXEWKB."
     "lat": 44.646006,
     "name": "Newport Halibut",
     "created": "2014-08-08T23:27:05.568Z",
+      "alt_name": "",
+      "history": "",
+      "facts": "",
     "ext": {
 
     },
+    "images": [{
+      "link": "/media/dog.jpg",
+      "caption": "Woof!",
+      "name": "A dog"}],
+    "videos": [{
+      "link": "http://www.youtube.com/watch?v=M-nlAuCW7WY",
+      "caption": "Princely",
+      "name": "Princely"}
+    ],
+    "categories": [
+      {
+        "category": "Uncool Stuff",
+        "id": 2
+      },
+      {
+        "category": "Non-Fish Shops",
+        "id": 4
+      },
+      {
+        "category": "Test Category Do Not Upvote",
+        "id": 6
+      }
+    ],
+    "hazards": [
+      {
+      "name": "Alien Abduction",
+      "description": "This site is liable to result in you being abducted by aliens.",
+        "id": 2
+      },
+      {
+      "name": "Alien Abduction 4",
+      "description": "This site is liable to result in you being abducted by aliens.",
+        "id": 4
+      },
+      {
+      "name": "Alien Abduction 6",
+      "description": "This site is liable to result in you being abducted by aliens.",
+        "id": 6
+      }
+    ]
   },
   {
     "id": 6,
@@ -748,9 +1343,52 @@ WKT EWKT, and HEXEWKB."
     "lat": 44.425188,
     "name": "Waldport Halibut",
     "created": "2014-08-08T23:27:05.568Z",
+      "alt_name": "",
+      "history": "",
+      "facts": "",
     "ext": {
 
     },
+    "images": [{
+      "link": "/media/dog.jpg",
+      "caption": "Woof!",
+      "name": "A dog"}],
+    "videos": [{
+      "link": "http://www.youtube.com/watch?v=M-nlAuCW7WY",
+      "caption": "Princely",
+      "name": "Princely"}
+    ],
+    "categories": [
+      {
+        "category": "Uncool Stuff",
+        "id": 2
+      },
+      {
+        "category": "Non-Fish Shops",
+        "id": 4
+      },
+      {
+        "category": "Test Category Do Not Upvote",
+        "id": 6
+      }
+    ],
+    "hazards": [
+      {
+      "name": "Alien Abduction",
+      "description": "This site is liable to result in you being abducted by aliens.",
+        "id": 2
+      },
+      {
+      "name": "Alien Abduction 4",
+      "description": "This site is liable to result in you being abducted by aliens.",
+        "id": 4
+      },
+      {
+      "name": "Alien Abduction 6",
+      "description": "This site is liable to result in you being abducted by aliens.",
+        "id": 6
+      }
+    ]
   },
     {
       "city": "Cloverdale",
@@ -759,6 +1397,9 @@ WKT EWKT, and HEXEWKB."
       "description": "Fake Pacific City Tuna",
       "zip": "97112",
       "created": "2014-08-08T23:27:05.568Z",
+      "alt_name": "",
+      "history": "",
+      "facts": "",
       "ext": {
 
       },
@@ -772,7 +1413,47 @@ WKT EWKT, and HEXEWKB."
       "lat": 45.197105,
       "contact_name": "Pacific City Tuna Contact",
       "id": 7,
-      "name": "Pacific City Tuna"
+      "name": "Pacific City Tuna",
+    "images": [{
+      "link": "/media/cat.jpg",
+      "caption": "Meow!",
+      "name": "A cat"}],
+    "videos": [{
+      "link": "http://www.youtube.com/watch?v=efgDdSWDg0g",
+      "name": "A Starship",
+      "caption": "Traveling at the speed of light!"}
+    ],
+    "categories": [
+      {
+        "category": "Cool Stuff",
+        "id": 1
+      },
+      {
+        "category": "Fish Shops",
+        "id": 3
+      },
+      {
+        "category": "Large Obelisks",
+        "id": 5
+      }
+    ],
+    "hazards": [
+      {
+      "name": "Falling Rocks",
+      "description": "If these fall on you, you're dead.",
+        "id": 1
+      },
+      {
+      "name": "Falling Rocks 3",
+      "description": "If these fall on you, you're dead.",
+        "id": 3
+      },
+      {
+      "name": "Falling Rocks 5",
+      "description": "If these fall on you, you're dead.",
+        "id": 5
+      }
+    ]
     },
     {
       "city": "Cloverdale",
@@ -781,6 +1462,9 @@ WKT EWKT, and HEXEWKB."
       "description": "Fake Pacific City Halibut",
       "zip": "97112",
       "created": "2014-08-08T23:27:05.568Z",
+      "alt_name": "",
+      "history": "",
+      "facts": "",
       "ext": {
 
       },
@@ -794,7 +1478,47 @@ WKT EWKT, and HEXEWKB."
       "lat": 45.207253,
       "contact_name": "Pacific City Halibut Contact",
       "id": 8,
-      "name": "Pacific City Halibut"
+      "name": "Pacific City Halibut",
+    "images": [{
+      "link": "/media/dog.jpg",
+      "caption": "Woof!",
+      "name": "A dog"}],
+    "videos": [{
+      "link": "http://www.youtube.com/watch?v=M-nlAuCW7WY",
+      "caption": "Princely",
+      "name": "Princely"}
+    ],
+    "categories": [
+      {
+        "category": "Uncool Stuff",
+        "id": 2
+      },
+      {
+        "category": "Non-Fish Shops",
+        "id": 4
+      },
+      {
+        "category": "Test Category Do Not Upvote",
+        "id": 6
+      }
+    ],
+    "hazards": [
+      {
+      "name": "Alien Abduction",
+      "description": "This site is liable to result in you being abducted by aliens.",
+        "id": 2
+      },
+      {
+      "name": "Alien Abduction 4",
+      "description": "This site is liable to result in you being abducted by aliens.",
+        "id": 4
+      },
+      {
+      "name": "Alien Abduction 6",
+      "description": "This site is liable to result in you being abducted by aliens.",
+        "id": 6
+      }
+    ]
     }
   ]
 }"""
@@ -814,190 +1538,565 @@ Geometry returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   },
   "pointsofinterest": [
   {
-    "id": 1,
-    "website": "",
-    "street": "720 SW Broadway",
-    "contact_name": "Portland Tuna Contact",
-    "city": "Portland",
-    "zip": "97204",
-    "location_description": "Located on Broadway in Portland",
-    "lng": -122.67963,
-    "state": "OR",
-    "hours": "",
-    "email": "",
-    "modified": "2014-08-08T23:27:05.568Z",
-    "description": "Fake Portland Tuna",
-    "phone": null,
-    "lat": 45.518962,
-    "name": "Portland Tuna",
-    "created": "2014-08-08T23:27:05.568Z",
-    "ext": {
-
-    },
-  },
-  {
-    "id": 3,
-    "website": "",
-    "street": "146 SE Bay Blvd",
-    "contact_name": "Newport Tuna Contact",
-    "city": "Newport",
-    "zip": "97365",
-    "location_description": "Located on Bay Blvd in Newport",
-    "lng": -124.050122,
-    "state": "OR",
-    "hours": "",
-    "email": "",
-    "modified": "2014-08-08T23:27:05.568Z",
-    "description": "Fake Newport Tuna",
-    "phone": null,
-    "lat": 44.631592,
-    "name": "Newport Tuna",
-    "created": "2014-08-08T23:27:05.568Z",
-    "ext": {
-
-    },
-    "products": [
-      {
-        "product_id": 2,
-        "preparation_id": 1,
-        "preparation": "Frozen",
-        "name": "Tuna"
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "website": "",
-    "street": "1 SW Pine St",
-    "contact_name": "Portland Halibut Contact",
-    "city": "Portland",
-    "zip": "97204",
-    "location_description": "Located on Pine in Portland",
-    "lng": -122.670619,
-    "state": "OR",
-    "hours": "",
-    "email": "",
-    "modified": "2014-08-08T23:27:05.568Z",
-    "description": "Fake Portland Halibut",
-    "phone": null,
-    "lat": 45.520988,
-    "name": "Portland Halibut",
-    "created": "2014-08-08T23:27:05.568Z",
-    "ext": {
-
-    },
-  },
-  {
-    "id": 5,
-    "website": "",
-    "street": "522 NW Spring St",
-    "contact_name": "Waldport Tuna Contact",
-    "city": "Waldport",
-    "zip": "97394",
-    "location_description": "Located on Spring St in Waldport",
-    "lng": -124.066166,
-    "state": "OR",
-    "hours": "",
-    "email": "",
-    "modified": "2014-08-08T23:27:05.568Z",
-    "description": "Fake Waldport Tuna",
-    "phone": null,
-    "lat": 44.427761,
-    "name": "Waldport Tuna",
-    "created": "2014-08-08T23:27:05.568Z",
-    "ext": {
-
-    },
-  },
-  {
-    "id": 4,
-    "website": "",
-    "street": "1226 Oregon Coast Hwy",
-    "contact_name": "Newpotr Halibut Contact",
-    "city": "Newport",
-    "zip": "97365",
-    "location_description": "Located on Oregon Coast Hwy in Newport",
-    "lng": -124.052868,
-    "state": "OR",
-    "hours": "",
-    "email": "",
-    "modified": "2014-08-08T23:27:05.568Z",
-    "description": "Fake Newport Halibut",
-    "phone": null,
-    "lat": 44.646006,
-    "name": "Newport Halibut",
-    "created": "2014-08-08T23:27:05.568Z",
-    "ext": {
-
-    },
-  },
-  {
-    "id": 6,
-    "website": "",
-    "street": "190 SW Maple St",
-    "contact_name": "Waldport Halibut Contact",
-    "city": "Waldport",
-    "zip": "97364",
-    "location_description": "Located on SW Maple St in Waldport",
-    "lng": -124.069126,
-    "state": "OR",
-    "hours": "",
-    "email": "",
-    "modified": "2014-08-08T23:27:05.568Z",
-    "description": "Fake Waldport Halibut",
-    "phone": null,
-    "lat": 44.425188,
-    "name": "Waldport Halibut",
-    "created": "2014-08-08T23:27:05.568Z",
-    "ext": {
-
-    },
-  },
+  "videos": [
     {
-      "city": "Cloverdale",
-      "website": "",
-      "modified": "2014-08-08T23:27:05.568Z",
-      "description": "Fake Pacific City Tuna",
-      "zip": "97112",
-      "created": "2014-08-08T23:27:05.568Z",
-      "ext": {
-
-      },
-      "location_description": "Located on Roger Ave in Pacific City",
-      "lng": -123.958093,
-      "email": "",
-      "hours": "",
-      "phone": null,
-      "state": "OR",
-      "street": "35650 Roger Ave",
-      "lat": 45.197105,
-      "contact_name": "Pacific City Tuna Contact",
-      "id": 7,
-      "name": "Pacific City Tuna"
-    },
-    {
-      "city": "Cloverdale",
-      "website": "",
-      "modified": "2014-08-08T23:27:05.568Z",
-      "description": "Fake Pacific City Halibut",
-      "zip": "97112",
-      "created": "2014-08-08T23:27:05.568Z",
-      "story": 1,
-      "ext": {
-
-      },
-      "location_description": "Located on Brooten Rd in Pacific City",
-      "lng": -123.959418,
-      "email": "",
-      "hours": "",
-      "phone": null,
-      "state": "OR",
-      "street": "34455 Brooten Rd",
-      "lat": 45.207253,
-      "contact_name": "Pacific City Halibut Contact",
-      "id": 8,
-      "name": "Pacific City Halibut"
+      "caption": "Traveling at the speed of light!",
+      "link": "http://www.youtube.com/watch?v=efgDdSWDg0g",
+      "name": "A Starship"
     }
+  ],
+  "images": [
+    {
+      "caption": "Meow!",
+      "link": "/media/cat.jpg",
+      "name": "A cat"
+    }
+  ],
+  "street": "720 SW Broadway",
+  "alt_name": "",
+  "facts": "",
+  "lng": -122.67963,
+  "contact_name": "Portland Tuna Contact",
+  "city": "Portland",
+  "zip": "97204",
+  "hazards": [
+    {
+      "id": 1,
+      "name": "Falling Rocks",
+      "description": "If these fall on you, you're dead."
+    },
+    {
+      "id": 3,
+      "name": "Falling Rocks 3",
+      "description": "If these fall on you, you're dead."
+    },
+    {
+      "id": 5,
+      "name": "Falling Rocks 5",
+      "description": "If these fall on you, you're dead."
+    }
+  ],
+  "location_description": "Located on Broadway in Portland",
+  "id": 1,
+  "state": "OR",
+  "email": "",
+  "website": "",
+  "description": "Fake Portland Tuna",
+  "hours": "",
+  "phone": null,
+  "lat": 45.518962,
+  "categories": [
+    {
+      "category": "Cool Stuff",
+      "id": 1
+    },
+    {
+      "category": "Fish Shops",
+      "id": 3
+    },
+    {
+      "category": "Large Obelisks",
+      "id": 5
+    }
+  ],
+  "name": "Portland Tuna",
+  "created": "2014-08-08T23:27:05.568Z",
+  "modified": "2014-08-08T23:27:05.568Z",
+  "ext": {
+
+  },
+  "history": ""
+},
+{
+  "videos": [
+    {
+      "caption": "Traveling at the speed of light!",
+      "link": "http://www.youtube.com/watch?v=efgDdSWDg0g",
+      "name": "A Starship"
+    }
+  ],
+  "images": [
+    {
+      "caption": "Meow!",
+      "link": "/media/cat.jpg",
+      "name": "A cat"
+    }
+  ],
+  "street": "146 SE Bay Blvd",
+  "alt_name": "",
+  "facts": "",
+  "lng": -124.050122,
+  "contact_name": "Newport Tuna Contact",
+  "city": "Newport",
+  "zip": "97365",
+  "hazards": [
+    {
+      "id": 1,
+      "name": "Falling Rocks",
+      "description": "If these fall on you, you're dead."
+    },
+    {
+      "id": 3,
+      "name": "Falling Rocks 3",
+      "description": "If these fall on you, you're dead."
+    },
+    {
+      "id": 5,
+      "name": "Falling Rocks 5",
+      "description": "If these fall on you, you're dead."
+    }
+  ],
+  "location_description": "Located on Bay Blvd in Newport",
+  "id": 3,
+  "state": "OR",
+  "email": "",
+  "website": "",
+  "description": "Fake Newport Tuna",
+  "hours": "",
+  "phone": null,
+  "lat": 44.631592,
+  "categories": [
+    {
+      "category": "Cool Stuff",
+      "id": 1
+    },
+    {
+      "category": "Fish Shops",
+      "id": 3
+    },
+    {
+      "category": "Large Obelisks",
+      "id": 5
+    }
+  ],
+  "name": "Newport Tuna",
+  "created": "2014-08-08T23:27:05.568Z",
+  "modified": "2014-08-08T23:27:05.568Z",
+  "ext": {
+
+  },
+  "history": ""
+},
+{
+  "videos": [
+    {
+      "caption": "Princely",
+      "link": "http://www.youtube.com/watch?v=M-nlAuCW7WY",
+      "name": "Princely"
+    }
+  ],
+  "images": [
+    {
+      "caption": "Woof!",
+      "link": "/media/dog.jpg",
+      "name": "A dog"
+    }
+  ],
+  "street": "1 SW Pine St",
+  "alt_name": "",
+  "facts": "",
+  "lng": -122.670619,
+  "contact_name": "Portland Halibut Contact",
+  "city": "Portland",
+  "zip": "97204",
+  "hazards": [
+    {
+      "id": 2,
+      "name": "Alien Abduction",
+      "description": "This site is liable to result in you being abducted by aliens."
+    },
+    {
+      "id": 4,
+      "name": "Alien Abduction 4",
+      "description": "This site is liable to result in you being abducted by aliens."
+    },
+    {
+      "id": 6,
+      "name": "Alien Abduction 6",
+      "description": "This site is liable to result in you being abducted by aliens."
+    }
+  ],
+  "location_description": "Located on Pine in Portland",
+  "id": 2,
+  "state": "OR",
+  "email": "",
+  "website": "",
+  "description": "Fake Portland Halibut",
+  "hours": "",
+  "phone": null,
+  "lat": 45.520988,
+  "categories": [
+    {
+      "category": "Uncool Stuff",
+      "id": 2
+    },
+    {
+      "category": "Non-Fish Shops",
+      "id": 4
+    },
+    {
+      "category": "Test Category Do Not Upvote",
+      "id": 6
+    }
+  ],
+  "name": "Portland Halibut",
+  "created": "2014-08-08T23:27:05.568Z",
+  "modified": "2014-08-08T23:27:05.568Z",
+  "ext": {
+
+  },
+  "history": ""
+},
+{
+  "videos": [
+    {
+      "caption": "Traveling at the speed of light!",
+      "link": "http://www.youtube.com/watch?v=efgDdSWDg0g",
+      "name": "A Starship"
+    }
+  ],
+  "images": [
+    {
+      "caption": "Meow!",
+      "link": "/media/cat.jpg",
+      "name": "A cat"
+    }
+  ],
+  "street": "522 NW Spring St",
+  "alt_name": "",
+  "facts": "",
+  "lng": -124.066166,
+  "contact_name": "Waldport Tuna Contact",
+  "city": "Waldport",
+  "zip": "97394",
+  "hazards": [
+    {
+      "id": 1,
+      "name": "Falling Rocks",
+      "description": "If these fall on you, you're dead."
+    },
+    {
+      "id": 3,
+      "name": "Falling Rocks 3",
+      "description": "If these fall on you, you're dead."
+    },
+    {
+      "id": 5,
+      "name": "Falling Rocks 5",
+      "description": "If these fall on you, you're dead."
+    }
+  ],
+  "location_description": "Located on Spring St in Waldport",
+  "id": 5,
+  "state": "OR",
+  "email": "",
+  "website": "",
+  "description": "Fake Waldport Tuna",
+  "hours": "",
+  "phone": null,
+  "lat": 44.427761,
+  "categories": [
+    {
+      "category": "Cool Stuff",
+      "id": 1
+    },
+    {
+      "category": "Fish Shops",
+      "id": 3
+    },
+    {
+      "category": "Large Obelisks",
+      "id": 5
+    }
+  ],
+  "name": "Waldport Tuna",
+  "created": "2014-08-08T23:27:05.568Z",
+  "modified": "2014-08-08T23:27:05.568Z",
+  "ext": {
+
+  },
+  "history": ""
+},
+{
+  "videos": [
+    {
+      "caption": "Princely",
+      "link": "http://www.youtube.com/watch?v=M-nlAuCW7WY",
+      "name": "Princely"
+    }
+  ],
+  "images": [
+    {
+      "caption": "Woof!",
+      "link": "/media/dog.jpg",
+      "name": "A dog"
+    }
+  ],
+  "street": "1226 Oregon Coast Hwy",
+  "alt_name": "",
+  "facts": "",
+  "lng": -124.052868,
+  "contact_name": "Newpotr Halibut Contact",
+  "city": "Newport",
+  "zip": "97365",
+  "hazards": [
+    {
+      "id": 2,
+      "name": "Alien Abduction",
+      "description": "This site is liable to result in you being abducted by aliens."
+    },
+    {
+      "id": 4,
+      "name": "Alien Abduction 4",
+      "description": "This site is liable to result in you being abducted by aliens."
+    },
+    {
+      "id": 6,
+      "name": "Alien Abduction 6",
+      "description": "This site is liable to result in you being abducted by aliens."
+    }
+  ],
+  "location_description": "Located on Oregon Coast Hwy in Newport",
+  "id": 4,
+  "state": "OR",
+  "email": "",
+  "website": "",
+  "description": "Fake Newport Halibut",
+  "hours": "",
+  "phone": null,
+  "lat": 44.646006,
+  "categories": [
+    {
+      "category": "Uncool Stuff",
+      "id": 2
+    },
+    {
+      "category": "Non-Fish Shops",
+      "id": 4
+    },
+    {
+      "category": "Test Category Do Not Upvote",
+      "id": 6
+    }
+  ],
+  "name": "Newport Halibut",
+  "created": "2014-08-08T23:27:05.568Z",
+  "modified": "2014-08-08T23:27:05.568Z",
+  "ext": {
+
+  },
+  "history": ""
+},
+{
+  "videos": [
+    {
+      "caption": "Princely",
+      "link": "http://www.youtube.com/watch?v=M-nlAuCW7WY",
+      "name": "Princely"
+    }
+  ],
+  "images": [
+    {
+      "caption": "Woof!",
+      "link": "/media/dog.jpg",
+      "name": "A dog"
+    }
+  ],
+  "street": "190 SW Maple St",
+  "alt_name": "",
+  "facts": "",
+  "lng": -124.069126,
+  "contact_name": "Waldport Halibut Contact",
+  "city": "Waldport",
+  "zip": "97364",
+  "hazards": [
+    {
+      "id": 2,
+      "name": "Alien Abduction",
+      "description": "This site is liable to result in you being abducted by aliens."
+    },
+    {
+      "id": 4,
+      "name": "Alien Abduction 4",
+      "description": "This site is liable to result in you being abducted by aliens."
+    },
+    {
+      "id": 6,
+      "name": "Alien Abduction 6",
+      "description": "This site is liable to result in you being abducted by aliens."
+    }
+  ],
+  "location_description": "Located on SW Maple St in Waldport",
+  "id": 6,
+  "state": "OR",
+  "email": "",
+  "website": "",
+  "description": "Fake Waldport Halibut",
+  "hours": "",
+  "phone": null,
+  "lat": 44.425188,
+  "categories": [
+    {
+      "category": "Uncool Stuff",
+      "id": 2
+    },
+    {
+      "category": "Non-Fish Shops",
+      "id": 4
+    },
+    {
+      "category": "Test Category Do Not Upvote",
+      "id": 6
+    }
+  ],
+  "name": "Waldport Halibut",
+  "created": "2014-08-08T23:27:05.568Z",
+  "modified": "2014-08-08T23:27:05.568Z",
+  "ext": {
+
+  },
+  "history": ""
+},
+{
+  "videos": [
+    {
+      "caption": "Traveling at the speed of light!",
+      "link": "http://www.youtube.com/watch?v=efgDdSWDg0g",
+      "name": "A Starship"
+    }
+  ],
+  "facts": "",
+  "street": "35650 Roger Ave",
+  "alt_name": "",
+  "images": [
+    {
+      "caption": "Meow!",
+      "link": "/media/cat.jpg",
+      "name": "A cat"
+    }
+  ],
+  "contact_name": "Pacific City Tuna Contact",
+  "id": 7,
+  "city": "Cloverdale",
+  "zip": "97112",
+  "hazards": [
+    {
+      "id": 1,
+      "name": "Falling Rocks",
+      "description": "If these fall on you, you're dead."
+    },
+    {
+      "id": 3,
+      "name": "Falling Rocks 3",
+      "description": "If these fall on you, you're dead."
+    },
+    {
+      "id": 5,
+      "name": "Falling Rocks 5",
+      "description": "If these fall on you, you're dead."
+    }
+  ],
+  "ext": {
+
+  },
+  "state": "OR",
+  "email": "",
+  "website": "",
+  "description": "Fake Pacific City Tuna",
+  "hours": "",
+  "phone": null,
+  "lat": 45.197105,
+  "categories": [
+    {
+      "category": "Cool Stuff",
+      "id": 1
+    },
+    {
+      "category": "Fish Shops",
+      "id": 3
+    },
+    {
+      "category": "Large Obelisks",
+      "id": 5
+    }
+  ],
+  "name": "Pacific City Tuna",
+  "created": "2014-08-08T23:27:05.568Z",
+  "modified": "2014-08-08T23:27:05.568Z",
+  "location_description": "Located on Roger Ave in Pacific City",
+  "lng": -123.958093,
+  "history": ""
+},
+{
+  "videos": [
+    {
+      "caption": "Princely",
+      "link": "http://www.youtube.com/watch?v=M-nlAuCW7WY",
+      "name": "Princely"
+    }
+  ],
+  "facts": "",
+  "street": "34455 Brooten Rd",
+  "alt_name": "",
+  "images": [
+    {
+      "caption": "Woof!",
+      "link": "/media/dog.jpg",
+      "name": "A dog"
+    }
+  ],
+  "contact_name": "Pacific City Halibut Contact",
+  "id": 8,
+  "city": "Cloverdale",
+  "zip": "97112",
+  "hazards": [
+    {
+      "id": 2,
+      "name": "Alien Abduction",
+      "description": "This site is liable to result in you being abducted by aliens."
+    },
+    {
+      "id": 4,
+      "name": "Alien Abduction 4",
+      "description": "This site is liable to result in you being abducted by aliens."
+    },
+    {
+      "id": 6,
+      "name": "Alien Abduction 6",
+      "description": "This site is liable to result in you being abducted by aliens."
+    }
+  ],
+  "ext": {
+
+  },
+  "state": "OR",
+  "email": "",
+  "website": "",
+  "description": "Fake Pacific City Halibut",
+  "hours": "",
+  "phone": null,
+  "lat": 45.207253,
+  "categories": [
+    {
+      "category": "Uncool Stuff",
+      "id": 2
+    },
+    {
+      "category": "Non-Fish Shops",
+      "id": 4
+    },
+    {
+      "category": "Test Category Do Not Upvote",
+      "id": 6
+    }
+  ],
+  "name": "Pacific City Halibut",
+  "created": "2014-08-08T23:27:05.568Z",
+  "modified": "2014-08-08T23:27:05.568Z",
+  "location_description": "Located on Brooten Rd in Pacific City",
+  "lng": -123.959418,
+  "history": ""
+}
   ]
 }"""
 
@@ -1016,262 +2115,564 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   },
   "pointsofinterest": [
   {
-    "id": 1,
-    "website": "",
-    "street": "720 SW Broadway",
-    "contact_name": "Portland Tuna Contact",
-    "city": "Portland",
-    "story":  2,
-    "zip": "97204",
-    "location_description": "Located on Broadway in Portland",
-    "lng": -122.67963,
-    "state": "OR",
-    "hours": "",
-    "email": "",
-    "status": true,
-    "modified": "2014-08-08T23:27:05.568Z",
-    "description": "Fake Portland Tuna",
-    "phone": null,
-    "lat": 45.518962,
-    "name": "Portland Tuna",
-    "created": "2014-08-08T23:27:05.568Z",
-    "ext": {
-
-    },
-    "products": [
-      {
-        "product_id": 2,
-        "preparation_id": 1,
-        "preparation": "Frozen",
-        "name": "Tuna"
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "website": "",
-    "street": "146 SE Bay Blvd",
-    "contact_name": "Newport Tuna Contact",
-    "city": "Newport",
-    "story":  2,
-    "zip": "97365",
-    "location_description": "Located on Bay Blvd in Newport",
-    "lng": -124.050122,
-    "state": "OR",
-    "hours": "",
-    "email": "",
-    "status": true,
-    "modified": "2014-08-08T23:27:05.568Z",
-    "description": "Fake Newport Tuna",
-    "phone": null,
-    "lat": 44.631592,
-    "name": "Newport Tuna",
-    "created": "2014-08-08T23:27:05.568Z",
-    "ext": {
-
-    },
-    "products": [
-      {
-        "product_id": 2,
-        "preparation_id": 1,
-        "preparation": "Frozen",
-        "name": "Tuna"
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "website": "",
-    "street": "1 SW Pine St",
-    "contact_name": "Portland Halibut Contact",
-    "city": "Portland",
-    "story":  1,
-    "zip": "97204",
-    "location_description": "Located on Pine in Portland",
-    "lng": -122.670619,
-    "state": "OR",
-    "hours": "",
-    "email": "",
-    "status": true,
-    "modified": "2014-08-08T23:27:05.568Z",
-    "description": "Fake Portland Halibut",
-    "phone": null,
-    "lat": 45.520988,
-    "name": "Portland Halibut",
-    "created": "2014-08-08T23:27:05.568Z",
-    "ext": {
-
-    },
-    "products": [
-      {
-        "product_id": 1,
-        "preparation_id": 1,
-        "preparation": "Frozen",
-        "name": "Halibut"
-      }
-    ]
-  },
-  {
-    "id": 5,
-    "website": "",
-    "street": "522 NW Spring St",
-    "contact_name": "Waldport Tuna Contact",
-    "city": "Waldport",
-    "story":  2,
-    "zip": "97394",
-    "location_description": "Located on Spring St in Waldport",
-    "lng": -124.066166,
-    "state": "OR",
-    "hours": "",
-    "email": "",
-    "status": true,
-    "modified": "2014-08-08T23:27:05.568Z",
-    "description": "Fake Waldport Tuna",
-    "phone": null,
-    "lat": 44.427761,
-    "name": "Waldport Tuna",
-    "created": "2014-08-08T23:27:05.568Z",
-    "ext": {
-
-    },
-    "products": [
-      {
-        "product_id": 2,
-        "preparation_id": 1,
-        "preparation": "Frozen",
-        "name": "Tuna"
-      }
-    ]
-  },
-  {
-    "id": 4,
-    "website": "",
-    "street": "1226 Oregon Coast Hwy",
-    "contact_name": "Newpotr Halibut Contact",
-    "city": "Newport",
-    "story":  1,
-    "zip": "97365",
-    "location_description": "Located on Oregon Coast Hwy in Newport",
-    "lng": -124.052868,
-    "state": "OR",
-    "hours": "",
-    "email": "",
-    "status": true,
-    "modified": "2014-08-08T23:27:05.568Z",
-    "description": "Fake Newport Halibut",
-    "phone": null,
-    "lat": 44.646006,
-    "name": "Newport Halibut",
-    "created": "2014-08-08T23:27:05.568Z",
-    "ext": {
-
-    },
-    "products": [
-      {
-        "product_id": 1,
-        "preparation_id": 1,
-        "preparation": "Frozen",
-        "name": "Halibut"
-      }
-    ]
-  },
-  {
-    "id": 6,
-    "website": "",
-    "street": "190 SW Maple St",
-    "contact_name": "Waldport Halibut Contact",
-    "city": "Waldport",
-    "story":  1,
-    "zip": "97364",
-    "location_description": "Located on SW Maple St in Waldport",
-    "lng": -124.069126,
-    "state": "OR",
-    "hours": "",
-    "email": "",
-    "status": true,
-    "modified": "2014-08-08T23:27:05.568Z",
-    "description": "Fake Waldport Halibut",
-    "phone": null,
-    "lat": 44.425188,
-    "name": "Waldport Halibut",
-    "created": "2014-08-08T23:27:05.568Z",
-    "ext": {
-
-    },
-    "products": [
-       {
-        "product_id": 1,
-        "preparation_id": 1,
-        "preparation": "Frozen",
-        "name": "Halibut"
-      }
-    ]
-  },
+  "videos": [
     {
-      "status": true,
-      "city": "Cloverdale",
-      "website": "",
-      "modified": "2014-08-08T23:27:05.568Z",
-      "description": "Fake Pacific City Tuna",
-      "zip": "97112",
-      "created": "2014-08-08T23:27:05.568Z",
-      "story": 2,
-      "ext": {
-
-      },
-      "location_description": "Located on Roger Ave in Pacific City",
-      "lng": -123.958093,
-      "email": "",
-      "hours": "",
-      "phone": null,
-      "state": "OR",
-      "street": "35650 Roger Ave",
-      "products": [
-      {
-        "product_id": 2,
-        "preparation_id": 1,
-        "preparation": "Frozen",
-        "name": "Tuna"
-      }
-      ],
-      "lat": 45.197105,
-      "contact_name": "Pacific City Tuna Contact",
-      "id": 7,
-      "name": "Pacific City Tuna"
-    },
-    {
-      "status": true,
-      "city": "Cloverdale",
-      "website": "",
-      "modified": "2014-08-08T23:27:05.568Z",
-      "description": "Fake Pacific City Halibut",
-      "zip": "97112",
-      "created": "2014-08-08T23:27:05.568Z",
-      "story": 1,
-      "ext": {
-
-      },
-      "location_description": "Located on Brooten Rd in Pacific City",
-      "lng": -123.959418,
-      "email": "",
-      "hours": "",
-      "phone": null,
-      "state": "OR",
-      "street": "34455 Brooten Rd",
-      "products": [
-       {
-        "product_id": 1,
-        "preparation_id": 1,
-        "preparation": "Frozen",
-        "name": "Halibut"
-      }
-      ],
-      "lat": 45.207253,
-      "contact_name": "Pacific City Halibut Contact",
-      "id": 8,
-      "name": "Pacific City Halibut"
+      "caption": "Traveling at the speed of light!",
+      "link": "http://www.youtube.com/watch?v=efgDdSWDg0g",
+      "name": "A Starship"
     }
-  ]
+  ],
+  "images": [
+    {
+      "caption": "Meow!",
+      "link": "/media/cat.jpg",
+      "name": "A cat"
+    }
+  ],
+  "street": "720 SW Broadway",
+  "alt_name": "",
+  "facts": "",
+  "lng": -122.67963,
+  "contact_name": "Portland Tuna Contact",
+  "city": "Portland",
+  "zip": "97204",
+  "hazards": [
+    {
+      "id": 1,
+      "name": "Falling Rocks",
+      "description": "If these fall on you, you're dead."
+    },
+    {
+      "id": 3,
+      "name": "Falling Rocks 3",
+      "description": "If these fall on you, you're dead."
+    },
+    {
+      "id": 5,
+      "name": "Falling Rocks 5",
+      "description": "If these fall on you, you're dead."
+    }
+  ],
+  "location_description": "Located on Broadway in Portland",
+  "id": 1,
+  "state": "OR",
+  "email": "",
+  "website": "",
+  "description": "Fake Portland Tuna",
+  "hours": "",
+  "phone": null,
+  "lat": 45.518962,
+  "categories": [
+    {
+      "category": "Cool Stuff",
+      "id": 1
+    },
+    {
+      "category": "Fish Shops",
+      "id": 3
+    },
+    {
+      "category": "Large Obelisks",
+      "id": 5
+    }
+  ],
+  "name": "Portland Tuna",
+  "created": "2014-08-08T23:27:05.568Z",
+  "modified": "2014-08-08T23:27:05.568Z",
+  "ext": {
+
+  },
+  "history": ""
+},
+{
+  "videos": [
+    {
+      "caption": "Traveling at the speed of light!",
+      "link": "http://www.youtube.com/watch?v=efgDdSWDg0g",
+      "name": "A Starship"
+    }
+  ],
+  "images": [
+    {
+      "caption": "Meow!",
+      "link": "/media/cat.jpg",
+      "name": "A cat"
+    }
+  ],
+  "street": "146 SE Bay Blvd",
+  "alt_name": "",
+  "facts": "",
+  "lng": -124.050122,
+  "contact_name": "Newport Tuna Contact",
+  "city": "Newport",
+  "zip": "97365",
+  "hazards": [
+    {
+      "id": 1,
+      "name": "Falling Rocks",
+      "description": "If these fall on you, you're dead."
+    },
+    {
+      "id": 3,
+      "name": "Falling Rocks 3",
+      "description": "If these fall on you, you're dead."
+    },
+    {
+      "id": 5,
+      "name": "Falling Rocks 5",
+      "description": "If these fall on you, you're dead."
+    }
+  ],
+  "location_description": "Located on Bay Blvd in Newport",
+  "id": 3,
+  "state": "OR",
+  "email": "",
+  "website": "",
+  "description": "Fake Newport Tuna",
+  "hours": "",
+  "phone": null,
+  "lat": 44.631592,
+  "categories": [
+    {
+      "category": "Cool Stuff",
+      "id": 1
+    },
+    {
+      "category": "Fish Shops",
+      "id": 3
+    },
+    {
+      "category": "Large Obelisks",
+      "id": 5
+    }
+  ],
+  "name": "Newport Tuna",
+  "created": "2014-08-08T23:27:05.568Z",
+  "modified": "2014-08-08T23:27:05.568Z",
+  "ext": {
+
+  },
+  "history": ""
+},
+{
+  "videos": [
+    {
+      "caption": "Princely",
+      "link": "http://www.youtube.com/watch?v=M-nlAuCW7WY",
+      "name": "Princely"
+    }
+  ],
+  "images": [
+    {
+      "caption": "Woof!",
+      "link": "/media/dog.jpg",
+      "name": "A dog"
+    }
+  ],
+  "street": "1 SW Pine St",
+  "alt_name": "",
+  "facts": "",
+  "lng": -122.670619,
+  "contact_name": "Portland Halibut Contact",
+  "city": "Portland",
+  "zip": "97204",
+  "hazards": [
+    {
+      "id": 2,
+      "name": "Alien Abduction",
+      "description": "This site is liable to result in you being abducted by aliens."
+    },
+    {
+      "id": 4,
+      "name": "Alien Abduction 4",
+      "description": "This site is liable to result in you being abducted by aliens."
+    },
+    {
+      "id": 6,
+      "name": "Alien Abduction 6",
+      "description": "This site is liable to result in you being abducted by aliens."
+    }
+  ],
+  "location_description": "Located on Pine in Portland",
+  "id": 2,
+  "state": "OR",
+  "email": "",
+  "website": "",
+  "description": "Fake Portland Halibut",
+  "hours": "",
+  "phone": null,
+  "lat": 45.520988,
+  "categories": [
+    {
+      "category": "Uncool Stuff",
+      "id": 2
+    },
+    {
+      "category": "Non-Fish Shops",
+      "id": 4
+    },
+    {
+      "category": "Test Category Do Not Upvote",
+      "id": 6
+    }
+  ],
+  "name": "Portland Halibut",
+  "created": "2014-08-08T23:27:05.568Z",
+  "modified": "2014-08-08T23:27:05.568Z",
+  "ext": {
+
+  },
+  "history": ""
+},
+{
+  "videos": [
+    {
+      "caption": "Traveling at the speed of light!",
+      "link": "http://www.youtube.com/watch?v=efgDdSWDg0g",
+      "name": "A Starship"
+    }
+  ],
+  "images": [
+    {
+      "caption": "Meow!",
+      "link": "/media/cat.jpg",
+      "name": "A cat"
+    }
+  ],
+  "street": "522 NW Spring St",
+  "alt_name": "",
+  "facts": "",
+  "lng": -124.066166,
+  "contact_name": "Waldport Tuna Contact",
+  "city": "Waldport",
+  "zip": "97394",
+  "hazards": [
+    {
+      "id": 1,
+      "name": "Falling Rocks",
+      "description": "If these fall on you, you're dead."
+    },
+    {
+      "id": 3,
+      "name": "Falling Rocks 3",
+      "description": "If these fall on you, you're dead."
+    },
+    {
+      "id": 5,
+      "name": "Falling Rocks 5",
+      "description": "If these fall on you, you're dead."
+    }
+  ],
+  "location_description": "Located on Spring St in Waldport",
+  "id": 5,
+  "state": "OR",
+  "email": "",
+  "website": "",
+  "description": "Fake Waldport Tuna",
+  "hours": "",
+  "phone": null,
+  "lat": 44.427761,
+  "categories": [
+    {
+      "category": "Cool Stuff",
+      "id": 1
+    },
+    {
+      "category": "Fish Shops",
+      "id": 3
+    },
+    {
+      "category": "Large Obelisks",
+      "id": 5
+    }
+  ],
+  "name": "Waldport Tuna",
+  "created": "2014-08-08T23:27:05.568Z",
+  "modified": "2014-08-08T23:27:05.568Z",
+  "ext": {
+
+  },
+  "history": ""
+},
+{
+  "videos": [
+    {
+      "caption": "Princely",
+      "link": "http://www.youtube.com/watch?v=M-nlAuCW7WY",
+      "name": "Princely"
+    }
+  ],
+  "images": [
+    {
+      "caption": "Woof!",
+      "link": "/media/dog.jpg",
+      "name": "A dog"
+    }
+  ],
+  "street": "1226 Oregon Coast Hwy",
+  "alt_name": "",
+  "facts": "",
+  "lng": -124.052868,
+  "contact_name": "Newpotr Halibut Contact",
+  "city": "Newport",
+  "zip": "97365",
+  "hazards": [
+    {
+      "id": 2,
+      "name": "Alien Abduction",
+      "description": "This site is liable to result in you being abducted by aliens."
+    },
+    {
+      "id": 4,
+      "name": "Alien Abduction 4",
+      "description": "This site is liable to result in you being abducted by aliens."
+    },
+    {
+      "id": 6,
+      "name": "Alien Abduction 6",
+      "description": "This site is liable to result in you being abducted by aliens."
+    }
+  ],
+  "location_description": "Located on Oregon Coast Hwy in Newport",
+  "id": 4,
+  "state": "OR",
+  "email": "",
+  "website": "",
+  "description": "Fake Newport Halibut",
+  "hours": "",
+  "phone": null,
+  "lat": 44.646006,
+  "categories": [
+    {
+      "category": "Uncool Stuff",
+      "id": 2
+    },
+    {
+      "category": "Non-Fish Shops",
+      "id": 4
+    },
+    {
+      "category": "Test Category Do Not Upvote",
+      "id": 6
+    }
+  ],
+  "name": "Newport Halibut",
+  "created": "2014-08-08T23:27:05.568Z",
+  "modified": "2014-08-08T23:27:05.568Z",
+  "ext": {
+
+  },
+  "history": ""
+},
+{
+  "videos": [
+    {
+      "caption": "Princely",
+      "link": "http://www.youtube.com/watch?v=M-nlAuCW7WY",
+      "name": "Princely"
+    }
+  ],
+  "images": [
+    {
+      "caption": "Woof!",
+      "link": "/media/dog.jpg",
+      "name": "A dog"
+    }
+  ],
+  "street": "190 SW Maple St",
+  "alt_name": "",
+  "facts": "",
+  "lng": -124.069126,
+  "contact_name": "Waldport Halibut Contact",
+  "city": "Waldport",
+  "zip": "97364",
+  "hazards": [
+    {
+      "id": 2,
+      "name": "Alien Abduction",
+      "description": "This site is liable to result in you being abducted by aliens."
+    },
+    {
+      "id": 4,
+      "name": "Alien Abduction 4",
+      "description": "This site is liable to result in you being abducted by aliens."
+    },
+    {
+      "id": 6,
+      "name": "Alien Abduction 6",
+      "description": "This site is liable to result in you being abducted by aliens."
+    }
+  ],
+  "location_description": "Located on SW Maple St in Waldport",
+  "id": 6,
+  "state": "OR",
+  "email": "",
+  "website": "",
+  "description": "Fake Waldport Halibut",
+  "hours": "",
+  "phone": null,
+  "lat": 44.425188,
+  "categories": [
+    {
+      "category": "Uncool Stuff",
+      "id": 2
+    },
+    {
+      "category": "Non-Fish Shops",
+      "id": 4
+    },
+    {
+      "category": "Test Category Do Not Upvote",
+      "id": 6
+    }
+  ],
+  "name": "Waldport Halibut",
+  "created": "2014-08-08T23:27:05.568Z",
+  "modified": "2014-08-08T23:27:05.568Z",
+  "ext": {
+
+  },
+  "history": ""
+},
+{
+  "videos": [
+    {
+      "caption": "Traveling at the speed of light!",
+      "link": "http://www.youtube.com/watch?v=efgDdSWDg0g",
+      "name": "A Starship"
+    }
+  ],
+  "facts": "",
+  "street": "35650 Roger Ave",
+  "alt_name": "",
+  "images": [
+    {
+      "caption": "Meow!",
+      "link": "/media/cat.jpg",
+      "name": "A cat"
+    }
+  ],
+  "contact_name": "Pacific City Tuna Contact",
+  "id": 7,
+  "city": "Cloverdale",
+  "zip": "97112",
+  "hazards": [
+    {
+      "id": 1,
+      "name": "Falling Rocks",
+      "description": "If these fall on you, you're dead."
+    },
+    {
+      "id": 3,
+      "name": "Falling Rocks 3",
+      "description": "If these fall on you, you're dead."
+    },
+    {
+      "id": 5,
+      "name": "Falling Rocks 5",
+      "description": "If these fall on you, you're dead."
+    }
+  ],
+  "ext": {
+
+  },
+  "state": "OR",
+  "email": "",
+  "website": "",
+  "description": "Fake Pacific City Tuna",
+  "hours": "",
+  "phone": null,
+  "lat": 45.197105,
+  "categories": [
+    {
+      "category": "Cool Stuff",
+      "id": 1
+    },
+    {
+      "category": "Fish Shops",
+      "id": 3
+    },
+    {
+      "category": "Large Obelisks",
+      "id": 5
+    }
+  ],
+  "name": "Pacific City Tuna",
+  "created": "2014-08-08T23:27:05.568Z",
+  "modified": "2014-08-08T23:27:05.568Z",
+  "location_description": "Located on Roger Ave in Pacific City",
+  "lng": -123.958093,
+  "history": ""
+},
+{
+  "videos": [
+    {
+      "caption": "Princely",
+      "link": "http://www.youtube.com/watch?v=M-nlAuCW7WY",
+      "name": "Princely"
+    }
+  ],
+  "facts": "",
+  "street": "34455 Brooten Rd",
+  "alt_name": "",
+  "images": [
+    {
+      "caption": "Woof!",
+      "link": "/media/dog.jpg",
+      "name": "A dog"
+    }
+  ],
+  "contact_name": "Pacific City Halibut Contact",
+  "id": 8,
+  "city": "Cloverdale",
+  "zip": "97112",
+  "hazards": [
+    {
+      "id": 2,
+      "name": "Alien Abduction",
+      "description": "This site is liable to result in you being abducted by aliens."
+    },
+    {
+      "id": 4,
+      "name": "Alien Abduction 4",
+      "description": "This site is liable to result in you being abducted by aliens."
+    },
+    {
+      "id": 6,
+      "name": "Alien Abduction 6",
+      "description": "This site is liable to result in you being abducted by aliens."
+    }
+  ],
+  "ext": {
+
+  },
+  "state": "OR",
+  "email": "",
+  "website": "",
+  "description": "Fake Pacific City Halibut",
+  "hours": "",
+  "phone": null,
+  "lat": 45.207253,
+  "categories": [
+    {
+      "category": "Uncool Stuff",
+      "id": 2
+    },
+    {
+      "category": "Non-Fish Shops",
+      "id": 4
+    },
+    {
+      "category": "Test Category Do Not Upvote",
+      "id": 6
+    }
+  ],
+  "name": "Pacific City Halibut",
+  "created": "2014-08-08T23:27:05.568Z",
+  "modified": "2014-08-08T23:27:05.568Z",
+  "location_description": "Located on Brooten Rd in Pacific City",
+  "lng": -123.959418,
+  "history": ""
 }"""
 
         # Nearest 3 fish stores, with a proximity of 20 miles.
@@ -1285,101 +2686,215 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
     "text": null
   },
   "pointsofinterest": [{
-    "id": 3,
-    "website": "",
-    "street": "146 SE Bay Blvd",
-    "contact_name": "Newport Tuna Contact",
-    "city": "Newport",
-    "story":  2,
-    "zip": "97365",
-    "location_description": "Located on Bay Blvd in Newport",
-    "lng": -124.050122,
-    "state": "OR",
-    "email": "",
-    "hours": "",
-    "status": true,
-    "modified": "2014-08-08T23:27:05.568Z",
-    "description": "Fake Newport Tuna",
-    "phone": null,
-    "lat": 44.631592,
-    "name": "Newport Tuna",
-    "created": "2014-08-08T23:27:05.568Z",
-    "ext": {
-
+  "videos": [
+    {
+      "caption": "Traveling at the speed of light!",
+      "link": "http://www.youtube.com/watch?v=efgDdSWDg0g",
+      "name": "A Starship"
+    }
+  ],
+  "images": [
+    {
+      "caption": "Meow!",
+      "link": "/media/cat.jpg",
+      "name": "A cat"
+    }
+  ],
+  "street": "146 SE Bay Blvd",
+  "alt_name": "",
+  "facts": "",
+  "lng": -124.050122,
+  "contact_name": "Newport Tuna Contact",
+  "city": "Newport",
+  "zip": "97365",
+  "hazards": [
+    {
+      "id": 1,
+      "name": "Falling Rocks",
+      "description": "If these fall on you, you're dead."
     },
-    "products": [
-      {
-        "product_id": 2,
-        "preparation_id": 1,
-        "preparation": "Frozen",
-        "name": "Tuna"
-      }
-    ]
+    {
+      "id": 3,
+      "name": "Falling Rocks 3",
+      "description": "If these fall on you, you're dead."
+    },
+    {
+      "id": 5,
+      "name": "Falling Rocks 5",
+      "description": "If these fall on you, you're dead."
+    }
+  ],
+  "location_description": "Located on Bay Blvd in Newport",
+  "id": 3,
+  "state": "OR",
+  "email": "",
+  "website": "",
+  "description": "Fake Newport Tuna",
+  "hours": "",
+  "phone": null,
+  "lat": 44.631592,
+  "categories": [
+    {
+      "category": "Cool Stuff",
+      "id": 1
+    },
+    {
+      "category": "Fish Shops",
+      "id": 3
+    },
+    {
+      "category": "Large Obelisks",
+      "id": 5
+    }
+  ],
+  "name": "Newport Tuna",
+  "created": "2014-08-08T23:27:05.568Z",
+  "modified": "2014-08-08T23:27:05.568Z",
+  "ext": {
+
   },
-  {
-    "id": 4,
-    "website": "",
-    "street": "1226 Oregon Coast Hwy",
-    "contact_name": "Newpotr Halibut Contact",
-    "city": "Newport",
-    "story":  1,
-    "zip": "97365",
-    "location_description": "Located on Oregon Coast Hwy in Newport",
-    "lng": -124.052868,
-    "state": "OR",
-    "email": "",
-    "hours": "",
-    "status": true,
-    "modified": "2014-08-08T23:27:05.568Z",
-    "description": "Fake Newport Halibut",
-    "phone": null,
-    "lat": 44.646006,
-    "name": "Newport Halibut",
-    "created": "2014-08-08T23:27:05.568Z",
-    "ext": {
-
+  "history": ""
+},
+{
+  "videos": [
+    {
+      "caption": "Princely",
+      "link": "http://www.youtube.com/watch?v=M-nlAuCW7WY",
+      "name": "Princely"
+    }
+  ],
+  "images": [
+    {
+      "caption": "Woof!",
+      "link": "/media/dog.jpg",
+      "name": "A dog"
+    }
+  ],
+  "street": "1226 Oregon Coast Hwy",
+  "alt_name": "",
+  "facts": "",
+  "lng": -124.052868,
+  "contact_name": "Newpotr Halibut Contact",
+  "city": "Newport",
+  "zip": "97365",
+  "hazards": [
+    {
+      "id": 2,
+      "name": "Alien Abduction",
+      "description": "This site is liable to result in you being abducted by aliens."
     },
-    "products": [
-      {
-        "product_id": 1,
-        "preparation": "Frozen",
-        "preparation_id": 1,
-        "name": "Halibut"
-      }
-    ]
+    {
+      "id": 4,
+      "name": "Alien Abduction 4",
+      "description": "This site is liable to result in you being abducted by aliens."
+    },
+    {
+      "id": 6,
+      "name": "Alien Abduction 6",
+      "description": "This site is liable to result in you being abducted by aliens."
+    }
+  ],
+  "location_description": "Located on Oregon Coast Hwy in Newport",
+  "id": 4,
+  "state": "OR",
+  "email": "",
+  "website": "",
+  "description": "Fake Newport Halibut",
+  "hours": "",
+  "phone": null,
+  "lat": 44.646006,
+  "categories": [
+    {
+      "category": "Uncool Stuff",
+      "id": 2
+    },
+    {
+      "category": "Non-Fish Shops",
+      "id": 4
+    },
+    {
+      "category": "Test Category Do Not Upvote",
+      "id": 6
+    }
+  ],
+  "name": "Newport Halibut",
+  "created": "2014-08-08T23:27:05.568Z",
+  "modified": "2014-08-08T23:27:05.568Z",
+  "ext": {
+
   },
-  {
-    "id": 5,
-    "website": "",
-    "street": "522 NW Spring St",
-    "contact_name": "Waldport Tuna Contact",
-    "city": "Waldport",
-    "story":  2,
-    "zip": "97394",
-    "location_description": "Located on Spring St in Waldport",
-    "lng": -124.066166,
-    "state": "OR",
-    "email": "",
-    "hours": "",
-    "status": true,
-    "modified": "2014-08-08T23:27:05.568Z",
-    "description": "Fake Waldport Tuna",
-    "phone": null,
-    "lat": 44.427761,
-    "name": "Waldport Tuna",
-    "created": "2014-08-08T23:27:05.568Z",
-    "ext": {
-
+  "history": ""
+},
+{
+  "videos": [
+    {
+      "caption": "Traveling at the speed of light!",
+      "link": "http://www.youtube.com/watch?v=efgDdSWDg0g",
+      "name": "A Starship"
+    }
+  ],
+  "images": [
+    {
+      "caption": "Meow!",
+      "link": "/media/cat.jpg",
+      "name": "A cat"
+    }
+  ],
+  "street": "522 NW Spring St",
+  "alt_name": "",
+  "facts": "",
+  "lng": -124.066166,
+  "contact_name": "Waldport Tuna Contact",
+  "city": "Waldport",
+  "zip": "97394",
+  "hazards": [
+    {
+      "id": 1,
+      "name": "Falling Rocks",
+      "description": "If these fall on you, you're dead."
     },
-    "products": [
-      {
-        "product_id": 2,
-        "preparation_id": 1,
-        "preparation": "Frozen",
-        "name": "Tuna"
-      }
-    ]
-  }]
+    {
+      "id": 3,
+      "name": "Falling Rocks 3",
+      "description": "If these fall on you, you're dead."
+    },
+    {
+      "id": 5,
+      "name": "Falling Rocks 5",
+      "description": "If these fall on you, you're dead."
+    }
+  ],
+  "location_description": "Located on Spring St in Waldport",
+  "id": 5,
+  "state": "OR",
+  "email": "",
+  "website": "",
+  "description": "Fake Waldport Tuna",
+  "hours": "",
+  "phone": null,
+  "lat": 44.427761,
+  "categories": [
+    {
+      "category": "Cool Stuff",
+      "id": 1
+    },
+    {
+      "category": "Fish Shops",
+      "id": 3
+    },
+    {
+      "category": "Large Obelisks",
+      "id": 5
+    }
+  ],
+  "name": "Waldport Tuna",
+  "created": "2014-08-08T23:27:05.568Z",
+  "modified": "2014-08-08T23:27:05.568Z",
+  "ext": {
+
+  },
+  "history": ""
+}]
 }"""
 
         # When a bad limit is given, warn and ignore it.
@@ -1395,133 +2910,285 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
     "text": "Invalid limit. Returning all results."
   },
   "pointsofinterest": [{
-    "id": 3,
-    "website": "",
-    "street": "146 SE Bay Blvd",
-    "contact_name": "Newport Tuna Contact",
-    "city": "Newport",
-    "story":  2,
-    "zip": "97365",
-    "location_description": "Located on Bay Blvd in Newport",
-    "lng": -124.050122,
-    "state": "OR",
-    "email": "",
-    "hours": "",
-    "status": true,
-    "modified": "2014-08-08T23:27:05.568Z",
-    "description": "Fake Newport Tuna",
-    "phone": null,
-    "lat": 44.631592,
-    "name": "Newport Tuna",
-    "created": "2014-08-08T23:27:05.568Z",
-    "ext": {
-
+  "videos": [
+    {
+      "caption": "Traveling at the speed of light!",
+      "link": "http://www.youtube.com/watch?v=efgDdSWDg0g",
+      "name": "A Starship"
+    }
+  ],
+  "images": [
+    {
+      "caption": "Meow!",
+      "link": "/media/cat.jpg",
+      "name": "A cat"
+    }
+  ],
+  "street": "146 SE Bay Blvd",
+  "alt_name": "",
+  "facts": "",
+  "lng": -124.050122,
+  "contact_name": "Newport Tuna Contact",
+  "city": "Newport",
+  "zip": "97365",
+  "hazards": [
+    {
+      "id": 1,
+      "name": "Falling Rocks",
+      "description": "If these fall on you, you're dead."
     },
-    "products": [
-      {
-        "product_id": 2,
-        "preparation_id": 1,
-        "preparation": "Frozen",
-        "name": "Tuna"
-      }
-    ]
+    {
+      "id": 3,
+      "name": "Falling Rocks 3",
+      "description": "If these fall on you, you're dead."
+    },
+    {
+      "id": 5,
+      "name": "Falling Rocks 5",
+      "description": "If these fall on you, you're dead."
+    }
+  ],
+  "location_description": "Located on Bay Blvd in Newport",
+  "id": 3,
+  "state": "OR",
+  "email": "",
+  "website": "",
+  "description": "Fake Newport Tuna",
+  "hours": "",
+  "phone": null,
+  "lat": 44.631592,
+  "categories": [
+    {
+      "category": "Cool Stuff",
+      "id": 1
+    },
+    {
+      "category": "Fish Shops",
+      "id": 3
+    },
+    {
+      "category": "Large Obelisks",
+      "id": 5
+    }
+  ],
+  "name": "Newport Tuna",
+  "created": "2014-08-08T23:27:05.568Z",
+  "modified": "2014-08-08T23:27:05.568Z",
+  "ext": {
+
   },
-  {
-    "id": 4,
-    "website": "",
-    "street": "1226 Oregon Coast Hwy",
-    "contact_name": "Newpotr Halibut Contact",
-    "city": "Newport",
-    "story":  1,
-    "zip": "97365",
-    "location_description": "Located on Oregon Coast Hwy in Newport",
-    "lng": -124.052868,
-    "state": "OR",
-    "email": "",
-    "hours": "",
-    "status": true,
-    "modified": "2014-08-08T23:27:05.568Z",
-    "description": "Fake Newport Halibut",
-    "phone": null,
-    "lat": 44.646006,
-    "name": "Newport Halibut",
-    "created": "2014-08-08T23:27:05.568Z",
-    "ext": {
-
+  "history": ""
+},
+{
+  "videos": [
+    {
+      "caption": "Princely",
+      "link": "http://www.youtube.com/watch?v=M-nlAuCW7WY",
+      "name": "Princely"
+    }
+  ],
+  "images": [
+    {
+      "caption": "Woof!",
+      "link": "/media/dog.jpg",
+      "name": "A dog"
+    }
+  ],
+  "street": "1226 Oregon Coast Hwy",
+  "alt_name": "",
+  "facts": "",
+  "lng": -124.052868,
+  "contact_name": "Newpotr Halibut Contact",
+  "city": "Newport",
+  "zip": "97365",
+  "hazards": [
+    {
+      "id": 2,
+      "name": "Alien Abduction",
+      "description": "This site is liable to result in you being abducted by aliens."
     },
-    "products": [
-      {
-        "product_id": 1,
-        "preparation": "Frozen",
-        "preparation_id": 1,
-        "name": "Halibut"
-      }
-    ]
+    {
+      "id": 4,
+      "name": "Alien Abduction 4",
+      "description": "This site is liable to result in you being abducted by aliens."
+    },
+    {
+      "id": 6,
+      "name": "Alien Abduction 6",
+      "description": "This site is liable to result in you being abducted by aliens."
+    }
+  ],
+  "location_description": "Located on Oregon Coast Hwy in Newport",
+  "id": 4,
+  "state": "OR",
+  "email": "",
+  "website": "",
+  "description": "Fake Newport Halibut",
+  "hours": "",
+  "phone": null,
+  "lat": 44.646006,
+  "categories": [
+    {
+      "category": "Uncool Stuff",
+      "id": 2
+    },
+    {
+      "category": "Non-Fish Shops",
+      "id": 4
+    },
+    {
+      "category": "Test Category Do Not Upvote",
+      "id": 6
+    }
+  ],
+  "name": "Newport Halibut",
+  "created": "2014-08-08T23:27:05.568Z",
+  "modified": "2014-08-08T23:27:05.568Z",
+  "ext": {
+
   },
-  {
-    "id": 5,
-    "website": "",
-    "street": "522 NW Spring St",
-    "contact_name": "Waldport Tuna Contact",
-    "city": "Waldport",
-    "story":  2,
-    "zip": "97394",
-    "location_description": "Located on Spring St in Waldport",
-    "lng": -124.066166,
-    "state": "OR",
-    "email": "",
-    "hours": "",
-    "status": true,
-    "modified": "2014-08-08T23:27:05.568Z",
-    "description": "Fake Waldport Tuna",
-    "phone": null,
-    "lat": 44.427761,
-    "name": "Waldport Tuna",
-    "created": "2014-08-08T23:27:05.568Z",
-    "ext": {
-
+  "history": ""
+},
+{
+  "videos": [
+    {
+      "caption": "Traveling at the speed of light!",
+      "link": "http://www.youtube.com/watch?v=efgDdSWDg0g",
+      "name": "A Starship"
+    }
+  ],
+  "images": [
+    {
+      "caption": "Meow!",
+      "link": "/media/cat.jpg",
+      "name": "A cat"
+    }
+  ],
+  "street": "522 NW Spring St",
+  "alt_name": "",
+  "facts": "",
+  "lng": -124.066166,
+  "contact_name": "Waldport Tuna Contact",
+  "city": "Waldport",
+  "zip": "97394",
+  "hazards": [
+    {
+      "id": 1,
+      "name": "Falling Rocks",
+      "description": "If these fall on you, you're dead."
     },
-    "products": [
-      {
-        "product_id": 2,
-        "preparation_id": 1,
-        "preparation": "Frozen",
-        "name": "Tuna"
-      }
-    ]
+    {
+      "id": 3,
+      "name": "Falling Rocks 3",
+      "description": "If these fall on you, you're dead."
+    },
+    {
+      "id": 5,
+      "name": "Falling Rocks 5",
+      "description": "If these fall on you, you're dead."
+    }
+  ],
+  "location_description": "Located on Spring St in Waldport",
+  "id": 5,
+  "state": "OR",
+  "email": "",
+  "website": "",
+  "description": "Fake Waldport Tuna",
+  "hours": "",
+  "phone": null,
+  "lat": 44.427761,
+  "categories": [
+    {
+      "category": "Cool Stuff",
+      "id": 1
+    },
+    {
+      "category": "Fish Shops",
+      "id": 3
+    },
+    {
+      "category": "Large Obelisks",
+      "id": 5
+    }
+  ],
+  "name": "Waldport Tuna",
+  "created": "2014-08-08T23:27:05.568Z",
+  "modified": "2014-08-08T23:27:05.568Z",
+  "ext": {
+
   },
-  {
-    "id": 6,
-    "website": "",
-    "street": "190 SW Maple St",
-    "contact_name": "Waldport Halibut Contact",
-    "city": "Waldport",
-    "story":  1,
-    "zip": "97364",
-    "location_description": "Located on SW Maple St in Waldport",
-    "lng": -124.069126,
-    "state": "OR",
-    "email": "",
-    "hours": "",
-    "status": true,
-    "modified": "2014-08-08T23:27:05.568Z",
-    "description": "Fake Waldport Halibut",
-    "phone": null,
-    "lat": 44.425188,
-    "name": "Waldport Halibut",
-    "created": "2014-08-08T23:27:05.568Z",
-    "ext": {
-
+  "history": ""
+},
+{
+  "videos": [
+    {
+      "caption": "Princely",
+      "link": "http://www.youtube.com/watch?v=M-nlAuCW7WY",
+      "name": "Princely"
+    }
+  ],
+  "images": [
+    {
+      "caption": "Woof!",
+      "link": "/media/dog.jpg",
+      "name": "A dog"
+    }
+  ],
+  "street": "190 SW Maple St",
+  "alt_name": "",
+  "facts": "",
+  "lng": -124.069126,
+  "contact_name": "Waldport Halibut Contact",
+  "city": "Waldport",
+  "zip": "97364",
+  "hazards": [
+    {
+      "id": 2,
+      "name": "Alien Abduction",
+      "description": "This site is liable to result in you being abducted by aliens."
     },
-    "products": [
-      {
-        "product_id": 1,
-        "preparation_id": 1,
-        "preparation": "Frozen",
-        "name": "Halibut"
-      }
-    ]
-  }]
+    {
+      "id": 4,
+      "name": "Alien Abduction 4",
+      "description": "This site is liable to result in you being abducted by aliens."
+    },
+    {
+      "id": 6,
+      "name": "Alien Abduction 6",
+      "description": "This site is liable to result in you being abducted by aliens."
+    }
+  ],
+  "location_description": "Located on SW Maple St in Waldport",
+  "id": 6,
+  "state": "OR",
+  "email": "",
+  "website": "",
+  "description": "Fake Waldport Halibut",
+  "hours": "",
+  "phone": null,
+  "lat": 44.425188,
+  "categories": [
+    {
+      "category": "Uncool Stuff",
+      "id": 2
+    },
+    {
+      "category": "Non-Fish Shops",
+      "id": 4
+    },
+    {
+      "category": "Test Category Do Not Upvote",
+      "id": 6
+    }
+  ],
+  "name": "Waldport Halibut",
+  "created": "2014-08-08T23:27:05.568Z",
+  "modified": "2014-08-08T23:27:05.568Z",
+  "ext": {
+
+  },
+  "history": ""
+}]
 }"""
 
     def test_successful_location_all_categories(self):
