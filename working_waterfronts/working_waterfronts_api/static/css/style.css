@@ -1,0 +1,245 @@
+@import url(http://fonts.googleapis.com/css?family=Coustard|Montserrat|Arimo|Bitter|Noto+Sans|Open+Sans);
+body {
+  margin: 0px;
+  padding: 0px;
+  font-size: 100%;
+  background: #517285;
+  text-align: center; }
+
+body, html {
+  height: 100%; }
+
+h1, h2, h3, h4, p, a {
+  font-family: "Montserrat", sans-serif;
+  margin: 0px;
+  line-height: 1.3em;
+  color: #333; }
+
+h1 {
+  font-size: 40pt; }
+
+h2 {
+  font-size: 36pt; }
+
+h3 {
+  font-size: 28pt; }
+
+h4 {
+  font-size: 24pt; }
+
+p {
+  font-size: 16pt;
+  text-align: left; }
+
+a {
+  text-decoration: none; }
+
+.light {
+  color: #FFF; }
+
+.accent {
+  color: #FFCA5D; }
+
+.warning {
+  color: #D54133; }
+
+.error {
+  max-width: 550px;
+  margin: 0px auto; }
+
+.step-links {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16pt;
+}
+
+.image_embed {
+  max-width: 90%;
+  max-height: 500px;
+}
+
+.header {
+  background: #FFF;
+  height: 70px;
+  width: 100%;
+  margin: 0px auto;
+  font-weight: 700; }
+  .header h2 {
+    line-height: 70px;
+    text-align: center;
+    color: #333; }
+  .header .logout {
+    position: absolute;
+    right: 20px;
+    top: 0px;
+    line-height: 70px; }
+  .header .logout:hover {
+    color: #517285; }
+
+.title p {
+  text-align: center; }
+
+.content {
+  background: #517285;
+  min-height: 100%;
+  width: 70%;
+  height: auto;
+  display: block;
+  margin: 30px auto;
+  padding: 10px; }
+
+.entry {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 10px;
+  border-radius: 10px;
+  margin: 20px auto;
+  width: 400px;
+  border: 2px solid #333; }
+  .entry a {
+    display: block; }
+
+.entry:hover {
+  background: #FFF; }
+
+.back {
+  display: inline-block;
+  border-radius: 5px;
+  position: absolute;
+  top: 0px;
+  left: 20px; }
+  .back a {
+    color: #333;
+    line-height: 70px;
+    vertical-align: middle; }
+  .back a :hover {
+    color: #517285; }
+
+.message {
+  font-size: 24pt;
+  width: 100%;
+  text-align: center;
+  color: #FFCA5D; }
+
+.form, .entry_box {
+  display: inline-block;
+  margin: 10px auto;
+  background: #FFF;
+  border-radius: 10px;
+  padding: 15px 40px; }
+  .form h3, .entry_box h3 {
+    margin-top: 30px;
+    text-align: left; }
+  .form input, .form select, .form textarea, .entry_box input, .entry_box textarea {
+    border: 2px solid #333;
+    display: block;
+    margin: 0px auto 20px;
+    font-size: 16pt;
+    font-family: "Montserrat", sans-serif;
+    width: 90%; }
+  .entry_box select {
+    border: 2px solid #333;
+    display: block;
+    margin: 0px auto 20px;
+    font-size: 16pt;
+    font-family: "Montserrat", sans-serif;
+    width: 90%;
+    display: inline-block; }
+  .form .submit, .form button, .entry_box .submit, .entry_box button {
+    background: #FFCA5D;
+    color: #333;
+    border: 2px solid #333;
+    font-size: 16pt;
+    font-family: "Montserrat", sans-serif;
+    height: auto;
+    padding: 2px;
+    display: block;
+    margin: 20px auto; }
+  .form .submit:hover, .form button:hover, .entry_box .submit:hover, .entry_box button:hover {
+    cursor: pointer;
+    background: #FFF;
+    border: 2px solid #517285;
+    color: #517285; }
+  .form p, .entry_box p {
+    margin-left: 5%; }
+  .entry_box .delete, .form .delete {
+    vertical-align: middle;
+    display: inline-block;
+  }
+  .form .dbutton, .entry_box .dbutton {
+    background: #D54133;
+    float: right; }
+
+.buttons {
+  margin-left: auto;
+  margin-right: 0px;
+  text-align: right; }
+
+.preparations {
+  display: inline-block;
+  max-width: 50%; }
+
+.list {
+  margin: 0px auto 20px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  border: 2px solid #333;
+  width: 80%; }
+
+.preparation:hover, .product:hover, .vendor:hover {
+  background-color: #FFF; }
+
+.item {
+  display: block;
+  font-size: 20pt; }
+
+.description {
+  width: 100%; }
+
+.new {
+  background: #FFCA5D;
+  color: #333;
+  border: 2px solid #333;
+  font-size: 16pt;
+  font-family: "Montserrat", sans-serif;
+  height: auto;
+  padding: 2px;
+  display: block;
+  margin: 20px auto;
+  display: inline-block; }
+  .new a {
+    padding: 5px;
+    vertical-align: middle; }
+
+.new:hover {
+  cursor: pointer;
+  background: #FFF;
+  border: 2px solid #517285;
+  color: #517285; }
+
+.form select {
+  display: inline-block;
+  background: #FFF;
+  width: 40%; }
+
+.product, .preparation, .image, .video {
+  display: block;
+}
+
+.no_products {
+  font-size: 18pt;
+  color: #333;
+  font-family: "Montserrat", sans-serif; }
+
+#new_product, #new_preparation, #new_video, #new_image {
+  display: none; }
+
+.product_list {
+  text-align: left; }
+  .product_list ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px; }
+  .product_list ul li {
+    padding-left: 30px; }
+
+/*# sourceMappingURL=style.css.map */
