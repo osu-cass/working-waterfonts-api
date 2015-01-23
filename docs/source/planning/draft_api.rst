@@ -61,6 +61,37 @@ Return a dictionary containing a record for every poi in the database. This data
             contact_name: varchar,
             phone: varchar,
             website: url,
+            hazards: [
+                  {
+                        name: varchar,
+                        description: varchar,
+                        id: int
+                  },
+                  ...
+            ],
+            categories: [
+                  {
+                        category: varchar,
+                        id: int
+                  },
+                  ...
+            ],
+            images: [
+                  {
+                        link: varchar,
+                        name: varchar,
+                        caption: varchar
+                  },
+                  ...
+            ],
+            videos: [
+                  {
+                        link: varchar,
+                        name: varchar,
+                        caption: varchar
+                  },
+                  ...
+            ],
             email: email,
 			created: datetime,
 			modified: datetime,
@@ -97,9 +128,37 @@ Returns a single poi record identified by <id>. This will return all available d
             phone: varchar (optional),
             website: url (optional),
             email: email (optional),
-            categories: [category1, category2, ...]
-            videos: {description1: link1, description2: link2,...}
-            images: {caption1: link1, caption2: link2,...}
+            hazards: [
+                  {
+                        name: varchar,
+                        description: varchar,
+                        id: int
+                  },
+                  ...
+            ],
+            categories: [
+                  {
+                        category: varchar,
+                        id: int
+                  },
+                  ...
+            ],
+            images: [
+                  {
+                        link: varchar,
+                        name: varchar,
+                        caption: varchar
+                  },
+                  ...
+            ],
+            videos: [
+                  {
+                        link: varchar,
+                        name: varchar,
+                        caption: varchar
+                  },
+                  ...
+            ],
 			created: datetime,
 			modified: datetime,
 			ext: {attribute: value, attribute: value...} or {},
@@ -131,6 +190,7 @@ Returns a list of pois in the category identified by <id>.
 		    {...},
 		    {...}
             ]
+            ...
 	}
 
 
