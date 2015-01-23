@@ -63,32 +63,32 @@ Return a dictionary containing a record for every poi in the database. This data
             website: url,
             hazards: [
                   {
-                        name,
-                        description,
-                        id
+                        name: varchar,
+                        description: varchar,
+                        id: int
                   },
                   ...
             ],
             categories: [
                   {
-                        category,
-                        id
+                        category: varchar,
+                        id: int
                   },
                   ...
             ],
             images: [
                   {
-                        link,
-                        name,
-                        caption
+                        link: varchar,
+                        name: varchar,
+                        caption: varchar
                   },
                   ...
             ],
             videos: [
                   {
-                        link,
-                        name,
-                        caption
+                        link: varchar,
+                        name: varchar,
+                        caption: varchar
                   },
                   ...
             ],
@@ -130,32 +130,32 @@ Returns a single poi record identified by <id>. This will return all available d
             email: email (optional),
             hazards: [
                   {
-                        name,
-                        description,
-                        id
+                        name: varchar,
+                        description: varchar,
+                        id: int
                   },
                   ...
             ],
             categories: [
                   {
-                        category,
-                        id
+                        category: varchar,
+                        id: int
                   },
                   ...
             ],
             images: [
                   {
-                        link,
-                        name,
-                        caption
+                        link: varchar,
+                        name: varchar,
+                        caption: varchar
                   },
                   ...
             ],
             videos: [
                   {
-                        link,
-                        name,
-                        caption
+                        link: varchar,
+                        name: varchar,
+                        caption: varchar
                   },
                   ...
             ],
