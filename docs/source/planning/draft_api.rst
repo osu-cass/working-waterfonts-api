@@ -63,35 +63,35 @@ Return a dictionary containing a record for every poi in the database. This data
             website: url,
             hazards: [
                   {
-                        name
-                        description
+                        name,
+                        description,
                         id
                   },
                   ...
-            ]
+            ],
             categories: [
                   {
-                        category
+                        category,
                         id
                   },
                   ...
-            ]
+            ],
             images: [
                   {
-                        url
-                        name
+                        link,
+                        name,
                         caption
                   },
                   ...
-            ]
+            ],
             videos: [
                   {
-                        url
-                        name
+                        link,
+                        name,
                         caption
                   },
                   ...
-            ]
+            ],
             email: email,
 			created: datetime,
 			modified: datetime,
@@ -130,35 +130,35 @@ Returns a single poi record identified by <id>. This will return all available d
             email: email (optional),
             hazards: [
                   {
-                        name
-                        description
+                        name,
+                        description,
                         id
                   },
                   ...
-            ]
+            ],
             categories: [
                   {
-                        category
+                        category,
                         id
                   },
                   ...
-            ]
+            ],
             images: [
                   {
-                        url
-                        name
+                        link,
+                        name,
                         caption
                   },
                   ...
-            ]
+            ],
             videos: [
                   {
-                        url
-                        name
+                        link,
+                        name,
                         caption
                   },
                   ...
-            ]
+            ],
 			created: datetime,
 			modified: datetime,
 			ext: {attribute: value, attribute: value...} or {},
