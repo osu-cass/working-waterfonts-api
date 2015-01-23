@@ -9,5 +9,5 @@ class HazardForm(forms.ModelForm):
         exclude = []
         widgets = {
             'name': forms.TextInput(attrs={'required': 'true'}),
-            'description': forms.Textarea
+            'description': forms.Textarea(attrs={'required': 'true'})
         }

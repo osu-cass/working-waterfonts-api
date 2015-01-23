@@ -133,7 +133,10 @@ class Hazard(models.Model):
     """
     name = models.TextField()
     description = models.TextField()
-    pointofinterests = models.ManyToManyField('PointOfInterest')
+    pointofinterests = models.ManyToManyField(
+        'PointOfInterest',
+        blank=True,
+        null=True)
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 

@@ -84,7 +84,8 @@ def hazard(request, id=None):
                 hazard.save()
             else:
                 hazard = Hazard.objects.create(
-                    **hazard_form.cleaned_data)
+                    name=hazard_form['name'],
+                    description=hazard_form['description'])
                 hazard.save()
             return HttpResponseRedirect(
                 "%s?saved=true" % reverse('entry-list-hazards'))
