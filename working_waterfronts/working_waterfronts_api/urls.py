@@ -15,4 +15,8 @@ urlpatterns = patterns(
         'working_waterfronts.working_waterfronts_api.views.entry.hazards.list',
         name='entry-list-hazards'),
 
+    url(r'^entry/?$',
+        'working_waterfronts.working_waterfronts_api.views.entry.home.home',
+        name='home'),
+
 )
