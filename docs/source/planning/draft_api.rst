@@ -81,14 +81,16 @@ Return a dictionary containing a record for every poi in the database. This data
                         url
                         name
                         caption
-                  }
+                  },
+                  ...
             ]
             videos: [
                   {
                         url
                         name
                         caption
-                  }
+                  },
+                  ...
             ]
             email: email,
 			created: datetime,
@@ -126,10 +128,37 @@ Returns a single poi record identified by <id>. This will return all available d
             phone: varchar (optional),
             website: url (optional),
             email: email (optional),
-            categories: [category1, category2, ...]
-            hazards: [hazard1, hazard2, ...]
-            videos: {description1: link1, description2: link2,...}
-            images: {caption1: link1, caption2: link2,...}
+            hazards: [
+                  {
+                        name
+                        description
+                        id
+                  },
+                  ...
+            ]
+            categories: [
+                  {
+                        category
+                        id
+                  },
+                  ...
+            ]
+            images: [
+                  {
+                        url
+                        name
+                        caption
+                  },
+                  ...
+            ]
+            videos: [
+                  {
+                        url
+                        name
+                        caption
+                  },
+                  ...
+            ]
 			created: datetime,
 			modified: datetime,
 			ext: {attribute: value, attribute: value...} or {},
