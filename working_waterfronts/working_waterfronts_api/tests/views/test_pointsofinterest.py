@@ -175,7 +175,7 @@ class PointsOfInterestTestCase(TestCase):
         self.assertEqual(len(parsed_answer['pointsofinterest']), 1)
 
 
-class NoVendorViewTestCase(TestCase):
+class NoPointOfInterestViewTestCase(TestCase):
 
     def setUp(self):
         user = User.objects.create_user(username='test', password='pass')
