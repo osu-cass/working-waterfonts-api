@@ -28,6 +28,10 @@ urlpatterns = patterns(
         'working_waterfronts.working_waterfronts_api.views.entry.images.image',
         name='new-image'),
 
+    url(r'^entry/images/?$',
+        'working_waterfronts.working_waterfronts_api.views.entry.images.image_list',
+        name='entry-list-images'),
+
     url(r'^1/pois/?$',
         'working_waterfronts.working_waterfronts_api.views.pointsofinterest.poi_list',
         name='pois-list'),
