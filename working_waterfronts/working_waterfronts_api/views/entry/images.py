@@ -12,8 +12,6 @@ from working_waterfronts.working_waterfronts_api.forms import ImageForm
 from working_waterfronts.working_waterfronts_api.functions import group_required
 
 
-@login_required
-@group_required('Administration Users', 'Data Entry Users')
 def image_list(request):
     """
     */entry/images*
@@ -54,8 +52,6 @@ def image_list(request):
     })
 
 
-@login_required
-@group_required('Administration Users', 'Data Entry Users')
 def image(request, id=None):
     """
     */entry/images/<id>*, */entry/images/new*
