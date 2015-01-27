@@ -80,7 +80,6 @@ class PointsOfInterestTestCase(TestCase):
       "history": "It was built at some time in the past"
     },
     {
-      {
         "name": "Haystack Rock",
         "alt_name": "",
   "contact_name": "",
@@ -118,20 +117,20 @@ class PointsOfInterestTestCase(TestCase):
         ],
         "videos": [
           {
-            "video": "http://www.youtube.com/watch?v=M-nlAuCW7WY",
+            "link": "http://www.youtube.com/watch?v=M-nlAuCW7WY",
             "caption": "Princely",
-            "name": "Princely",
+            "name": "Princely"
 
           }
         ],
         "images": [
           {
-            "image": "/media/cat.jpg",
+            "link": "/media/cat.jpg",
             "caption": "Meow!",
-            "name": "A cat",
+            "name": "A cat"
 
           }
-        ],
+        ]
 
       }
     ]
@@ -2634,6 +2633,8 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   "location_description": "Located on Brooten Rd in Pacific City",
   "lng": -123.959418,
   "history": ""
+  }
+  ]
 }"""
 
         # Nearest 3 fish stores, with a proximity of 20 miles.
