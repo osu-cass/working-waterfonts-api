@@ -63,9 +63,8 @@ class EditHazardTestCase(TestCase):
             reverse('edit-hazard', kwargs={'id': '1'}))
 
         fields = {
-            "name": "Alien Abduction",
-            "description": "This site is liable to result " +
-            "in you being abducted by aliens.",
+            "name": "Falling Rocks",
+            "description": "If these fall on you, you're dead.",
         }
 
         form = response.context['hazard_form']

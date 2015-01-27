@@ -31,13 +31,6 @@ class NewHazardTestCase(TestCase):
             username='temporary', password='temporary')
         self.assertEqual(response, True)
 
-    def test_not_logged_in(self):
-        self.client.logout()
-
-        response = self.client.get(
-            reverse('edit-hazard', kwargs={'id': '1'}))
-        self.assertRedirects(response, '/login?next=/entry/hazards/1')
-
     def test_url_endpoint(self):
         url = reverse('new-hazard')
         self.assertEqual(url, '/entry/hazards/new')
@@ -65,7 +58,7 @@ class NewHazardTestCase(TestCase):
 
         # Data that we'll post to the server to get the new hazard created
         new_hazard = {
-            'name': 'Frier', 'description': ''}
+            'name': 'Frier', 'description': 'Some Text'}
 
         self.client.post(reverse('new-hazard'), new_hazard)
 
