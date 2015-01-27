@@ -16,8 +16,6 @@ class PointsOfInterestTestCase(TestCase):
         admin_group = Group(name='Administration Users')
         admin_group.save()
         user.groups.add(admin_group)
-        self.client.post(
-            reverse('login'), {'username': 'test', 'password': 'pass'})
 
         self.maxDiff = None
         self.expected_list = """
@@ -33,6 +31,7 @@ class PointsOfInterestTestCase(TestCase):
     {
       "street": "123 Fake St",
       "alt_name": "",
+  "contact_name": "",
       "facts": "It's a lighthouse",
       "lng": -124.10534,
       "id": 1,
@@ -49,8 +48,7 @@ class PointsOfInterestTestCase(TestCase):
 
       },
       "state": "Oregon",
-      "contact_name": "",
-      "email": "",
+          "email": "",
       "website": "",
       "description": "A pretty nice lighthouse",
       "phone": null,
@@ -85,6 +83,7 @@ class PointsOfInterestTestCase(TestCase):
       {
         "name": "Haystack Rock",
         "alt_name": "",
+  "contact_name": "",
         "description": "A pretty nice rock",
         "history": "Nature made it",
         "facts": "It's a nature habitat place, no climbing!",
@@ -182,8 +181,6 @@ class NoPointOfInterestViewTestCase(TestCase):
         admin_group = Group(name='Administration Users')
         admin_group.save()
         user.groups.add(admin_group)
-        self.client.post(
-            reverse('login'), {'username': 'test', 'password': 'pass'})
 
         self.expected_no_pointsofinterest = """
 {
@@ -235,8 +232,6 @@ class PointsOfInterestLocationTestCase(TestCase):
         admin_group = Group(name='Administration Users')
         admin_group.save()
         user.groups.add(admin_group)
-        self.client.post(
-            reverse('login'), {'username': 'test', 'password': 'pass'})
 
         self.maxDiff = None
 
@@ -283,9 +278,9 @@ class PointsOfInterestLocationTestCase(TestCase):
   ],
   "street": "146 SE Bay Blvd",
   "alt_name": "",
+  "contact_name": "",
   "facts": "",
   "lng": -124.050122,
-  "contact_name": "Newport Tuna Contact",
   "city": "Newport",
   "zip": "97365",
   "hazards": [
@@ -311,7 +306,6 @@ class PointsOfInterestLocationTestCase(TestCase):
   "email": "",
   "website": "",
   "description": "Fake Newport Tuna",
-  "hours": "",
   "phone": null,
   "lat": 44.631592,
   "categories": [
@@ -353,9 +347,9 @@ class PointsOfInterestLocationTestCase(TestCase):
   ],
   "street": "1226 Oregon Coast Hwy",
   "alt_name": "",
+  "contact_name": "",
   "facts": "",
   "lng": -124.052868,
-  "contact_name": "Newpotr Halibut Contact",
   "city": "Newport",
   "zip": "97365",
   "hazards": [
@@ -381,7 +375,6 @@ class PointsOfInterestLocationTestCase(TestCase):
   "email": "",
   "website": "",
   "description": "Fake Newport Halibut",
-  "hours": "",
   "phone": null,
   "lat": 44.646006,
   "categories": [
@@ -423,9 +416,9 @@ class PointsOfInterestLocationTestCase(TestCase):
   ],
   "street": "522 NW Spring St",
   "alt_name": "",
+  "contact_name": "",
   "facts": "",
   "lng": -124.066166,
-  "contact_name": "Waldport Tuna Contact",
   "city": "Waldport",
   "zip": "97394",
   "hazards": [
@@ -451,7 +444,6 @@ class PointsOfInterestLocationTestCase(TestCase):
   "email": "",
   "website": "",
   "description": "Fake Waldport Tuna",
-  "hours": "",
   "phone": null,
   "lat": 44.427761,
   "categories": [
@@ -493,9 +485,9 @@ class PointsOfInterestLocationTestCase(TestCase):
   ],
   "street": "190 SW Maple St",
   "alt_name": "",
+  "contact_name": "",
   "facts": "",
   "lng": -124.069126,
-  "contact_name": "Waldport Halibut Contact",
   "city": "Waldport",
   "zip": "97364",
   "hazards": [
@@ -521,7 +513,6 @@ class PointsOfInterestLocationTestCase(TestCase):
   "email": "",
   "website": "",
   "description": "Fake Waldport Halibut",
-  "hours": "",
   "phone": null,
   "lat": 44.425188,
   "categories": [
@@ -578,9 +569,9 @@ class PointsOfInterestLocationTestCase(TestCase):
   ],
   "street": "146 SE Bay Blvd",
   "alt_name": "",
+  "contact_name": "",
   "facts": "",
   "lng": -124.050122,
-  "contact_name": "Newport Tuna Contact",
   "city": "Newport",
   "zip": "97365",
   "hazards": [
@@ -606,7 +597,6 @@ class PointsOfInterestLocationTestCase(TestCase):
   "email": "",
   "website": "",
   "description": "Fake Newport Tuna",
-  "hours": "",
   "phone": null,
   "lat": 44.631592,
   "categories": [
@@ -648,9 +638,9 @@ class PointsOfInterestLocationTestCase(TestCase):
   ],
   "street": "1226 Oregon Coast Hwy",
   "alt_name": "",
+  "contact_name": "",
   "facts": "",
   "lng": -124.052868,
-  "contact_name": "Newpotr Halibut Contact",
   "city": "Newport",
   "zip": "97365",
   "hazards": [
@@ -676,7 +666,6 @@ class PointsOfInterestLocationTestCase(TestCase):
   "email": "",
   "website": "",
   "description": "Fake Newport Halibut",
-  "hours": "",
   "phone": null,
   "lat": 44.646006,
   "categories": [
@@ -718,9 +707,9 @@ class PointsOfInterestLocationTestCase(TestCase):
   ],
   "street": "522 NW Spring St",
   "alt_name": "",
+  "contact_name": "",
   "facts": "",
   "lng": -124.066166,
-  "contact_name": "Waldport Tuna Contact",
   "city": "Waldport",
   "zip": "97394",
   "hazards": [
@@ -746,7 +735,6 @@ class PointsOfInterestLocationTestCase(TestCase):
   "email": "",
   "website": "",
   "description": "Fake Waldport Tuna",
-  "hours": "",
   "phone": null,
   "lat": 44.427761,
   "categories": [
@@ -788,9 +776,9 @@ class PointsOfInterestLocationTestCase(TestCase):
   ],
   "street": "190 SW Maple St",
   "alt_name": "",
+  "contact_name": "",
   "facts": "",
   "lng": -124.069126,
-  "contact_name": "Waldport Halibut Contact",
   "city": "Waldport",
   "zip": "97364",
   "hazards": [
@@ -816,7 +804,6 @@ class PointsOfInterestLocationTestCase(TestCase):
   "email": "",
   "website": "",
   "description": "Fake Waldport Halibut",
-  "hours": "",
   "phone": null,
   "lat": 44.425188,
   "categories": [
@@ -852,6 +839,7 @@ class PointsOfInterestLocationTestCase(TestCase):
   "facts": "",
   "street": "35650 Roger Ave",
   "alt_name": "",
+  "contact_name": "",
   "images": [
     {
       "caption": "Meow!",
@@ -859,7 +847,6 @@ class PointsOfInterestLocationTestCase(TestCase):
       "name": "A cat"
     }
   ],
-  "contact_name": "Pacific City Tuna Contact",
   "id": 7,
   "city": "Cloverdale",
   "zip": "97112",
@@ -887,7 +874,6 @@ class PointsOfInterestLocationTestCase(TestCase):
   "email": "",
   "website": "",
   "description": "Fake Pacific City Tuna",
-  "hours": "",
   "phone": null,
   "lat": 45.197105,
   "categories": [
@@ -922,6 +908,7 @@ class PointsOfInterestLocationTestCase(TestCase):
   "facts": "",
   "street": "34455 Brooten Rd",
   "alt_name": "",
+  "contact_name": "",
   "images": [
     {
       "caption": "Woof!",
@@ -929,7 +916,6 @@ class PointsOfInterestLocationTestCase(TestCase):
       "name": "A dog"
     }
   ],
-  "contact_name": "Pacific City Halibut Contact",
   "id": 8,
   "city": "Cloverdale",
   "zip": "97112",
@@ -957,7 +943,6 @@ class PointsOfInterestLocationTestCase(TestCase):
   "email": "",
   "website": "",
   "description": "Fake Pacific City Halibut",
-  "hours": "",
   "phone": null,
   "lat": 45.207253,
   "categories": [
@@ -1004,13 +989,11 @@ WKT EWKT, and HEXEWKB."
     "id": 1,
     "website": "",
     "street": "720 SW Broadway",
-    "contact_name": "Portland Tuna Contact",
-    "city": "Portland",
+      "city": "Portland",
     "zip": "97204",
     "location_description": "Located on Broadway in Portland",
     "lng": -122.67963,
     "state": "OR",
-    "hours": "",
     "email": "",
     "modified": "2014-08-08T23:27:05.568Z",
     "description": "Fake Portland Tuna",
@@ -1019,6 +1002,7 @@ WKT EWKT, and HEXEWKB."
     "name": "Portland Tuna",
     "created": "2014-08-08T23:27:05.568Z",
       "alt_name": "",
+  "contact_name": "",
       "history": "",
       "facts": "",
     "ext": {
@@ -1069,13 +1053,11 @@ WKT EWKT, and HEXEWKB."
     "id": 3,
     "website": "",
     "street": "146 SE Bay Blvd",
-    "contact_name": "Newport Tuna Contact",
-    "city": "Newport",
+      "city": "Newport",
     "zip": "97365",
     "location_description": "Located on Bay Blvd in Newport",
     "lng": -124.050122,
     "state": "OR",
-    "hours": "",
     "email": "",
     "modified": "2014-08-08T23:27:05.568Z",
     "description": "Fake Newport Tuna",
@@ -1084,6 +1066,7 @@ WKT EWKT, and HEXEWKB."
     "name": "Newport Tuna",
     "created": "2014-08-08T23:27:05.568Z",
       "alt_name": "",
+  "contact_name": "",
       "history": "",
       "facts": "",
     "ext": {
@@ -1134,13 +1117,11 @@ WKT EWKT, and HEXEWKB."
     "id": 2,
     "website": "",
     "street": "1 SW Pine St",
-    "contact_name": "Portland Halibut Contact",
-    "city": "Portland",
+      "city": "Portland",
     "zip": "97204",
     "location_description": "Located on Pine in Portland",
     "lng": -122.670619,
     "state": "OR",
-    "hours": "",
     "email": "",
     "modified": "2014-08-08T23:27:05.568Z",
     "description": "Fake Portland Halibut",
@@ -1149,6 +1130,7 @@ WKT EWKT, and HEXEWKB."
     "name": "Portland Halibut",
     "created": "2014-08-08T23:27:05.568Z",
       "alt_name": "",
+  "contact_name": "",
       "history": "",
       "facts": "",
     "ext": {
@@ -1199,13 +1181,11 @@ WKT EWKT, and HEXEWKB."
     "id": 5,
     "website": "",
     "street": "522 NW Spring St",
-    "contact_name": "Waldport Tuna Contact",
-    "city": "Waldport",
+      "city": "Waldport",
     "zip": "97394",
     "location_description": "Located on Spring St in Waldport",
     "lng": -124.066166,
     "state": "OR",
-    "hours": "",
     "email": "",
     "modified": "2014-08-08T23:27:05.568Z",
     "description": "Fake Waldport Tuna",
@@ -1214,6 +1194,7 @@ WKT EWKT, and HEXEWKB."
     "name": "Waldport Tuna",
     "created": "2014-08-08T23:27:05.568Z",
       "alt_name": "",
+  "contact_name": "",
       "history": "",
       "facts": "",
     "ext": {
@@ -1264,13 +1245,11 @@ WKT EWKT, and HEXEWKB."
     "id": 4,
     "website": "",
     "street": "1226 Oregon Coast Hwy",
-    "contact_name": "Newpotr Halibut Contact",
-    "city": "Newport",
+      "city": "Newport",
     "zip": "97365",
     "location_description": "Located on Oregon Coast Hwy in Newport",
     "lng": -124.052868,
     "state": "OR",
-    "hours": "",
     "email": "",
     "modified": "2014-08-08T23:27:05.568Z",
     "description": "Fake Newport Halibut",
@@ -1279,6 +1258,7 @@ WKT EWKT, and HEXEWKB."
     "name": "Newport Halibut",
     "created": "2014-08-08T23:27:05.568Z",
       "alt_name": "",
+  "contact_name": "",
       "history": "",
       "facts": "",
     "ext": {
@@ -1329,13 +1309,11 @@ WKT EWKT, and HEXEWKB."
     "id": 6,
     "website": "",
     "street": "190 SW Maple St",
-    "contact_name": "Waldport Halibut Contact",
-    "city": "Waldport",
+      "city": "Waldport",
     "zip": "97364",
     "location_description": "Located on SW Maple St in Waldport",
     "lng": -124.069126,
     "state": "OR",
-    "hours": "",
     "email": "",
     "modified": "2014-08-08T23:27:05.568Z",
     "description": "Fake Waldport Halibut",
@@ -1344,6 +1322,7 @@ WKT EWKT, and HEXEWKB."
     "name": "Waldport Halibut",
     "created": "2014-08-08T23:27:05.568Z",
       "alt_name": "",
+  "contact_name": "",
       "history": "",
       "facts": "",
     "ext": {
@@ -1398,6 +1377,7 @@ WKT EWKT, and HEXEWKB."
       "zip": "97112",
       "created": "2014-08-08T23:27:05.568Z",
       "alt_name": "",
+  "contact_name": "",
       "history": "",
       "facts": "",
       "ext": {
@@ -1406,13 +1386,11 @@ WKT EWKT, and HEXEWKB."
       "location_description": "Located on Roger Ave in Pacific City",
       "lng": -123.958093,
       "email": "",
-      "hours": "",
-      "phone": null,
+            "phone": null,
       "state": "OR",
       "street": "35650 Roger Ave",
       "lat": 45.197105,
-      "contact_name": "Pacific City Tuna Contact",
-      "id": 7,
+          "id": 7,
       "name": "Pacific City Tuna",
     "images": [{
       "link": "/media/cat.jpg",
@@ -1463,6 +1441,7 @@ WKT EWKT, and HEXEWKB."
       "zip": "97112",
       "created": "2014-08-08T23:27:05.568Z",
       "alt_name": "",
+  "contact_name": "",
       "history": "",
       "facts": "",
       "ext": {
@@ -1471,13 +1450,11 @@ WKT EWKT, and HEXEWKB."
       "location_description": "Located on Brooten Rd in Pacific City",
       "lng": -123.959418,
       "email": "",
-      "hours": "",
-      "phone": null,
+            "phone": null,
       "state": "OR",
       "street": "34455 Brooten Rd",
       "lat": 45.207253,
-      "contact_name": "Pacific City Halibut Contact",
-      "id": 8,
+          "id": 8,
       "name": "Pacific City Halibut",
     "images": [{
       "link": "/media/dog.jpg",
@@ -1554,9 +1531,9 @@ Geometry returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   ],
   "street": "720 SW Broadway",
   "alt_name": "",
+  "contact_name": "",
   "facts": "",
   "lng": -122.67963,
-  "contact_name": "Portland Tuna Contact",
   "city": "Portland",
   "zip": "97204",
   "hazards": [
@@ -1582,7 +1559,6 @@ Geometry returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   "email": "",
   "website": "",
   "description": "Fake Portland Tuna",
-  "hours": "",
   "phone": null,
   "lat": 45.518962,
   "categories": [
@@ -1624,9 +1600,9 @@ Geometry returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   ],
   "street": "146 SE Bay Blvd",
   "alt_name": "",
+  "contact_name": "",
   "facts": "",
   "lng": -124.050122,
-  "contact_name": "Newport Tuna Contact",
   "city": "Newport",
   "zip": "97365",
   "hazards": [
@@ -1652,7 +1628,6 @@ Geometry returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   "email": "",
   "website": "",
   "description": "Fake Newport Tuna",
-  "hours": "",
   "phone": null,
   "lat": 44.631592,
   "categories": [
@@ -1694,9 +1669,9 @@ Geometry returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   ],
   "street": "1 SW Pine St",
   "alt_name": "",
+  "contact_name": "",
   "facts": "",
   "lng": -122.670619,
-  "contact_name": "Portland Halibut Contact",
   "city": "Portland",
   "zip": "97204",
   "hazards": [
@@ -1722,7 +1697,6 @@ Geometry returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   "email": "",
   "website": "",
   "description": "Fake Portland Halibut",
-  "hours": "",
   "phone": null,
   "lat": 45.520988,
   "categories": [
@@ -1764,9 +1738,9 @@ Geometry returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   ],
   "street": "522 NW Spring St",
   "alt_name": "",
+  "contact_name": "",
   "facts": "",
   "lng": -124.066166,
-  "contact_name": "Waldport Tuna Contact",
   "city": "Waldport",
   "zip": "97394",
   "hazards": [
@@ -1792,7 +1766,6 @@ Geometry returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   "email": "",
   "website": "",
   "description": "Fake Waldport Tuna",
-  "hours": "",
   "phone": null,
   "lat": 44.427761,
   "categories": [
@@ -1834,9 +1807,9 @@ Geometry returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   ],
   "street": "1226 Oregon Coast Hwy",
   "alt_name": "",
+  "contact_name": "",
   "facts": "",
   "lng": -124.052868,
-  "contact_name": "Newpotr Halibut Contact",
   "city": "Newport",
   "zip": "97365",
   "hazards": [
@@ -1862,7 +1835,6 @@ Geometry returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   "email": "",
   "website": "",
   "description": "Fake Newport Halibut",
-  "hours": "",
   "phone": null,
   "lat": 44.646006,
   "categories": [
@@ -1904,9 +1876,9 @@ Geometry returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   ],
   "street": "190 SW Maple St",
   "alt_name": "",
+  "contact_name": "",
   "facts": "",
   "lng": -124.069126,
-  "contact_name": "Waldport Halibut Contact",
   "city": "Waldport",
   "zip": "97364",
   "hazards": [
@@ -1932,7 +1904,6 @@ Geometry returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   "email": "",
   "website": "",
   "description": "Fake Waldport Halibut",
-  "hours": "",
   "phone": null,
   "lat": 44.425188,
   "categories": [
@@ -1968,6 +1939,7 @@ Geometry returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   "facts": "",
   "street": "35650 Roger Ave",
   "alt_name": "",
+  "contact_name": "",
   "images": [
     {
       "caption": "Meow!",
@@ -1975,7 +1947,6 @@ Geometry returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
       "name": "A cat"
     }
   ],
-  "contact_name": "Pacific City Tuna Contact",
   "id": 7,
   "city": "Cloverdale",
   "zip": "97112",
@@ -2003,7 +1974,6 @@ Geometry returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   "email": "",
   "website": "",
   "description": "Fake Pacific City Tuna",
-  "hours": "",
   "phone": null,
   "lat": 45.197105,
   "categories": [
@@ -2038,6 +2008,7 @@ Geometry returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   "facts": "",
   "street": "34455 Brooten Rd",
   "alt_name": "",
+  "contact_name": "",
   "images": [
     {
       "caption": "Woof!",
@@ -2045,7 +2016,6 @@ Geometry returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
       "name": "A dog"
     }
   ],
-  "contact_name": "Pacific City Halibut Contact",
   "id": 8,
   "city": "Cloverdale",
   "zip": "97112",
@@ -2073,7 +2043,6 @@ Geometry returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   "email": "",
   "website": "",
   "description": "Fake Pacific City Halibut",
-  "hours": "",
   "phone": null,
   "lat": 45.207253,
   "categories": [
@@ -2131,9 +2100,9 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   ],
   "street": "720 SW Broadway",
   "alt_name": "",
+  "contact_name": "",
   "facts": "",
   "lng": -122.67963,
-  "contact_name": "Portland Tuna Contact",
   "city": "Portland",
   "zip": "97204",
   "hazards": [
@@ -2159,7 +2128,6 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   "email": "",
   "website": "",
   "description": "Fake Portland Tuna",
-  "hours": "",
   "phone": null,
   "lat": 45.518962,
   "categories": [
@@ -2201,9 +2169,9 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   ],
   "street": "146 SE Bay Blvd",
   "alt_name": "",
+  "contact_name": "",
   "facts": "",
   "lng": -124.050122,
-  "contact_name": "Newport Tuna Contact",
   "city": "Newport",
   "zip": "97365",
   "hazards": [
@@ -2229,7 +2197,6 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   "email": "",
   "website": "",
   "description": "Fake Newport Tuna",
-  "hours": "",
   "phone": null,
   "lat": 44.631592,
   "categories": [
@@ -2271,9 +2238,9 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   ],
   "street": "1 SW Pine St",
   "alt_name": "",
+  "contact_name": "",
   "facts": "",
   "lng": -122.670619,
-  "contact_name": "Portland Halibut Contact",
   "city": "Portland",
   "zip": "97204",
   "hazards": [
@@ -2299,7 +2266,6 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   "email": "",
   "website": "",
   "description": "Fake Portland Halibut",
-  "hours": "",
   "phone": null,
   "lat": 45.520988,
   "categories": [
@@ -2341,9 +2307,9 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   ],
   "street": "522 NW Spring St",
   "alt_name": "",
+  "contact_name": "",
   "facts": "",
   "lng": -124.066166,
-  "contact_name": "Waldport Tuna Contact",
   "city": "Waldport",
   "zip": "97394",
   "hazards": [
@@ -2369,7 +2335,6 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   "email": "",
   "website": "",
   "description": "Fake Waldport Tuna",
-  "hours": "",
   "phone": null,
   "lat": 44.427761,
   "categories": [
@@ -2411,9 +2376,9 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   ],
   "street": "1226 Oregon Coast Hwy",
   "alt_name": "",
+  "contact_name": "",
   "facts": "",
   "lng": -124.052868,
-  "contact_name": "Newpotr Halibut Contact",
   "city": "Newport",
   "zip": "97365",
   "hazards": [
@@ -2439,7 +2404,6 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   "email": "",
   "website": "",
   "description": "Fake Newport Halibut",
-  "hours": "",
   "phone": null,
   "lat": 44.646006,
   "categories": [
@@ -2481,9 +2445,9 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   ],
   "street": "190 SW Maple St",
   "alt_name": "",
+  "contact_name": "",
   "facts": "",
   "lng": -124.069126,
-  "contact_name": "Waldport Halibut Contact",
   "city": "Waldport",
   "zip": "97364",
   "hazards": [
@@ -2509,7 +2473,6 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   "email": "",
   "website": "",
   "description": "Fake Waldport Halibut",
-  "hours": "",
   "phone": null,
   "lat": 44.425188,
   "categories": [
@@ -2545,6 +2508,7 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   "facts": "",
   "street": "35650 Roger Ave",
   "alt_name": "",
+  "contact_name": "",
   "images": [
     {
       "caption": "Meow!",
@@ -2552,7 +2516,6 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
       "name": "A cat"
     }
   ],
-  "contact_name": "Pacific City Tuna Contact",
   "id": 7,
   "city": "Cloverdale",
   "zip": "97112",
@@ -2580,7 +2543,6 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   "email": "",
   "website": "",
   "description": "Fake Pacific City Tuna",
-  "hours": "",
   "phone": null,
   "lat": 45.197105,
   "categories": [
@@ -2615,6 +2577,7 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   "facts": "",
   "street": "34455 Brooten Rd",
   "alt_name": "",
+  "contact_name": "",
   "images": [
     {
       "caption": "Woof!",
@@ -2622,7 +2585,6 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
       "name": "A dog"
     }
   ],
-  "contact_name": "Pacific City Halibut Contact",
   "id": 8,
   "city": "Cloverdale",
   "zip": "97112",
@@ -2650,7 +2612,6 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   "email": "",
   "website": "",
   "description": "Fake Pacific City Halibut",
-  "hours": "",
   "phone": null,
   "lat": 45.207253,
   "categories": [
@@ -2702,9 +2663,9 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   ],
   "street": "146 SE Bay Blvd",
   "alt_name": "",
+  "contact_name": "",
   "facts": "",
   "lng": -124.050122,
-  "contact_name": "Newport Tuna Contact",
   "city": "Newport",
   "zip": "97365",
   "hazards": [
@@ -2730,7 +2691,6 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   "email": "",
   "website": "",
   "description": "Fake Newport Tuna",
-  "hours": "",
   "phone": null,
   "lat": 44.631592,
   "categories": [
@@ -2772,9 +2732,9 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   ],
   "street": "1226 Oregon Coast Hwy",
   "alt_name": "",
+  "contact_name": "",
   "facts": "",
   "lng": -124.052868,
-  "contact_name": "Newpotr Halibut Contact",
   "city": "Newport",
   "zip": "97365",
   "hazards": [
@@ -2800,7 +2760,6 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   "email": "",
   "website": "",
   "description": "Fake Newport Halibut",
-  "hours": "",
   "phone": null,
   "lat": 44.646006,
   "categories": [
@@ -2842,9 +2801,9 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   ],
   "street": "522 NW Spring St",
   "alt_name": "",
+  "contact_name": "",
   "facts": "",
   "lng": -124.066166,
-  "contact_name": "Waldport Tuna Contact",
   "city": "Waldport",
   "zip": "97394",
   "hazards": [
@@ -2870,7 +2829,6 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   "email": "",
   "website": "",
   "description": "Fake Waldport Tuna",
-  "hours": "",
   "phone": null,
   "lat": 44.427761,
   "categories": [
@@ -2926,9 +2884,9 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   ],
   "street": "146 SE Bay Blvd",
   "alt_name": "",
+  "contact_name": "",
   "facts": "",
   "lng": -124.050122,
-  "contact_name": "Newport Tuna Contact",
   "city": "Newport",
   "zip": "97365",
   "hazards": [
@@ -2954,7 +2912,6 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   "email": "",
   "website": "",
   "description": "Fake Newport Tuna",
-  "hours": "",
   "phone": null,
   "lat": 44.631592,
   "categories": [
@@ -2996,9 +2953,9 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   ],
   "street": "1226 Oregon Coast Hwy",
   "alt_name": "",
+  "contact_name": "",
   "facts": "",
   "lng": -124.052868,
-  "contact_name": "Newpotr Halibut Contact",
   "city": "Newport",
   "zip": "97365",
   "hazards": [
@@ -3024,7 +2981,6 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   "email": "",
   "website": "",
   "description": "Fake Newport Halibut",
-  "hours": "",
   "phone": null,
   "lat": 44.646006,
   "categories": [
@@ -3066,9 +3022,9 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   ],
   "street": "522 NW Spring St",
   "alt_name": "",
+  "contact_name": "",
   "facts": "",
   "lng": -124.066166,
-  "contact_name": "Waldport Tuna Contact",
   "city": "Waldport",
   "zip": "97394",
   "hazards": [
@@ -3094,7 +3050,6 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   "email": "",
   "website": "",
   "description": "Fake Waldport Tuna",
-  "hours": "",
   "phone": null,
   "lat": 44.427761,
   "categories": [
@@ -3136,9 +3091,9 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   ],
   "street": "190 SW Maple St",
   "alt_name": "",
+  "contact_name": "",
   "facts": "",
   "lng": -124.069126,
-  "contact_name": "Waldport Halibut Contact",
   "city": "Waldport",
   "zip": "97364",
   "hazards": [
@@ -3164,7 +3119,6 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
   "email": "",
   "website": "",
   "description": "Fake Waldport Halibut",
-  "hours": "",
   "phone": null,
   "lat": 44.425188,
   "categories": [
@@ -3201,6 +3155,11 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
         ).content)
 
         expected_answer = json.loads(self.expected_nearby_all_pointsofinterest)
+
+        for poi in all_pointsofinterest_data['pointsofinterest']:
+            poi['hazards'] = sorted(poi['hazards'], key=lambda k: k['id'])
+            poi['categories'] = sorted(poi['categories'], key=lambda k: k['id'])
+
         self.assertEqual(all_pointsofinterest_data, expected_answer)
 
     def test_good_proximity_all_categories(self):
@@ -3227,8 +3186,19 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
 
         all_pointsofinterest_data['pointsofinterest'] = sorted(
             all_pointsofinterest_data['pointsofinterest'], key=lambda k: k['id'])
+        all_pointsofinterest_data['pointsofinterest'] = sorted(
+            all_pointsofinterest_data['pointsofinterest'], key=lambda k: k['id'])
         expected_answer['pointsofinterest'] = sorted(
             expected_answer['pointsofinterest'], key=lambda k: k['id'])
+
+        for poi in all_pointsofinterest_data['pointsofinterest']:
+            poi['hazards'] = sorted(poi['hazards'], key=lambda k: k['id'])
+            poi['categories'] = sorted(poi['categories'], key=lambda k: k['id'])
+
+        for poi in expected_answer['pointsofinterest']:
+            poi['hazards'] = sorted(poi['hazards'], key=lambda k: k['id'])
+            poi['categories'] = sorted(poi['categories'], key=lambda k: k['id'])
+
 
         self.assertEqual(all_pointsofinterest_data, expected_answer)
 
@@ -3250,6 +3220,14 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
         expected_answer['pointsofinterest'] = sorted(
             expected_answer['pointsofinterest'], key=lambda k: k['id'])
 
+        for poi in all_pointsofinterest_data['pointsofinterest']:
+            poi['hazards'] = sorted(poi['hazards'], key=lambda k: k['id'])
+            poi['categories'] = sorted(poi['categories'], key=lambda k: k['id'])
+
+        for poi in expected_answer['pointsofinterest']:
+            poi['hazards'] = sorted(poi['hazards'], key=lambda k: k['id'])
+            poi['categories'] = sorted(poi['categories'], key=lambda k: k['id'])
+
         self.assertEqual(all_pointsofinterest_data, expected_answer)
 
         # Lat is missing
@@ -3263,6 +3241,14 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
         expected_answer['pointsofinterest'] = sorted(
             expected_answer['pointsofinterest'], key=lambda k: k['id'])
 
+        for poi in all_pointsofinterest_data['pointsofinterest']:
+            poi['hazards'] = sorted(poi['hazards'], key=lambda k: k['id'])
+            poi['categories'] = sorted(poi['categories'], key=lambda k: k['id'])
+
+        for poi in expected_answer['pointsofinterest']:
+            poi['hazards'] = sorted(poi['hazards'], key=lambda k: k['id'])
+            poi['categories'] = sorted(poi['categories'], key=lambda k: k['id'])
+
         self.assertEqual(all_pointsofinterest_data, expected_answer)
 
         # Long is missing
@@ -3274,6 +3260,14 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
             all_pointsofinterest_data['pointsofinterest'], key=lambda k: k['id'])
         expected_answer['pointsofinterest'] = sorted(
             expected_answer['pointsofinterest'], key=lambda k: k['id'])
+
+        for poi in all_pointsofinterest_data['pointsofinterest']:
+            poi['hazards'] = sorted(poi['hazards'], key=lambda k: k['id'])
+            poi['categories'] = sorted(poi['categories'], key=lambda k: k['id'])
+
+        for poi in expected_answer['pointsofinterest']:
+            poi['hazards'] = sorted(poi['hazards'], key=lambda k: k['id'])
+            poi['categories'] = sorted(poi['categories'], key=lambda k: k['id'])
 
         self.assertEqual(all_pointsofinterest_data, expected_answer)
 
@@ -3300,6 +3294,16 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
             ).content)
 
         expected_answer = json.loads(self.expected_nearby_limit_3)
+
+        for poi in all_pointsofinterest_data['pointsofinterest']:
+            poi['hazards'] = sorted(poi['hazards'], key=lambda k: k['id'])
+            poi['categories'] = sorted(poi['categories'], key=lambda k: k['id'])
+
+        for poi in expected_answer['pointsofinterest']:
+            poi['hazards'] = sorted(poi['hazards'], key=lambda k: k['id'])
+            poi['categories'] = sorted(poi['categories'], key=lambda k: k['id'])
+
+
         self.assertEqual(all_pointsofinterest_data, expected_answer)
 
     def test_bad_limit_with_location_all_products(self):
@@ -3312,6 +3316,15 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
                 'pois-list')).content)
 
         expected_answer = json.loads(self.expected_nearby_bad_limit)
+
+        for poi in all_pointsofinterest_data['pointsofinterest']:
+            poi['hazards'] = sorted(poi['hazards'], key=lambda k: k['id'])
+            poi['categories'] = sorted(poi['categories'], key=lambda k: k['id'])
+
+        for poi in expected_answer['pointsofinterest']:
+            poi['hazards'] = sorted(poi['hazards'], key=lambda k: k['id'])
+            poi['categories'] = sorted(poi['categories'], key=lambda k: k['id'])
+
         self.assertEqual(all_pointsofinterest_data, expected_answer)
 
     def test_limit_larger_than_length_all_products(self):
@@ -3324,4 +3337,13 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
             'limit=200' % reverse('pois-list')).content)
 
         expected_answer = json.loads(self.expected_nearby_all_pointsofinterest)
+
+        for poi in all_pointsofinterest_data['pointsofinterest']:
+            poi['hazards'] = sorted(poi['hazards'], key=lambda k: k['id'])
+            poi['categories'] = sorted(poi['categories'], key=lambda k: k['id'])
+
+        for poi in expected_answer['pointsofinterest']:
+            poi['hazards'] = sorted(poi['hazards'], key=lambda k: k['id'])
+            poi['categories'] = sorted(poi['categories'], key=lambda k: k['id'])
+
         self.assertEqual(all_pointsofinterest_data, expected_answer)
