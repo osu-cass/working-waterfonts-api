@@ -41,13 +41,6 @@ class NewImageTestCase(TestCase):
     def tearDown(self):
         self.image.close()
 
-    def test_not_logged_in(self):
-        self.client.logout()
-
-        response = self.client.get(
-            reverse('new-image'))
-        self.assertRedirects(response, '/login?next=/entry/images/new')
-
     def test_url_endpoint(self):
         url = reverse('new-image')
         self.assertEqual(url, '/entry/images/new')

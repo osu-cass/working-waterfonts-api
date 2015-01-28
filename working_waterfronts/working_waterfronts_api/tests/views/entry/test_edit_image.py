@@ -37,13 +37,6 @@ class EditImageTestCase(TestCase):
         self.image = open(
             os.path.join(self.test_media_directory, 'cat.jpg'), 'r')
 
-    def test_not_logged_in(self):
-        self.client.logout()
-
-        response = self.client.get(
-            reverse('edit-image', kwargs={'id': '1'}))
-        self.assertRedirects(response, '/login?next=/entry/images/1')
-
     def test_url_endpoint(self):
         url = reverse('edit-image', kwargs={'id': '1'})
         self.assertEqual(url, '/entry/images/1')
