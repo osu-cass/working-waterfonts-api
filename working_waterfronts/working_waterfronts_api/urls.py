@@ -38,6 +38,10 @@ urlpatterns = patterns(
         url_base + '.views.pointsofinterest.poi_list',
         name='pois-list'),
 
+    url(r'^1/poi/(?P<id>\d+)/?$',
+        url_base + '.views.pointsofinterest.poi_details',
+        name='poi-details'),
+
      url(r'^entry/videos/(?P<id>\d+)/?$',
         url_base + '.views.entry.videos.video',
         name='edit-video'),
