@@ -20,13 +20,6 @@ class ListHazardTestCase(TestCase):
             username='temporary', password='temporary')
         self.assertEqual(response, True)
 
-    def test_not_logged_in(self):
-        self.client.logout()
-
-        response = self.client.get(
-            reverse('edit-hazard', kwargs={'id': '1'}))
-        self.assertRedirects(response, '/login?next=/entry/hazards/1')
-
     def test_url_endpoint(self):
         url = reverse('entry-list-hazards')
         self.assertEqual(url, '/entry/hazards')
