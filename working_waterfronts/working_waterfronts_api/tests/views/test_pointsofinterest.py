@@ -582,13 +582,13 @@ being abducted by aliens."
   "zip": "97365",
   "hazards": [
     {
-      "id": 1,
-      "name": "Falling Rocks",
+      "id": 3,
+      "name": "Falling Rocks 3",
       "description": "If these fall on you, you're dead."
     },
     {
-      "id": 3,
-      "name": "Falling Rocks 3",
+      "id": 1,
+      "name": "Falling Rocks",
       "description": "If these fall on you, you're dead."
     },
     {
@@ -723,13 +723,13 @@ being abducted by aliens."
   "zip": "97394",
   "hazards": [
     {
-      "id": 1,
-      "name": "Falling Rocks",
+      "id": 3,
+      "name": "Falling Rocks 3",
       "description": "If these fall on you, you're dead."
     },
     {
-      "id": 3,
-      "name": "Falling Rocks 3",
+      "id": 1,
+      "name": "Falling Rocks",
       "description": "If these fall on you, you're dead."
     },
     {
@@ -864,13 +864,13 @@ being abducted by aliens."
   "zip": "97112",
   "hazards": [
     {
-      "id": 1,
-      "name": "Falling Rocks",
+      "id": 3,
+      "name": "Falling Rocks 3",
       "description": "If these fall on you, you're dead."
     },
     {
-      "id": 3,
-      "name": "Falling Rocks 3",
+      "id": 1,
+      "name": "Falling Rocks",
       "description": "If these fall on you, you're dead."
     },
     {
