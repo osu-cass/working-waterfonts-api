@@ -10,7 +10,7 @@ from .serializer import ObjectSerializer
 
 def poi_list(request):
     """
-    */pointsofinterest/*
+    */pois/*
 
     List all pointsofinterest in the database. There is no order to this list,
     only whatever is returned by the database.
