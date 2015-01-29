@@ -105,7 +105,8 @@ class PointsOfInterestTestCase(TestCase):
         "hazards": [
           {
             "name": "Alien Abduction",
-            "description": "This site is liable to result in you being abducted by aliens.",
+            "description": "This site is liable to result \
+in you being abducted by aliens.",
             "id": 2
           }
         ],
@@ -213,10 +214,10 @@ class PointsOfInterestLocationTestCase(TestCase):
     Test whether the /pois/ view returns the correct results when given a
     coordinate to center on.
 
-    For future test-writers: the location_fixtures tests have six pointsofinterest
+    For future test-writers: the location_fixtures tests have six POIs
     in them -- two in Newport, two in Waldport, and two in Portland. Each
-    vendor has one product, and each product is sold at one of the two pointsofinterest
-    in the city.
+    POI has three categories, and each categories is sold at one of the two
+    POIs in the city.
 
     This means you can easily test the proximity limit by limiting yourself
     to one city, or just the coast, etc.
@@ -355,17 +356,20 @@ class PointsOfInterestLocationTestCase(TestCase):
     {
       "id": 2,
       "name": "Alien Abduction",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     },
     {
       "id": 4,
       "name": "Alien Abduction 4",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     },
     {
       "id": 6,
       "name": "Alien Abduction 6",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     }
   ],
   "location_description": "Located on Oregon Coast Hwy in Newport",
@@ -493,17 +497,20 @@ class PointsOfInterestLocationTestCase(TestCase):
     {
       "id": 2,
       "name": "Alien Abduction",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     },
     {
       "id": 4,
       "name": "Alien Abduction 4",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     },
     {
       "id": 6,
       "name": "Alien Abduction 6",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     }
   ],
   "location_description": "Located on SW Maple St in Waldport",
@@ -646,17 +653,20 @@ class PointsOfInterestLocationTestCase(TestCase):
     {
       "id": 2,
       "name": "Alien Abduction",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     },
     {
       "id": 4,
       "name": "Alien Abduction 4",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     },
     {
       "id": 6,
       "name": "Alien Abduction 6",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     }
   ],
   "location_description": "Located on Oregon Coast Hwy in Newport",
@@ -784,17 +794,20 @@ class PointsOfInterestLocationTestCase(TestCase):
     {
       "id": 2,
       "name": "Alien Abduction",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     },
     {
       "id": 4,
       "name": "Alien Abduction 4",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     },
     {
       "id": 6,
       "name": "Alien Abduction 6",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     }
   ],
   "location_description": "Located on SW Maple St in Waldport",
@@ -922,17 +935,20 @@ class PointsOfInterestLocationTestCase(TestCase):
     {
       "id": 2,
       "name": "Alien Abduction",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     },
     {
       "id": 4,
       "name": "Alien Abduction 4",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     },
     {
       "id": 6,
       "name": "Alien Abduction 6",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     }
   ],
   "ext": {
@@ -1161,17 +1177,20 @@ WKT EWKT, and HEXEWKB."
     "hazards": [
       {
       "name": "Alien Abduction",
-      "description": "This site is liable to result in you being abducted by aliens.",
+      "description": "This site is liable to result in you \
+being abducted by aliens.",
         "id": 2
       },
       {
       "name": "Alien Abduction 4",
-      "description": "This site is liable to result in you being abducted by aliens.",
+      "description": "This site is liable to result in you \
+being abducted by aliens.",
         "id": 4
       },
       {
       "name": "Alien Abduction 6",
-      "description": "This site is liable to result in you being abducted by aliens.",
+      "description": "This site is liable to result in you \
+being abducted by aliens.",
         "id": 6
       }
     ]
@@ -1289,17 +1308,20 @@ WKT EWKT, and HEXEWKB."
     "hazards": [
       {
       "name": "Alien Abduction",
-      "description": "This site is liable to result in you being abducted by aliens.",
+      "description": "This site is liable to result in you \
+being abducted by aliens.",
         "id": 2
       },
       {
       "name": "Alien Abduction 4",
-      "description": "This site is liable to result in you being abducted by aliens.",
+      "description": "This site is liable to result in you \
+being abducted by aliens.",
         "id": 4
       },
       {
       "name": "Alien Abduction 6",
-      "description": "This site is liable to result in you being abducted by aliens.",
+      "description": "This site is liable to result in you \
+being abducted by aliens.",
         "id": 6
       }
     ]
@@ -1353,17 +1375,20 @@ WKT EWKT, and HEXEWKB."
     "hazards": [
       {
       "name": "Alien Abduction",
-      "description": "This site is liable to result in you being abducted by aliens.",
+      "description": "This site is liable to result in you \
+being abducted by aliens.",
         "id": 2
       },
       {
       "name": "Alien Abduction 4",
-      "description": "This site is liable to result in you being abducted by aliens.",
+      "description": "This site is liable to result in you \
+being abducted by aliens.",
         "id": 4
       },
       {
       "name": "Alien Abduction 6",
-      "description": "This site is liable to result in you being abducted by aliens.",
+      "description": "This site is liable to result in you \
+being abducted by aliens.",
         "id": 6
       }
     ]
@@ -1481,17 +1506,20 @@ WKT EWKT, and HEXEWKB."
     "hazards": [
       {
       "name": "Alien Abduction",
-      "description": "This site is liable to result in you being abducted by aliens.",
+      "description": "This site is liable to result in you \
+being abducted by aliens.",
         "id": 2
       },
       {
       "name": "Alien Abduction 4",
-      "description": "This site is liable to result in you being abducted by aliens.",
+      "description": "This site is liable to result in you \
+being abducted by aliens.",
         "id": 4
       },
       {
       "name": "Alien Abduction 6",
-      "description": "This site is liable to result in you being abducted by aliens.",
+      "description": "This site is liable to result in you \
+being abducted by aliens.",
         "id": 6
       }
     ]
@@ -1677,17 +1705,20 @@ Geometry returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
     {
       "id": 2,
       "name": "Alien Abduction",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     },
     {
       "id": 4,
       "name": "Alien Abduction 4",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     },
     {
       "id": 6,
       "name": "Alien Abduction 6",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     }
   ],
   "location_description": "Located on Pine in Portland",
@@ -1815,17 +1846,20 @@ Geometry returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
     {
       "id": 2,
       "name": "Alien Abduction",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     },
     {
       "id": 4,
       "name": "Alien Abduction 4",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     },
     {
       "id": 6,
       "name": "Alien Abduction 6",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     }
   ],
   "location_description": "Located on Oregon Coast Hwy in Newport",
@@ -1884,17 +1918,20 @@ Geometry returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
     {
       "id": 2,
       "name": "Alien Abduction",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     },
     {
       "id": 4,
       "name": "Alien Abduction 4",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     },
     {
       "id": 6,
       "name": "Alien Abduction 6",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     }
   ],
   "location_description": "Located on SW Maple St in Waldport",
@@ -2022,17 +2059,20 @@ Geometry returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
     {
       "id": 2,
       "name": "Alien Abduction",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     },
     {
       "id": 4,
       "name": "Alien Abduction 4",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     },
     {
       "id": 6,
       "name": "Alien Abduction 6",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     }
   ],
   "ext": {
@@ -2246,17 +2286,20 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
     {
       "id": 2,
       "name": "Alien Abduction",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     },
     {
       "id": 4,
       "name": "Alien Abduction 4",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     },
     {
       "id": 6,
       "name": "Alien Abduction 6",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     }
   ],
   "location_description": "Located on Pine in Portland",
@@ -2384,17 +2427,20 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
     {
       "id": 2,
       "name": "Alien Abduction",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     },
     {
       "id": 4,
       "name": "Alien Abduction 4",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     },
     {
       "id": 6,
       "name": "Alien Abduction 6",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     }
   ],
   "location_description": "Located on Oregon Coast Hwy in Newport",
@@ -2453,17 +2499,20 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
     {
       "id": 2,
       "name": "Alien Abduction",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     },
     {
       "id": 4,
       "name": "Alien Abduction 4",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     },
     {
       "id": 6,
       "name": "Alien Abduction 6",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     }
   ],
   "location_description": "Located on SW Maple St in Waldport",
@@ -2591,17 +2640,20 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
     {
       "id": 2,
       "name": "Alien Abduction",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     },
     {
       "id": 4,
       "name": "Alien Abduction 4",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     },
     {
       "id": 6,
       "name": "Alien Abduction 6",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     }
   ],
   "ext": {
@@ -2742,17 +2794,20 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
     {
       "id": 2,
       "name": "Alien Abduction",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     },
     {
       "id": 4,
       "name": "Alien Abduction 4",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     },
     {
       "id": 6,
       "name": "Alien Abduction 6",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     }
   ],
   "location_description": "Located on Oregon Coast Hwy in Newport",
@@ -2963,17 +3018,20 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
     {
       "id": 2,
       "name": "Alien Abduction",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     },
     {
       "id": 4,
       "name": "Alien Abduction 4",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     },
     {
       "id": 6,
       "name": "Alien Abduction 6",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     }
   ],
   "location_description": "Located on Oregon Coast Hwy in Newport",
@@ -3101,17 +3159,20 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
     {
       "id": 2,
       "name": "Alien Abduction",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     },
     {
       "id": 4,
       "name": "Alien Abduction 4",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     },
     {
       "id": 6,
       "name": "Alien Abduction 6",
-      "description": "This site is liable to result in you being abducted by aliens."
+      "description": "This site is liable to result in you \
+being abducted by aliens."
     }
   ],
   "location_description": "Located on SW Maple St in Waldport",
@@ -3148,8 +3209,8 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
 
     def test_successful_location_all_categories(self):
         """
-        Test that good parameters return all pointsofinterest ordered by location.
-        There will also be a default limit of 20 miles.
+        Test that good parameters return all pointsofinterest ordered by
+        location. There will also be a default limit of 20 miles.
         """
         all_pointsofinterest_data = json.loads(self.client.get(
             '%s?lat=44.609079&lng=-124.052538' % reverse('pois-list')
@@ -3166,8 +3227,8 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
 
     def test_good_proximity_all_categories(self):
         """
-        Test that good parameters return all pointsofinterest ordered by location.
-        Extending the proximity to 50 miles adds two stores.
+        Test that good parameters return all pointsofinterest ordered by
+        location. Extending the proximity to 50 miles adds two stores.
         """
         extended_proximity = json.loads(self.client.get(
             '%s?lat=44.609079&lng=-124.052538&'
@@ -3187,9 +3248,11 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
         expected_answer = json.loads(self.expected_error_result)
 
         all_pointsofinterest_data['pointsofinterest'] = sorted(
-            all_pointsofinterest_data['pointsofinterest'], key=lambda k: k['id'])
+            all_pointsofinterest_data['pointsofinterest'],
+            key=lambda k: k['id'])
         all_pointsofinterest_data['pointsofinterest'] = sorted(
-            all_pointsofinterest_data['pointsofinterest'], key=lambda k: k['id'])
+            all_pointsofinterest_data['pointsofinterest'],
+            key=lambda k: k['id'])
         expected_answer['pointsofinterest'] = sorted(
             expected_answer['pointsofinterest'], key=lambda k: k['id'])
 
@@ -3219,7 +3282,8 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
         expected_answer = json.loads(self.expected_error_result)
 
         all_pointsofinterest_data['pointsofinterest'] = sorted(
-            all_pointsofinterest_data['pointsofinterest'], key=lambda k: k['id'])
+            all_pointsofinterest_data['pointsofinterest'],
+            key=lambda k: k['id'])
         expected_answer['pointsofinterest'] = sorted(
             expected_answer['pointsofinterest'], key=lambda k: k['id'])
 
@@ -3242,7 +3306,8 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
             '%s?lng=-45.232' % reverse('pois-list')).content)
 
         all_pointsofinterest_data['pointsofinterest'] = sorted(
-            all_pointsofinterest_data['pointsofinterest'], key=lambda k: k['id'])
+            all_pointsofinterest_data['pointsofinterest'],
+            key=lambda k: k['id'])
         expected_answer['pointsofinterest'] = sorted(
             expected_answer['pointsofinterest'], key=lambda k: k['id'])
 
@@ -3264,7 +3329,8 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
         all_pointsofinterest_data = json.loads(self.client.get(
             '%s?lat=-45.232' % reverse('pois-list')).content)
         all_pointsofinterest_data['pointsofinterest'] = sorted(
-            all_pointsofinterest_data['pointsofinterest'], key=lambda k: k['id'])
+            all_pointsofinterest_data['pointsofinterest'],
+            key=lambda k: k['id'])
         expected_answer['pointsofinterest'] = sorted(
             expected_answer['pointsofinterest'], key=lambda k: k['id'])
 
@@ -3282,7 +3348,8 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
 
     def test_no_pointsofinterest_nearby(self):
         """
-        Test that, when there are no pointsofinterest, we get an empty list back.
+        Test that, when there are no pointsofinterest, we get an empty
+        list back.
         """
         all_pointsofinterest_data = json.loads(self.client.get(
             '%s?lat=44.015225&lng=-123.016873' % reverse('pois-list')
@@ -3293,8 +3360,8 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
 
     def test_limit_with_location_all_products(self):
         """
-        Test that the limit parameter limits the number of pointsofinterest with the
-        location parameters. There will also be a default proximity of
+        Test that the limit parameter limits the number of pointsofinterest
+        with the location parameters. There will also be a default proximity of
         20 miles.
         """
         all_pointsofinterest_data = json.loads(self.client.get(

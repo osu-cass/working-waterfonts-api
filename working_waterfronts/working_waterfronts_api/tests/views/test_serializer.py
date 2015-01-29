@@ -2,7 +2,6 @@ import json
 from django.test import TestCase
 from working_waterfronts.working_waterfronts_api.models import (
     PointOfInterest, Hazard, Category)
-from django.contrib.gis.geos import fromstr
 from working_waterfronts.working_waterfronts_api.views.serializer import (
     ObjectSerializer)
 

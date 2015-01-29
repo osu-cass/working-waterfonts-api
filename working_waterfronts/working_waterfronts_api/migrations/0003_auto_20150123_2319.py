@@ -15,7 +15,8 @@ class Migration(migrations.Migration):
             model_name='hazard',
             name='pointofinterests',
             field=models.ManyToManyField(
-                to='working_waterfronts_api.PointOfInterest', null=True, blank=True),
+                to='working_waterfronts_api.PointOfInterest',
+                null=True, blank=True),
             preserve_default=True,
         ),
     ]

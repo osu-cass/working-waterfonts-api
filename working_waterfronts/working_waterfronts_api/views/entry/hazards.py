@@ -3,13 +3,11 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.core.urlresolvers import reverse
 from django.shortcuts import get_object_or_404
-from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.conf import settings
 
 from working_waterfronts.working_waterfronts_api.models import Hazard
 from working_waterfronts.working_waterfronts_api.forms import HazardForm
-from working_waterfronts.working_waterfronts_api.functions import group_required
 
 
 def list(request):

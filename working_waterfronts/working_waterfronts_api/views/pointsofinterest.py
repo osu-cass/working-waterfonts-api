@@ -1,8 +1,8 @@
-from django.http import (HttpResponse,
-                         HttpResponseNotFound)
+from django.http import HttpResponse
 from django.contrib.gis.measure import D
 from working_waterfronts.working_waterfronts_api.models import PointOfInterest
-from working_waterfronts.working_waterfronts_api.functions import get_lat_long_prox
+from working_waterfronts.working_waterfronts_api.functions import (
+    get_lat_long_prox)
 
 import json
 from .serializer import ObjectSerializer
