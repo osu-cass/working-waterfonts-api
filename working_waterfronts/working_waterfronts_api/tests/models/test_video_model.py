@@ -5,6 +5,7 @@ from django.contrib.gis.db import models
 
 
 class VideoTestCase(TestCase):
+
     def setUp(self):
         self.expected_fields = {
             'video': models.URLField,

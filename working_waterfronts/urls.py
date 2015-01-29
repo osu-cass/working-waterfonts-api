@@ -8,7 +8,7 @@ urlpatterns = patterns(
     '',
     url(r'^admin/', include(admin.site.urls)),
     (r'^', include('working_waterfronts.working_waterfronts_api.urls')),
-    )
+)
 
 if settings.DEBUG:
     # Allow statics to be served if in debug mode

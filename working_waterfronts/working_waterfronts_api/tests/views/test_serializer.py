@@ -85,9 +85,9 @@ class SerializerTestCase(TestCase):
     def test_serializer_poi(self):
         serializer = ObjectSerializer()
         data = serializer.serialize(
-                [PointOfInterest.objects.get(id=1)],
-                use_natural_foreign_keys=True
-            )
+            [PointOfInterest.objects.get(id=1)],
+            use_natural_foreign_keys=True
+        )
 
         parsed_answer = json.loads(data)
         expected_answer = json.loads(self.expected_poi_json)
@@ -97,9 +97,9 @@ class SerializerTestCase(TestCase):
     def test_serializer_hazard(self):
         serializer = ObjectSerializer()
         data = serializer.serialize(
-                [Hazard.objects.get(id=1)],
-                use_natural_foreign_keys=True
-            )
+            [Hazard.objects.get(id=1)],
+            use_natural_foreign_keys=True
+        )
 
         parsed_answer = json.loads(data)
         expected_answer = json.loads(self.expected_hazard_json)
@@ -109,9 +109,9 @@ class SerializerTestCase(TestCase):
     def test_serializer_category(self):
         serializer = ObjectSerializer()
         data = serializer.serialize(
-                [Category.objects.get(id=1)],
-                use_natural_foreign_keys=True
-            )
+            [Category.objects.get(id=1)],
+            use_natural_foreign_keys=True
+        )
 
         parsed_answer = json.loads(data)
         expected_answer = json.loads(self.expected_category_json)

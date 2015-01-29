@@ -43,6 +43,7 @@ class PointOfInterest(models.Model):
 
 
 class Video(models.Model):
+
     """
     The video model holds a video URL and related data.
 
@@ -107,6 +108,7 @@ class Image(models.Model):
 
 
 class Category(models.Model):
+
     """
     The category model is a name associated with many points of interest.
     Its raison d'etre is to be a category for POIs -- it holds no other
@@ -128,6 +130,7 @@ class Category(models.Model):
 
 
 class Hazard(models.Model):
+
     """
     The Hazard model holds a hazard and its description.
     """

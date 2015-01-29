@@ -22,13 +22,15 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='pointofinterest',
             name='images',
-            field=models.ManyToManyField(to='working_waterfronts_api.Image', blank=True),
+            field=models.ManyToManyField(
+                to='working_waterfronts_api.Image', blank=True),
             preserve_default=True,
         ),
         migrations.AddField(
             model_name='pointofinterest',
             name='videos',
-            field=models.ManyToManyField(to='working_waterfronts_api.Video', blank=True),
+            field=models.ManyToManyField(
+                to='working_waterfronts_api.Video', blank=True),
             preserve_default=True,
         ),
     ]

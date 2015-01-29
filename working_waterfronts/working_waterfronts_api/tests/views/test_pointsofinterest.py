@@ -3159,7 +3159,8 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
 
         for poi in all_pointsofinterest_data['pointsofinterest']:
             poi['hazards'] = sorted(poi['hazards'], key=lambda k: k['id'])
-            poi['categories'] = sorted(poi['categories'], key=lambda k: k['id'])
+            poi['categories'] = sorted(
+                poi['categories'], key=lambda k: k['id'])
 
         self.assertEqual(all_pointsofinterest_data, expected_answer)
 
@@ -3194,12 +3195,13 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
 
         for poi in all_pointsofinterest_data['pointsofinterest']:
             poi['hazards'] = sorted(poi['hazards'], key=lambda k: k['id'])
-            poi['categories'] = sorted(poi['categories'], key=lambda k: k['id'])
+            poi['categories'] = sorted(
+                poi['categories'], key=lambda k: k['id'])
 
         for poi in expected_answer['pointsofinterest']:
             poi['hazards'] = sorted(poi['hazards'], key=lambda k: k['id'])
-            poi['categories'] = sorted(poi['categories'], key=lambda k: k['id'])
-
+            poi['categories'] = sorted(
+                poi['categories'], key=lambda k: k['id'])
 
         self.assertEqual(all_pointsofinterest_data, expected_answer)
 
@@ -3223,11 +3225,13 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
 
         for poi in all_pointsofinterest_data['pointsofinterest']:
             poi['hazards'] = sorted(poi['hazards'], key=lambda k: k['id'])
-            poi['categories'] = sorted(poi['categories'], key=lambda k: k['id'])
+            poi['categories'] = sorted(
+                poi['categories'], key=lambda k: k['id'])
 
         for poi in expected_answer['pointsofinterest']:
             poi['hazards'] = sorted(poi['hazards'], key=lambda k: k['id'])
-            poi['categories'] = sorted(poi['categories'], key=lambda k: k['id'])
+            poi['categories'] = sorted(
+                poi['categories'], key=lambda k: k['id'])
 
         self.assertEqual(all_pointsofinterest_data, expected_answer)
 
@@ -3244,11 +3248,13 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
 
         for poi in all_pointsofinterest_data['pointsofinterest']:
             poi['hazards'] = sorted(poi['hazards'], key=lambda k: k['id'])
-            poi['categories'] = sorted(poi['categories'], key=lambda k: k['id'])
+            poi['categories'] = sorted(
+                poi['categories'], key=lambda k: k['id'])
 
         for poi in expected_answer['pointsofinterest']:
             poi['hazards'] = sorted(poi['hazards'], key=lambda k: k['id'])
-            poi['categories'] = sorted(poi['categories'], key=lambda k: k['id'])
+            poi['categories'] = sorted(
+                poi['categories'], key=lambda k: k['id'])
 
         self.assertEqual(all_pointsofinterest_data, expected_answer)
 
@@ -3264,11 +3270,13 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
 
         for poi in all_pointsofinterest_data['pointsofinterest']:
             poi['hazards'] = sorted(poi['hazards'], key=lambda k: k['id'])
-            poi['categories'] = sorted(poi['categories'], key=lambda k: k['id'])
+            poi['categories'] = sorted(
+                poi['categories'], key=lambda k: k['id'])
 
         for poi in expected_answer['pointsofinterest']:
             poi['hazards'] = sorted(poi['hazards'], key=lambda k: k['id'])
-            poi['categories'] = sorted(poi['categories'], key=lambda k: k['id'])
+            poi['categories'] = sorted(
+                poi['categories'], key=lambda k: k['id'])
 
         self.assertEqual(all_pointsofinterest_data, expected_answer)
 
@@ -3292,18 +3300,19 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
         all_pointsofinterest_data = json.loads(self.client.get(
             '%s?lat=44.609079&lng=-124.052538&limit=3' % reverse(
                 'pois-list')
-            ).content)
+        ).content)
 
         expected_answer = json.loads(self.expected_nearby_limit_3)
 
         for poi in all_pointsofinterest_data['pointsofinterest']:
             poi['hazards'] = sorted(poi['hazards'], key=lambda k: k['id'])
-            poi['categories'] = sorted(poi['categories'], key=lambda k: k['id'])
+            poi['categories'] = sorted(
+                poi['categories'], key=lambda k: k['id'])
 
         for poi in expected_answer['pointsofinterest']:
             poi['hazards'] = sorted(poi['hazards'], key=lambda k: k['id'])
-            poi['categories'] = sorted(poi['categories'], key=lambda k: k['id'])
-
+            poi['categories'] = sorted(
+                poi['categories'], key=lambda k: k['id'])
 
         self.assertEqual(all_pointsofinterest_data, expected_answer)
 
@@ -3320,11 +3329,13 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
 
         for poi in all_pointsofinterest_data['pointsofinterest']:
             poi['hazards'] = sorted(poi['hazards'], key=lambda k: k['id'])
-            poi['categories'] = sorted(poi['categories'], key=lambda k: k['id'])
+            poi['categories'] = sorted(
+                poi['categories'], key=lambda k: k['id'])
 
         for poi in expected_answer['pointsofinterest']:
             poi['hazards'] = sorted(poi['hazards'], key=lambda k: k['id'])
-            poi['categories'] = sorted(poi['categories'], key=lambda k: k['id'])
+            poi['categories'] = sorted(
+                poi['categories'], key=lambda k: k['id'])
 
         self.assertEqual(all_pointsofinterest_data, expected_answer)
 
@@ -3341,10 +3352,12 @@ returned from GEOS C function \\"GEOSWKTReader_read_r\\"."
 
         for poi in all_pointsofinterest_data['pointsofinterest']:
             poi['hazards'] = sorted(poi['hazards'], key=lambda k: k['id'])
-            poi['categories'] = sorted(poi['categories'], key=lambda k: k['id'])
+            poi['categories'] = sorted(
+                poi['categories'], key=lambda k: k['id'])
 
         for poi in expected_answer['pointsofinterest']:
             poi['hazards'] = sorted(poi['hazards'], key=lambda k: k['id'])
-            poi['categories'] = sorted(poi['categories'], key=lambda k: k['id'])
+            poi['categories'] = sorted(
+                poi['categories'], key=lambda k: k['id'])
 
         self.assertEqual(all_pointsofinterest_data, expected_answer)
