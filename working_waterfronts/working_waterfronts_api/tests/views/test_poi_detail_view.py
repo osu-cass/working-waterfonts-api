@@ -10,13 +10,6 @@ class POIViewTestCase(TestCase):
     fixtures = ['test_fixtures']
 
     def setUp(self):
-        user = User.objects.create_user(username='test', password='pass')
-        admin_group = Group(name='Administration Users')
-        admin_group.save()
-        user.groups.add(admin_group)
-        self.client.post(
-            reverse('login'), {'username': 'test', 'password': 'pass'})
-
         self.expected_poi = """
 {
   "error": {
