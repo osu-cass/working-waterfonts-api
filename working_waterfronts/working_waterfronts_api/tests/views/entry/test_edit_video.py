@@ -26,13 +26,6 @@ class EditVideoTestCase(TestCase):
             username='temporary', password='temporary')
         self.assertEqual(response, True)
 
-    def test_not_logged_in(self):
-        self.client.logout()
-
-        response = self.client.get(
-            reverse('edit-video', kwargs={'id': '1'}))
-        self.assertRedirects(response, '/login?next=/entry/videos/1')
-
     def test_url_endpoint(self):
         url = reverse('edit-video', kwargs={'id': '1'})
         self.assertEqual(url, '/entry/videos/1')
