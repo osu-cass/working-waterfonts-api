@@ -18,56 +18,54 @@ class POIViewTestCase(TestCase):
     "debug": null,
     "level": null
   },
-  {
-      "street": "123 Fake St",
-      "alt_name": "",
-      "contact_name": "",
-      "facts": "It's a lighthouse",
-      "lng": -124.10534,
-      "id": 1,
-      "city": "Newport",
-      "zip": "11234",
-      "hazards": [
-          {
-              "name": "Falling Rocks",
-              "description": "If these fall on you, you're dead.",
-              "id": 1
-          }
-      ],
-      "ext": {
-      },
-      "state": "Oregon",
-      "email": "",
-      "website": "",
-      "description": "A pretty nice lighthouse",
-      "phone": null,
-      "lat": 43.966874,
-      "categories": [
-          {
-              "category": "Cool Stuff",
-              "id": 1
-          }
-      ],
-      "videos": [
-          {
-              "caption": "Traveling at the speed of light!",
-              "link": "http://www.youtube.com/watch?v=efgDdSWDg0g",
-              "name": "A Starship"
-          }
-      ],
-      "images": [
-          {
-              "caption": "Woof!",
-              "link": "/media/dog.jpg",
-              "name": "A dog"
-          }
-      ],
-      "name": "Newport Lighthouse",
-      "created": "2014-08-08T23:27:05.568Z",
-      "modified": "2014-08-08T23:27:05.568Z",
-      "location_description": "out on the cape over there",
-      "history": "It was built at some time in the past"
+  "street": "123 Fake St",
+  "alt_name": "",
+  "contact_name": "",
+  "facts": "It's a lighthouse",
+  "lng": -124.10534,
+  "id": 1,
+  "city": "Newport",
+  "zip": "11234",
+  "hazards": [
+      {
+          "name": "Falling Rocks",
+          "description": "If these fall on you, you're dead.",
+          "id": 1
+      }
+  ],
+  "ext": {
   },
+  "state": "Oregon",
+  "email": "",
+  "website": "",
+  "description": "A pretty nice lighthouse",
+  "phone": null,
+  "lat": 43.966874,
+  "categories": [
+      {
+          "category": "Cool Stuff",
+          "id": 1
+      }
+  ],
+  "videos": [
+      {
+          "caption": "Traveling at the speed of light!",
+          "link": "http://www.youtube.com/watch?v=efgDdSWDg0g",
+          "name": "A Starship"
+      }
+  ],
+  "images": [
+      {
+          "caption": "Woof!",
+          "link": "/media/dog.jpg",
+          "name": "A dog"
+      }
+  ],
+  "name": "Newport Lighthouse",
+  "created": "2014-08-08T23:27:05.568Z",
+  "modified": "2014-08-08T23:27:05.568Z",
+  "location_description": "out on the cape over there",
+  "history": "It was built at some time in the past"
 }"""
 
         self.expected_not_found = """
