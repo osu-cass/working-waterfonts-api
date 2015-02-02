@@ -72,11 +72,11 @@ class LoginViewTestCase(TestCase):
         parameter, and see if we get logged in
         """
         post_data = self.user_credentials.copy()
-        post_data['next'] = '/entry/vendors/'
+        post_data['next'] = '/entry/pois/'
 
         response = self.client.post(
             reverse('login'), post_data)
-        self.assertRedirects(response, '/entry/vendors/')
+        self.assertRedirects(response, '/entry/pois/')
 
     def test_root_redirect(self):
         """
