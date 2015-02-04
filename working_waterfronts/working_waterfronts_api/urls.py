@@ -49,4 +49,12 @@ urlpatterns = patterns(
     url(r'^entry/videos/new/?$',
         url_base + '.views.entry.videos.video',
         name='new-video'),
+
+    url(r'^login/?$',
+        url_base + '.views.entry.login.login_user',
+        name='login'),
+
+    url(r'^logout/?$',
+        url_base + '.views.entry.login.logout_user',
+        name='logout'),
 )
