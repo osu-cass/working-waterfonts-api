@@ -1,5 +1,6 @@
 import django.forms as forms
-from working_waterfronts.working_waterfronts_api.models import Hazard, Image
+from working_waterfronts.working_waterfronts_api.models import (
+    Hazard, Image, Category)
 
 
 class HazardForm(forms.ModelForm):
@@ -21,4 +22,14 @@ class ImageForm(forms.ModelForm):
         widgets = {
             'caption': forms.TextInput(attrs={'required': 'true'}),
             'name': forms.TextInput(attrs={'required': 'true'})
+        }
+
+
+class CategoryForm(forms.ModelForm):
+
+    class Meta:
+        model = Category
+        exclude = []
+        widgets = {
+            'category': forms.TextInput(attrs={'required': 'true'})
         }

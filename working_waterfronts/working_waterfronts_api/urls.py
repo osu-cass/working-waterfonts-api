@@ -22,6 +22,18 @@ urlpatterns = patterns(
         url_base + '.views.entry.home.home',
         name='home'),
 
+    url(r'^entry/categories/(?P<id>\d+)/?$',
+        url_base + '.views.entry.categories.category',
+        name='edit-category'),
+
+    url(r'^entry/categories/new/?$',
+        url_base + '.views.entry.categories.category',
+        name='new-category'),
+
+    url(r'^entry/categories/?$',
+        url_base + '.views.entry.categories.list',
+        name='entry-list-categories'),
+
     url(r'^entry/images/(?P<id>\d+)/?$',
         url_base + '.views.entry.images.image',
         name='edit-image'),

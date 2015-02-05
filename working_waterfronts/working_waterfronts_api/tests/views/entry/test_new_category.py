@@ -41,7 +41,7 @@ class NewCategoryTestCase(TestCase):
         """
         response = self.client.get(reverse('new-category'))
 
-        fields = {'name': 'input'}
+        fields = {'category': 'input'}
         form = response.context['category_form']
 
         for field in fields:
@@ -58,7 +58,7 @@ class NewCategoryTestCase(TestCase):
 
         # Data that we'll post to the server to get the new category created
         new_category = {
-            'name': 'Friers'}
+            'category': 'Friers'}
 
         self.client.post(reverse('new-category'), new_category)
 
@@ -76,7 +76,7 @@ class NewCategoryTestCase(TestCase):
         all_categories = Category.objects.all()
 
         response = self.client.post(reverse('new-category'))
-        required_fields = ['name']
+        required_fields = ['category']
         for field_name in required_fields:
             self.assertIn(field_name,
                           response.context['category_form'].errors)
