@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotFound
 from django.contrib.gis.measure import D
 from working_waterfronts.working_waterfronts_api.models import PointOfInterest
 from working_waterfronts.working_waterfronts_api.functions import (
@@ -52,5 +52,49 @@ def poi_list(request):
         ),
         "error": error
     }
+
+    return HttpResponse(json.dumps(data), content_type="application/json")
+
+def poi_details(request, id=None):
+    """
+        */pois/<id>*
+
+        Returns the poi data for poi <id>.
+    """
+    data = {}
+
+    try:
+        poi = poi.objects.get(id=id)
+    except Exception as e:
+        data['error'] = {
+            'status': True,
+            'name': 'poi Not Found',
+            'text': 'poi id %s was not found.' % id,
+            'level': 'Error',
+            'debug': '{0}: {1}'.format(type(e).__name__, str(e))
+        }
+        return HttpResponseNotFound(
+            json.dumps(data),
+            content_type="application/json"
+        )
+
+    error = {
+        'status': False,
+        'name': None,
+        'text': None,
+        'level': None,
+        'debug': None
+    }
+
+    serializer = ObjectSerializer()
+
+    data = json.loads(
+        serializer.serialize(
+            [poi],
+            use_natural_foreign_keys=True
+        )[1:-1]
+    )
+
+    data['error'] = error
 
     return HttpResponse(json.dumps(data), content_type="application/json")
