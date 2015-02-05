@@ -37,4 +37,8 @@ urlpatterns = patterns(
     url(r'^1/pois/?$',
         url_base + '.views.pointsofinterest.poi_list',
         name='pois-list'),
+
+    url(r'^1/pois/categories/(?P<id>\d+)/?$',
+        'working_waterfronts.working_waterfronts_api.views.pointsofinterest.poi_categories',
+        name='pois-categories'),
 )

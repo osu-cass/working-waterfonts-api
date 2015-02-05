@@ -3235,6 +3235,15 @@ being abducted by aliens."
             'proximity=50' % reverse('pois-list')).content)
 
         expected_answer = json.loads(self.expected_nearby_extended)
+
+        for poi in extended_proximity['pointsofinterest']:
+            poi['hazards'] = sorted(poi['hazards'], key=lambda k: k['id'])
+            poi['categories'] = sorted(poi['categories'], key=lambda k: k['id'])
+
+        for poi in expected_answer['pointsofinterest']:
+            poi['hazards'] = sorted(poi['hazards'], key=lambda k: k['id'])
+            poi['categories'] = sorted(poi['categories'], key=lambda k: k['id'])
+
         self.assertEqual(extended_proximity, expected_answer)
 
     def test_bad_location_with_proximity_parameters(self):

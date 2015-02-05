@@ -81,7 +81,7 @@ def get_lat_long_prox(request, error=None):
                     "level": "Warning",
                     "status": True,
                     "name": "Bad proximity",
-                    "text": "There was an error finding vendors "
+                    "text": "There was an error finding PointsOfInterest "
                             "within {0} miles".format(proximity),
                     'debug': "{0}: {1}".format(type(e).__name__, str(e))
                 }
