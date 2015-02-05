@@ -3238,11 +3238,13 @@ being abducted by aliens."
 
         for poi in extended_proximity['pointsofinterest']:
             poi['hazards'] = sorted(poi['hazards'], key=lambda k: k['id'])
-            poi['categories'] = sorted(poi['categories'], key=lambda k: k['id'])
+            poi['categories'] = sorted(
+                poi['categories'], key=lambda k: k['id'])
 
         for poi in expected_answer['pointsofinterest']:
             poi['hazards'] = sorted(poi['hazards'], key=lambda k: k['id'])
-            poi['categories'] = sorted(poi['categories'], key=lambda k: k['id'])
+            poi['categories'] = sorted(
+                poi['categories'], key=lambda k: k['id'])
 
         self.assertEqual(extended_proximity, expected_answer)
 
