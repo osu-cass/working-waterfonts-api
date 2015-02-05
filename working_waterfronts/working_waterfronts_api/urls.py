@@ -49,4 +49,8 @@ urlpatterns = patterns(
     url(r'^entry/videos/new/?$',
         url_base + '.views.entry.videos.video',
         name='new-video'),
+
+    url(r'^1/pois/categories/(?P<id>\d+)/?$',
+        'working_waterfronts.working_waterfronts_api.views.pointsofinterest.poi_categories',
+        name='pois-categories'),
 )

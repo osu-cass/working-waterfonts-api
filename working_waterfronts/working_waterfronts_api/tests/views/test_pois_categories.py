@@ -110,7 +110,7 @@ class POIsCategoriesTestCase(TestCase):
         expected_error = json.loads(self.limited_pois_error)
 
         self.assertEqual(parsed_answer['error'], expected_error['error'])
-        self.assertEqual(len(parsed_answer['pois']), 1)
+        self.assertEqual(len(parsed_answer['pointsofinterest']), 1)
 
 
 class POIsCategoriesLocationTestCase(TestCase):
@@ -141,7 +141,7 @@ class POIsCategoriesLocationTestCase(TestCase):
     "text": "No PointsOfInterest found for category 1",
     "name": "No PointsOfInterest"
     },
-  "pois": []
+  "pointsofinterest": []
 }"""
 
         # Nearby POIs for category 1.
@@ -1036,7 +1036,7 @@ as WKT EWKT, and HEXEWKB."
   "error": {
     "level": "Warning",
     "status": true,
-    "text": "There was an error finding pois within cat miles",
+    "text": "There was an error finding PointsOfInterest within cat miles",
     "name": "Bad proximity",
     "debug": "ValueError: invalid literal for int() with base 10: 'cat'"
   },
