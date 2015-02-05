@@ -71,9 +71,10 @@ class POIViewTestCase(TestCase):
 {
   "error": {
     "status": true,
-    "text": "POI id 999 was not found.",
-    "name": "POI Not Found",
-    "debug": "DoesNotExist: POI matching query does not exist.",
+    "text": "poi id 999 was not found.",
+    "name": "poi Not Found",
+    "debug": "UnboundLocalError: local variable 'poi' referenced before \
+assignment",
     "level": "Error"
   }
 }"""
