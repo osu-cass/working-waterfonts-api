@@ -1,6 +1,6 @@
 import django.forms as forms
 from working_waterfronts.working_waterfronts_api.models import (
-    Hazard, Image, Video, PointOfInterest)
+    Hazard, Image, Video, PointOfInterest, Category)
 
 
 class PointOfInterestForm(forms.ModelForm):
@@ -52,4 +52,14 @@ class VideoForm(forms.ModelForm):
         widgets = {
             'caption': forms.TextInput(attrs={'required': 'true'}),
             'name': forms.TextInput(attrs={'required': 'true'})
+        }
+
+
+class CategoryForm(forms.ModelForm):
+
+    class Meta:
+        model = Category
+        exclude = []
+        widgets = {
+            'category': forms.TextInput(attrs={'required': 'true'})
         }

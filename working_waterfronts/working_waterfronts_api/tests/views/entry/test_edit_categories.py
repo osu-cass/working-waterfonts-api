@@ -41,7 +41,7 @@ class EditCategoryTestCase(TestCase):
         """
         # Data that we'll post to the server to get the new category created
         new_category = {
-            "name": "Alien Habitats"
+            "category": "Alien Habitats"
         }
 
         self.client.post(
@@ -61,7 +61,7 @@ class EditCategoryTestCase(TestCase):
             reverse('edit-category', kwargs={'id': '1'}))
 
         fields = {
-            "name": "Cool Stuff"
+            "category": "Cool Stuff"
         }
 
         form = response.context['category_form']
