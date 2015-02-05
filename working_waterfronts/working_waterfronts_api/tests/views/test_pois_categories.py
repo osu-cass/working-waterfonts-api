@@ -1,8 +1,6 @@
 from django.test import TestCase
 from django.core.urlresolvers import reverse
 from django.test.utils import override_settings
-from django.contrib.auth.models import Group
-from django.contrib.auth.models import User
 
 import json
 
