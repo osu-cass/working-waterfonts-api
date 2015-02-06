@@ -73,8 +73,7 @@ class POIViewTestCase(TestCase):
     "status": true,
     "text": "poi id 999 was not found.",
     "name": "poi Not Found",
-    "debug": "UnboundLocalError: local variable 'poi' referenced before \
-assignment",
+    "debug": "DoesNotExist: PointOfInterest matching query does not exist.",
     "level": "Error"
   }
 }"""
