@@ -64,7 +64,7 @@ def poi_details(request, id=None):
     data = {}
 
     try:
-        poi = poi.objects.get(id=id)
+        poi = PointOfInterest.objects.get(id=id)
     except Exception as e:
         data['error'] = {
             'status': True,
