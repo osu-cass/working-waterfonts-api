@@ -98,7 +98,8 @@ def poi(request, id=None):
 
         try:
             categories = [Category.objects.get(
-                pk=int(c)) for c in post_data.get('category_ids', None).split(',')]
+                pk=int(c)) for c in post_data.get(
+                    'category_ids', None).split(',')]
         except:
             errors.append("You must choose at least one category.")
 
