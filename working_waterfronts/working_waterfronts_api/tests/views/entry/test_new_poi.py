@@ -2,7 +2,6 @@ from django.test import TestCase
 from django.core.urlresolvers import reverse
 from working_waterfronts.working_waterfronts_api.models import (
     PointOfInterest, Category, Hazard)
-from django.contrib.auth.models import User, Group
 
 
 class NewPOITestCase(TestCase):
@@ -21,19 +20,6 @@ class NewPOITestCase(TestCase):
             bad adddress. This behaviour may be changed in the future.
     """
 
-    def setUp(self):
-        user = User.objects.create_user(
-            'temporary', 'temporary@gmail.com', 'temporary')
-        user.save()
-
-        admin_group = Group(name='Administration Users')
-        admin_group.save()
-        user.groups.add(admin_group)
-
-        response = self.client.login(
-            username='temporary', password='temporary')
-        self.assertEqual(response, True)
-
     def test_url_endpoint(self):
         url = reverse('new-poi')
         self.assertEqual(url, '/entry/pois/new')
@@ -42,19 +28,16 @@ class NewPOITestCase(TestCase):
         """
         Tests to see if the form contains all of the right fields
         """
-        response = self.client.post(
-            reverse('login'),
-            {'username': 'temporary', 'password': 'temporary'})
         response = self.client.get(reverse('new-poi'))
 
         fields = {
             'name': 'input', 'alt_name': 'input', 'description': 'textarea',
-            'history': 'textarea', 'facts': 'textarea', 'hours': 'input',
+            'history': 'textarea', 'facts': 'textarea',
             'street': 'input', 'city': 'input', 'state': 'input',
             'zip': 'input', 'location_description': 'textarea',
             'contact_name': 'input', 'website': 'input', 'email': 'input',
             'phone': 'input'}
-        form = response.context['pointofinterest_form']
+        form = response.context['poi_form']
 
         for field in fields:
             self.assertIn(fields[field], str(form[field]))
@@ -78,7 +61,7 @@ class NewPOITestCase(TestCase):
         new_poi = {
             'name': 'Test Name', 'alt_name': 'Tester Obj',
             'description': 'Test Description',
-            'history': 'history', 'facts': 'It\'s a test', 'hours': 'open',
+            'history': 'history', 'facts': 'It\'s a test',
             'street': '750 NW Lighthouse Dr', 'city': 'Newport', 'state': 'OR',
             'zip': '97365', 'location_description': 'test loc description',
             'contact_name': 'Test Contact', 'website': '', 'email': '',
@@ -113,15 +96,12 @@ class NewPOITestCase(TestCase):
         POST a "new pointofinterest" command to the server missing all of the
         required fields, and test to see what the error comes back as.
         """
-        response = self.client.post(
-            reverse('login'),
-            {'username': 'temporary', 'password': 'temporary'})
         # Create a list of all objects before sending bad POST data
         all_pointsofinterest = PointOfInterest.objects.all()
 
         new_poi = {
             'name': '', 'alt_name': '', 'description': '',
-            'history': '', 'facts': '', 'hours': '',
+            'history': '', 'facts': '',
             'street': '', 'city': '', 'state': '',
             'zip': '', 'location_description': '',
             'contact_name': '', 'website': '', 'email': '',
@@ -130,14 +110,10 @@ class NewPOITestCase(TestCase):
         response = self.client.post(reverse('new-poi'), new_poi)
 
         # Test non-automatically generated errors written into the view
+        self.assertIn('Full address is required.', response.context['errors'])
         self.assertIn(
             'You must choose at least one category.',
             response.context['errors'])
-        self.assertIn(
-            'You must choose at least one hazard.',
-            response.context['errors'])
-        self.assertIn('Full address is required.', response.context['errors'])
-
         # Test that we didn't add any new objects
         self.assertEqual(
             list(PointOfInterest.objects.all()),
@@ -167,7 +143,7 @@ class NewPOITestCase(TestCase):
         new_poi = {
             'name': 'Test Name', 'alt_name': 'Tester Obj',
             'description': 'Test Description',
-            'history': 'history', 'facts': 'It\'s a test', 'hours': 'open',
+            'history': 'history', 'facts': 'It\'s a test',
             'street': '123 Fake Street', 'city': 'Springfield', 'state': 'OR',
             'zip': '97477', 'location_description': 'test loc description',
             'contact_name': 'Test Contact', 'website': '', 'email': '',

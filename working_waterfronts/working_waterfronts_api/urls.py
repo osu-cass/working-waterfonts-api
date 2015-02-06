@@ -34,6 +34,18 @@ urlpatterns = patterns(
         url_base + '.views.entry.images.image_list',
         name='entry-list-images'),
 
+    url(r'^entry/pois/(?P<id>\d+)/?$',
+        url_base + '.views.entry.pois.poi',
+        name='edit-poi'),
+
+    url(r'^entry/pois/new/?$',
+        url_base + '.views.entry.pois.poi',
+        name='new-poi'),
+
+    url(r'^entry/pois/?$',
+        url_base + '.views.entry.pois.list',
+        name='entry-list-pois'),
+
     url(r'^1/pois/?$',
         url_base + '.views.pointsofinterest.poi_list',
         name='pois-list'),
