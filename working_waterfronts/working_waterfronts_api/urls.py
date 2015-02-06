@@ -38,6 +38,10 @@ urlpatterns = patterns(
         url_base + '.views.pointsofinterest.poi_list',
         name='pois-list'),
 
+    url(r'^entry/pois/?$',
+        url_base + '.views.pointsofinterest.poi_list',
+        name='entry-list-pois'),
+
      url(r'^entry/videos/(?P<id>\d+)/?$',
         url_base + '.views.entry.videos.video',
         name='edit-video'),
@@ -57,4 +61,8 @@ urlpatterns = patterns(
     url(r'^logout/?$',
         url_base + '.views.entry.login.logout_user',
         name='logout'),
+
+     url(r'^/?$',
+         url_base + '.views.entry.login.root',
+         name='root'),
 )
