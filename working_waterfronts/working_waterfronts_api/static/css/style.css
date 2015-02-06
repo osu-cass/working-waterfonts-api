@@ -230,7 +230,7 @@ a {
   color: #333;
   font-family: "Montserrat", sans-serif; }
 
-#new_product, #new_preparation, #new_video, #new_image {
+#new_product, #new_preparation, #new_video, #new_image, #new_hazard, #new_category {
   display: none; }
 
 .product_list {

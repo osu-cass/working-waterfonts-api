@@ -1,7 +1,6 @@
 from django.test import TestCase
 from django.core.urlresolvers import reverse
-from whats_fresh.whats_fresh_api.models import PointOfInterest
-from django.contrib.auth.models import User, Group
+from working_waterfronts.working_waterfronts_api.models import PointOfInterest
 
 
 class EditPointOfInterestTestCase(TestCase):
@@ -19,19 +18,6 @@ class EditPointOfInterestTestCase(TestCase):
     """
     fixtures = ['test_fixtures']
 
-    def setUp(self):
-        user = User.objects.create_user(
-            'temporary', 'temporary@gmail.com', 'temporary')
-        user.save()
-
-        admin_group = Group(name='Administration Users')
-        admin_group.save()
-        user.groups.add(admin_group)
-
-        response = self.client.login(
-            username='temporary', password='temporary')
-        self.assertEqual(response, True)
-
     def test_url_endpoint(self):
         url = reverse('edit-poi', kwargs={'id': '1'})
         self.assertEqual(url, '/entry/pois/1')
@@ -46,11 +32,12 @@ class EditPointOfInterestTestCase(TestCase):
         new_poi = {
             'name': 'Test Name', 'alt_name': 'Tester Obj',
             'description': 'Test Description',
-            'history': 'history', 'facts': 'It\'s a test', 'hours': 'open',
+            'history': 'history', 'facts': 'It\'s a test',
             'street': '750 NW Lighthouse Dr', 'city': 'Newport', 'state': 'OR',
             'zip': '97365', 'location_description': 'test loc description',
             'contact_name': 'Test Contact', 'website': '', 'email': '',
-            'phone': '', 'category_ids': '1,2', 'hazard_ids': '1,2'}
+            'phone': '', 'category_ids': '1,2', 'hazard_ids': '1,2',
+            'image_ids': '', 'video_ids': ''}
 
         self.client.post(
             reverse('edit-poi', kwargs={'id': '1'}), new_poi)
@@ -60,6 +47,8 @@ class EditPointOfInterestTestCase(TestCase):
         # into objects, so we'll not need the list fields
         del new_poi['category_ids']
         del new_poi['hazard_ids']
+        del new_poi['video_ids']
+        del new_poi['image_ids']
         new_poi['phone'] = None
 
         poi = PointOfInterest.objects.get(id=1)
@@ -96,7 +85,7 @@ class EditPointOfInterestTestCase(TestCase):
             "zip": "11234",
             "website": "",
             "email": "",
-            "phone": "",
+            "phone": None,
         }
 
         form = response.context['poi_form']
