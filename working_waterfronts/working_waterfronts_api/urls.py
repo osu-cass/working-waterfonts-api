@@ -38,9 +38,15 @@ urlpatterns = patterns(
         url_base + '.views.pointsofinterest.poi_list',
         name='pois-list'),
 
+<<<<<<< HEAD
     url(r'^1/pois/(?P<id>\d+)/?$',
         url_base + '.views.pointsofinterest.poi_details',
         name='poi-details'),
+=======
+    url(r'^entry/pois/?$',
+        url_base + '.views.pointsofinterest.poi_list',
+        name='entry-list-pois'),
+>>>>>>> feature/17919
 
     url(r'^entry/videos/(?P<id>\d+)/?$',
         url_base + '.views.entry.videos.video',
@@ -54,7 +60,25 @@ urlpatterns = patterns(
         url_base + '.views.entry.videos.video',
         name='new-video'),
 
+<<<<<<< HEAD
     url(r'^1/pois/categories/(?P<id>\d+)/?$',
         url_base + '.views.pointsofinterest.poi_categories',
         name='pois-categories'),
+=======
+    url(r'^login/?$',
+        url_base + '.views.entry.login.login_user',
+        name='login'),
+
+    url(r'^logout/?$',
+        url_base + '.views.entry.login.logout_user',
+        name='logout'),
+
+    url(r'^/?$',
+        url_base + '.views.entry.login.root',
+        name='root'),
+
+    url(r'^entry/catagories/?$',
+        url_base + '.views.entry.catagories.catagory_list',
+        name='entry-list-catagories'),
+>>>>>>> feature/17919
 )
