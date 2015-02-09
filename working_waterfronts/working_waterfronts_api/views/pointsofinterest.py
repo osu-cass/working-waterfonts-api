@@ -55,6 +55,7 @@ def poi_list(request):
 
     return HttpResponse(json.dumps(data), content_type="application/json")
 
+
 def poi_details(request, id=None):
     """
         */pois/<id>*
