@@ -56,6 +56,7 @@ def poi_list(request):
     return HttpResponse(json.dumps(data), content_type="application/json")
 
 
+<<<<<<< HEAD
 def poi_categories(request, id=None):
     """
     */pois/categories/<id>*
@@ -91,12 +92,32 @@ def poi_categories(request, id=None):
             'text': 'Category id is invalid',
             'level': 'Error',
             'debug': "{0}: {1}".format(type(e).__name__, str(e))
+=======
+def poi_details(request, id=None):
+    """
+        */pois/<id>*
+
+        Returns the poi data for poi <id>.
+    """
+    data = {}
+
+    try:
+        poi = PointOfInterest.objects.get(id=id)
+    except Exception as e:
+        data['error'] = {
+            'status': True,
+            'name': 'poi Not Found',
+            'text': 'poi id %s was not found.' % id,
+            'level': 'Error',
+            'debug': '{0}: {1}'.format(type(e).__name__, str(e))
+>>>>>>> feature/17871
         }
         return HttpResponseNotFound(
             json.dumps(data),
             content_type="application/json"
         )
 
+<<<<<<< HEAD
     if not poi_list:
         error = {
             "status": True,
@@ -117,5 +138,25 @@ def poi_categories(request, id=None):
         ),
         "error": error
     }
+=======
+    error = {
+        'status': False,
+        'name': None,
+        'text': None,
+        'level': None,
+        'debug': None
+    }
+
+    serializer = ObjectSerializer()
+
+    data = json.loads(
+        serializer.serialize(
+            [poi],
+            use_natural_foreign_keys=True
+        )[1:-1]
+    )
+
+    data['error'] = error
+>>>>>>> feature/17871
 
     return HttpResponse(json.dumps(data), content_type="application/json")

@@ -1,6 +1,7 @@
 import django.forms as forms
 from working_waterfronts.working_waterfronts_api.models import (
-    Hazard, Image, Video)
+                                                                Hazard, Image, 
+                                                                Video)
 
 
 class HazardForm(forms.ModelForm):
