@@ -38,13 +38,10 @@ urlpatterns = patterns(
         url_base + '.views.pointsofinterest.poi_list',
         name='pois-list'),
 
-<<<<<<< HEAD
-=======
     url(r'^1/pois/(?P<id>\d+)/?$',
         url_base + '.views.pointsofinterest.poi_details',
         name='poi-details'),
 
->>>>>>> feature/17871
     url(r'^entry/videos/(?P<id>\d+)/?$',
         url_base + '.views.entry.videos.video',
         name='edit-video'),
@@ -57,13 +54,7 @@ urlpatterns = patterns(
         url_base + '.views.entry.videos.video',
         name='new-video'),
 
-<<<<<<< HEAD
     url(r'^1/pois/categories/(?P<id>\d+)/?$',
         url_base + '.views.pointsofinterest.poi_categories',
         name='pois-categories'),
-=======
-    url(r'^1/pois/(?P<id>\d+)/?$',
-        url_base + '.views.pointsofinterest.poi_details',
-        name='poi-details'),
->>>>>>> feature/17871
 )
