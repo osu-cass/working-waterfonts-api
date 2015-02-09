@@ -27,6 +27,13 @@ class NewVideoTestCase(TestCase):
             username='temporary', password='temporary')
         self.assertEqual(response, True)
 
+    def test_not_logged_in(self):
+        self.client.logout()
+
+        response = self.client.get(
+            reverse('new-video'))
+        self.assertRedirects(response, '/login?next=/entry/videos/new')
+
     def test_url_endpoint(self):
         url = reverse('new-video')
         self.assertEqual(url, '/entry/videos/new')

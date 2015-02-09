@@ -24,6 +24,13 @@ class ListHazardTestCase(TestCase):
         url = reverse('entry-list-hazards')
         self.assertEqual(url, '/entry/hazards')
 
+    def test_not_logged_in(self):
+        self.client.logout()
+
+        response = self.client.get(
+            reverse('entry-list-hazards'))
+        self.assertRedirects(response, '/login?next=/entry/hazards')
+
     def test_list_items(self):
         """
         Tests to see if the list of hazards contains the proper
