@@ -78,7 +78,6 @@ def poi_categories(request, id=None):
             poi_list = PointOfInterest.objects.filter(
                 categories__id=int(id),
                 location__distance_lte=(point, D(mi=proximity)))[:limit]
-            print poi_list
         else:
             poi_list = PointOfInterest.objects.filter(
                 categories__id=int(id)
