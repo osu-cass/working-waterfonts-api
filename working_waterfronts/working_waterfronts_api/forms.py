@@ -1,6 +1,6 @@
 import django.forms as forms
 from working_waterfronts.working_waterfronts_api.models import (Hazard, Image,
-    Video)
+                                                                Video)
 
 
 class HazardForm(forms.ModelForm):
@@ -23,6 +23,7 @@ class ImageForm(forms.ModelForm):
             'caption': forms.TextInput(attrs={'required': 'true'}),
             'name': forms.TextInput(attrs={'required': 'true'})
         }
+
 
 class VideoForm(forms.ModelForm):
     class Meta:
