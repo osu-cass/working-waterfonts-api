@@ -20,6 +20,13 @@ class ListImageTestCase(TestCase):
             username='temporary', password='temporary')
         self.assertEqual(response, True)
 
+    def test_not_logged_in(self):
+        self.client.logout()
+
+        response = self.client.get(
+            reverse('entry-list-images'))
+        self.assertRedirects(response, '/login?next=/entry/images')
+
     def test_url_endpoint(self):
         url = reverse('entry-list-images')
         self.assertEqual(url, '/entry/images')

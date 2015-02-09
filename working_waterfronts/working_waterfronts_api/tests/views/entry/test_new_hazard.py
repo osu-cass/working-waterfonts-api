@@ -31,6 +31,13 @@ class NewHazardTestCase(TestCase):
             username='temporary', password='temporary')
         self.assertEqual(response, True)
 
+    def test_not_logged_in(self):
+        self.client.logout()
+
+        response = self.client.get(
+            reverse('new-hazard'))
+        self.assertRedirects(response, '/login?next=/entry/hazards/new')
+
     def test_url_endpoint(self):
         url = reverse('new-hazard')
         self.assertEqual(url, '/entry/hazards/new')
