@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.core.urlresolvers import reverse
 
-from django.contrib.auth.models import User, Group
+from django.contrib.auth.models import User
 
 
 class LoginViewTestCase(TestCase):
