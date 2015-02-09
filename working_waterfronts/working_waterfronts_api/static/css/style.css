@@ -1,9 +1,13 @@
 @import url(http://fonts.googleapis.com/css?family=Coustard|Montserrat|Arimo|Bitter|Noto+Sans|Open+Sans);
+.image_embed {
+  max-width: 90%;
+  max-height: 500px; }
+
 body {
   margin: 0px;
   padding: 0px;
   font-size: 100%;
-  background: #517285;
+  background: #F79622;
   text-align: center; }
 
 body, html {
@@ -13,7 +17,7 @@ h1, h2, h3, h4, p, a {
   font-family: "Montserrat", sans-serif;
   margin: 0px;
   line-height: 1.3em;
-  color: #333; }
+  color: #424143; }
 
 h1 {
   font-size: 40pt; }
@@ -38,7 +42,7 @@ a {
   color: #FFF; }
 
 .accent {
-  color: #FFCA5D; }
+  color: #FFF; }
 
 .warning {
   color: #D54133; }
@@ -48,14 +52,8 @@ a {
   margin: 0px auto; }
 
 .step-links {
-    font-family: "Montserrat", sans-serif;
-    font-size: 16pt;
-}
-
-.image_embed {
-  max-width: 90%;
-  max-height: 500px;
-}
+  font-family: "Montserrat", sans-serif;
+  font-size: 16pt; }
 
 .header {
   background: #FFF;
@@ -66,20 +64,20 @@ a {
   .header h2 {
     line-height: 70px;
     text-align: center;
-    color: #333; }
+    color: #424143; }
   .header .logout {
     position: absolute;
     right: 20px;
     top: 0px;
     line-height: 70px; }
   .header .logout:hover {
-    color: #517285; }
+    color: #F79622; }
 
 .title p {
   text-align: center; }
 
 .content {
-  background: #517285;
+  background: #F79622;
   min-height: 100%;
   width: 70%;
   height: auto;
@@ -93,7 +91,7 @@ a {
   border-radius: 10px;
   margin: 20px auto;
   width: 400px;
-  border: 2px solid #333; }
+  border: 2px solid #424143; }
   .entry a {
     display: block; }
 
@@ -107,17 +105,17 @@ a {
   top: 0px;
   left: 20px; }
   .back a {
-    color: #333;
+    color: #424143;
     line-height: 70px;
     vertical-align: middle; }
   .back a :hover {
-    color: #517285; }
+    color: #F79622; }
 
 .message {
   font-size: 24pt;
   width: 100%;
   text-align: center;
-  color: #FFCA5D; }
+  color: #FFF; }
 
 .form, .entry_box {
   display: inline-block;
@@ -128,25 +126,24 @@ a {
   .form h3, .entry_box h3 {
     margin-top: 30px;
     text-align: left; }
-  .form input, .form select, .form textarea, .entry_box input, .entry_box textarea {
-    border: 2px solid #333;
+  .form input, .form textarea, .entry_box input, .entry_box textarea {
+    border: 2px solid #424143;
     display: block;
     margin: 0px auto 20px;
     font-size: 16pt;
     font-family: "Montserrat", sans-serif;
     width: 90%; }
-  .entry_box select {
-    border: 2px solid #333;
-    display: block;
+  .form select, .entry_box select {
+    border: 2px solid #424143;
+    display: inline-block;
     margin: 0px auto 20px;
     font-size: 16pt;
     font-family: "Montserrat", sans-serif;
-    width: 90%;
-    display: inline-block; }
+    width: 90%; }
   .form .submit, .form button, .entry_box .submit, .entry_box button {
-    background: #FFCA5D;
-    color: #333;
-    border: 2px solid #333;
+    background: #FFF;
+    color: #424143;
+    border: 2px solid #424143;
     font-size: 16pt;
     font-family: "Montserrat", sans-serif;
     height: auto;
@@ -156,14 +153,13 @@ a {
   .form .submit:hover, .form button:hover, .entry_box .submit:hover, .entry_box button:hover {
     cursor: pointer;
     background: #FFF;
-    border: 2px solid #517285;
-    color: #517285; }
+    border: 2px solid #F79622;
+    color: #F79622; }
   .form p, .entry_box p {
     margin-left: 5%; }
-  .entry_box .delete, .form .delete {
-    vertical-align: middle;
+  .form .delete, .entry_box .delete {
     display: inline-block;
-  }
+    vertical-align: middle; }
   .form .dbutton, .entry_box .dbutton {
     background: #D54133;
     float: right; }
@@ -182,7 +178,7 @@ a {
   padding: 10px;
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 10px;
-  border: 2px solid #333;
+  border: 2px solid #424143;
   width: 80%; }
 
 .preparation:hover, .product:hover, .vendor:hover {
@@ -196,9 +192,9 @@ a {
   width: 100%; }
 
 .new {
-  background: #FFCA5D;
-  color: #333;
-  border: 2px solid #333;
+  background: #FFF;
+  color: #424143;
+  border: 2px solid #424143;
   font-size: 16pt;
   font-family: "Montserrat", sans-serif;
   height: auto;
@@ -213,8 +209,8 @@ a {
 .new:hover {
   cursor: pointer;
   background: #FFF;
-  border: 2px solid #517285;
-  color: #517285; }
+  border: 2px solid #F79622;
+  color: #F79622; }
 
 .form select {
   display: inline-block;
@@ -222,15 +218,14 @@ a {
   width: 40%; }
 
 .product, .preparation, .image, .video {
-  display: block;
-}
+  display: block; }
 
 .no_products {
   font-size: 18pt;
-  color: #333;
+  color: #424143;
   font-family: "Montserrat", sans-serif; }
 
-#new_product, #new_preparation, #new_video, #new_image {
+#new_product, #new_preparation, #new_image, #new_video {
   display: none; }
 
 .product_list {
