@@ -1,10 +1,20 @@
 from django.test import TestCase
 from django.core.urlresolvers import reverse
+from django.contrib.auth.models import User
 from working_waterfronts.working_waterfronts_api.models import PointOfInterest
 
 
 class ListPointOfInterestTestCase(TestCase):
     fixtures = ['thirtythree']
+
+    def setUp(self):
+        user = User.objects.create_user(
+            'temporary', 'temporary@gmail.com', 'temporary')
+        user.save()
+
+        response = self.client.login(
+            username='temporary', password='temporary')
+        self.assertEqual(response, True)
 
     def test_url_endpoint(self):
         url = reverse('entry-list-pois')

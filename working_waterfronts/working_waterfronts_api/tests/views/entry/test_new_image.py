@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.core.urlresolvers import reverse
 from working_waterfronts.working_waterfronts_api.models import Image
-from django.contrib.auth.models import User, Group
+from django.contrib.auth.models import User
 import os
 
 
@@ -24,10 +24,6 @@ class NewImageTestCase(TestCase):
             'temporary', 'temporary@gmail.com', 'temporary')
         user.save()
 
-        admin_group = Group(name='Administration Users')
-        admin_group.save()
-        user.groups.add(admin_group)
-
         response = self.client.login(
             username='temporary', password='temporary')
         self.assertEqual(response, True)
@@ -40,6 +36,13 @@ class NewImageTestCase(TestCase):
 
     def tearDown(self):
         self.image.close()
+
+    def test_not_logged_in(self):
+        self.client.logout()
+
+        response = self.client.get(
+            reverse('new-image'))
+        self.assertRedirects(response, '/login?next=/entry/images/new')
 
     def test_url_endpoint(self):
         url = reverse('new-image')

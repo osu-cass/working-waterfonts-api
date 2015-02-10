@@ -20,6 +20,13 @@ class ListVideoTestCase(TestCase):
         url = reverse('entry-list-videos')
         self.assertEqual(url, '/entry/videos')
 
+    def test_not_logged_in(self):
+        self.client.logout()
+
+        response = self.client.get(
+            reverse('entry-list-videos'))
+        self.assertRedirects(response, '/login?next=/entry/videos')
+
     def test_list_items(self):
         """
         Tests to see if the list of videos contains the proper
