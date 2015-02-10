@@ -41,21 +41,6 @@ def coordinates_from_address(street, city, state, zip):
         raise BadAddressException("Address %s not found" % full_address)
 
 
-def group_required(*group_names):
-    """
-    This decorator can be used to protect a view from users not in a given list
-    of groups. Add @group_required to a view to require the user to be logged
-    in and part of the passed groups. If the user is not a member of the given
-    groups, they will be redirected to /login.
-    """
-    def in_groups(u):
-        if u.is_authenticated():
-            if u.is_superuser | bool(u.groups.filter(name__in=group_names)):
-                return True
-        return False
-    return user_passes_test(in_groups, login_url='/login')
-
-
 def get_lat_long_prox(request, error=None):
     """
     Parse the latitude, longitude, proximity, and limit for the Vendor

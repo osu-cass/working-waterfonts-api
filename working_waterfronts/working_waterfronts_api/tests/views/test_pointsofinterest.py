@@ -4,18 +4,12 @@ from django.test import TestCase
 from django.test.client import Client
 from django.core.urlresolvers import reverse
 from django.test.utils import override_settings
-from django.contrib.auth.models import Group, User
 
 
 class PointsOfInterestTestCase(TestCase):
     fixtures = ['test_fixtures']
 
     def setUp(self):
-
-        user = User.objects.create_user(username='test', password='pass')
-        admin_group = Group(name='Administration Users')
-        admin_group.save()
-        user.groups.add(admin_group)
 
         self.maxDiff = None
         self.expected_list = """
@@ -177,10 +171,6 @@ in you being abducted by aliens.",
 class NoPointOfInterestViewTestCase(TestCase):
 
     def setUp(self):
-        user = User.objects.create_user(username='test', password='pass')
-        admin_group = Group(name='Administration Users')
-        admin_group.save()
-        user.groups.add(admin_group)
 
         self.expected_no_pointsofinterest = """
 {
@@ -228,10 +218,6 @@ class PointsOfInterestLocationTestCase(TestCase):
     # is changed, then the tests would break without overriding it.
     @override_settings(DEFAULT_PROXIMITY='20')
     def setUp(self):
-        user = User.objects.create_user(username='test', password='pass')
-        admin_group = Group(name='Administration Users')
-        admin_group.save()
-        user.groups.add(admin_group)
 
         self.maxDiff = None
 
