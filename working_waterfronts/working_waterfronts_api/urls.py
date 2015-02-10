@@ -22,6 +22,18 @@ urlpatterns = patterns(
         url_base + '.views.entry.home.home',
         name='home'),
 
+    url(r'^entry/categories/(?P<id>\d+)/?$',
+        url_base + '.views.entry.categories.category',
+        name='edit-category'),
+
+    url(r'^entry/categories/new/?$',
+        url_base + '.views.entry.categories.category',
+        name='new-category'),
+
+    url(r'^entry/categories/?$',
+        url_base + '.views.entry.categories.list',
+        name='entry-list-categories'),
+
     url(r'^entry/images/(?P<id>\d+)/?$',
         url_base + '.views.entry.images.image',
         name='edit-image'),
@@ -33,6 +45,18 @@ urlpatterns = patterns(
     url(r'^entry/images/?$',
         url_base + '.views.entry.images.image_list',
         name='entry-list-images'),
+
+    url(r'^entry/pois/(?P<id>\d+)/?$',
+        url_base + '.views.entry.pois.poi',
+        name='edit-poi'),
+
+    url(r'^entry/pois/new/?$',
+        url_base + '.views.entry.pois.poi',
+        name='new-poi'),
+
+    url(r'^entry/pois/?$',
+        url_base + '.views.entry.pois.list',
+        name='entry-list-pois'),
 
     url(r'^1/pois/?$',
         url_base + '.views.pointsofinterest.poi_list',

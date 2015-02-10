@@ -1,0 +1,328 @@
+{% extends "base.html" %}
+
+{% block header %}
+<div class="back">
+    {% for p in parent_url %}
+    <a href="{{ p.url }}">
+        &lt; <span class="parent_text">{{ p.name }}</span>
+    </a>
+    {% endfor %}
+</div>
+{% endblock header %}
+
+{% block title %}
+<h2 class='light'>{{ title }}</h2>
+<h4 class='light accent'>{{ message }}</h4>
+{% endblock title %}
+
+{% block content %}
+{% load staticfiles %}
+<form action="{{ post_url }}" method="post">
+
+    <div class='error'>
+        {% for error in poi_form.errors %}
+        {% if error != "lat" and error != "long" %}
+        <h4 class='light warning'>Invalid {{ error|escape }}!</h4>
+        {% endif %}
+        {% endfor %}
+        {% for error in errors %}
+        <h4 class='light warning'>{{ error|escape }}</h4>
+        {% endfor %}
+    </div>
+
+    {% csrf_token %}
+    <div class="entry_box">
+        {% if poi_form.instance.pk != None %}
+        <button class='dbutton' type="button" onclick="deletePointOfInterest();return false;"/>Delete</button>
+        {% endif %}
+        <h3>Basic Info</h3>
+        <p class="field_text">Name*:</p>
+        {{ poi_form.name }}
+        <p class="field_text">Description*:</p>
+        {{ poi_form.description }}
+        <p class="field_text">Alternative Name:</p>
+        {{ poi_form.alt_name }}
+        <p class="field_text">History*:</p>
+        {{ poi_form.history }}
+        <p class="field_text">Facts*:</p>
+        {{ poi_form.facts }}
+        <h3>Location</h3>
+        <p class="field_text">Street Address*:</p>
+        {{ poi_form.street }}
+        <p class="field_text">City*:</p>
+        {{ poi_form.city }}
+        <p class="field_text">State*:</p>
+        {{ poi_form.state }}
+        <p class="field_text">Zipcode*:</p>
+        {{ poi_form.zip }}
+        <p class=" field_text">Location Description:</p>
+        {{ poi_form.location_description }}
+        <h3>Contact info: </h3>
+        <p class="field_text">Contact Name*:</p>
+        {{ poi_form.contact_name }}
+        <p class=" field_text">Website:</p>
+        {{ poi_form.website }}
+        <p class=" field_text">Email:</p>
+        {{ poi_form.email }}
+        <p class=" field_text">Phone:</p>
+        {{ poi_form.phone }}
+
+    <div class="image_container">
+        <h3>Images</h3>
+        <button type="button" onclick="appendImage()">Add Image</button>
+        {% if existing_images %}
+        {% for image in existing_images %}
+        <div class="image">
+            <select disabled id="existing{{ prep.id }}" class="image_select">
+                <option value="{{ image.id }}">{{ image.name }}</option>
+            </select>
+            <a href="#" onclick="deleteImage(this);return false;"><img class="delete" src="{% static 'delete.png' %}" /></a>
+        </div>
+        {% endfor %}
+        {% else %}
+        <span class="no_images">No Images Yet!</span>
+        {% endif %}
+    </div>
+
+        <div class="video_container">
+        <h3>Videos</h3>
+        <button type="button" onclick="appendVideo()">Add Video</button>
+        {% if existing_videos %}
+        {% for video in existing_videos %}
+        <div class="video">
+            <select disabled id="existing{{ prep.id }}" class="video_select">
+                <option value="{{ video.id }}">{{ video.name }}</option>
+            </select>
+            <a href="#" onclick="deleteVideo(this);return false;"><img class="delete" src="{% static 'delete.png' %}" /></a>
+        </div>
+        {% endfor %}
+        {% else %}
+        <span class="no_videos">No Videos Yet!</span>
+        {% endif %}
+    </div>
+
+    <div class="category_container">
+        <h3>Categories</h3>
+        <button type="button" onclick="appendCategory()">Add Category</button>
+        {% if existing_categories %}
+        {% for category in existing_categories %}
+        <div class="category">
+            <select disabled id="existing{{ prep.id }}" class="category_select">
+                <option value="{{ category.id }}">{{ category.category }}</option>
+            </select>
+            <a href="#" onclick="deleteCategory(this);return false;"><img class="delete" src="{% static 'delete.png' %}" /></a>
+        </div>
+        {% endfor %}
+        {% else %}
+        <span class="no_categories">No Categories Yet!</span>
+        {% endif %}
+    </div>
+
+    <div class="hazard_container">
+        <h3>Hazards</h3>
+        <button type="button" onclick="appendHazard()">Add Hazard</button>
+        {% if existing_hazards %}
+        {% for hazard in existing_hazards %}
+        <div class="hazard">
+            <select disabled id="existing{{ prep.id }}" class="hazard_select">
+                <option value="{{ hazard.id }}">{{ hazard.name }}</option>
+            </select>
+            <a href="#" onclick="deleteHazard(this);return false;"><img class="delete" src="{% static 'delete.png' %}" /></a>
+        </div>
+        {% endfor %}
+        {% else %}
+        <span class="no_hazards">No Hazards Yet!</span>
+        {% endif %}
+    </div>
+
+    <input class='image' name="image_ids" type="hidden" />
+    <input class='image' name="video_ids" type="hidden" />
+    <input class='image' name="category_ids" type="hidden" />
+    <input class='image' name="hazard_ids" type="hidden" />
+
+    <button type="submit" onclick="setFields();"/>Save</button>
+    </div>
+</form>
+
+
+<!-- The template div used by appendVideo() -->
+<div id='new_video'>
+    <div class="video">
+        <select class="video_select">
+            <option selected disabled></option>
+            {% for video in data_dict.videos %}
+            <option value="{{ video.id }}">{{ video.name }}</option>
+            {% endfor %}
+        </select>
+        <a href="#" onclick="deleteVideo(this);return false;"><img class="delete" src="{% static 'delete.png' %}" /></a>
+    </div>
+</div>
+
+<!-- The template div used by appendImage() -->
+<div id='new_image'>
+    <div class="image">
+        <select class="image_select">
+            <option selected disabled></option>
+            {% for image in data_dict.images %}
+            <option value="{{ image.id }}">{{ image.name }}</option>
+            {% endfor %}
+        </select>
+        <a href="#" onclick="deleteImage(this);return false;"><img class="delete" src="{% static 'delete.png' %}" /></a>
+    </div>
+</div>
+
+<!-- The template div used by appendHazard() -->
+<div id='new_hazard'>
+    <div class="hazard">
+        <select class="hazard_select">
+            <option selected disabled></option>
+            {% for hazard in data_dict.hazards %}
+            <option value="{{ hazard.id }}">{{ hazard.name }}</option>
+            {% endfor %}
+        </select>
+        <a href="#" onclick="deleteHazard(this);return false;"><img class="delete" src="{% static 'delete.png' %}" /></a>
+    </div>
+</div>
+
+<!-- The template div used by appendCategory() -->
+<div id='new_category'>
+    <div class="category">
+        <select class="category_select">
+            <option selected disabled></option>
+            {% for category in data_dict.categories %}
+            <option value="{{ category.id }}">{{ category.category }}</option>
+            {% endfor %}
+        </select>
+        <a href="#" onclick="deleteCategory(this);return false;"><img class="delete" src="{% static 'delete.png' %}" /></a>
+    </div>
+</div>
+{% endblock content %}
+
+{% block footer %}
+<script>
+
+
+    function deletePointOfInterest()
+    {
+        if(confirm('Are you sure you want to delete this point of interest?')) {
+            $.ajax({
+                type: 'DELETE',
+                headers: { 'X-CSRFToken': '{{ csrf_token }}' },
+                statusCode: {
+                    404: function() {
+                        $("#error_tag").text('Unable to delete point of interest!');
+                        $("html, body").animate({ scrollTop: 0 }, "slow");
+                    },
+                    200: function() {
+                        window.location.replace('{% with parent_url|last as last %}{{ last.url }}{% endwith %}/?success=true');
+                    }
+                }
+            });
+        }
+    }
+
+    number_of_images = 0;
+    number_of_videos = 0;
+    number_of_categories = 0;
+    number_of_hazards = 0;
+
+    function deleteHazard(element)
+    {
+        $( element ).parent().css("display", "none");
+        if ($( ".hazard:visible" ).length === 0) {
+            $( ".no_hazards" ).show();
+        };
+    }
+
+    function appendHazard()
+    {
+        $( ".no_hazards" ).hide();
+        var new_html = $('#new_hazard').html();
+        var new_html = new_html.split("$iteration").join(number_of_hazards);
+        $( ".hazard_container" ).append( new_html );
+        number_of_hazards++;
+    }
+
+    function deleteCategory(element)
+    {
+        $( element ).parent().css("display", "none");
+        if ($( ".category:visible" ).length === 0) {
+            $( ".no_categories" ).show();
+        };
+    }
+
+    function appendCategory()
+    {
+        $( ".no_categories" ).hide();
+        var new_html = $('#new_category').html();
+        var new_html = new_html.split("$iteration").join(number_of_categories);
+        $( ".category_container" ).append( new_html );
+        number_of_categories++;
+    }
+
+    function deleteVideo(element)
+    {
+        $( element ).parent().css("display", "none");
+        if ($( ".video:visible" ).length === 0) {
+            $( ".no_videos" ).show();
+        };
+    }
+
+    function appendVideo()
+    {
+        $( ".no_videos" ).hide();
+        var new_html = $('#new_video').html();
+        var new_html = new_html.split("$iteration").join(number_of_videos);
+        $( ".video_container" ).append( new_html );
+        number_of_videos++;
+    }
+
+    function deleteImage(element)
+    {
+        $( element ).parent().css("display", "none");
+        if ($( ".image:visible" ).length === 0) {
+            $( ".no_images" ).show();
+        };
+    }
+
+    function appendImage()
+    {
+        $( ".no_images" ).hide();
+        var new_html = $('#new_image').html();
+        var new_html = new_html.split("$iteration").join(number_of_images);
+        $( ".image_container" ).append( new_html );
+        number_of_images++;
+    }
+
+    function setFields()
+    {
+        var image_ids = []
+        $( ".image_select:visible" ).each( function( index, element ){
+            image_ids.push(this.options[this.selectedIndex].value);
+        });
+
+        $('input[name="image_ids"]').val(image_ids);
+
+        var video_ids = []
+        $( ".video_select:visible" ).each( function( index, element ){
+            video_ids.push(this.options[this.selectedIndex].value);
+        });
+
+        $('input[name="video_ids"]').val(video_ids);
+
+        var hazard_ids = []
+        $( ".hazard_select:visible" ).each( function( index, element ){
+            hazard_ids.push(this.options[this.selectedIndex].value);
+        });
+
+        $('input[name="hazard_ids"]').val(hazard_ids);
+
+        var category_ids = []
+        $( ".category_select:visible" ).each( function( index, element ){
+            category_ids.push(this.options[this.selectedIndex].value);
+        });
+
+        $('input[name="category_ids"]').val(category_ids);
+    }
+</script>
+{% endblock footer %}

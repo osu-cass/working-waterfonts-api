@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from django.shortcuts import get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -10,6 +11,7 @@ from working_waterfronts.working_waterfronts_api.models import Video
 from working_waterfronts.working_waterfronts_api.forms import VideoForm
 
 
+@login_required
 def video_list(request):
     """
     */entry/videos*
@@ -50,6 +52,7 @@ def video_list(request):
     })
 
 
+@login_required
 def video(request, id=None):
     """
     */entry/videos/<id>*, */entry/videos/new*

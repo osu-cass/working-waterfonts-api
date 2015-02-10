@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from django.shortcuts import get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -10,6 +11,7 @@ from working_waterfronts.working_waterfronts_api.models import Hazard
 from working_waterfronts.working_waterfronts_api.forms import HazardForm
 
 
+@login_required
 def list(request):
     """
     */entry/hazards*
@@ -51,6 +53,7 @@ def list(request):
     })
 
 
+@login_required
 def hazard(request, id=None):
     """
     */entry/hazards/<id>*, */entry/hazards/new*

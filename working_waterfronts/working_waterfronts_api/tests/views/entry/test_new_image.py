@@ -46,7 +46,7 @@ class NewImageTestCase(TestCase):
 
         response = self.client.get(
             reverse('new-image'))
-        self.assertRedirects(response, '/entry/images/new')
+        self.assertRedirects(response, '/login?next=/entry/images/new')
 
     def test_url_endpoint(self):
         url = reverse('new-image')
