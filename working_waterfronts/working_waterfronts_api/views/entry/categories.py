@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.core.urlresolvers import reverse
 from django.shortcuts import get_object_or_404
+from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.conf import settings
 
@@ -10,6 +11,7 @@ from working_waterfronts.working_waterfronts_api.models import Category
 from working_waterfronts.working_waterfronts_api.forms import CategoryForm
 
 
+@login_required
 def list(request):
     """
     */entry/categories*
@@ -51,6 +53,7 @@ def list(request):
     })
 
 
+@login_required
 def category(request, id=None):
     """
     */entry/categories/<id>*, */entry/categories/new*

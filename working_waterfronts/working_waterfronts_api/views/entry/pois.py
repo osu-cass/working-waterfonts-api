@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.contrib.gis.geos import fromstr
 from django.core.urlresolvers import reverse
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.conf import settings
@@ -18,6 +19,7 @@ from working_waterfronts.working_waterfronts_api.forms import (
     PointOfInterestForm)
 
 
+@login_required
 def list(request):
     """
     */entry/pois*
@@ -59,6 +61,7 @@ def list(request):
     })
 
 
+@login_required
 def poi(request, id=None):
     """
     */entry/pois/<id>*, */entry/pois/new*

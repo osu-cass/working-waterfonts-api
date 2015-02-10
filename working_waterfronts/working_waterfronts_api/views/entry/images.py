@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.core.urlresolvers import reverse
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.conf import settings
@@ -10,6 +11,7 @@ from working_waterfronts.working_waterfronts_api.models import Image
 from working_waterfronts.working_waterfronts_api.forms import ImageForm
 
 
+@login_required
 def image_list(request):
     """
     */entry/images*
@@ -50,6 +52,7 @@ def image_list(request):
     })
 
 
+@login_required
 def image(request, id=None):
     """
     */entry/images/<id>*, */entry/images/new*
