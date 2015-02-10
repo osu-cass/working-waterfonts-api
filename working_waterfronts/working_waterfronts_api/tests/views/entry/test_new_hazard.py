@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.core.urlresolvers import reverse
 from working_waterfronts.working_waterfronts_api.models import Hazard
-from django.contrib.auth.models import User, Group
+from django.contrib.auth.models import User
 
 
 class NewHazardTestCase(TestCase):
@@ -22,10 +22,6 @@ class NewHazardTestCase(TestCase):
         user = User.objects.create_user(
             'temporary', 'temporary@gmail.com', 'temporary')
         user.save()
-
-        admin_group = Group(name='Administration Users')
-        admin_group.save()
-        user.groups.add(admin_group)
 
         response = self.client.login(
             username='temporary', password='temporary')
