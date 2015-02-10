@@ -12,19 +12,6 @@ class ListVideoTestCase(TestCase):
             'temporary', 'temporary@gmail.com', 'temporary')
         user.save()
 
-        admin_group = Group(name='Administration Users')
-        admin_group.save()
-        user.groups.add(admin_group)
-
-        response = self.client.login(
-            username='temporary', password='temporary')
-        self.assertEqual(response, True)
-
-    def setUp(self):
-        user = User.objects.create_user(
-            'temporary', 'temporary@gmail.com', 'temporary')
-        user.save()
-
         response = self.client.login(
             username='temporary', password='temporary')
         self.assertEqual(response, True)

@@ -1,5 +1,6 @@
 from django.test import TestCase
 from django.core.urlresolvers import reverse
+from django.contrib.auth.models import User, Group
 from working_waterfronts.working_waterfronts_api.models import PointOfInterest
 
 
