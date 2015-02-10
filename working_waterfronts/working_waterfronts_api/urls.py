@@ -97,7 +97,7 @@ urlpatterns = patterns(
         url_base + '.views.entry.login.root',
         name='root'),
 
-    url(r'^entry/catagories/?$',
-        url_base + '.views.entry.catagories.catagory_list',
-        name='entry-list-catagories'),
+    url(r'^entry/categories/?$',
+        url_base + '.views.entry.categories.category_list',
+        name='entry-list-categories'),
 )
