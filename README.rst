@@ -6,4 +6,4 @@ Working Waterfronts API
 
 The Working Waterfronts API is a REST-style JSON API for Oregon Coast
 fishery-related landmarks and points of interest.
-For development and API documentation, please see the `Working Waterfronts Read the Docs <http://working-waterfronts.readthedocs.org/en/latest/index.html>`_.
+For development and API documentation, please see the `Working Waterfronts Read the Docs <http://working-waterfronts-api.readthedocs.org/en/latest/index.html>`_.
