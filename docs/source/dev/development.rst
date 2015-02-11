@@ -154,7 +154,7 @@ when they run the app:
 
 ::
 
-    $ docker run -v /path/to/code/:/opt/whats_fresh --link postgis:postgis osuosl/whats_fresh:dev
+    $ docker run -v /path/to/code/:/opt/working_waterfronts --link postgis:postgis osuosl/working_waterfronts:dev
 
 Developing
 ==========
