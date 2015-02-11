@@ -1,0 +1,14 @@
+postgis:
+  image: kartoza/postgis
+  environment:
+    PASS: working_waterfronts
+    USERNAME: working_waterfronts
+
+web:
+  build: .
+  ports:
+    - "8000:8000"
+  volumes:
+    - .:/opt/working_waterfronts
+  links:
+    - postgis
