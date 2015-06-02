@@ -52,19 +52,19 @@ If you are using Linux you will need to prefix all of the
 following commands with sudo. If you are using OS X you will need to use
 the boot2docker tool.
 
-Fig
----
+docker-compose
+--------------
 Starting multiple Docker containers with complicated options can lead to a
-lengthy and difficult to remember commands. Using fig, a program for
+lengthy and difficult to remember commands. Using docker-compose, a program for
 orchestrating multiple Docker containers, setting up the development
 environment can be done with one command:
 
 ::
-	$ fig up
+	$ docker-compose up
 
 This command starts a postgis container and a What's Fresh container using the
-fig.yml file. Fig creates a volume mount to the current directory to make
-development easier.
+docker-compose.yml file. Docker Compose creates a volume mount to the current
+directory to make development easier.
 
 
 Postgis image
@@ -177,7 +177,7 @@ To install Vagrant, just use your package manager::
 
 **vagrant-berkshelf and vagrant-omnibus**
 
-These plugins are used to configure the Vagrant machine. To install these
+These plugins are used to condocker-composeure the Vagrant machine. To install these
 plugins, you'll need to use Vagrant's plugin manager::
 
     vagrant plugin install vagrant-berkshelf
