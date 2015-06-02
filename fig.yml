@@ -1,11 +1,11 @@
 postgis:
-  image: kartoza/postgis
+  build: ./dockerfiles/postgres
   environment:
     PASS: working_waterfronts
     USERNAME: working_waterfronts
 
 web:
-  build: .
+  build: ./dockerfiles/working-waterfronts
   ports:
     - "8000:8000"
   volumes:
