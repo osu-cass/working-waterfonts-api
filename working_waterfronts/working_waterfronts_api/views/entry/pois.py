@@ -86,13 +86,18 @@ def poi(request, id=None):
         errors = []
 
         try:
-            coordinates = coordinates_from_address(
-                post_data['street'], post_data['city'], post_data['state'],
-                post_data['zip'])
+            if post_data['lat'] and post_data['long']:
+                post_data['location'] = fromstr('POINT(%s %s)' %
+                (postdata['long'], postdata['lat']), srid=4326)
 
-            post_data['location'] = fromstr(
-                'POINT(%s %s)' % (coordinates[1], coordinates[0]),
-                srid=4326)
+            else:
+                coordinates = coordinates_from_address(
+                    post_data['street'], post_data['city'], post_data['state'],
+                    post_data['zip'])
+
+                post_data['location'] = fromstr(
+                    'POINT(%s %s)' % (coordinates[1], coordinates[0]),
+                    srid=4326)
         # Bad Address will be thrown if Google does not return coordinates for
         # the address, and MultiValueDictKeyError will be thrown if the POST
         # data being passed in is empty.
