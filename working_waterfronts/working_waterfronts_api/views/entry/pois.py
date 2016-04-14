@@ -189,8 +189,8 @@ def poi(request, id=None):
         title = "Edit {0}".format(poi.name)
         post_url = reverse('edit-poi', kwargs={'id': id})
         poi_form = PointOfInterestForm(instance=poi)
-        poi_form.fields['latitude'] = post_data['latitude']
-        poi_form.fields['longitude'] = post_data['longitude']
+        poi_form.fields['latitude'] = poi.location[1]
+        poi_form.fields['longitude'] = poi.location[0]
         existing_images = poi.images.all()
         existing_videos = poi.videos.all()
         existing_categories = poi.categories.all()
