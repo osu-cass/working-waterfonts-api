@@ -88,7 +88,7 @@ def poi(request, id=None):
         try:
             if post_data['latitude'] and post_data['longitude']:
                 post_data['location'] = fromstr('POINT(%s %s)' %
-                (postdata['longitude'], post_data['latitude']), srid=4326)
+                (post_data['longitude'], post_data['latitude']), srid=4326)
 
             else:
                 coordinates = coordinates_from_address(
