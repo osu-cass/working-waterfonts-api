@@ -18,6 +18,8 @@ class PointOfInterest(models.Model):
     location = models.PointField()
     objects = models.GeoManager()
 
+    latitude = models.TextField()
+    longitude = models.TextField()
     street = models.TextField()
     city = models.TextField()
     state = models.TextField()
