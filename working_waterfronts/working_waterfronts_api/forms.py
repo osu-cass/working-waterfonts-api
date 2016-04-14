@@ -5,8 +5,8 @@ from working_waterfronts.working_waterfronts_api.models import (
 
 class PointOfInterestForm(forms.ModelForm):
 
-    latitude = forms.TextField()
-    longitude = forms.TextField()
+    latitude = forms.TextInput()
+    longitude = forms.TextInput()
 
     class Meta:
         model = PointOfInterest
