@@ -190,7 +190,7 @@ def poi(request, id=None):
         poi.longitude = poi.location[0]
         title = "Edit {0}".format(poi.name)
         post_url = reverse('edit-poi', kwargs={'id': id})
-        poi_form = PointOfInterestForm(instance=poi)
+        poi_form = PointOfInterestForm(instance=poi, initial={'latitude': poi.latitude, 'longitude': poi.longitude})
         """
         if post_data:
             poi_form.fields['latitude'] = post_data['latitude']
