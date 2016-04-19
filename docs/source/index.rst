@@ -1,5 +1,5 @@
 Working Waterfronts's API documentation
-================================
+=======================================
 
 API and Usage Documentation:
 
