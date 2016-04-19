@@ -88,7 +88,7 @@ def poi(request, id=None):
         try:
             if post_data['latitude'] and post_data['longitude']:
                 post_data['location'] = fromstr('POINT(%s %s)' %
-                (post_data['longitude'], post_data['latitude']), srid=4326)
+                    (post_data['longitude'], post_data['latitude']), srid=4326)
 
             else:
                 coordinates = coordinates_from_address(
@@ -190,7 +190,8 @@ def poi(request, id=None):
         poi.longitude = poi.location[0]
         title = "Edit {0}".format(poi.name)
         post_url = reverse('edit-poi', kwargs={'id': id})
-        poi_form = PointOfInterestForm(instance=poi, initial={'latitude': poi.latitude, 'longitude': poi.longitude})
+        poi_form = PointOfInterestForm(instance=poi, initial={'latitude': poi.latitude, 
+            'longitude': poi.longitude})
         """
         if post_data:
             poi_form.fields['latitude'] = post_data['latitude']

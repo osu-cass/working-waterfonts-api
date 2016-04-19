@@ -34,7 +34,7 @@ class EditPointOfInterestTestCase(TestCase):
 
     def test_successful_poi_update(self):
         """
-        POST a proper "new poi" command to the server, and see if the
+        POST a proper "edit poi" command to the server, and see if the
         new poi appears in the database
         """
 
@@ -85,6 +85,8 @@ class EditPointOfInterestTestCase(TestCase):
         fields = {
             "name": "Newport Lighthouse",
             "alt_name": "",
+            "lat": "44.6752643",
+            "long": "-124.072162"
             "description": "A pretty nice lighthouse",
             "history": "It was built at some time in the past",
             "facts": "It's a lighthouse",

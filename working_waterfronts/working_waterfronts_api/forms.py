@@ -24,6 +24,7 @@ class PointOfInterestForm(forms.ModelForm):
             'contact_name': forms.TextInput(attrs={'required': 'true'})
         }
 
+
 class HazardForm(forms.ModelForm):
 
     class Meta:
