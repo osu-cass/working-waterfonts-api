@@ -32,9 +32,9 @@ class EditPointOfInterestTestCase(TestCase):
         url = reverse('edit-poi', kwargs={'id': '1'})
         self.assertEqual(url, '/entry/pois/1')
 
-    def test_successful_poi_update(self):
+    def test_poi_update_no_coords(self):
         """
-        POST a proper "new poi" command to the server, and see if the
+        POST a proper "edit poi" command to the server, and see if the
         new poi appears in the database
         """
 
@@ -74,6 +74,53 @@ class EditPointOfInterestTestCase(TestCase):
         self.assertEqual(sorted(hazards), [1, 2])
         self.assertEqual(sorted(categories), [1, 2])
 
+    def test_poi_update_with_coords(self):
+        """
+        POST a proper "edit poi" command to the server, but change the lat
+        and long - and see if the updated poi has the new coords
+        """
+
+        # Data that we'll post to the server to get the poi updated
+        new_poi = {
+            'name': 'Test Name', 'alt_name': 'Tester Obj',
+            'description': 'Test Description',
+            'latitude': 45.0,
+            'longitude': -124.0,
+            'history': 'history', 'facts': 'It\'s a test',
+            'street': '750 NW Lighthouse Dr', 'city': 'Newport', 'state': 'OR',
+            'zip': '97365', 'location_description': 'test loc description',
+            'contact_name': 'Test Contact', 'website': '', 'email': '',
+            'phone': '', 'category_ids': '1,2', 'hazard_ids': '1,2',
+            'image_ids': '', 'video_ids': ''}
+
+        self.client.post(
+            reverse('edit-poi', kwargs={'id': '1'}), new_poi)
+
+        # These values are changed by the server after being received from
+        # the client/web page. The preparation IDs are going to be changed
+        # into objects, so we'll not need the list fields
+        del new_poi['category_ids']
+        del new_poi['hazard_ids']
+        del new_poi['video_ids']
+        del new_poi['image_ids']
+        del new_poi['longitude']
+        del new_poi['latitude']
+
+        new_poi['phone'] = None
+
+        poi = PointOfInterest.objects.get(id=1)
+        for field in new_poi:
+            self.assertEqual(getattr(poi, field), new_poi[field])
+
+        self.assertEqual(poi.location.y, 45.0000000)  # latitude
+        self.assertEqual(poi.location.x, -124.000000)  # longitude
+
+        hazards = [hazard.id for hazard in poi.hazards.all()]
+        categories = [category.id for category in poi.categories.all()]
+
+        self.assertEqual(sorted(hazards), [1, 2])
+        self.assertEqual(sorted(categories), [1, 2])
+
     def test_form_fields(self):
         """
         Tests to see if the form contains all of the right fields with the
@@ -85,6 +132,8 @@ class EditPointOfInterestTestCase(TestCase):
         fields = {
             "name": "Newport Lighthouse",
             "alt_name": "",
+            "latitude": 43.966874,
+            "longitude": -124.10534,
             "description": "A pretty nice lighthouse",
             "history": "It was built at some time in the past",
             "facts": "It's a lighthouse",

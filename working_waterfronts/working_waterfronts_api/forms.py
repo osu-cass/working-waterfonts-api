@@ -5,6 +5,9 @@ from working_waterfronts.working_waterfronts_api.models import (
 
 class PointOfInterestForm(forms.ModelForm):
 
+    latitude = forms.CharField(required=False)
+    longitude = forms.CharField(required=False)
+
     class Meta:
         model = PointOfInterest
         exclude = []
@@ -14,10 +17,10 @@ class PointOfInterestForm(forms.ModelForm):
             'description': forms.Textarea(attrs={'required': 'true'}),
             'history': forms.Textarea(attrs={'required': 'true'}),
             'facts': forms.Textarea(attrs={'required': 'true'}),
-            'street': forms.TextInput(attrs={'required': 'true'}),
-            'city': forms.TextInput(attrs={'required': 'true'}),
-            'state': forms.TextInput(attrs={'required': 'true'}),
-            'zip': forms.TextInput(attrs={'required': 'true'}),
+            'street': forms.TextInput(attrs={'required': 'false'}),
+            'city': forms.TextInput(attrs={'required': 'false'}),
+            'state': forms.TextInput(attrs={'required': 'false'}),
+            'zip': forms.TextInput(attrs={'required': 'false'}),
             'contact_name': forms.TextInput(attrs={'required': 'true'})
         }
 

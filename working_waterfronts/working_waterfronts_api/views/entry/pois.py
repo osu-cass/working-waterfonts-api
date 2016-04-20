@@ -86,13 +86,20 @@ def poi(request, id=None):
         errors = []
 
         try:
-            coordinates = coordinates_from_address(
-                post_data['street'], post_data['city'], post_data['state'],
-                post_data['zip'])
+            try:
+                post_data['location'] = fromstr(
+                    'POINT(%s %s)' % (post_data['longitude'],
+                                      post_data['latitude']), srid=4326)
 
-            post_data['location'] = fromstr(
-                'POINT(%s %s)' % (coordinates[1], coordinates[0]),
-                srid=4326)
+            except:
+                coordinates = coordinates_from_address(
+                    post_data['street'], post_data['city'], post_data['state'],
+                    post_data['zip'])
+
+                post_data['location'] = fromstr(
+                    'POINT(%s %s)' % (coordinates[1], coordinates[0]),
+                    srid=4326)
+
         # Bad Address will be thrown if Google does not return coordinates for
         # the address, and MultiValueDictKeyError will be thrown if the POST
         # data being passed in is empty.
@@ -181,9 +188,14 @@ def poi(request, id=None):
 
     if id:
         poi = PointOfInterest.objects.get(id=id)
+        poi.latitude = poi.location[1]
+        poi.longitude = poi.location[0]
         title = "Edit {0}".format(poi.name)
         post_url = reverse('edit-poi', kwargs={'id': id})
-        poi_form = PointOfInterestForm(instance=poi)
+        poi_form = PointOfInterestForm(
+            instance=poi,
+            initial={'latitude': poi.latitude, 'longitude': poi.longitude})
+
         existing_images = poi.images.all()
         existing_videos = poi.videos.all()
         existing_categories = poi.categories.all()

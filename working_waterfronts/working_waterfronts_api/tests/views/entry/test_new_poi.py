@@ -51,7 +51,7 @@ class NewPOITestCase(TestCase):
         for field in fields:
             self.assertIn(fields[field], str(form[field]))
 
-    def test_successful_pointofinterest_creation(self):
+    def test_pointofinterest_creation_no_coords(self):
         """
         POST a proper "new pointofinterest" command to the server, and see if
         the new pointofinterest appears in the database
@@ -93,6 +93,58 @@ class NewPOITestCase(TestCase):
 
         self.assertEqual(poi.location.y, 44.6752643)  # latitude
         self.assertEqual(poi.location.x, -124.072162)  # longitude
+
+        hazards = [hazard.id for hazard in poi.hazards.all()]
+        categories = [category.id for category in poi.categories.all()]
+
+        self.assertEqual(sorted(hazards), [1, 2])
+        self.assertEqual(sorted(categories), [1, 2])
+
+    def test_pointofinterest_creation_with_coords(self):
+        """
+        POST a proper "new pointofinterest" command to the server, and see if
+        the new pointofinterest appears in the database
+        """
+        # Create objects that we'll be setting as the foreign objects for
+        # our test POI
+        Hazard.objects.all().delete()
+        Category.objects.all().delete()
+
+        Hazard.objects.create(id=1)
+        Hazard.objects.create(id=2)
+        Category.objects.create(id=1)
+        Category.objects.create(id=2)
+
+        # Data that we'll post to the server to get the new poi created
+        new_poi = {
+            'name': 'Test Name', 'alt_name': 'Tester Obj',
+            'description': 'Test Description', 'latitude': 45.0,
+            'longitude': -125.0,
+            'history': 'history', 'facts': 'It\'s a test',
+            'street': '750 NW Lighthouse Dr', 'city': 'Newport', 'state': 'OR',
+            'zip': '97365', 'location_description': 'test loc description',
+            'contact_name': 'Test Contact', 'website': '', 'email': '',
+            'phone': '', 'category_ids': '1,2', 'hazard_ids': '1,2'}
+
+        self.client.post(reverse('new-poi'), new_poi)
+
+        self.assertGreater(len(PointOfInterest.objects.all()), 0)
+
+        # These values are changed by the server after being received from
+        # the client/web page. The preparation IDs are going to be changed
+        # into objects, so we'll not need the list fields
+        del new_poi['category_ids']
+        del new_poi['hazard_ids']
+        del new_poi['latitude']
+        del new_poi['longitude']
+        new_poi['phone'] = None
+
+        poi = PointOfInterest.objects.all()[0]
+        for field in new_poi:
+            self.assertEqual(getattr(poi, field), new_poi[field])
+
+        self.assertEqual(poi.location.y, 45.0)  # latitude
+        self.assertEqual(poi.location.x, -125.0)  # longitude
 
         hazards = [hazard.id for hazard in poi.hazards.all()]
         categories = [category.id for category in poi.categories.all()]
