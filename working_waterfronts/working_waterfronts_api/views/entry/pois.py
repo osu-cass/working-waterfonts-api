@@ -86,12 +86,12 @@ def poi(request, id=None):
         errors = []
 
         try:
-            if post_data['latitude'] and post_data['longitude']:
-                post_data['location'] = fromstr('POINT(%s %s)' %
-                    (post_data['longitude'], post_data['latitude']), 
-                    srid=4326)
+            try:
+                post_data['location'] = fromstr(
+                    'POINT(%s %s)' % (post_data['longitude'],
+                                      post_data['latitude']), srid=4326)
 
-            else:
+            except:
                 coordinates = coordinates_from_address(
                     post_data['street'], post_data['city'], post_data['state'],
                     post_data['zip'])
@@ -99,6 +99,7 @@ def poi(request, id=None):
                 post_data['location'] = fromstr(
                     'POINT(%s %s)' % (coordinates[1], coordinates[0]),
                     srid=4326)
+
         # Bad Address will be thrown if Google does not return coordinates for
         # the address, and MultiValueDictKeyError will be thrown if the POST
         # data being passed in is empty.
@@ -191,7 +192,8 @@ def poi(request, id=None):
         poi.longitude = poi.location[0]
         title = "Edit {0}".format(poi.name)
         post_url = reverse('edit-poi', kwargs={'id': id})
-        poi_form = PointOfInterestForm(instance=poi, 
+        poi_form = PointOfInterestForm(
+            instance=poi,
             initial={'latitude': poi.latitude, 'longitude': poi.longitude})
 
         existing_images = poi.images.all()

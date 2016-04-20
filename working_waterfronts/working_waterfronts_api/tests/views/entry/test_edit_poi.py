@@ -32,7 +32,7 @@ class EditPointOfInterestTestCase(TestCase):
         url = reverse('edit-poi', kwargs={'id': '1'})
         self.assertEqual(url, '/entry/pois/1')
 
-    def test_successful_poi_update(self):
+    def test_poi_update_no_coords(self):
         """
         POST a proper "edit poi" command to the server, and see if the
         new poi appears in the database
@@ -74,7 +74,7 @@ class EditPointOfInterestTestCase(TestCase):
         self.assertEqual(sorted(hazards), [1, 2])
         self.assertEqual(sorted(categories), [1, 2])
 
-    def test_successful_poi_lat_long_update(self):
+    def test_poi_update_with_coords(self):
         """
         POST a proper "edit poi" command to the server, but change the lat
         and long - and see if the updated poi has the new coords
@@ -84,8 +84,8 @@ class EditPointOfInterestTestCase(TestCase):
         new_poi = {
             'name': 'Test Name', 'alt_name': 'Tester Obj',
             'description': 'Test Description',
-            'latitude': '45.0',
-            'longitude': '-124.0',
+            'latitude': 45.0,
+            'longitude': -124.0,
             'history': 'history', 'facts': 'It\'s a test',
             'street': '750 NW Lighthouse Dr', 'city': 'Newport', 'state': 'OR',
             'zip': '97365', 'location_description': 'test loc description',
