@@ -118,7 +118,7 @@ class NewPOITestCase(TestCase):
         # Data that we'll post to the server to get the new poi created
         new_poi = {
             'name': 'Test Name', 'alt_name': 'Tester Obj',
-            'description': 'Test Description', 'latitude': 45.0, 
+            'description': 'Test Description', 'latitude': 45.0,
             'longitude': -125.0,
             'history': 'history', 'facts': 'It\'s a test',
             'street': '750 NW Lighthouse Dr', 'city': 'Newport', 'state': 'OR',
