@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/opt/working_waterfronts
+    links:
+      - postgis
+    command: ./wait-for-it.sh postgis:5432 -t 0 -- python manage.py runserver 0.0.0.0:8000
+
+  postgis:
+    image: kartoza/postgis:latest
+    environment:
+      POSTGRES_USER: working_waterfronts
+      POSTGRES_PASS: working_waterfronts
+      POSTGRES_DBNAME: working_waterfronts
+    command: sh -c "echo \"host all all 0.0.0.0/0 md5\" >> /etc/postgresql/9.5/main/pg_hba.conf && /start-postgis.sh"
+

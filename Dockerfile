@@ -1,7 +1,6 @@
-FROM centos:7
+FROM ubuntu:16.04
 
 MAINTAINER OSU Open Source Lab, support@osuosl.org
-
 
 ENV PASSWORD working_waterfronts
 ENV HOST postgis
@@ -12,17 +11,25 @@ ENV ENGINE django.contrib.gis.db.backends.postgis
 
 EXPOSE 8000
 
-RUN yum install -y python-devel python-setuptools postgresql-devel gcc curl
+# Add add UbuntuGIS repository to install GDAL
+RUN apt-get -y update
+RUN apt-get install -y software-properties-common
+RUN add-apt-repository -y ppa:ubuntugis/ubuntugis-unstable
+RUN apt-get -y update
 
-# Install the ius repository to install GDAL
-RUN curl http://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/ius-release-1.0-13.ius.centos7.noarch.rpm > /tmp/ius.rpm
-RUN yum install -y /tmp/ius.rpm
-RUN yum install -y gdal
-
-RUN easy_install pip
+RUN apt-get install -y --no-install-recommends \
+    python-dev \
+    python-setuptools \
+    python-pip \
+    build-essential \
+    postgresql-server-dev-9.5 \
+    gdal-bin \
+    gcc \
+    curl
 
 WORKDIR /opt/working_waterfronts
 
 COPY . /opt/working_waterfronts
+RUN pip install wheel
 RUN pip install .
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
